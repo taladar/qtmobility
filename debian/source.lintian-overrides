@@ -1,0 +1,4 @@
+qtmobility source: source-is-missing doc/config/scripts/jquery.js
+qtmobility source: package-needs-versioned-debhelper-build-depends 9
+qtmobility source: obsolete-url-in-packaging debian/copyright http://qt.gitorious.org/qt-mobility
+qtmobility source: ancient-standards-version 3.9.3
