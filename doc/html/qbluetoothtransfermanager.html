@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qbluetoothtransfermanager.cpp -->
+  <title>Qt 1.2: QBluetoothTransferManager Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtconnectivity.html">QtConnectivity</a></li>
+              <li>QBluetoothTransferManager</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QBluetoothTransferManager Class Reference</h1>
+<!-- $$$QBluetoothTransferManager-brief -->
+<p>The QBluetoothTransferManager class allows the application to send data objects to other devices. Currently implemented using OPP. <a href="#details">More...</a></p>
+<!-- @@@QBluetoothTransferManager -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QBluetoothTransferManager&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qbluetoothtransfermanager-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransfermanager.html#Operation-enum">Operation</a></b> { GetOperation, PutOperation }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransfermanager.html#QBluetoothTransferManager">QBluetoothTransferManager</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransfermanager.html#dtor.QBluetoothTransferManager">~QBluetoothTransferManager</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBluetoothTransferReply * </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransfermanager.html#put">put</a></b> ( const QBluetoothTransferRequest &amp; <i>request</i>, QIODevice * <i>data</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransfermanager.html#finished">finished</a></b> ( QBluetoothTransferReply * <i>reply</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QBluetoothTransferManager-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QBluetoothTransferManager class allows the application to send data objects to other devices. Currently implemented using OPP.</p>
+<p>QBluetoothTransferManager uses OBEX to send get and put commands to remote devices.</p>
+</div>
+<!-- @@@QBluetoothTransferManager -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Operation$$$GetOperation$$$PutOperation -->
+<h3 class="fn"><a name="Operation-enum"></a>enum QBluetoothTransferManager::Operation</h3>
+<p>This enum describes the type of operation that a transfer request is for.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QBluetoothTransferManager::GetOperation</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">The get operation is used to retrieve an object from a remote device. Not implemented.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothTransferManager::PutOperation</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">The put operation is used to send an object to a remote device.</td></tr>
+</table>
+<!-- @@@Operation -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QBluetoothTransferManager[overload1]$$$QBluetoothTransferManagerQObject* -->
+<h3 class="fn"><a name="QBluetoothTransferManager"></a>QBluetoothTransferManager::QBluetoothTransferManager ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new <a href="qbluetoothtransfermanager.html">QBluetoothTransferManager</a> with <i>parent</i>.</p>
+<!-- @@@QBluetoothTransferManager -->
+<!-- $$$~QBluetoothTransferManager[overload1]$$$~QBluetoothTransferManager -->
+<h3 class="fn"><a name="dtor.QBluetoothTransferManager"></a>QBluetoothTransferManager::~QBluetoothTransferManager ()</h3>
+<p>Destroys the <a href="qbluetoothtransfermanager.html">QBluetoothTransferManager</a>.</p>
+<!-- @@@~QBluetoothTransferManager -->
+<!-- $$$finished[overload1]$$$finishedQBluetoothTransferReply* -->
+<h3 class="fn"><a name="finished"></a>void QBluetoothTransferManager::finished ( <a href="qbluetoothtransferreply.html">QBluetoothTransferReply</a> * <i>reply</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the transfer for <i>reply</i> finishes.</p>
+<!-- @@@finished -->
+<!-- $$$put[overload1]$$$putconstQBluetoothTransferRequest&QIODevice* -->
+<h3 class="fn"><a name="put"></a><a href="qbluetoothtransferreply.html">QBluetoothTransferReply</a> * QBluetoothTransferManager::put ( const <a href="qbluetoothtransferrequest.html">QBluetoothTransferRequest</a> &amp; <i>request</i>, <a href="http://qt.nokia.com/doc/4.7/qiodevice.html">QIODevice</a> * <i>data</i> )</h3>
+<p>Sends the contents of <i>data</i> to the remote device <i>request</i> and returns a new <a href="qbluetoothtransferreply.html">QBluetoothTransferReply</a>, that can be used to track the request's progress.</p>
+<!-- @@@put -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

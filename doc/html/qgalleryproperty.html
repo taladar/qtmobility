@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgalleryproperty.qdoc -->
+  <title>Qt 1.2: QGalleryProperty Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtgallery.html">QtGallery</a></li>
+              <li>QGalleryProperty</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#macros">Macros</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGalleryProperty Class Reference</h1>
+<!-- $$$QGalleryProperty-brief -->
+<p>The QGalleryProperty class provides a string constant identifying a gallery property. <a href="#details">More...</a></p>
+<!-- @@@QGalleryProperty -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QGalleryProperty&gt;</pre><ul>
+<li><a href="qgalleryproperty-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#Attribute-enum">Attribute</a></b> { CanRead, CanWrite, CanSort, CanFilter }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#Attribute-enum">Attributes</a></b></td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#ascending">ascending</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#contains">contains</a></b> ( const QString &amp; <i>string</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#descending">descending</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#endsWith">endsWith</a></b> ( const QString &amp; <i>string</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#name">name</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#regExp">regExp</a></b> ( const QString &amp; <i>regExp</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#regExp-2">regExp</a></b> ( const QRegExp &amp; <i>regExp</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#startsWith">startsWith</a></b> ( const QString &amp; <i>string</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#wildcard">wildcard</a></b> ( const QString &amp; <i>string</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#operator-QString">operator QString</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#operator-lt">operator&lt;</a></b> ( const QVariant &amp; <i>value</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#operator-lt-eq">operator&lt;=</a></b> ( const QVariant &amp; <i>value</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#operator-eq-eq">operator==</a></b> ( const QVariant &amp; <i>value</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#operator-gt">operator&gt;</a></b> ( const QVariant &amp; <i>value</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryMetaDataFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#operator-gt-eq">operator&gt;=</a></b> ( const QVariant &amp; <i>value</i> ) const</td></tr>
+</table>
+<a name="macros"></a>
+<h2>Macros</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgalleryproperty.html#Q_DEFINE_GALLERY_PROPERTY">Q_DEFINE_GALLERY_PROPERTY</a></b> (  <i>scope</i>,  <i>name</i> )</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QGalleryProperty-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QGalleryProperty class provides a string constant identifying a gallery property.</p>
+<p><a href="qabstractgallery.html">QAbstractGallery</a> implementations use to QGalleryProperty to define the names of properties in their schemas. In addition to providing the name of a property QGalleryProperty also contains a number of operator overloads and functions for constructing meta-data filters.</p>
+</div>
+<p>See also <a href="qgallerytype.html">QGalleryType</a> and <a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a>.</p>
+<!-- @@@QGalleryProperty -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Attribute$$$CanRead$$$CanWrite$$$CanSort$$$CanFilter -->
+<h3 class="flags"><a name="Attribute-enum"></a>enum QGalleryProperty::Attribute<br/>flags QGalleryProperty::Attributes</h3>
+<p>This enumeration describes the attributes of a property.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QGalleryProperty::CanRead</tt></td><td class=" topAlign"><tt>0x01</tt></td><td  class="topAlign">The value of this property can be read.</td></tr>
+<tr><td  class="topAlign"><tt>QGalleryProperty::CanWrite</tt></td><td class=" topAlign"><tt>0x02</tt></td><td  class="topAlign">The value of this property can be written.</td></tr>
+<tr><td  class="topAlign"><tt>QGalleryProperty::CanSort</tt></td><td class=" topAlign"><tt>0x04</tt></td><td  class="topAlign">The value of this property can be used to sort items.</td></tr>
+<tr><td  class="topAlign"><tt>QGalleryProperty::CanFilter</tt></td><td class=" topAlign"><tt>0x08</tt></td><td  class="topAlign">The value of this property can be used in a filter.</td></tr>
+</table>
+<p>The Attributes type is a typedef for <a href="qflags.html">QFlags</a>&lt;Attribute&gt;. It stores an OR combination of Attribute values.</p>
+<!-- @@@Attribute -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ascending[overload1]$$$ascending -->
+<h3 class="fn"><a name="ascending"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QGalleryProperty::ascending () const</h3>
+<p>Returns a sort key which indicating items should be sorted a property in ascending order.</p>
+<!-- @@@ascending -->
+<!-- $$$contains[overload1]$$$containsconstQString& -->
+<h3 class="fn"><a name="contains"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::contains ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>string</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property value contains contains a <i>string</i> literal.</p>
+<!-- @@@contains -->
+<!-- $$$descending[overload1]$$$descending -->
+<h3 class="fn"><a name="descending"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QGalleryProperty::descending () const</h3>
+<p>Returns a sort key which indicating items should be sorted a property in descending order.</p>
+<!-- @@@descending -->
+<!-- $$$endsWith[overload1]$$$endsWithconstQString& -->
+<h3 class="fn"><a name="endsWith"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::endsWith ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>string</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property value ends with a <i>string</i> literal.</p>
+<!-- @@@endsWith -->
+<!-- $$$name[overload1]$$$name -->
+<h3 class="fn"><a name="name"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QGalleryProperty::name () const</h3>
+<p>Returns the name of a property.</p>
+<!-- @@@name -->
+<!-- $$$regExp[overload1]$$$regExpconstQString& -->
+<h3 class="fn"><a name="regExp"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::regExp ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>regExp</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property value matches a <i>regExp</i>.</p>
+<!-- @@@regExp -->
+<!-- $$$regExp$$$regExpconstQRegExp& -->
+<h3 class="fn"><a name="regExp-2"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::regExp ( const <a href="http://qt.nokia.com/doc/4.7/qregexp.html">QRegExp</a> &amp; <i>regExp</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property value matches a <i>regExp</i>.</p>
+<!-- @@@regExp -->
+<!-- $$$startsWith[overload1]$$$startsWithconstQString& -->
+<h3 class="fn"><a name="startsWith"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::startsWith ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>string</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property value starts with a <i>string</i> literal.</p>
+<!-- @@@startsWith -->
+<!-- $$$wildcard[overload1]$$$wildcardconstQString& -->
+<h3 class="fn"><a name="wildcard"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::wildcard ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>string</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property value matches a <i>string</i> literal using wildcard matching.</p>
+<!-- @@@wildcard -->
+<!-- $$$operator QString[overload1]$$$operator QString -->
+<h3 class="fn"><a name="operator-QString"></a>QGalleryProperty::operator QString () const</h3>
+<p>Returns the name of a property.</p>
+<!-- @@@operator QString -->
+<!-- $$$operator<[overload1]$$$operator<constQVariant& -->
+<h3 class="fn"><a name="operator-lt"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::operator&lt; ( const <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> &amp; <i>value</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property is less than a <i>value</i>.</p>
+<!-- @@@operator< -->
+<!-- $$$operator<=[overload1]$$$operator<=constQVariant& -->
+<h3 class="fn"><a name="operator-lt-eq"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::operator&lt;= ( const <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> &amp; <i>value</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property is less than or equal to a <i>value</i>.</p>
+<!-- @@@operator<= -->
+<!-- $$$operator==[overload1]$$$operator==constQVariant& -->
+<h3 class="fn"><a name="operator-eq-eq"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::operator== ( const <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> &amp; <i>value</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property is equal to a <i>value</i>.</p>
+<!-- @@@operator== -->
+<!-- $$$operator>[overload1]$$$operator>constQVariant& -->
+<h3 class="fn"><a name="operator-gt"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::operator&gt; ( const <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> &amp; <i>value</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property is greater than a <i>value</i>.</p>
+<!-- @@@operator> -->
+<!-- $$$operator>=[overload1]$$$operator>=constQVariant& -->
+<h3 class="fn"><a name="operator-gt-eq"></a><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> QGalleryProperty::operator&gt;= ( const <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> &amp; <i>value</i> ) const</h3>
+<p>Returns a gallery filter which tests if a property is greater than or equal to a <i>value</i>.</p>
+<!-- @@@operator>= -->
+</div>
+<div class="macros">
+<h2>Macro Documentation</h2>
+<!-- $$$Q_DEFINE_GALLERY_PROPERTY[overload1]$$$Q_DEFINE_GALLERY_PROPERTY -->
+<h3 class="fn"><a name="Q_DEFINE_GALLERY_PROPERTY"></a>Q_DEFINE_GALLERY_PROPERTY (  <i>scope</i>,  <i>name</i> )</h3>
+<p>Macro for defining the <i>name</i> of a gallery property within the <i>scope</i> of a class or namespace.</p>
+<!-- @@@Q_DEFINE_GALLERY_PROPERTY -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

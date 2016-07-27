@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgeoboundingarea.cpp -->
+  <title>Qt 1.2: QGeoBoundingArea Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QGeoBoundingArea</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGeoBoundingArea Class Reference</h1>
+<!-- $$$QGeoBoundingArea-brief -->
+<p>The QGeoBoundingArea class defines a geographic area. <a href="#details">More...</a></p>
+<!-- @@@QGeoBoundingArea -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QGeoBoundingArea&gt;</pre><p>Inherited by <a href="qgeoboundingbox.html">QGeoBoundingBox</a> and <a href="qgeoboundingcircle.html">QGeoBoundingCircle</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qgeoboundingarea-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgeoboundingarea.html#AreaType-enum">AreaType</a></b> { BoxType, CircleType }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qgeoboundingarea.html#dtor.QGeoBoundingArea">~QGeoBoundingArea</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qgeoboundingarea.html#contains">contains</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i> ) const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qgeoboundingarea.html#isEmpty">isEmpty</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qgeoboundingarea.html#isValid">isValid</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual AreaType </td><td class="memItemRight bottomAlign"><b><a href="qgeoboundingarea.html#type">type</a></b> () const = 0</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QGeoBoundingArea-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QGeoBoundingArea class defines a geographic area.</p>
+<p>This class is the base class for classes which specify a geographic area.</p>
+<p>For the sake of consistency, subclasses should describe the specific details of the associated areas in terms of <a href="qgeocoordinate.html">QGeoCoordinate</a> instances and distances in metres.</p>
+</div>
+<!-- @@@QGeoBoundingArea -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$AreaType$$$BoxType$$$CircleType -->
+<h3 class="fn"><a name="AreaType-enum"></a>enum QGeoBoundingArea::AreaType</h3>
+<p>Describes the type of a bounding area.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QGeoBoundingArea::BoxType</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">A box shaped bounding area.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoBoundingArea::CircleType</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">A circular bounding area.</td></tr>
+</table>
+<!-- @@@AreaType -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$~QGeoBoundingArea[overload1]$$$~QGeoBoundingArea -->
+<h3 class="fn"><a name="dtor.QGeoBoundingArea"></a>QGeoBoundingArea::~QGeoBoundingArea ()<tt> [virtual]</tt></h3>
+<p>Destroys this bounding area.</p>
+<!-- @@@~QGeoBoundingArea -->
+<!-- $$$contains[overload1]$$$containsconstQGeoCoordinate& -->
+<h3 class="fn"><a name="contains"></a>bool QGeoBoundingArea::contains ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>coordinate</i> ) const<tt> [pure virtual]</tt></h3>
+<p>Returns whether the coordinate <i>coordinate</i> is contained within this area.</p>
+<!-- @@@contains -->
+<!-- $$$isEmpty[overload1]$$$isEmpty -->
+<h3 class="fn"><a name="isEmpty"></a>bool QGeoBoundingArea::isEmpty () const<tt> [pure virtual]</tt></h3>
+<p>Returns whether this bounding area is empty.</p>
+<p>An empty area is a region which has a geometrical area of 0.</p>
+<!-- @@@isEmpty -->
+<!-- $$$isValid[overload1]$$$isValid -->
+<h3 class="fn"><a name="isValid"></a>bool QGeoBoundingArea::isValid () const<tt> [pure virtual]</tt></h3>
+<p>Returns whether this bounding area is valid.</p>
+<p>An area is considered to be invalid if some of the data that is required to unambiguously describe the area has not been set or has been set to an unsuitable value.</p>
+<!-- @@@isValid -->
+<!-- $$$type[overload1]$$$type -->
+<h3 class="fn"><a name="type"></a><a href="qgeoboundingarea.html#AreaType-enum">AreaType</a> QGeoBoundingArea::type () const<tt> [pure virtual]</tt></h3>
+<p>Returns the type of this area.</p>
+<!-- @@@type -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

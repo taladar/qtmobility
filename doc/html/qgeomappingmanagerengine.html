@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgeomappingmanagerengine.cpp -->
+  <title>Qt 1.2: QGeoMappingManagerEngine Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QGeoMappingManagerEngine</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGeoMappingManagerEngine Class Reference</h1>
+<!-- $$$QGeoMappingManagerEngine-brief -->
+<p>The QGeoMappingManagerEngine class provides an interface and convenience methods to implementors of <a href="qgeoserviceprovider.html">QGeoServiceProvider</a> plugins who want to provides support for displaying and interacting with maps. <a href="#details">More...</a></p>
+<!-- @@@QGeoMappingManagerEngine -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QGeoMappingManagerEngine&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qgeotiledmappingmanagerengine.html">QGeoTiledMappingManagerEngine</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qgeomappingmanagerengine-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#QGeoMappingManagerEngine">QGeoMappingManagerEngine</a></b> ( const QMap&lt;QString, QVariant&gt; &amp; <i>parameters</i>, QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#dtor.QGeoMappingManagerEngine">~QGeoMappingManagerEngine</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QGeoMapData * </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#createMapData">createMapData</a></b> () = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QLocale </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#locale">locale</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#managerName">managerName</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#managerVersion">managerVersion</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#maximumTilt">maximumTilt</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#maximumZoomLevel">maximumZoomLevel</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#minimumTilt">minimumTilt</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#minimumZoomLevel">minimumZoomLevel</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#setLocale">setLocale</a></b> ( const QLocale &amp; <i>locale</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QGraphicsGeoMap::ConnectivityMode&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#supportedConnectivityModes">supportedConnectivityModes</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QGraphicsGeoMap::MapType&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#supportedMapTypes">supportedMapTypes</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#supportsBearing">supportsBearing</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#supportsCustomMapObjects">supportsCustomMapObjects</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#supportsTilting">supportsTilting</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h2>Protected Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#setMaximumTilt">setMaximumTilt</a></b> ( qreal <i>maximumTilt</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#setMaximumZoomLevel">setMaximumZoomLevel</a></b> ( qreal <i>maximumZoom</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#setMinimumTilt">setMinimumTilt</a></b> ( qreal <i>minimumTilt</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#setMinimumZoomLevel">setMinimumZoomLevel</a></b> ( qreal <i>minimumZoom</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#setSupportedConnectivityModes">setSupportedConnectivityModes</a></b> ( const QList&lt;QGraphicsGeoMap::ConnectivityMode&gt; &amp; <i>connectivityModes</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#setSupportedMapTypes">setSupportedMapTypes</a></b> ( const QList&lt;QGraphicsGeoMap::MapType&gt; &amp; <i>mapTypes</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#setSupportsBearing">setSupportsBearing</a></b> ( bool <i>supportsBearing</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#setSupportsCustomMapObjects">setSupportsCustomMapObjects</a></b> ( bool <i>supportsCustomMapObjects</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappingmanagerengine.html#setSupportsTilting">setSupportsTilting</a></b> ( bool <i>supportsTilting</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QGeoMappingManagerEngine-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QGeoMappingManagerEngine class provides an interface and convenience methods to implementors of <a href="qgeoserviceprovider.html">QGeoServiceProvider</a> plugins who want to provides support for displaying and interacting with maps.</p>
+<p>Subclasses of QGeoMappingManagerEngine need to provide an implementations of <a href="qgeomappingmanagerengine.html#createMapData">createMapData</a>(). The <a href="qgeomapdata.html">QGeoMapData</a> instances returned by <a href="qgeomappingmanagerengine.html#createMapData">createMapData</a>() can be used to contain and manage information concerning what a particular <a href="qgraphicsgeomap.html">QGraphicsGeoMap</a> is viewing.</p>
+<p>Most of the other functions configure the reported capabilities of the engine. It is important that these functions are called before <a href="qgeomappingmanagerengine.html#createMapData">createMapData</a>() or any of the capability reporting functions are used to prevent incorrect or inconsistent behaviour.</p>
+</div>
+<!-- @@@QGeoMappingManagerEngine -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QGeoMappingManagerEngine[overload1]$$$QGeoMappingManagerEngineconstQMap<QString,QVariant>&QObject* -->
+<h3 class="fn"><a name="QGeoMappingManagerEngine"></a>QGeoMappingManagerEngine::QGeoMappingManagerEngine ( const <a href="http://qt.nokia.com/doc/4.7/qmap.html">QMap</a>&lt;<a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a>, <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a>&gt; &amp; <i>parameters</i>, <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new engine with the specified <i>parent</i>, using <i>parameters</i> to pass any implementation specific data to the engine.</p>
+<!-- @@@QGeoMappingManagerEngine -->
+<!-- $$$~QGeoMappingManagerEngine[overload1]$$$~QGeoMappingManagerEngine -->
+<h3 class="fn"><a name="dtor.QGeoMappingManagerEngine"></a>QGeoMappingManagerEngine::~QGeoMappingManagerEngine ()<tt> [virtual]</tt></h3>
+<p>Destroys this engine.</p>
+<!-- @@@~QGeoMappingManagerEngine -->
+<!-- $$$createMapData[overload1]$$$createMapData -->
+<h3 class="fn"><a name="createMapData"></a><a href="qgeomapdata.html">QGeoMapData</a> * QGeoMappingManagerEngine::createMapData ()<tt> [pure virtual]</tt></h3>
+<p>Returns a new <a href="qgeomapdata.html">QGeoMapData</a> instance which will be managed by this manager.</p>
+<p>A <a href="qgeomapdata.html">QGeoMapData</a> instance contains and manages the information about what a <a href="qgraphicsgeomap.html">QGraphicsGeoMap</a> is looking at. A single manager can be used by several <a href="qgraphicsgeomap.html">QGraphicsGeoMap</a> instances since each instance has an associated <a href="qgeomapdata.html">QGeoMapData</a> instance.</p>
+<p>The <a href="qgeomapdata.html">QGeoMapData</a> instance can be treated as a kind of session object, or as a model in a model-view-controller architecture, with <a href="qgraphicsgeomap.html">QGraphicsGeoMap</a> as the view and <a href="qgeomappingmanagerengine.html">QGeoMappingManagerEngine</a> as the controller.</p>
+<p>Subclasses of <a href="qgeomappingmanagerengine.html">QGeoMappingManagerEngine</a> are free to override this function to return subclasses of <a href="qgeomapdata.html">QGeoMapData</a> in order to customize the map.</p>
+<!-- @@@createMapData -->
+<!-- $$$locale[overload1]$$$locale -->
+<h3 class="fn"><a name="locale"></a><a href="http://qt.nokia.com/doc/4.7/qlocale.html">QLocale</a> QGeoMappingManagerEngine::locale () const</h3>
+<p>Returns the locale used to hint to this mapping manager about what language to use for map labels.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#setLocale">setLocale</a>().</p>
+<!-- @@@locale -->
+<!-- $$$managerName[overload1]$$$managerName -->
+<h3 class="fn"><a name="managerName"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QGeoMappingManagerEngine::managerName () const</h3>
+<p>Returns the name which this engine implementation uses to distinguish itself from the implementations provided by other plugins.</p>
+<p>The combination of managerName() and <a href="qgeomappingmanagerengine.html#managerVersion">managerVersion</a>() should be unique amongst plugin implementations.</p>
+<!-- @@@managerName -->
+<!-- $$$managerVersion[overload1]$$$managerVersion -->
+<h3 class="fn"><a name="managerVersion"></a>int QGeoMappingManagerEngine::managerVersion () const</h3>
+<p>Returns the version of this engine implementation.</p>
+<p>The combination of <a href="qgeomappingmanagerengine.html#managerName">managerName</a>() and managerVersion() should be unique amongst plugin implementations.</p>
+<!-- @@@managerVersion -->
+<!-- $$$maximumTilt[overload1]$$$maximumTilt -->
+<h3 class="fn"><a name="maximumTilt"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> QGeoMappingManagerEngine::maximumTilt () const</h3>
+<p>Returns the maximum tilt supported by this engine.</p>
+<p>Value in degrees where 0 is equivalent to 90 degrees between view and earth's surface i.e&#x2e; looking straight down to earth.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#setMaximumTilt">setMaximumTilt</a>().</p>
+<!-- @@@maximumTilt -->
+<!-- $$$maximumZoomLevel[overload1]$$$maximumZoomLevel -->
+<h3 class="fn"><a name="maximumZoomLevel"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> QGeoMappingManagerEngine::maximumZoomLevel () const</h3>
+<p>Returns the maximum zoom level supported by this engine.</p>
+<p>Larger values of the zoom level correspond to more detailed views of the map.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#setMaximumZoomLevel">setMaximumZoomLevel</a>().</p>
+<!-- @@@maximumZoomLevel -->
+<!-- $$$minimumTilt[overload1]$$$minimumTilt -->
+<h3 class="fn"><a name="minimumTilt"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> QGeoMappingManagerEngine::minimumTilt () const</h3>
+<p>Returns the minimum tilt supported by this engine.</p>
+<p>Value in degrees where 0 is equivalent to 90 degrees between view and earth's surface i.e&#x2e; looking straight down to earth.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#setMinimumTilt">setMinimumTilt</a>().</p>
+<!-- @@@minimumTilt -->
+<!-- $$$minimumZoomLevel[overload1]$$$minimumZoomLevel -->
+<h3 class="fn"><a name="minimumZoomLevel"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> QGeoMappingManagerEngine::minimumZoomLevel () const</h3>
+<p>Returns the minimum zoom level supported by this engine.</p>
+<p>Larger values of the zoom level correspond to more detailed views of the map.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#setMinimumZoomLevel">setMinimumZoomLevel</a>().</p>
+<!-- @@@minimumZoomLevel -->
+<!-- $$$setLocale[overload1]$$$setLocaleconstQLocale& -->
+<h3 class="fn"><a name="setLocale"></a>void QGeoMappingManagerEngine::setLocale ( const <a href="http://qt.nokia.com/doc/4.7/qlocale.html">QLocale</a> &amp; <i>locale</i> )</h3>
+<p>Sets the locale to be used by the this manager to <i>locale</i>.</p>
+<p>If this mapping manager supports returning map labels in different languages, they will be returned in the language of <i>locale</i>.</p>
+<p>The locale used defaults to the system locale if this is not set.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#locale">locale</a>().</p>
+<!-- @@@setLocale -->
+<!-- $$$setMaximumTilt[overload1]$$$setMaximumTiltqreal -->
+<h3 class="fn"><a name="setMaximumTilt"></a>void QGeoMappingManagerEngine::setMaximumTilt ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>maximumTilt</i> )<tt> [protected]</tt></h3>
+<p>Sets the maximum tilt supported by this engine to <i>maximumTilt</i>.</p>
+<p>Value in degrees where 0 is equivalent to 90 degrees between view and earth's surface i.e&#x2e; looking straight down to earth.</p>
+<p>Subclasses of <a href="qgeomappingmanagerengine.html">QGeoMappingManagerEngine</a> should use this function to ensure <a href="qgeomappingmanagerengine.html#maximumTilt">maximumTilt</a>() provides accurate information. If no maximum value is set by the subclass the value of 0 is used.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#maximumTilt">maximumTilt</a>().</p>
+<!-- @@@setMaximumTilt -->
+<!-- $$$setMaximumZoomLevel[overload1]$$$setMaximumZoomLevelqreal -->
+<h3 class="fn"><a name="setMaximumZoomLevel"></a>void QGeoMappingManagerEngine::setMaximumZoomLevel ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>maximumZoom</i> )<tt> [protected]</tt></h3>
+<p>Sets the maximum zoom level supported by this engine to <i>maximumZoom</i>.</p>
+<p>Larger values of the zoom level correspond to more detailed views of the map.</p>
+<p>Subclasses of <a href="qgeomappingmanagerengine.html">QGeoMappingManagerEngine</a> should use this function to ensure <a href="qgeomappingmanagerengine.html#maximumZoomLevel">maximumZoomLevel</a>() provides accurate information.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#maximumZoomLevel">maximumZoomLevel</a>().</p>
+<!-- @@@setMaximumZoomLevel -->
+<!-- $$$setMinimumTilt[overload1]$$$setMinimumTiltqreal -->
+<h3 class="fn"><a name="setMinimumTilt"></a>void QGeoMappingManagerEngine::setMinimumTilt ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>minimumTilt</i> )<tt> [protected]</tt></h3>
+<p>Sets the minimum tilt supported by this engine to <i>minimumTilt</i>.</p>
+<p>Value in degrees where 0 is equivalent to 90 degrees between view and earth's surface i.e&#x2e; looking straight down to earth.</p>
+<p>Subclasses of <a href="qgeomappingmanagerengine.html">QGeoMappingManagerEngine</a> should use this function to ensure <a href="qgeomappingmanagerengine.html#minimumTilt">minimumTilt</a>() provides accurate information. If no minimum value is set by the subclass the value of 0 is used.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#minimumTilt">minimumTilt</a>().</p>
+<!-- @@@setMinimumTilt -->
+<!-- $$$setMinimumZoomLevel[overload1]$$$setMinimumZoomLevelqreal -->
+<h3 class="fn"><a name="setMinimumZoomLevel"></a>void QGeoMappingManagerEngine::setMinimumZoomLevel ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>minimumZoom</i> )<tt> [protected]</tt></h3>
+<p>Sets the minimum zoom level supported by this engine to <i>minimumZoom</i>.</p>
+<p>Larger values of the zoom level correspond to more detailed views of the map.</p>
+<p>Subclasses of <a href="qgeomappingmanagerengine.html">QGeoMappingManagerEngine</a> should use this function to ensure <a href="qgeomappingmanagerengine.html#minimumZoomLevel">minimumZoomLevel</a>() provides accurate information.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#minimumZoomLevel">minimumZoomLevel</a>().</p>
+<!-- @@@setMinimumZoomLevel -->
+<!-- $$$setSupportedConnectivityModes[overload1]$$$setSupportedConnectivityModesconstQList<QGraphicsGeoMap::ConnectivityMode>& -->
+<h3 class="fn"><a name="setSupportedConnectivityModes"></a>void QGeoMappingManagerEngine::setSupportedConnectivityModes ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgraphicsgeomap.html#ConnectivityMode-enum">QGraphicsGeoMap::ConnectivityMode</a>&gt; &amp; <i>connectivityModes</i> )<tt> [protected]</tt></h3>
+<p>Sets the list of connectivity modes supported by this engine to <i>connectivityModes</i>.</p>
+<p>Subclasses of <a href="qgeomappingmanagerengine.html">QGeoMappingManagerEngine</a> should use this function to ensure that <a href="qgeomappingmanagerengine.html#supportedConnectivityModes">supportedConnectivityModes</a>() provides accurate information.</p>
+<p>If createMapData does not specify a connectivity mode the first mode from <i>connectivityModes</i> will be used, or <a href="qgraphicsgeomap.html#ConnectivityMode-enum">QGraphicsGeoMap::NoConnectivity</a> will be used if <i>connectivityModes</i> is empty.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#supportedConnectivityModes">supportedConnectivityModes</a>().</p>
+<!-- @@@setSupportedConnectivityModes -->
+<!-- $$$setSupportedMapTypes[overload1]$$$setSupportedMapTypesconstQList<QGraphicsGeoMap::MapType>& -->
+<h3 class="fn"><a name="setSupportedMapTypes"></a>void QGeoMappingManagerEngine::setSupportedMapTypes ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgraphicsgeomap.html#MapType-enum">QGraphicsGeoMap::MapType</a>&gt; &amp; <i>mapTypes</i> )<tt> [protected]</tt></h3>
+<p>Sets the list of map types supported by this engine to <i>mapTypes</i>.</p>
+<p>Subclasses of <a href="qgeomappingmanagerengine.html">QGeoMappingManagerEngine</a> should use this function to ensure that <a href="qgeomappingmanagerengine.html#supportedMapTypes">supportedMapTypes</a>() provides accurate information.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#supportedMapTypes">supportedMapTypes</a>().</p>
+<!-- @@@setSupportedMapTypes -->
+<!-- $$$setSupportsBearing[overload1]$$$setSupportsBearingbool -->
+<h3 class="fn"><a name="setSupportsBearing"></a>void QGeoMappingManagerEngine::setSupportsBearing ( bool <i>supportsBearing</i> )<tt> [protected]</tt></h3>
+<p>Sets whether bearing is supported by this engine to <i>supportsBearing</i>.</p>
+<p>Subclasses of <a href="qgeomappingmanagerengine.html">QGeoMappingManagerEngine</a> should use this function to ensure <a href="qgeomappingmanagerengine.html#supportsBearing">supportsBearing</a>() provides accurate information. If no value is set by the subclass then bearing support is disabled and supportsBearing set to false.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#supportsBearing">supportsBearing</a>().</p>
+<!-- @@@setSupportsBearing -->
+<!-- $$$setSupportsCustomMapObjects[overload1]$$$setSupportsCustomMapObjectsbool -->
+<h3 class="fn"><a name="setSupportsCustomMapObjects"></a>void QGeoMappingManagerEngine::setSupportsCustomMapObjects ( bool <i>supportsCustomMapObjects</i> )<tt> [protected]</tt></h3>
+<p>Sets whether custom map objects are supported by this engine to <i>supportsCustomMapObjects</i>.</p>
+<p>Custom map objects are map objects based on <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> instances, which are hard to support in cases where the map rendering is not being performed by the Qt Graphics View framwork.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#supportsCustomMapObjects">supportsCustomMapObjects</a>().</p>
+<!-- @@@setSupportsCustomMapObjects -->
+<!-- $$$setSupportsTilting[overload1]$$$setSupportsTiltingbool -->
+<h3 class="fn"><a name="setSupportsTilting"></a>void QGeoMappingManagerEngine::setSupportsTilting ( bool <i>supportsTilting</i> )<tt> [protected]</tt></h3>
+<p>Sets whether tilting is supported by this engine to <i>supportsTilting</i>.</p>
+<p>Subclasses of <a href="qgeomappingmanagerengine.html">QGeoMappingManagerEngine</a> should use this function to ensure <a href="qgeomappingmanagerengine.html#supportsTilting">supportsTilting</a>() provides accurate information. If no value is set by the subclass then tilting support is disabled and supportsTilting set to false.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#supportsTilting">supportsTilting</a>().</p>
+<!-- @@@setSupportsTilting -->
+<!-- $$$supportedConnectivityModes[overload1]$$$supportedConnectivityModes -->
+<h3 class="fn"><a name="supportedConnectivityModes"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgraphicsgeomap.html#ConnectivityMode-enum">QGraphicsGeoMap::ConnectivityMode</a>&gt; QGeoMappingManagerEngine::supportedConnectivityModes () const</h3>
+<p>Returns a list of the connectivity modes supported by this engine.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#setSupportedConnectivityModes">setSupportedConnectivityModes</a>().</p>
+<!-- @@@supportedConnectivityModes -->
+<!-- $$$supportedMapTypes[overload1]$$$supportedMapTypes -->
+<h3 class="fn"><a name="supportedMapTypes"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgraphicsgeomap.html#MapType-enum">QGraphicsGeoMap::MapType</a>&gt; QGeoMappingManagerEngine::supportedMapTypes () const</h3>
+<p>Returns a list of the map types supported by this engine.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#setSupportedMapTypes">setSupportedMapTypes</a>().</p>
+<!-- @@@supportedMapTypes -->
+<!-- $$$supportsBearing[overload1]$$$supportsBearing -->
+<h3 class="fn"><a name="supportsBearing"></a>bool QGeoMappingManagerEngine::supportsBearing () const</h3>
+<p>Return whether bearing is supported by this engine.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#setSupportsBearing">setSupportsBearing</a>().</p>
+<!-- @@@supportsBearing -->
+<!-- $$$supportsCustomMapObjects[overload1]$$$supportsCustomMapObjects -->
+<h3 class="fn"><a name="supportsCustomMapObjects"></a>bool QGeoMappingManagerEngine::supportsCustomMapObjects () const</h3>
+<p>Returns whether custom map objects are supported by this engine.</p>
+<p>Custom map objects are map objects based on <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> instances, which are hard to support in cases where the map rendering is not being performed by the Qt Graphics View framwork.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#setSupportsCustomMapObjects">setSupportsCustomMapObjects</a>().</p>
+<!-- @@@supportsCustomMapObjects -->
+<!-- $$$supportsTilting[overload1]$$$supportsTilting -->
+<h3 class="fn"><a name="supportsTilting"></a>bool QGeoMappingManagerEngine::supportsTilting () const</h3>
+<p>Return whether tilting is supported by this engine.</p>
+<p>See also <a href="qgeomappingmanagerengine.html#setSupportsTilting">setSupportsTilting</a>().</p>
+<!-- @@@supportsTilting -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

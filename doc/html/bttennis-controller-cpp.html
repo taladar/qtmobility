@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt 1.2: controller.cpp Example File (bttennis/controller.cpp)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<h1 class="title">controller.cpp Example File</h1>
+<span class="small-subtitle">bttennis/controller.cpp</span>
+<!-- $$$bttennis/controller.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** You may use this file under the terms of the BSD license as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+ **     the names of its contributors may be used to endorse or promote
+ **     products derived from this software without specific prior written
+ **     permission.
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;controller.h&quot;
+
+ #include &lt;QDateTime&gt;
+ #include &lt;QDebug&gt;
+
+ #define FRAME_RATE 60
+
+ Controller::Controller(QObject *parent) :
+     QObject(parent), timer(new QTimer), elapsed(new QTime), score_left(0), score_right(0),
+     col_x(0), col_y(0),
+     rightPaddleForce(0), leftPaddleForce(0),
+     rightPaddleLast(0), leftPaddleLast(0),
+     rightPowerUp(0), leftPowerUp(0)
+ {
+
+     qsrand(QDateTime::currentDateTime().time().msec());
+
+     timer-&gt;setInterval(1000/FRAME_RATE);
+<span class="comment"> //    timer-&gt;setInterval(0);</span>
+     connect(timer, SIGNAL(timeout()), SLOT(tick()));
+     srand(QDateTime::currentDateTime().time().msec());
+
+     fpscntr = new QTime;
+     frames = 0;
+
+     timer-&gt;start();
+     restart_ball();
+ }
+
+ void Controller::tick()
+ {
+     if(col_x)
+         col_x--;
+     if(col_y)
+         col_y--;
+
+<span class="comment"> //    frames++;</span>
+<span class="comment"> //    if(fpscntr-&gt;elapsed() &gt; 1000){</span>
+<span class="comment"> //        int f = frames/(fpscntr-&gt;elapsed()/1000.0);</span>
+<span class="comment"> //        emit fps(QString(&quot;FPS %1&quot;).arg(f));</span>
+<span class="comment"> //        frames = 0;</span>
+<span class="comment"> //        fpscntr-&gt;restart();</span>
+<span class="comment"> //    }</span>
+
+     int msec = elapsed-&gt;elapsed();
+     elapsed-&gt;restart();
+
+     ball_x += speed_x*msec/1000;
+     ball_y += speed_y*msec/1000;
+
+     const int decay = 5;
+
+     if(leftPaddleForce &gt; decay)
+         leftPaddleForce-=decay;
+     else if(leftPaddleForce &lt; -decay)
+         leftPaddleForce+=decay;
+     if(rightPaddleForce &gt; decay)
+         rightPaddleForce-=decay;
+     else if(rightPaddleForce &lt; -decay)
+         rightPaddleForce+=decay;
+
+     if(rightPaddleForce &lt;= decay)
+         rightPowerUp++;
+
+     if(leftPaddleForce &lt;= decay)
+         leftPowerUp++;
+
+<span class="comment"> //    ttf++;</span>
+<span class="comment"> //    if(msec &gt; 1000/FRAME_RATE+2 || msec &lt; 1000/FRAME_RATE-2)</span>
+<span class="comment"> //        dev++;</span>
+
+<span class="comment"> //    if(</span>!(i++%120)) {
+<span class="comment"> //        qDebug() &lt;&lt; &quot;powerUp: &quot; &lt;&lt; leftPowerUp &lt;&lt; rightPowerUp &lt;&lt; leftPaddleForce &lt;&lt; rightPaddleForce &lt;&lt; speed_x*msec/1000 &lt;&lt; speed_y*msec/1000 &lt;&lt; msec &lt;&lt; dev;</span>
+<span class="comment"> //        ttf = dev =0;</span>
+<span class="comment"> //    }</span>
+
+     emit moveBall(ball_x, ball_y);
+ }
+
+ static inline int paddle_boost(int force){
+     if(force &gt; 30)
+         return -3*FRAME_RATE;
+     else if(force &gt; 20)
+         return -2*FRAME_RATE;
+     else if(force &gt; 6)
+         return -1*FRAME_RATE;
+     else if(force &lt; -30)
+         return 3*FRAME_RATE;
+     else if(force &lt; -20)
+         return 2*FRAME_RATE;
+     else if(force &lt; -6)
+         return 1*FRAME_RATE;
+     return 0;
+ }
+
+ void Controller::ballCollision(Board::Edge pos)
+ {
+
+     if((pos == Board::Top || pos == Board::Bottom) &amp;&amp; !col_y) {
+         speed_y *= -1;
+         col_y = 10;
+     }
+
+     if(pos == Board::Left &amp;&amp; !col_x) {
+         speed_x *= -1;
+         speed_y += paddle_boost(leftPaddleForce);
+         col_x = 10;
+
+         if(leftPowerUp &gt; 75 &amp;&amp; speed_x &lt; 8*FRAME_RATE){
+             speed_x *= 2;
+             leftPowerUp = 0;
+         }
+     }
+     else if(pos == Board::Right &amp;&amp; !col_x) {
+         speed_x *= -1;
+         speed_y += paddle_boost(rightPaddleForce);
+         col_x = 10;
+
+         if(rightPowerUp &gt; 75 &amp;&amp; speed_x &gt; -8*FRAME_RATE){
+             speed_x *= 2;
+             rightPowerUp = 0;
+         }
+
+     }
+<span class="comment"> //    tick();</span>
+<span class="comment"> //    QMetaObject::invokeMethod(this, &quot;moveBall&quot;, Qt::QueuedConnection, Q_ARG(int, ball_x), Q_ARG(int, ball_y));</span>
+<span class="comment"> //    emit moveBall(ball_x, ball_y);</span>
+
+ }
+
+ void Controller::scored(Board::Edge pos)
+ {
+     if(!timer-&gt;isActive())
+         return;
+
+     if(pos == Board::Left)
+         emit score(score_left, ++score_right);
+     else if(pos == Board::Right)
+         emit score(++score_left, score_right);
+
+     restart_ball();
+ }
+
+ void Controller::restart_ball()
+ {
+     if(!timer-&gt;isActive())
+         return;
+
+     elapsed-&gt;start();
+
+     ball_x = Board::Width/2;
+     ball_y = Board::Height/2;
+
+<span class="comment"> //    ball_y = (qrand()%(Board::Height/2))+Board::Height/4;</span>
+     ball_y = (qrand()%(Board::Height-48))+24;
+
+     <span class="comment">// Speed in in pixels/second</span>
+
+     const int max = 4*FRAME_RATE;
+     const int min_x = 2*FRAME_RATE;
+     const int min_y = 1.5*FRAME_RATE;
+
+     speed_y = min_y+qrand()%(max-min_y);
+     if(speed_y%2)
+         speed_y *= -1;
+
+     speed_x = min_x+qrand()%(max-min_y);
+     if(speed_x%2)
+         speed_x *= -1;
+
+     leftPowerUp = rightPowerUp = 0;
+
+     emit moveBall(ball_x, ball_y);
+ }
+
+ void Controller::resetBoard()
+ {
+     if(!timer-&gt;isActive())
+         return;
+
+     score_left = score_right = 0;
+     restart_ball();
+ }
+
+ void Controller::stop()
+ {
+     timer-&gt;stop();
+ }
+
+ void Controller::start()
+ {
+     timer-&gt;start();
+     fpscntr-&gt;restart();
+     frames = 0;
+ }
+
+ void Controller::moveLeftPaddle(int y)
+ {
+     leftPaddleForce += leftPaddleLast-y;
+     leftPaddleLast = y;
+     leftPowerUp = 0;
+ }
+
+ void Controller::moveRightPaddle(int y)
+ {
+     rightPaddleForce += rightPaddleLast-y;
+     rightPaddleLast =y;
+     rightPowerUp = 0;
+ }
+
+ void Controller::refresh()
+ {
+     emit moveBall(ball_x, ball_y);
+     emit score(score_left, score_right);
+ }</pre>
+</div>
+<!-- @@@bttennis/controller.cpp -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

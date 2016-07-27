@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- sensors.qdoc -->
+  <title>Qt 1.2: Sensors</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li>Sensors</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#namespace">Namespace</a></li>
+<li class="level1"><a href="#sensor-types">Sensor Types</a></li>
+<li class="level1"><a href="#common-conventions">Common Conventions</a></li>
+<li class="level1"><a href="#using-a-sensor">Using a Sensor</a></li>
+<li class="level1"><a href="#accessing-sensor-data-in-a-generic-fashion">Accessing sensor data in a generic fashion</a></li>
+<li class="level1"><a href="#platform-notes">Platform notes</a></li>
+<li class="level2"><a href="#s60-3rd-edition">S60 3rd Edition</a></li>
+<li class="level2"><a href="#symbian">Symbian</a></li>
+<li class="level2"><a href="#maemo-5">Maemo 5</a></li>
+<li class="level2"><a href="#meego">MeeGo</a></li>
+<li class="level1"><a href="#front-end-back-end">Front end, back end</a></li>
+<li class="level1"><a href="#main-classes">Main Classes</a></li>
+<li class="level1"><a href="#reading-classes">Reading Classes</a></li>
+<li class="level1"><a href="#sensor-classes">Sensor Classes</a></li>
+<li class="level1"><a href="#filter-classes">Filter Classes</a></li>
+</ul>
+</div>
+<h1 class="title">Sensors</h1>
+<span class="subtitle"></span>
+<!-- $$$sensors-api.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The Sensors API is primarily concerned with low-level, real-time sensors such as the accelerometer although there are higher-level, event-driven sensors represented too.</p>
+<a name="namespace"></a>
+<h2>Namespace</h2>
+<p>The QtMobility APIs are placed into the <i>QtMobility</i> namespace. This is done to facilitate the future migration of QtMobility APIs into Qt. See the <a href="quickstart.html">Quickstart guide</a> for an example on how the namespace impacts on application development.</p>
+<a name="sensor-types"></a>
+<h2>Sensor Types</h2>
+<p>On a device there can be many types of sensors. Not all of the types that the Sensors API supports may be available. There may also be types available that are not defined in the Sensors API. You can find the sensor types available on a device using the <a href="qsensor.html#sensorTypes">QSensor::sensorTypes</a>() function.</p>
+<p>For a list of built-in sensor types, see the <a href="preview.html#sensor-classes">Sensor Classes</a> section below.</p>
+<a name="common-conventions"></a>
+<h2>Common Conventions</h2>
+<p>Unless otherwise specified, sensors shall use the <a href="http://en.wikipedia.org/wiki/Cartesian_coordinate_system">Right Hand Cartesian coordinate system</a>.</p>
+<p class="centerAlign"><img src="images/sensors-coordinates.jpg" /></p><p>To allow for measurements in all 6 directions, negative values are used.</p>
+<p class="centerAlign"><img src="images/sensors-coordinates2.jpg" /></p><p>Where rotation around an axis is used, the rotation shall be expressed as a Right Hand rotation.</p>
+<p class="centerAlign"><img src="images/sensors-coordinates3.jpg" /></p><p>In general, sensor data is oriented to the top of the device. If values are to be displayed on the screen the values may need to be transformed so that they match the user interface orientation. A sensor may define its data as being oriented to the UI. This will be noted in the documentation for the sensor.</p>
+<p class="centerAlign"><img src="images/sensors-sides2.jpg" /></p><a name="using-a-sensor"></a>
+<h2>Using a Sensor</h2>
+<p>The life cycle of a sensor is typically:</p>
+<ul>
+<li>Create an instance of <a href="qsensor.html">QSensor</a> or one of its sub-classes on the stack or heap.</li>
+<li>Setup as required by the application.</li>
+<li>Start receiving values.</li>
+<li>Sensor data is used by the application.</li>
+<li>Stop receiving values.</li>
+</ul>
+<p>Here is an example of creating a sensor on the heap and on the stack.</p>
+<pre class="highlightedCode brush: cpp"><span class="comment"> // On the heap (deleted when this object is deleted)</span>
+ QAccelerometer *sensor = new QAccelerometer(this);
+
+<span class="comment"> // On the stack (deleted when the current scope ends)</span>
+ QOrientationSensor orient_sensor;</pre>
+<a name="accessing-sensor-data-in-a-generic-fashion"></a>
+<h2>Accessing sensor data in a generic fashion</h2>
+<p>The preferred way to deal with sensor data is via the <a href="#reading-classes">Reading Classes</a>. However, sometimes this may not be possible. For example, you may be deploying an application to a device that has a new sensor type but no C++ header describing the reading class is available.</p>
+<p>Thanks to Qt's property system you can still access the sensor data. You need to know 3 pieces of information in order to do this:</p>
+<ul>
+<li>The sensor type.</li>
+<li>The property name or index.</li>
+<li>The property type or a comparable type.</li>
+</ul>
+<p>For example, here is an example of how you can access a property of the accelerometer. This code does not require any compile-time links to <a href="qaccelerometer.html">QAccelerometer</a> or <a href="qaccelerometerreading.html">QAccelerometerReading</a>.</p>
+<pre class="highlightedCode brush: cpp"><span class="comment"> // start the sensor</span>
+ QSensor sensor(&quot;QAccelerometer&quot;);
+ sensor.start();
+
+<span class="comment"> // later</span>
+ QSensorReading *reading = sensor.reading();
+ qreal x = reading-&gt;property(&quot;x&quot;).value&lt;qreal&gt;();
+ qreal y = reading-&gt;value(1).value&lt;qreal&gt;();</pre>
+<p>You can discover all of this information at runtime too. The <a href="sensors-sensor-explorer.html">sensor_explorer</a> example shows you information about available sensors.</p>
+<a name="platform-notes"></a>
+<h2>Platform notes</h2>
+<a name="s60-3rd-edition"></a>
+<h3>S60 3rd Edition</h3>
+<p>Note that support for sensors in S60 3.1 device is extremely limited due to the native API. Only the accelerometer is supported and only a few devices.</p>
+<p>Some devices running S60 3.2 support a newer native API and therefore support more sensors.</p>
+<p>More information about these platforms can be found <a href="http://wiki.forum.nokia.com/index.php/Nokia_Sensor_APIs">here</a>.</p>
+<p>Note that timestamps on this platform come from the system clock. Applications need to handle shifts in time caused by the user manually setting the clock or from the automatic time synchronization feature setting the clock.</p>
+<a name="symbian"></a>
+<h3>Symbian</h3>
+<p>Most Symbian devices have their sensor data read via the Sensor Framework API. Some limitations appear in the Sensors API as a result.</p>
+<p>Only specific data rates can be selected. Setting an invalid data rate has no effect so applications that need to influence the used data rate should connect to the sensor, check the available data rates and select one as appropriate.</p>
+<p>Readings are delivered to the application via a queue. If the application blocks the event loop or otherwise interferes with the ability of the system to deliver readings (eg. by using up too much CPU time), they can get blocked in this queue. Since delayed readings are not useful, the system will drop readings as needed so that the application is always dealing with the most recent reading available. The application can tweak the policy by setting properties on the sensor.</p>
+<p>The default policy is to accept up to 100 readings from the system at once and to discard all but the last one.</p>
+<pre class="highlightedCode brush: cpp"> QAccelerometer sensor;
+ sensor.setProperty(&quot;maximumReadingCount&quot;, 100);
+ sensor.setProperty(&quot;processAllReadings&quot;, false);</pre>
+<p>Applications that desire the original behaviour can set the maximumReadingCount to 1. Note that this does not guarantee that readings will not be dropped by the system. If the queue fills up, readings will be dropped.</p>
+<pre class="highlightedCode brush: cpp"> QAccelerometer sensor;
+ sensor.setProperty(&quot;maximumReadingCount&quot;, 1);</pre>
+<p>Larger maximumReadingCount values reduce the need for the lower-priority sensor daemon to get CPU timeslices. If the application is using lots of CPU but is still able to process readings quickly, it can request that all the fetched readings are processed.</p>
+<pre class="highlightedCode brush: cpp"> QAccelerometer sensor;
+ sensor.setProperty(&quot;maximumReadingCount&quot;, 10);
+ sensor.setProperty(&quot;processAllReadings&quot;, true);</pre>
+<p>More information about the native API can be found <a href="http://wiki.forum.nokia.com/index.php/Nokia_Sensor_APIs">here</a>.</p>
+<p>Note that timestamps on this platform come from the system clock. Applications need to handle shifts in time caused by the user manually setting the clock or from the automatic time synchronization feature setting the clock.</p>
+<p>The ambient light sensor can only detect changes. Unlike all other sensors, it cannot report the &quot;current value&quot; so it is not possible to determine the current ambient light level.</p>
+<a name="maemo-5"></a>
+<h3>Maemo 5</h3>
+<p>The N900 represents a unique device for the Sensors API. Unlike the Symbian and <a href="#meego">MeeGo</a> platforms, sensor data is retrieved directly from the kernel and this has implications on the API.</p>
+<p>Axes are rotated when compared to Symbian or <a href="#meego">MeeGo</a> devices. While Symbian and <a href="#meego">MeeGo</a> devices orient their hardware sensors towards a portrait orientation, the N900 does not do this. Instead, it orients the hardware sensors towards its default landscape orientation. This has portability implications for applications that want to force the use of a particular screen orientation and use sensors. The following code shows how accelerometer values can be interpreted to ensure consistent results on the N900 as well as Symbian and <a href="#meego">MeeGo</a> devices.</p>
+<pre class="highlightedCode brush: cpp"> #ifdef Q_WS_MAEMO_5
+     qreal x = reading-&gt;y();
+     qreal y = -reading-&gt;x();
+ #else
+     qreal x = reading-&gt;x();
+     qreal y = reading-&gt;y();
+ #endif
+     qreal z = reading-&gt;z();</pre>
+<p>Alternatively, applications can set the environment variable <tt>N900_PORTRAIT_SENSORS</tt> to 1. This must be done before any Sensors API calls are made so the beginning of the main function is a good place to do it.</p>
+<pre class="highlightedCode brush: cpp"> int main(int argc, char **argv)
+ {
+     qputenv(&quot;N900_PORTRAIT_SENSORS&quot;, &quot;1&quot;);
+     ...</pre>
+<p>Despite hardware that allows for multiple data rates and output ranges, the Sensors API does not allow access to these due to permissions issues.</p>
+<p>Readings are polled using a timer. If the application blocks the event loop or otherwise interferes with the ability of the timer to fire, readings will be missed. There are no queues so applications must ensure that they process the readings promptly (possibly saving them into a buffer for later processing if required).</p>
+<a name="meego"></a>
+<h3>MeeGo</h3>
+<p>The data rates offered by <a href="#meego">MeeGo</a> are not tied to how fast the hardware runs.</p>
+<p>The default data rate for a sensor is likely to be low when compared to Symbian or Maemo 5. Applications should request a suitable data rate, taking care to avoid selecting invalid rates on other devices.</p>
+<p>Sensors may be suspended by the system in order to save power. Applications can avoid this by setting a property on the sensor object.</p>
+<pre class="highlightedCode brush: cpp"> QAccelerometer *accelerometer = new QAccelerometer(this);
+ accelerometer-&gt;setProperty(&quot;alwaysOn&quot;, true);
+ accelerometer-&gt;start();</pre>
+<p>Unlike Symbian and N900, <a href="#meego">MeeGo</a> does not currently provide initial readings. Thus, certain sensors must detect a change in value before a value can be reported. Examples include the orientation sensor and ambient light sensor.</p>
+<a name="front-end-back-end"></a>
+<h2>Front end, back end</h2>
+<p>The Sensors API has a front end, for application developers to use and a back end, where device implementors write code to access their hardware. As an application developer you do not need to access the back end though it may be useful to understand how it works.</p>
+<p>Commands from the application are delivered through <a href="qsensor.html">QSensor</a> and then down to the device plugin. Data comes back through the <a href="qsensorreading.html">QSensorReading</a> class.</p>
+<p class="centerAlign"><img src="images/sensors-overview.png" /></p><p>More information about the back end can be found in <a href="sensors-backend.html">Sensors Backend</a>.</p>
+<a name="main-classes"></a>
+<h2>Main Classes</h2>
+<p>The primary classes that make up the Sensors API.</p>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qsensor.html">QSensor</a></p></td><td class="tblDescr"><p>Represents a single hardware sensor</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qsensorfilter.html">QSensorFilter</a></p></td><td class="tblDescr"><p>Efficient callback facility for asynchronous notifications of sensor changes</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qsensorreading.html">QSensorReading</a></p></td><td class="tblDescr"><p>Holds the readings from the sensor</p></td></tr>
+</table>
+<a name="reading-classes"></a>
+<h2>Reading Classes</h2>
+<p>The best way to access sensor data is via one of these classes.</p>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qaccelerometerreading.html">QAccelerometerReading</a></p></td><td class="tblDescr"><p>Reports on linear acceleration along the X, Y and Z axes</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qambientlightreading.html">QAmbientLightReading</a></p></td><td class="tblDescr"><p>Represents one reading from the ambient light sensor</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qcompassreading.html">QCompassReading</a></p></td><td class="tblDescr"><p>Represents one reading from a compass</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qgyroscopereading.html">QGyroscopeReading</a></p></td><td class="tblDescr"><p>Represents one reading from the gyroscope sensor</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qlightreading.html">QLightReading</a></p></td><td class="tblDescr"><p>Represents one reading from the light sensor</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qmagnetometerreading.html">QMagnetometerReading</a></p></td><td class="tblDescr"><p>Represents one reading from the magnetometer</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qorientationreading.html">QOrientationReading</a></p></td><td class="tblDescr"><p>Represents one reading from the orientation sensor</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qproximityreading.html">QProximityReading</a></p></td><td class="tblDescr"><p>Represents one reading from the proximity sensor</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qrotationreading.html">QRotationReading</a></p></td><td class="tblDescr"><p>Represents one reading from the rotation sensor</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qtapreading.html">QTapReading</a></p></td><td class="tblDescr"><p>Represents one reading from the tap sensor</p></td></tr>
+</table>
+<a name="sensor-classes"></a>
+<h2>Sensor Classes</h2>
+<p>These classes provide convenience wrappers that reduce the need for casting. Each of these classes represents a sensor type that the Sensors API knows about. Note that additional types may be made available at run-time. See <a href="#sensor-types">Sensor Types</a> for more information.</p>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qaccelerometer.html">QAccelerometer</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensor</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qambientlightsensor.html">QAmbientLightSensor</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensor</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qcompass.html">QCompass</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensor</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qgyroscope.html">QGyroscope</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensor</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qlightsensor.html">QLightSensor</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensor</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qmagnetometer.html">QMagnetometer</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensor</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qorientationsensor.html">QOrientationSensor</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensor</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qproximitysensor.html">QProximitySensor</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensor</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qrotationsensor.html">QRotationSensor</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensor</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qtapsensor.html">QTapSensor</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensor</p></td></tr>
+</table>
+<a name="filter-classes"></a>
+<h2>Filter Classes</h2>
+<p>As with the sensor classes, these provide convenience wrappers that reduce the need for casting.</p>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qaccelerometerfilter.html">QAccelerometerFilter</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensorFilter</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qambientlightfilter.html">QAmbientLightFilter</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensorFilter</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qcompassfilter.html">QCompassFilter</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensorFilter</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qgyroscopefilter.html">QGyroscopeFilter</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensorFilter</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qlightfilter.html">QLightFilter</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensorFilter</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qmagnetometerfilter.html">QMagnetometerFilter</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensorFilter</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qorientationfilter.html">QOrientationFilter</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensorFilter</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qproximityfilter.html">QProximityFilter</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensorFilter</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qrotationfilter.html">QRotationFilter</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensorFilter</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qtapfilter.html">QTapFilter</a></p></td><td class="tblDescr"><p>Convenience wrapper around QSensorFilter</p></td></tr>
+</table>
+</div>
+<!-- @@@sensors-api.html -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

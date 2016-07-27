@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qbluetoothtransferreply.cpp -->
+  <title>Qt 1.2: QBluetoothTransferReply Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtconnectivity.html">QtConnectivity</a></li>
+              <li>QBluetoothTransferReply</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QBluetoothTransferReply Class Reference</h1>
+<!-- $$$QBluetoothTransferReply-brief -->
+<p>The QBluetoothTransferReply class contains the data and headers for a request sent with QBluetoothTranferManager. <a href="#details">More...</a></p>
+<!-- @@@QBluetoothTransferReply -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QBluetoothTransferReply&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qbluetoothtransferreply-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#TransferError-enum">TransferError</a></b> { NoError, UnknownError, FileNotFoundError, HostNotFoundError, UserCanceledTransferError }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#dtor.QBluetoothTransferReply">~QBluetoothTransferReply</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#attribute">attribute</a></b> ( QBluetoothTransferRequest::Attribute <i>code</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual TransferError </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#error">error</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QString </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#errorString">errorString</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#isFinished">isFinished</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#isRunning">isRunning</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBluetoothTransferManager * </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#manager">manager</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBluetoothTransferManager::Operation </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#operation">operation</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2>Public Slots</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#abort">abort</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#downloadProgress">downloadProgress</a></b> ( qint64 <i>bytesReceived</i>, qint64 <i>bytesTotal</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#finished">finished</a></b> ( QBluetoothTransferReply * <i>reply</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#uploadProgress">uploadProgress</a></b> ( qint64 <i>bytesSent</i>, qint64 <i>bytesTotal</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h2>Protected Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#QBluetoothTransferReply">QBluetoothTransferReply</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#setAttribute">setAttribute</a></b> ( QBluetoothTransferRequest::Attribute <i>code</i>, const QVariant &amp; <i>value</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#setManager">setManager</a></b> ( QBluetoothTransferManager * <i>manager</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothtransferreply.html#setOperation">setOperation</a></b> ( QBluetoothTransferManager::Operation <i>operation</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QBluetoothTransferReply-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QBluetoothTransferReply class contains the data and headers for a request sent with QBluetoothTranferManager.</p>
+<p>In additional to a copy of the <a href="qbluetoothtransferrequest.html">QBluetoothTransferRequest</a> object used to create the request, QBluetoothTransferReply contains the contents of the reply itself.</p>
+<p>QBluetoothTransferReply is a sequential-access <a href="http://qt.nokia.com/doc/4.7/qiodevice.html">QIODevice</a>, which means that once data is read from the object, it no longer kept by the device. It is therefore the application's responsibility to keep this data if it needs to. Whenever more data is received and processed, the readyRead() signal is emitted.</p>
+<p>The <a href="qbluetoothtransferreply.html#downloadProgress">downloadProgress</a>() signal is also emitted when data is received, but the number of bytes contained in it may not represent the actual bytes received, if any transformation is done to the contents (for example, decompressing and removing the protocol overhead).</p>
+<p>Even though QBluetoothTransferReply is a <a href="http://qt.nokia.com/doc/4.7/qiodevice.html">QIODevice</a> connected to the contents of the reply, it also emits the <a href="qbluetoothtransferreply.html#uploadProgress">uploadProgress</a>() signal, which indicates the progress of the upload for operations that have such content.</p>
+</div>
+<!-- @@@QBluetoothTransferReply -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$TransferError$$$NoError$$$UnknownError$$$FileNotFoundError$$$HostNotFoundError$$$UserCanceledTransferError -->
+<h3 class="fn"><a name="TransferError-enum"></a>enum QBluetoothTransferReply::TransferError</h3>
+<p>This enum describes the type of error that occurred</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QBluetoothTransferReply::NoError</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">No error.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothTransferReply::UnknownError</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Unknown error, no better enum available</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothTransferReply::FileNotFoundError</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Unable to open the file specified</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothTransferReply::HostNotFoundError</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">Unable to connect to the target host</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothTransferReply::UserCanceledTransferError</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">User terminated the transfer</td></tr>
+</table>
+<!-- @@@TransferError -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QBluetoothTransferReply[overload1]$$$QBluetoothTransferReplyQObject* -->
+<h3 class="fn"><a name="QBluetoothTransferReply"></a>QBluetoothTransferReply::QBluetoothTransferReply ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )<tt> [protected]</tt></h3>
+<p>Constructs a new <a href="qbluetoothtransferreply.html">QBluetoothTransferReply</a> with parent <i>parent</i>.</p>
+<!-- @@@QBluetoothTransferReply -->
+<!-- $$$~QBluetoothTransferReply[overload1]$$$~QBluetoothTransferReply -->
+<h3 class="fn"><a name="dtor.QBluetoothTransferReply"></a>QBluetoothTransferReply::~QBluetoothTransferReply ()</h3>
+<p>Destroys the <a href="qbluetoothtransferreply.html">QBluetoothTransferReply</a> object.</p>
+<!-- @@@~QBluetoothTransferReply -->
+<!-- $$$abort[overload1]$$$abort -->
+<h3 class="fn"><a name="abort"></a>void QBluetoothTransferReply::abort ()<tt> [slot]</tt></h3>
+<p>Aborts this reply.</p>
+<!-- @@@abort -->
+<!-- $$$attribute[overload1]$$$attributeQBluetoothTransferRequest::Attribute -->
+<h3 class="fn"><a name="attribute"></a><a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> QBluetoothTransferReply::attribute ( <a href="qbluetoothtransferrequest.html#Attribute-enum">QBluetoothTransferRequest::Attribute</a> <i>code</i> ) const</h3>
+<p>Returns the attribute associated with the code <i>code</i>. If the attribute has not been set, it returns an invalid <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a>.</p>
+<p>See also <a href="qbluetoothtransferreply.html#setAttribute">setAttribute</a>().</p>
+<!-- @@@attribute -->
+<!-- $$$downloadProgress[overload1]$$$downloadProgressqint64qint64 -->
+<h3 class="fn"><a name="downloadProgress"></a>void QBluetoothTransferReply::downloadProgress ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> <i>bytesReceived</i>, <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> <i>bytesTotal</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever data is received. The <i>bytesReceived</i> parameter contains the total number of bytes received so far out of <i>bytesTotal</i> expected for the entire transfer.</p>
+<!-- @@@downloadProgress -->
+<!-- $$$error[overload1]$$$error -->
+<h3 class="fn"><a name="error"></a><a href="qbluetoothtransferreply.html#TransferError-enum">TransferError</a> QBluetoothTransferReply::error () const<tt> [pure virtual]</tt></h3>
+<!-- @@@error -->
+<!-- $$$errorString[overload1]$$$errorString -->
+<h3 class="fn"><a name="errorString"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QBluetoothTransferReply::errorString () const<tt> [pure virtual]</tt></h3>
+<p>String describing the error. Can be displayed to the user.</p>
+<!-- @@@errorString -->
+<!-- $$$finished[overload1]$$$finishedQBluetoothTransferReply* -->
+<h3 class="fn"><a name="finished"></a>void QBluetoothTransferReply::finished ( QBluetoothTransferReply * <i>reply</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the transfer is complete for <i>reply</i>.</p>
+<!-- @@@finished -->
+<!-- $$$isFinished[overload1]$$$isFinished -->
+<h3 class="fn"><a name="isFinished"></a>bool QBluetoothTransferReply::isFinished () const<tt> [pure virtual]</tt></h3>
+<p>Returns true if this reply has finished; otherwise returns false.</p>
+<!-- @@@isFinished -->
+<!-- $$$isRunning[overload1]$$$isRunning -->
+<h3 class="fn"><a name="isRunning"></a>bool QBluetoothTransferReply::isRunning () const<tt> [pure virtual]</tt></h3>
+<p>Returns true if this reply is running; otherwise returns false.</p>
+<!-- @@@isRunning -->
+<!-- $$$manager[overload1]$$$manager -->
+<h3 class="fn"><a name="manager"></a><a href="qbluetoothtransfermanager.html">QBluetoothTransferManager</a> * QBluetoothTransferReply::manager () const</h3>
+<p>Returns the <a href="qbluetoothtransfermanager.html">QBluetoothTransferManager</a> that was used to create this <a href="qbluetoothtransferreply.html">QBluetoothTransferReply</a> object.</p>
+<p>See also <a href="qbluetoothtransferreply.html#setManager">setManager</a>().</p>
+<!-- @@@manager -->
+<!-- $$$operation[overload1]$$$operation -->
+<h3 class="fn"><a name="operation"></a><a href="qbluetoothtransfermanager.html#Operation-enum">QBluetoothTransferManager::Operation</a> QBluetoothTransferReply::operation () const</h3>
+<p>Returns the type of operation that this reply is for.</p>
+<p>See also <a href="qbluetoothtransferreply.html#setOperation">setOperation</a>().</p>
+<!-- @@@operation -->
+<!-- $$$setAttribute[overload1]$$$setAttributeQBluetoothTransferRequest::AttributeconstQVariant& -->
+<h3 class="fn"><a name="setAttribute"></a>void QBluetoothTransferReply::setAttribute ( <a href="qbluetoothtransferrequest.html#Attribute-enum">QBluetoothTransferRequest::Attribute</a> <i>code</i>, const <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> &amp; <i>value</i> )<tt> [protected]</tt></h3>
+<p>Set the attribute associated with the code <i>code</i> to the value <i>value</i>.</p>
+<p>See also <a href="qbluetoothtransferreply.html#attribute">attribute</a>().</p>
+<!-- @@@setAttribute -->
+<!-- $$$setManager[overload1]$$$setManagerQBluetoothTransferManager* -->
+<h3 class="fn"><a name="setManager"></a>void QBluetoothTransferReply::setManager ( <a href="qbluetoothtransfermanager.html">QBluetoothTransferManager</a> * <i>manager</i> )<tt> [protected]</tt></h3>
+<p>Set the reply's manager to manager <i>manager</i>.</p>
+<p>See also <a href="qbluetoothtransferreply.html#manager">manager</a>().</p>
+<!-- @@@setManager -->
+<!-- $$$setOperation[overload1]$$$setOperationQBluetoothTransferManager::Operation -->
+<h3 class="fn"><a name="setOperation"></a>void QBluetoothTransferReply::setOperation ( <a href="qbluetoothtransfermanager.html#Operation-enum">QBluetoothTransferManager::Operation</a> <i>operation</i> )<tt> [protected]</tt></h3>
+<p>Sets the operation of this <a href="qbluetoothtransferreply.html">QBluetoothTransferReply</a> to <i>operation</i>.</p>
+<p>See also <a href="qbluetoothtransferreply.html#operation">operation</a>().</p>
+<!-- @@@setOperation -->
+<!-- $$$uploadProgress[overload1]$$$uploadProgressqint64qint64 -->
+<h3 class="fn"><a name="uploadProgress"></a>void QBluetoothTransferReply::uploadProgress ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> <i>bytesSent</i>, <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> <i>bytesTotal</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever data is sent. The <i>bytesSent</i> parameter contains the total number of bytes sent so far out of <i>bytesTotal</i>.</p>
+<!-- @@@uploadProgress -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

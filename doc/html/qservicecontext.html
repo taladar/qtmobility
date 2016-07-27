@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qservicecontext.cpp -->
+  <title>Qt 1.2: QServiceContext Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtserviceframework.html">QtServiceFramework</a></li>
+              <li>QServiceContext</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QServiceContext Class Reference</h1>
+<!-- $$$QServiceContext-brief -->
+<p>The QServiceContext class provides context information to services. <a href="#details">More...</a></p>
+<!-- @@@QServiceContext -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QServiceContext&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.0.</p>
+<ul>
+<li><a href="qservicecontext-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#ContextType-enum">ContextType</a></b> { DisplayContext, ScriptContext, UserDefined }</td></tr>
+</table>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><a href="qservicecontext.html#clientId-prop">clientId</a></b> : QString</li>
+<li class="fn"><b><a href="qservicecontext.html#clientName-prop">clientName</a></b> : QString</li>
+</ul>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#QServiceContext">QServiceContext</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#dtor.QServiceContext">~QServiceContext</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#clientData">clientData</a></b> ( const QString &amp; <i>key</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#clientId-prop">clientId</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#clientName-prop">clientName</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#notify">notify</a></b> ( ContextType <i>type</i>, const QVariant &amp; <i>data</i> ) = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#resetClientData">resetClientData</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#setClientData">setClientData</a></b> ( const QString &amp; <i>key</i>, const QVariant &amp; <i>value</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#clientId-prop">setClientId</a></b> ( const QString &amp; <i>id</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qservicecontext.html#clientName-prop">setClientName</a></b> ( const QString &amp; <i>name</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QServiceContext-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QServiceContext class provides context information to services.</p>
+<p>A service context is created by clients and passed on to the service. It enables the opportunity to pass additional context information and errors between services, clients and the service framework.</p>
+<p>Clients must implement this abstract class to receive context information.</p>
+</div>
+<p>See also <a href="qservicemanager.html">QServiceManager</a>.</p>
+<!-- @@@QServiceContext -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$ContextType$$$DisplayContext$$$ScriptContext$$$UserDefined -->
+<h3 class="fn"><a name="ContextType-enum"></a>enum QServiceContext::ContextType</h3>
+<p>This enum describes the type of context information.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QServiceContext::DisplayContext</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">The service provides user visible display text such as an error message.</td></tr>
+<tr><td  class="topAlign"><tt>QServiceContext::ScriptContext</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">The service provides a script which may be executed by the client.</td></tr>
+<tr><td  class="topAlign"><tt>QServiceContext::UserDefined</tt></td><td class=" topAlign"><tt>100</tt></td><td  class="topAlign">The first context type that can be used for service specific context information.</td></tr>
+</table>
+<!-- @@@ContextType -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$clientId-prop$$$clientId$$$setClientIdconstQString& -->
+<h3 class="fn"><a name="clientId-prop"></a>clientId : <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></h3>
+<p>This property holds the id of the client using the service.</p>
+<p>By default, this value is empty but you can change this by calling setClientId().</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><b>clientId</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setClientId</b> ( const QString &amp; <i>id</i> )</td></tr>
+</table>
+<!-- @@@clientId -->
+<!-- $$$clientName-prop$$$clientName$$$setClientNameconstQString& -->
+<h3 class="fn"><a name="clientName-prop"></a>clientName : <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></h3>
+<p>This property holds the name of the client using the service.</p>
+<p>By default, this value is empty but you can change this by calling setClientName(). This string is translated and can be shown to the user.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><b>clientName</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setClientName</b> ( const QString &amp; <i>name</i> )</td></tr>
+</table>
+<!-- @@@clientName -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QServiceContext[overload1]$$$QServiceContextQObject* -->
+<h3 class="fn"><a name="QServiceContext"></a>QServiceContext::QServiceContext ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constrcuts a service context with the given <i>parent</i>.</p>
+<!-- @@@QServiceContext -->
+<!-- $$$~QServiceContext[overload1]$$$~QServiceContext -->
+<h3 class="fn"><a name="dtor.QServiceContext"></a>QServiceContext::~QServiceContext ()<tt> [virtual]</tt></h3>
+<p>Destroys the service context object.</p>
+<!-- @@@~QServiceContext -->
+<!-- $$$clientData[overload1]$$$clientDataconstQString& -->
+<h3 class="fn"><a name="clientData"></a><a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> QServiceContext::clientData ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>key</i> ) const</h3>
+<p>Returns the client data associated to <i>key</i>.</p>
+<p>See also <a href="qservicecontext.html#setClientData">setClientData</a>() and <a href="qservicecontext.html#resetClientData">resetClientData</a>().</p>
+<!-- @@@clientData -->
+<!-- $$$notify[overload1]$$$notifyContextTypeconstQVariant& -->
+<h3 class="fn"><a name="notify"></a>void QServiceContext::notify ( <a href="qservicecontext.html#ContextType-enum">ContextType</a> <i>type</i>, const <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> &amp; <i>data</i> )<tt> [pure virtual]</tt></h3>
+<p>Services may call this function to notify the service client about service related context information of the given <i>type</i>. The contextual information is stored in <i>data</i>.</p>
+<!-- @@@notify -->
+<!-- $$$resetClientData[overload1]$$$resetClientData -->
+<h3 class="fn"><a name="resetClientData"></a>void QServiceContext::resetClientData ()</h3>
+<p>Deletes all client data associated to the service context.</p>
+<p>See also <a href="qservicecontext.html#clientData">clientData</a>() and <a href="qservicecontext.html#setClientData">setClientData</a>().</p>
+<!-- @@@resetClientData -->
+<!-- $$$setClientData[overload1]$$$setClientDataconstQString&constQVariant& -->
+<h3 class="fn"><a name="setClientData"></a>void QServiceContext::setClientData ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>key</i>, const <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> &amp; <i>value</i> )</h3>
+<p>Attaches arbitrary data <i>value</i> to the context object. The value can be retrieved via <i>key</i>.</p>
+<p>See also <a href="qservicecontext.html#clientData">clientData</a>() and <a href="qservicecontext.html#resetClientData">resetClientData</a>().</p>
+<!-- @@@setClientData -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

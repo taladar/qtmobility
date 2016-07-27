@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt 1.2: tennis.qml Example File (declarative-connectivity/tennis/tennis.qml)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<h1 class="title">tennis.qml Example File</h1>
+<span class="small-subtitle">declarative-connectivity/tennis/tennis.qml</span>
+<!-- $$$declarative-connectivity/tennis/tennis.qml-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="highlightedCode brush: cpp"> /****************************************************************************
+ **
+ ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the examples of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** You may use this file under the terms of the BSD license as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+ **     the names of its contributors may be used to endorse or promote
+ **     products derived from this software without specific prior written
+ **     permission.
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/
+
+ import Qt 4.7
+ import QtMobility.connectivity 1.2
+ import Controller 1.0
+
+ Rectangle {
+     id: bounds
+
+     property BluetoothService currentService
+     property alias minimalDiscovery: myModel.minimalDiscovery
+     property alias uuidFilder: myModel.uuidFilter
+     property color fg: &quot;white&quot;
+     property color bg: &quot;black&quot;
+
+     Rectangle {
+         id: page
+
+         width: 640
+         height: 360
+         color: bg
+         focus:  true
+
+         // client side
+
+         BluetoothDiscoveryModel {
+             id: myModel
+
+             function connect(s){
+                 socket.setService(s);
+                 socket.setConnected(true);
+             }
+
+             discovery: false
+             minimalDiscovery: true
+             //onDiscoveryChanged: console.log(&quot;Discovery: &quot; + discovery)
+             onNewServiceDiscovered: { connect(service); discovery = false; }
+             uuidFilter: &quot;e8e10f95-1a70-4b27-9ccf-02010264e9c9&quot;
+        }
+
+ //       BluetoothService {
+ //            id: btservice
+
+ //            deviceAddress: &quot;00:1A:9F:92:9E:5A&quot;
+ //            serviceUuid: &quot;e8e10f95-1a70-4b27-9ccf-02010264e9c9&quot;
+ //       }
+
+        BluetoothSocket {
+            id: socket
+
+            function parse(s){
+                var args  = s.split(&quot; &quot;);
+
+                if(args[0] == &quot;m&quot;){
+                    ball.x = args[1]-ball.width/2;
+                    ball.y = args[2]-ball.height/2;
+                }
+                else if(args[0] == &quot;l&quot;){
+                    leftPaddle.y = Number(args[1])+topBumper.height;
+                }
+                else if(args[0] == &quot;s&quot;){
+                    scoreLeft.text = args[1];
+                    scoreRight.text = args[2];
+                }
+                else if(args[0] == &quot;e&quot;){ // echo packet, check for RTT
+                    socket.sendStringData(s);
+                }
+                else if(args[0] == &quot;E&quot;){
+                    var d = new Date();
+
+                    var lag = d.getTime() - args[1];
+                    if(lag &gt; 250){
+                        statusText.text = &quot;LAG! &quot; + lag + &quot;ms&quot;;
+                    }
+                }
+            }
+
+            //connected: true
+ //           service: btservice
+
+            onStateChanged: console.log(&quot;New socket state &quot; + state);
+            onErrorChanged: { statusText.text = error; }
+            onServiceChanged: console.log(&quot;New service&quot;);
+            onConnectedChanged: {
+                console.log(&quot;Connected: &quot; + connected);
+                if(connected) {
+                     statusText.text = &quot;Connected&quot;;
+                    controller.stop();
+                }
+                else {
+                    statusText.text = &quot;Unconnected &quot; + error;
+                    controller.start();
+                    controller.refresh();
+                }
+            }
+            //onConnectedChanged: console.log(&quot;Connected changed&quot;);
+            onDataAvailable: parse(socket.stringData);
+        }
+
+        Timer {
+            id: lagTimer
+
+            function sendEcho() {
+                if(socket.connected){
+                     var s = &quot;E &quot; + new Date().getTime();
+                     socket.sendStringData(s);
+                }
+                if(server_socket.connected){
+                    var s = &quot;e &quot; + new Date().getTime();
+                    server_socket.sendStringData(s);
+                }
+            }
+
+            interval: 1000
+            repeat: true
+            running: socket.connected || server_socket.connected
+            onTriggered: sendEcho();
+        }
+
+        // server side, not implemented
+
+        BluetoothService {
+             id: btserver
+
+             serviceName: &quot;bttennis&quot;
+             serviceDescription: &quot;QML Tennis Service&quot;
+             serviceProtocol: &quot;l2cap&quot;
+             serviceUuid: &quot;e8e10f95-1a70-4b27-9ccf-02010264e9c9&quot;
+             registered: true
+             onNewClient: {
+                 console.log(&quot;Got a new connections!&quot;);
+                 if (!server_socket.connected) {
+                     assignNextClient(server_socket);
+                 } else {
+                     nextClient().connected = false;
+                 }
+             }
+        }
+
+        BluetoothSocket {
+            id: server_socket
+
+            function parse(s){
+                var args  = s.split(&quot; &quot;);
+
+                if(args[0] == &quot;r&quot;){
+                    rightPaddle.y = Number(args[1])+topBumper.height;
+                }
+                else if(args[0] == &quot;E&quot;){ // echo packet, check for RTT
+                    sendStringData(s);
+                }
+                else if(args[0] == &quot;E&quot;){
+                    var d = new Date();
+
+                    var lag = d.getTime() - args[1];
+                    if(lag &gt; 250){
+                        statusText.text = &quot;LAG! &quot; + lag + &quot;ms&quot;;
+                    }
+                }
+            }
+
+            onStateChanged: console.log(&quot;SERVER: New socket state &quot; + state);
+            onErrorChanged: { console.log(&quot;SERVER: error: &quot; + error); statusText.text = error; }
+            onServiceChanged: console.log(&quot;SERVER: New service&quot;);
+            onConnectedChanged: {
+                console.log(&quot;SERVER Connected: &quot; + connected);
+                if(connected) {
+                     statusText.text = &quot;Server Connected&quot;;
+                     controller.refresh();
+                }
+                else {
+                    statusText.text = &quot;Server Unconnected &quot; + error;
+                }
+            }
+            onDataAvailable: parse(stringData);
+        }
+
+        Connections {
+            target: deviceSensor.item
+            onReadingChanged: {
+                 if (x &gt;= 20 &amp;&amp; x &lt;= 70)
+                     rightPaddle.paddlePos = ((x - 20) / 50 * page.height) - rightPaddle.height / 2;
+            }
+        }
+
+        Handover {
+            id: handover
+
+            bluetoothService: BluetoothService {
+                serviceName: &quot;bttennis&quot;
+                serviceProtocol: &quot;l2cap&quot;;
+                serviceUuid: &quot;e8e10f95-1a70-4b27-9ccf-02010264e9c9&quot;
+            }
+
+            onBluetoothServiceChanged: {
+                console.log(&quot;Connecting to NFC provided address &quot; + bluetoothService.deviceAddress);
+                statusText.text = &quot;Connecting: &quot; + bluetoothService.deviceAddress + &quot; &quot; + bluetoothService.serverPort;
+                socket.setService(bluetoothService);
+                socket.setConnected(true);
+            }
+
+            onAvailableChanged: statusText.text = &quot;Touch to play&quot;;
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            enabled:  true
+
+            onMousePositionChanged: {
+                var y = mouseY-rightPaddle.height/2;
+                var p = server_socket.connected ? leftPaddle : rightPaddle;
+
+                if(y &lt; topBumper.height)
+                    y = topBumper.height;
+                if(y &gt; page.height - bottomBumper.height - rightPaddle.height)
+                    y = page.height - bottomBumper.height - rightPaddle.height;
+                p.paddlePos = y;
+            }
+        }
+
+        ConnectButton {
+            id: connectButton
+
+            mymodel: myModel
+            socket: socket
+            server_socket: server_socket
+        }
+
+         // Make a ball to bounce
+         Rectangle {
+             id: ball
+
+             x: page.width/2-width/2;
+             y: page.height/2-height/2;
+             width: 12; height: 12; z: 1
+             color: fg
+         }
+
+         Paddle {
+             id: leftPaddle
+
+             property int lastsent: 0
+
+             onPaddleMoved: {
+                 controller.moveLeftPaddle(y);
+                 if (server_socket.connected) {
+                     var c = Math.round(y-topBumper.height);
+                     if (c == lastsent){
+                         return;
+                     }
+                     lastsent = c;
+                     server_socket.sendStringData(&quot;l &quot; + c);
+                 }
+             }
+         }
+
+         Paddle {
+             id: rightPaddle
+
+             x: page.width - 12;
+
+             onPaddleMoved:  {
+                 if(socket.connected)
+                     socket.sendStringData(&quot;r &quot; + Math.round(rightPaddle.y-topBumper.height));
+                 controller.moveRightPaddle(y);
+             }
+
+         }
+         Bumper {
+             id: topBumper
+         }
+         Bumper {
+             id: bottomBumper
+             y: page.height-height
+         }
+         Score {
+             id: scoreLeft
+         }
+         Score {
+             id: scoreRight
+             x: 3*page.width/4-paintedWidth/2
+         }
+
+         Repeater {
+             model: page.height / 8
+             Rectangle { color: fg; x: page.width/2; y: index * 8; width: 2; height: 5 }
+         }
+
+         Text {
+             id: statusText
+             font.family: &quot;Old English&quot;
+             font.pixelSize: 25; font.bold: true
+             text: &quot;&quot;
+             color:  fg
+             y: page.height-height-25
+             x: 24
+
+             onTextChanged: NumberAnimation { target: statusText; property: &quot;opacity&quot;; easing.type: Easing.InOutSine; from: 1; to: 0; duration: 2000 }
+         }
+
+         Keys.onPressed: {
+             var p = server_socket.connected ? leftPaddle : rightPaddle;
+
+             if(event.key == Qt.Key_Up){
+                 p.paddlePos -= 20;
+                 event.accepted = true;
+             }
+             else if(event.key == Qt.Key_Down){
+                 p.paddlePos += 20;
+                 event.accepted = true;
+             }
+         }
+
+         Loader {
+             id: deviceSensor
+             source: &quot;sensor.qml&quot;
+         }
+
+         transform: Scale { xScale: bounds.width/page.width; yScale: bounds.height/page.height }
+
+         Controller {
+             id: controller
+
+             property bool dir: true;
+             property int lastx: page.width/2;
+
+             onMoveBall: {
+                 ball.x = x-ball.width/2;
+                 ball.y = y-ball.height/2;
+                 if((ball.x+ball.width &gt; rightPaddle.x) &amp;&amp;
+                    (ball.y+ball.width &gt; rightPaddle.y) &amp;&amp;
+                    (ball.y &lt; rightPaddle.y + rightPaddle.height)){
+                     ballCollision(4);
+
+                 }
+                 else if((ball.x &lt; leftPaddle.width) &amp;&amp;
+                         (ball.y+ball.width &gt; leftPaddle.y) &amp;&amp;
+                         (ball.y &lt; leftPaddle.y + leftPaddle.height)){
+                     ballCollision(3);
+
+                 }
+                 else if(ball.x &gt; page.width){
+                     scored(4);
+                 }
+                 else if(x &lt; 0){
+                     scored(3);
+                 }
+                 else if(ball.y &lt; topBumper.height){
+                     ballCollision(1);
+                 }
+                 else if((y + ball.height/2) &gt; bottomBumper.y){
+                     ballCollision(2);
+                 }
+                 if(lastx &gt; x){
+                     dir = true;
+                 }
+                 else {
+                     dir = false;
+                 }
+                 lastx = x;
+
+                 if (!socket.connected &amp;&amp; !server_socket.connected){
+                     if(dir &amp;&amp; ball.x &lt; page.width/2) {
+                         leftPaddle.paddlePos = ball.y - leftPaddle.height/2;
+                     }
+                     else if(!dir &amp;&amp; ball.x &gt; page.width/2){
+                         rightPaddle.paddlePos = ball.y - leftPaddle.height/2;
+                     }
+                 }
+
+                 if (server_socket.connected){
+                     var s = &quot;m &quot; + ball.x + &quot; &quot; + ball.y;
+                     server_socket.sendStringData(s);
+                 }
+             }
+             onScore: {
+                 scoreLeft.text = left;
+                 scoreRight.text = right;
+
+                 if (server_socket.connected) {
+                     var s = &quot;s &quot; + left + &quot; &quot; + right;
+                     server_socket.sendStringData(s);
+                 }
+             }
+         }
+     }
+ }</pre>
+</div>
+<!-- @@@declarative-connectivity/tennis/tennis.qml -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

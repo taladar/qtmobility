@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qllcpsocket.cpp -->
+  <title>Qt 1.2: QLlcpSocket Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtconnectivity.html">QtConnectivity</a></li>
+              <li>QLlcpSocket</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QLlcpSocket Class Reference</h1>
+<!-- $$$QLlcpSocket-brief -->
+<p>The QLlcpSocket class provides an NFC LLCP socket. <a href="#details">More...</a></p>
+<!-- @@@QLlcpSocket -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QLlcpSocket&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qiodevice.html">QIODevice</a>.</p>
+<p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qllcpsocket-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#SocketError-enum">SocketError</a></b> { UnknownSocketError, RemoteHostClosedError, SocketAccessError, SocketResourceError }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#SocketState-enum">SocketState</a></b> { UnconnectedState, ConnectingState, ConnectedState, ClosingState, BoundState, ListeningState }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#QLlcpSocket">QLlcpSocket</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#dtor.QLlcpSocket">~QLlcpSocket</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#bind">bind</a></b> ( quint8 <i>port</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#connectToService">connectToService</a></b> ( QNearFieldTarget * <i>target</i>, const QString &amp; <i>serviceUri</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#disconnectFromService">disconnectFromService</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> SocketError </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#error">error</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#hasPendingDatagrams">hasPendingDatagrams</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#pendingDatagramSize">pendingDatagramSize</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#readDatagram">readDatagram</a></b> ( char * <i>data</i>, qint64 <i>maxSize</i>, QNearFieldTarget ** <i>target</i> = 0, quint8 * <i>port</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> SocketState </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#state">state</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#waitForConnected">waitForConnected</a></b> ( int <i>msecs</i> = 30000 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#waitForDisconnected">waitForDisconnected</a></b> ( int <i>msecs</i> = 30000 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#writeDatagram">writeDatagram</a></b> ( const char * <i>data</i>, qint64 <i>size</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#writeDatagram-2">writeDatagram</a></b> ( const char * <i>data</i>, qint64 <i>size</i>, QNearFieldTarget * <i>target</i>, quint8 <i>port</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#writeDatagram-3">writeDatagram</a></b> ( const QByteArray &amp; <i>datagram</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#writeDatagram-4">writeDatagram</a></b> ( const QByteArray &amp; <i>datagram</i>, QNearFieldTarget * <i>target</i>, quint8 <i>port</i> )</td></tr>
+</table>
+<a name="reimplemented-public-functions"></a>
+<h2>Reimplemented Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual qint64 </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#bytesAvailable">bytesAvailable</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#canReadLine">canReadLine</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#close">close</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#isSequential">isSequential</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#waitForBytesWritten">waitForBytesWritten</a></b> ( int <i>msecs</i> = 30000 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#waitForReadyRead">waitForReadyRead</a></b> ( int <i>msecs</i> = 30000 )</td></tr>
+</table>
+<ul>
+<li class="fn">33 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qiodevice.html#public-functions">QIODevice</a></li>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#connected">connected</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#disconnected">disconnected</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#error-2">error</a></b> ( QLlcpSocket::SocketError <i>socketError</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qllcpsocket.html#stateChanged">stateChanged</a></b> ( QLlcpSocket::SocketState <i>socketState</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">4 signals inherited from <a href="http://qt.nokia.com/doc/4.7/qiodevice.html#signals">QIODevice</a></li>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">5 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qiodevice.html#protected-functions">QIODevice</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QLlcpSocket-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QLlcpSocket class provides an NFC LLCP socket.</p>
+<p>NFC LLCP protocol is a peer-to-peer communication protocol between two NFC compliant devices.</p>
+</div>
+<!-- @@@QLlcpSocket -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$SocketError$$$UnknownSocketError$$$RemoteHostClosedError$$$SocketAccessError$$$SocketResourceError -->
+<h3 class="fn"><a name="SocketError-enum"></a>enum QLlcpSocket::SocketError</h3>
+<p>This enum describes the errors that can occur. The most recent error can be retrieved through a call to <a href="qllcpsocket.html#error">error</a>().</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QLlcpSocket::UnknownSocketError</tt></td><td class=" topAlign"><tt>QAbstractSocket::UnknownSocketError</tt></td><td  class="topAlign">An unidentified error has occurred.</td></tr>
+<tr><td  class="topAlign"><tt>QLlcpSocket::RemoteHostClosedError</tt></td><td class=" topAlign"><tt>QAbstractSocket::RemoteHostClosedError</tt></td><td  class="topAlign">The remote host closed the connection.</td></tr>
+<tr><td  class="topAlign"><tt>QLlcpSocket::SocketAccessError</tt></td><td class=" topAlign"><tt>QAbstractSocket::SocketAccessError</tt></td><td  class="topAlign">The socket operation failed because the application lacked the required privileges.</td></tr>
+<tr><td  class="topAlign"><tt>QLlcpSocket::SocketResourceError</tt></td><td class=" topAlign"><tt>QAbstractSocket::SocketResourceError</tt></td><td  class="topAlign">The local system ran out of resources (e.g&#x2e;, too many sockets).</td></tr>
+</table>
+<!-- @@@SocketError -->
+<!-- $$$SocketState$$$UnconnectedState$$$ConnectingState$$$ConnectedState$$$ClosingState$$$BoundState$$$ListeningState -->
+<h3 class="fn"><a name="SocketState-enum"></a>enum QLlcpSocket::SocketState</h3>
+<p>This enum describes the different state in which a socket can be.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QLlcpSocket::UnconnectedState</tt></td><td class=" topAlign"><tt>QAbstractSocket::UnconnectedState</tt></td><td  class="topAlign">The socket is not connected.</td></tr>
+<tr><td  class="topAlign"><tt>QLlcpSocket::ConnectingState</tt></td><td class=" topAlign"><tt>QAbstractSocket::ConnectingState</tt></td><td  class="topAlign">The socket has started establishing a connection.</td></tr>
+<tr><td  class="topAlign"><tt>QLlcpSocket::ConnectedState</tt></td><td class=" topAlign"><tt>QAbstractSocket::ConnectedState</tt></td><td  class="topAlign">A connection is established.</td></tr>
+<tr><td  class="topAlign"><tt>QLlcpSocket::ClosingState</tt></td><td class=" topAlign"><tt>QAbstractSocket::ClosingState</tt></td><td  class="topAlign">The socket is about to close.</td></tr>
+<tr><td  class="topAlign"><tt>QLlcpSocket::BoundState</tt></td><td class=" topAlign"><tt>QAbstractSocket::BoundState</tt></td><td  class="topAlign">The socket is bound to a local port (for servers).</td></tr>
+<tr><td  class="topAlign"><tt>QLlcpSocket::ListeningState</tt></td><td class=" topAlign"><tt>QAbstractSocket::ListeningState</tt></td><td  class="topAlign">The socket is listening for incoming connections (for internal use).</td></tr>
+</table>
+<!-- @@@SocketState -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QLlcpSocket[overload1]$$$QLlcpSocketQObject* -->
+<h3 class="fn"><a name="QLlcpSocket"></a>QLlcpSocket::QLlcpSocket ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Construct a new unconnected LLCP socket with <i>parent</i>.</p>
+<!-- @@@QLlcpSocket -->
+<!-- $$$~QLlcpSocket[overload1]$$$~QLlcpSocket -->
+<h3 class="fn"><a name="dtor.QLlcpSocket"></a>QLlcpSocket::~QLlcpSocket ()</h3>
+<p>Destroys the LLCP socket.</p>
+<!-- @@@~QLlcpSocket -->
+<!-- $$$bind[overload1]$$$bindquint8 -->
+<h3 class="fn"><a name="bind"></a>bool QLlcpSocket::bind ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#quint8-typedef">quint8</a> <i>port</i> )</h3>
+<p>Binds the LLCP socket to local <i>port</i>. Returns true on success; otherwise returns false.</p>
+<!-- @@@bind -->
+<!-- $$$bytesAvailable[overload1]$$$bytesAvailable -->
+<h3 class="fn"><a name="bytesAvailable"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> QLlcpSocket::bytesAvailable () const<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="http://qt.nokia.com/doc/4.7/qiodevice.html#bytesAvailable">QIODevice::bytesAvailable</a>().</p>
+<!-- @@@bytesAvailable -->
+<!-- $$$canReadLine[overload1]$$$canReadLine -->
+<h3 class="fn"><a name="canReadLine"></a>bool QLlcpSocket::canReadLine () const<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="http://qt.nokia.com/doc/4.7/qiodevice.html#canReadLine">QIODevice::canReadLine</a>().</p>
+<!-- @@@canReadLine -->
+<!-- $$$close[overload1]$$$close -->
+<h3 class="fn"><a name="close"></a>void QLlcpSocket::close ()<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="http://qt.nokia.com/doc/4.7/qiodevice.html#close">QIODevice::close</a>().</p>
+<p>Disconnects the socket.</p>
+<!-- @@@close -->
+<!-- $$$connectToService[overload1]$$$connectToServiceQNearFieldTarget*constQString& -->
+<h3 class="fn"><a name="connectToService"></a>void QLlcpSocket::connectToService ( <a href="qnearfieldtarget.html">QNearFieldTarget</a> * <i>target</i>, const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>serviceUri</i> )</h3>
+<p>Connects to the service identified by the URI <i>serviceUri</i> on <i>target</i>.</p>
+<!-- @@@connectToService -->
+<!-- $$$connected[overload1]$$$connected -->
+<h3 class="fn"><a name="connected"></a>void QLlcpSocket::connected ()<tt> [signal]</tt></h3>
+<p>This signal is emitted after <a href="qllcpsocket.html#connectToService">connectToService</a>() has been called and a connection has been successfully established.</p>
+<p>See also <a href="qllcpsocket.html#connectToService">connectToService</a>() and <a href="qllcpsocket.html#disconnected">disconnected</a>().</p>
+<!-- @@@connected -->
+<!-- $$$disconnectFromService[overload1]$$$disconnectFromService -->
+<h3 class="fn"><a name="disconnectFromService"></a>void QLlcpSocket::disconnectFromService ()</h3>
+<p>Disconnects the socket.</p>
+<!-- @@@disconnectFromService -->
+<!-- $$$disconnected[overload1]$$$disconnected -->
+<h3 class="fn"><a name="disconnected"></a>void QLlcpSocket::disconnected ()<tt> [signal]</tt></h3>
+<p>This signal is emitted when the socket has been disconnected.</p>
+<p>See also <a href="qllcpsocket.html#disconnectFromService">disconnectFromService</a>().</p>
+<!-- @@@disconnected -->
+<!-- $$$error[overload1]$$$error -->
+<h3 class="fn"><a name="error"></a><a href="qllcpsocket.html#SocketError-enum">SocketError</a> QLlcpSocket::error () const</h3>
+<p>Returns the type of error that last occurred.</p>
+<!-- @@@error -->
+<!-- $$$error$$$errorQLlcpSocket::SocketError -->
+<h3 class="fn"><a name="error-2"></a>void QLlcpSocket::error ( <a href="qllcpsocket.html#SocketError-enum">QLlcpSocket::SocketError</a> <i>socketError</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when an error occurs. The <i>socketError</i> parameter describes the error.</p>
+<!-- @@@error -->
+<!-- $$$hasPendingDatagrams[overload1]$$$hasPendingDatagrams -->
+<h3 class="fn"><a name="hasPendingDatagrams"></a>bool QLlcpSocket::hasPendingDatagrams () const</h3>
+<p>Returns true if at least one datagram (service data units) is waiting to be read; otherwise returns false.</p>
+<p>See also <a href="qllcpsocket.html#pendingDatagramSize">pendingDatagramSize</a>() and <a href="qllcpsocket.html#readDatagram">readDatagram</a>().</p>
+<!-- @@@hasPendingDatagrams -->
+<!-- $$$isSequential[overload1]$$$isSequential -->
+<h3 class="fn"><a name="isSequential"></a>bool QLlcpSocket::isSequential () const<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="http://qt.nokia.com/doc/4.7/qiodevice.html#isSequential">QIODevice::isSequential</a>().</p>
+<p>Always returns true.</p>
+<!-- @@@isSequential -->
+<!-- $$$pendingDatagramSize[overload1]$$$pendingDatagramSize -->
+<h3 class="fn"><a name="pendingDatagramSize"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> QLlcpSocket::pendingDatagramSize () const</h3>
+<p>Returns the size of the first pending datagram (service data unit). If there is no datagram available, this function returns -1.</p>
+<p>See also <a href="qllcpsocket.html#hasPendingDatagrams">hasPendingDatagrams</a>() and <a href="qllcpsocket.html#readDatagram">readDatagram</a>().</p>
+<!-- @@@pendingDatagramSize -->
+<!-- $$$readDatagram[overload1]$$$readDatagramchar*qint64QNearFieldTarget**quint8* -->
+<h3 class="fn"><a name="readDatagram"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> QLlcpSocket::readDatagram ( char * <i>data</i>, <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> <i>maxSize</i>, <a href="qnearfieldtarget.html">QNearFieldTarget</a> ** <i>target</i> = 0, <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#quint8-typedef">quint8</a> * <i>port</i> = 0 )</h3>
+<p>Receives a datagram no larger than <i>maxSize</i> bytes and stores it in <i>data</i>. The sender's details are stored in <i>target</i> and <i>port</i> (unless the pointers are 0).</p>
+<p>Returns the size of the datagram on success; otherwise returns -1.</p>
+<p>If maxSize is too small, the rest of the datagram will be lost. To avoid loss of data, call <a href="qllcpsocket.html#pendingDatagramSize">pendingDatagramSize</a>() to determine the size of the pending datagram before attempting to read it. If maxSize is 0, the datagram will be discarded.</p>
+<p>See also <a href="qllcpsocket.html#writeDatagram">writeDatagram</a>(), <a href="qllcpsocket.html#hasPendingDatagrams">hasPendingDatagrams</a>(), and <a href="qllcpsocket.html#pendingDatagramSize">pendingDatagramSize</a>().</p>
+<!-- @@@readDatagram -->
+<!-- $$$state[overload1]$$$state -->
+<h3 class="fn"><a name="state"></a><a href="qllcpsocket.html#SocketState-enum">SocketState</a> QLlcpSocket::state () const</h3>
+<p>Returns the state of the socket.</p>
+<!-- @@@state -->
+<!-- $$$stateChanged[overload1]$$$stateChangedQLlcpSocket::SocketState -->
+<h3 class="fn"><a name="stateChanged"></a>void QLlcpSocket::stateChanged ( <a href="qllcpsocket.html#SocketState-enum">QLlcpSocket::SocketState</a> <i>socketState</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the state of the socket changes. The <i>socketState</i> parameter describes the new state.</p>
+<!-- @@@stateChanged -->
+<!-- $$$waitForBytesWritten[overload1]$$$waitForBytesWrittenint -->
+<h3 class="fn"><a name="waitForBytesWritten"></a>bool QLlcpSocket::waitForBytesWritten ( int <i>msecs</i> = 30000 )<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="http://qt.nokia.com/doc/4.7/qiodevice.html#waitForBytesWritten">QIODevice::waitForBytesWritten</a>().</p>
+<!-- @@@waitForBytesWritten -->
+<!-- $$$waitForConnected[overload1]$$$waitForConnectedint -->
+<h3 class="fn"><a name="waitForConnected"></a>bool QLlcpSocket::waitForConnected ( int <i>msecs</i> = 30000 )<tt> [virtual]</tt></h3>
+<p>Waits until the socket is connected, up to <i>msecs</i> milliseconds. If the connection has been established, this function returns true; otherwise it returns false. In the case where it returns false, you can call <a href="qllcpsocket.html#error">error</a>() to determine the cause of the error.</p>
+<p>If msecs is -1, this function will not time out.</p>
+<!-- @@@waitForConnected -->
+<!-- $$$waitForDisconnected[overload1]$$$waitForDisconnectedint -->
+<h3 class="fn"><a name="waitForDisconnected"></a>bool QLlcpSocket::waitForDisconnected ( int <i>msecs</i> = 30000 )<tt> [virtual]</tt></h3>
+<p>Waits until the socket is disconnected, up to <i>msecs</i> milliseconds. If the connection has been disconnected, this function returns true; otherwise it returns false. In the case where it returns false, you can call <a href="qllcpsocket.html#error">error</a>() to determine the cause of the error.</p>
+<p>If msecs is -1, this function will not time out.</p>
+<!-- @@@waitForDisconnected -->
+<!-- $$$waitForReadyRead[overload1]$$$waitForReadyReadint -->
+<h3 class="fn"><a name="waitForReadyRead"></a>bool QLlcpSocket::waitForReadyRead ( int <i>msecs</i> = 30000 )<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="http://qt.nokia.com/doc/4.7/qiodevice.html#waitForReadyRead">QIODevice::waitForReadyRead</a>().</p>
+<!-- @@@waitForReadyRead -->
+<!-- $$$writeDatagram[overload1]$$$writeDatagramconstchar*qint64 -->
+<h3 class="fn"><a name="writeDatagram"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> QLlcpSocket::writeDatagram ( const char * <i>data</i>, <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> <i>size</i> )</h3>
+<p>Sends the datagram at <i>data</i> of size <i>size</i> to the service that this socket is connected to. Returns the number of bytes sent on success; otherwise return -1;</p>
+<!-- @@@writeDatagram -->
+<!-- $$$writeDatagram$$$writeDatagramconstchar*qint64QNearFieldTarget*quint8 -->
+<h3 class="fn"><a name="writeDatagram-2"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> QLlcpSocket::writeDatagram ( const char * <i>data</i>, <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> <i>size</i>, <a href="qnearfieldtarget.html">QNearFieldTarget</a> * <i>target</i>, <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#quint8-typedef">quint8</a> <i>port</i> )</h3>
+<p>Sends the datagram at <i>data</i> of size <i>size</i> to the service identified by the URI <i>port</i> on <i>target</i>. Returns the number of bytes sent on success; otherwise returns -1.</p>
+<p>See also <a href="qllcpsocket.html#readDatagram">readDatagram</a>().</p>
+<!-- @@@writeDatagram -->
+<!-- $$$writeDatagram$$$writeDatagramconstQByteArray& -->
+<h3 class="fn"><a name="writeDatagram-3"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> QLlcpSocket::writeDatagram ( const <a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a> &amp; <i>datagram</i> )</h3>
+<p>This is an overloaded function.</p>
+<p>Sends the datagram <i>datagram</i> to the service that this socket is connected to.</p>
+<!-- @@@writeDatagram -->
+<!-- $$$writeDatagram$$$writeDatagramconstQByteArray&QNearFieldTarget*quint8 -->
+<h3 class="fn"><a name="writeDatagram-4"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qint64-typedef">qint64</a> QLlcpSocket::writeDatagram ( const <a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a> &amp; <i>datagram</i>, <a href="qnearfieldtarget.html">QNearFieldTarget</a> * <i>target</i>, <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#quint8-typedef">quint8</a> <i>port</i> )</h3>
+<p>This is an overloaded function.</p>
+<p>Sends the datagram <i>datagram</i> to the service identified by the URI <i>port</i> on <i>target</i>.</p>
+<!-- @@@writeDatagram -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

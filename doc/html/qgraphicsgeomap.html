@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgraphicsgeomap.cpp -->
+  <title>Qt 1.2: QGraphicsGeoMap Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QGraphicsGeoMap</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGraphicsGeoMap Class Reference</h1>
+<!-- $$$QGraphicsGeoMap-brief -->
+<p>The QGraphicsGeoMap class is used to display a map and manager the interactions between the user and the map. <a href="#details">More...</a></p>
+<!-- @@@QGraphicsGeoMap -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QGraphicsGeoMap&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html">QGraphicsWidget</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qgraphicsgeomap-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#ConnectivityMode-enum">ConnectivityMode</a></b> { NoConnectivity, OfflineMode, OnlineMode, HybridMode }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#MapType-enum">MapType</a></b> { NoMap, StreetMap, SatelliteMapDay, SatelliteMapNight, TerrainMap }</td></tr>
+</table>
+<a name="properties"></a>
+<h2>Properties</h2>
+<table class="propsummary">
+<tr><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qgraphicsgeomap.html#bearing-prop">bearing</a></b> : qreal</li>
+<li class="fn"><b><a href="qgraphicsgeomap.html#center-prop">center</a></b> : QGeoCoordinate</li>
+<li class="fn"><b><a href="qgraphicsgeomap.html#connectivityMode-prop">connectivityMode</a></b> : ConnectivityMode</li>
+<li class="fn"><b><a href="qgraphicsgeomap.html#mapType-prop">mapType</a></b> : MapType</li>
+<li class="fn"><b><a href="qgraphicsgeomap.html#maximumTilt-prop">maximumTilt</a></b> : const qreal</li>
+<li class="fn"><b><a href="qgraphicsgeomap.html#maximumZoomLevel-prop">maximumZoomLevel</a></b> : const qreal</li>
+</ul></td><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qgraphicsgeomap.html#minimumTilt-prop">minimumTilt</a></b> : const qreal</li>
+<li class="fn"><b><a href="qgraphicsgeomap.html#minimumZoomLevel-prop">minimumZoomLevel</a></b> : const qreal</li>
+<li class="fn"><b><a href="qgraphicsgeomap.html#supportsBearing-prop">supportsBearing</a></b> : const bool</li>
+<li class="fn"><b><a href="qgraphicsgeomap.html#supportsTilting-prop">supportsTilting</a></b> : const bool</li>
+<li class="fn"><b><a href="qgraphicsgeomap.html#tilt-prop">tilt</a></b> : qreal</li>
+<li class="fn"><b><a href="qgraphicsgeomap.html#zoomLevel-prop">zoomLevel</a></b> : qreal</li>
+</ul>
+</td></tr>
+</table>
+<ul>
+<li class="fn">14 properties inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html#properties">QGraphicsWidget</a></li>
+<li class="fn">12 properties inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsobject.html#properties">QGraphicsObject</a></li>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#QGraphicsGeoMap">QGraphicsGeoMap</a></b> ( QGeoMappingManager * <i>manager</i>, QGraphicsItem * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#dtor.QGraphicsGeoMap">~QGraphicsGeoMap</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#addMapObject">addMapObject</a></b> ( QGeoMapObject * <i>mapObject</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#addMapOverlay">addMapOverlay</a></b> ( QGeoMapOverlay * <i>overlay</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#bearing-prop">bearing</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#center-prop">center</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#clearMapObjects">clearMapObjects</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#clearMapOverlays">clearMapOverlays</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ConnectivityMode </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#connectivityMode-prop">connectivityMode</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#coordinateToScreenPosition">coordinateToScreenPosition</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#fitInViewport">fitInViewport</a></b> ( const QGeoBoundingBox &amp; <i>bounds</i>, bool <i>preserveViewportCenter</i> = false )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QGeoMapObject *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#mapObjects">mapObjects</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QGeoMapObject *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#mapObjectsAtScreenPosition">mapObjectsAtScreenPosition</a></b> ( const QPointF &amp; <i>screenPosition</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QGeoMapObject *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#mapObjectsInScreenRect">mapObjectsInScreenRect</a></b> ( const QRectF &amp; <i>screenRect</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QGeoMapObject *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#mapObjectsInViewport">mapObjectsInViewport</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QGeoMapOverlay *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#mapOverlays">mapOverlays</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> MapType </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#mapType-prop">mapType</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#maximumTilt-prop">maximumTilt</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#maximumZoomLevel-prop">maximumZoomLevel</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#minimumTilt-prop">minimumTilt</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#minimumZoomLevel-prop">minimumZoomLevel</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#removeMapObject">removeMapObject</a></b> ( QGeoMapObject * <i>mapObject</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#removeMapOverlay">removeMapOverlay</a></b> ( QGeoMapOverlay * <i>overlay</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#screenPositionToCoordinate">screenPositionToCoordinate</a></b> ( QPointF <i>screenPosition</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#bearing-prop">setBearing</a></b> ( qreal <i>bearing</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#center-prop">setCenter</a></b> ( const QGeoCoordinate &amp; <i>center</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#connectivityMode-prop">setConnectivityMode</a></b> ( ConnectivityMode <i>connectivityMode</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#mapType-prop">setMapType</a></b> ( MapType <i>mapType</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#tilt-prop">setTilt</a></b> ( qreal <i>tilt</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#zoomLevel-prop">setZoomLevel</a></b> ( qreal <i>zoomLevel</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;ConnectivityMode&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#supportedConnectivityModes">supportedConnectivityModes</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;MapType&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#supportedMapTypes">supportedMapTypes</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#supportsBearing-prop">supportsBearing</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#supportsCustomMapObjects">supportsCustomMapObjects</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#supportsTilting-prop">supportsTilting</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#tilt-prop">tilt</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoBoundingBox </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#viewport">viewport</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#zoomLevel-prop">zoomLevel</a></b> () const</td></tr>
+</table>
+<a name="reimplemented-public-functions"></a>
+<h2>Reimplemented Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#paint">paint</a></b> ( QPainter * <i>painter</i>, const QStyleOptionGraphicsItem * <i>option</i>, QWidget * <i>parent</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QPainterPath </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#shape">shape</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">53 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html#public-functions">QGraphicsWidget</a></li>
+<li class="fn">2 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsobject.html#public-functions">QGraphicsObject</a></li>
+<li class="fn">35 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicslayoutitem.html#public-functions">QGraphicsLayoutItem</a></li>
+<li class="fn">177 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#public-functions">QGraphicsItem</a></li>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2>Public Slots</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#pan">pan</a></b> ( int <i>dx</i>, int <i>dy</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html#public-slots">QGraphicsWidget</a></li>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#bearingChanged">bearingChanged</a></b> ( qreal <i>bearing</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#centerChanged">centerChanged</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#connectivityModeChanged">connectivityModeChanged</a></b> ( QGraphicsGeoMap::ConnectivityMode <i>connectivityMode</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#mapTypeChanged">mapTypeChanged</a></b> ( QGraphicsGeoMap::MapType <i>mapType</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#tiltChanged">tiltChanged</a></b> ( qreal <i>tilt</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#zoomLevelChanged">zoomLevelChanged</a></b> ( qreal <i>zoomLevel</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html#signals">QGraphicsWidget</a></li>
+<li class="fn">9 signals inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsobject.html#signals">QGraphicsObject</a></li>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="reimplemented-protected-functions"></a>
+<h2>Reimplemented Protected Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#resizeEvent">resizeEvent</a></b> ( QGraphicsSceneResizeEvent * <i>event</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">24 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html#protected-functions">QGraphicsWidget</a></li>
+<li class="fn">3 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicslayoutitem.html#protected-functions">QGraphicsLayoutItem</a></li>
+<li class="fn">24 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#protected-functions">QGraphicsItem</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html#public-variables">QGraphicsWidget</a></li>
+<li class="fn">2 public variables inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#public-variables">QGraphicsItem</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">1 static public member inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html#static-public-members">QGraphicsWidget</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">24 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html#protected-functions">QGraphicsWidget</a></li>
+<li class="fn">3 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicslayoutitem.html#protected-functions">QGraphicsLayoutItem</a></li>
+<li class="fn">24 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#protected-functions">QGraphicsItem</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">1 protected slot inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsobject.html#protected-slots">QGraphicsObject</a></li>
+<li class="fn">1 protected type inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicslayoutitem.html#protected-variables">QGraphicsLayoutItem</a></li>
+<li class="fn">1 protected type inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#protected-variables">QGraphicsItem</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QGraphicsGeoMap-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QGraphicsGeoMap class is used to display a map and manager the interactions between the user and the map.</p>
+<p>Most of the functionality is provided by <a href="qgeomappingmanager.html">QGeoMappingManager</a>, which handles most aspects of the display.</p>
+<p>The map viewport can be panned, the zoom level can be changed and the center coordinate of the viewport can be set explicitly.</p>
+<p>The <a href="qgraphicsgeomap.html#screenPositionToCoordinate">screenPositionToCoordinate</a>() and coordinateToScreenPoisition() functions can be used to convert between positions on the screen and global coordinates.</p>
+<p>Mouse and keyboard events should be handled by subclassing QGraphicsGeoMap and providing implementations of the event handling functions present in <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html">QGraphicsWidget</a>.</p>
+</div>
+<!-- @@@QGraphicsGeoMap -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$ConnectivityMode$$$NoConnectivity$$$OfflineMode$$$OnlineMode$$$HybridMode -->
+<h3 class="fn"><a name="ConnectivityMode-enum"></a>enum QGraphicsGeoMap::ConnectivityMode</h3>
+<p>Describes the method of obtaining the mapping data.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QGraphicsGeoMap::NoConnectivity</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">There is no map data.</td></tr>
+<tr><td  class="topAlign"><tt>QGraphicsGeoMap::OfflineMode</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">The map data will come from an offline source.</td></tr>
+<tr><td  class="topAlign"><tt>QGraphicsGeoMap::OnlineMode</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">The map data will come from an online source.</td></tr>
+<tr><td  class="topAlign"><tt>QGraphicsGeoMap::HybridMode</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">The map data will come from a combination of offline and online sources.</td></tr>
+</table>
+<!-- @@@ConnectivityMode -->
+<!-- $$$MapType$$$NoMap$$$StreetMap$$$SatelliteMapDay$$$SatelliteMapNight$$$TerrainMap -->
+<h3 class="fn"><a name="MapType-enum"></a>enum QGraphicsGeoMap::MapType</h3>
+<p>Describes a type of map data.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QGraphicsGeoMap::NoMap</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Indicates a lack of map valid data.</td></tr>
+<tr><td  class="topAlign"><tt>QGraphicsGeoMap::StreetMap</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">The map data is a graphical representation of streets and building boundaries.</td></tr>
+<tr><td  class="topAlign"><tt>QGraphicsGeoMap::SatelliteMapDay</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">The map data is composed of images collected by satellites during the daytime.</td></tr>
+<tr><td  class="topAlign"><tt>QGraphicsGeoMap::SatelliteMapNight</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">The map data is composed of images collected by satellites during the nighttime.</td></tr>
+<tr><td  class="topAlign"><tt>QGraphicsGeoMap::TerrainMap</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">The map data is a graphical representation of terrain features. This may also include some of the information provided by QGraphicsGeoMap::StreetMap.</td></tr>
+</table>
+<!-- @@@MapType -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$bearing-prop$$$bearing$$$setBearingqreal$$$bearingChangedqreal -->
+<h3 class="fn"><a name="bearing-prop"></a>bearing : <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds this property holds the bearing of the map.</p>
+<p>Value in degrees where 0 is equivalent to 90 degrees between view and earth's surface i.e&#x2e; looking straight down to earth.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>bearing</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setBearing</b> ( qreal <i>bearing</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#bearingChanged">bearingChanged</a></b> ( qreal <i>bearing</i> )</td></tr>
+</table>
+<!-- @@@bearing -->
+<!-- $$$center-prop$$$center$$$setCenterconstQGeoCoordinate&$$$centerChangedconstQGeoCoordinate& -->
+<h3 class="fn"><a name="center-prop"></a>center : <a href="qgeocoordinate.html">QGeoCoordinate</a></h3>
+<p>This property holds this property holds the coordinate at the center of the map viewport.</p>
+<p>Panning the map can be more efficient than changing the center by small increments.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b>center</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setCenter</b> ( const QGeoCoordinate &amp; <i>center</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#centerChanged">centerChanged</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i> )</td></tr>
+</table>
+<!-- @@@center -->
+<!-- $$$connectivityMode-prop$$$connectivityMode$$$setConnectivityModeConnectivityMode$$$connectivityModeChangedQGraphicsGeoMap::ConnectivityMode -->
+<h3 class="fn"><a name="connectivityMode-prop"></a>connectivityMode : <a href="qgraphicsgeomap.html#ConnectivityMode-enum">ConnectivityMode</a></h3>
+<p>This property holds this property holds the connectivity mode used to obtain the map data.</p>
+<p>Setting connectivityMode to a mode not present in <a href="qgraphicsgeomap.html#supportedConnectivityModes">supportedConnectivityModes</a>() will do nothing.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> ConnectivityMode </td><td class="memItemRight bottomAlign"><b>connectivityMode</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setConnectivityMode</b> ( ConnectivityMode <i>connectivityMode</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#connectivityModeChanged">connectivityModeChanged</a></b> ( QGraphicsGeoMap::ConnectivityMode <i>connectivityMode</i> )</td></tr>
+</table>
+<!-- @@@connectivityMode -->
+<!-- $$$mapType-prop$$$mapType$$$setMapTypeMapType$$$mapTypeChangedQGraphicsGeoMap::MapType -->
+<h3 class="fn"><a name="mapType-prop"></a>mapType : <a href="qgraphicsgeomap.html#MapType-enum">MapType</a></h3>
+<p>This property holds this property holds the type of map data displayed by the map.</p>
+<p>Setting mapType to a type not present in <a href="qgraphicsgeomap.html#supportedMapTypes">supportedMapTypes</a>() will do nothing.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> MapType </td><td class="memItemRight bottomAlign"><b>mapType</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setMapType</b> ( MapType <i>mapType</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#mapTypeChanged">mapTypeChanged</a></b> ( QGraphicsGeoMap::MapType <i>mapType</i> )</td></tr>
+</table>
+<!-- @@@mapType -->
+<!-- $$$maximumTilt-prop$$$maximumTilt -->
+<h3 class="fn"><a name="maximumTilt-prop"></a>maximumTilt : const <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds this property holds the maximum tilt supported by the QGeoMappingManager associated with this widget.</p>
+<p>Value in degrees where 0 is equivalent to 90 degrees between view and earth's surface i.e&#x2e; looking straight down to earth.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>maximumTilt</b> () const</td></tr>
+</table>
+<!-- @@@maximumTilt -->
+<!-- $$$maximumZoomLevel-prop$$$maximumZoomLevel -->
+<h3 class="fn"><a name="maximumZoomLevel-prop"></a>maximumZoomLevel : const <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds this property holds the maximum zoom level supported by the QGeoMappingManager associated with this widget.</p>
+<p>Larger values of the zoom level correspond to more detailed views of the map.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>maximumZoomLevel</b> () const</td></tr>
+</table>
+<!-- @@@maximumZoomLevel -->
+<!-- $$$minimumTilt-prop$$$minimumTilt -->
+<h3 class="fn"><a name="minimumTilt-prop"></a>minimumTilt : const <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds this property holds the minimum tilt supported by the QGeoMappingManager associated with this widget.</p>
+<p>Value in degrees where 0 is equivalent to 90 degrees between view and earth's surface i.e&#x2e; looking straight down to earth.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>minimumTilt</b> () const</td></tr>
+</table>
+<!-- @@@minimumTilt -->
+<!-- $$$minimumZoomLevel-prop$$$minimumZoomLevel -->
+<h3 class="fn"><a name="minimumZoomLevel-prop"></a>minimumZoomLevel : const <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds this property holds the minimum zoom level supported by the QGeoMappingManager associated with this widget.</p>
+<p>Larger values of the zoom level correspond to more detailed views of the map.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>minimumZoomLevel</b> () const</td></tr>
+</table>
+<!-- @@@minimumZoomLevel -->
+<!-- $$$supportsBearing-prop$$$supportsBearing -->
+<h3 class="fn"><a name="supportsBearing-prop"></a>supportsBearing : const bool</h3>
+<p>This property holds this property holds whether bearing is supported by the QGeoMappingManager associated with this widget.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><b>supportsBearing</b> () const</td></tr>
+</table>
+<!-- @@@supportsBearing -->
+<!-- $$$supportsTilting-prop$$$supportsTilting -->
+<h3 class="fn"><a name="supportsTilting-prop"></a>supportsTilting : const bool</h3>
+<p>This property holds this property holds whether tilting is supported by the QGeoMappingManager associated with this widget.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><b>supportsTilting</b> () const</td></tr>
+</table>
+<!-- @@@supportsTilting -->
+<!-- $$$tilt-prop$$$tilt$$$setTiltqreal$$$tiltChangedqreal -->
+<h3 class="fn"><a name="tilt-prop"></a>tilt : <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds this property holds the tilt of the map.</p>
+<p>Value in degrees where 0 is equivalent to 90 degrees between view and earth's surface i.e&#x2e; looking straight down to earth.</p>
+<p>If <i>tilt</i> is less than <a href="qgraphicsgeomap.html#minimumTilt-prop">minimumTilt</a>() then <a href="qgraphicsgeomap.html#minimumTilt-prop">minimumTilt</a>() will be used, and if <i>tilt</i> is larger than <a href="qgraphicsgeomap.html#maximumTilt-prop">maximumTilt</a>() then <a href="qgraphicsgeomap.html#maximumTilt-prop">maximumTilt</a>() will be used.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>tilt</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setTilt</b> ( qreal <i>tilt</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#tiltChanged">tiltChanged</a></b> ( qreal <i>tilt</i> )</td></tr>
+</table>
+<!-- @@@tilt -->
+<!-- $$$zoomLevel-prop$$$zoomLevel$$$setZoomLevelqreal$$$zoomLevelChangedqreal -->
+<h3 class="fn"><a name="zoomLevel-prop"></a>zoomLevel : <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds this property holds the zoom level of the map.</p>
+<p>Larger values of the zoom level correspond to more detailed views of the map.</p>
+<p>If zoomLevel is less than <a href="qgraphicsgeomap.html#minimumZoomLevel-prop">minimumZoomLevel</a> then <a href="qgraphicsgeomap.html#minimumZoomLevel-prop">minimumZoomLevel</a> will be used, and if zoomLevel is larger than <a href="qgraphicsgeomap.html#maximumZoomLevel-prop">maximumZoomLevel</a> then <a href="qgraphicsgeomap.html#maximumZoomLevel-prop">maximumZoomLevel</a> will be used.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>zoomLevel</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setZoomLevel</b> ( qreal <i>zoomLevel</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsgeomap.html#zoomLevelChanged">zoomLevelChanged</a></b> ( qreal <i>zoomLevel</i> )</td></tr>
+</table>
+<!-- @@@zoomLevel -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QGraphicsGeoMap[overload1]$$$QGraphicsGeoMapQGeoMappingManager*QGraphicsItem* -->
+<h3 class="fn"><a name="QGraphicsGeoMap"></a>QGraphicsGeoMap::QGraphicsGeoMap ( <a href="qgeomappingmanager.html">QGeoMappingManager</a> * <i>manager</i>, <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0 )</h3>
+<p>Creates a new mapping widget, with the mapping operations managed by <i>manager</i>, and the specified <i>parent</i>.</p>
+<p>Note that the <i>manager</i> will typically be accessed from an instance of <a href="qgeoserviceprovider.html">QGeoServiceProvider</a>:</p>
+<pre class="highlightedCode brush: cpp"> QGeoServiceProvider serviceProvider(&quot;nokia&quot;);
+ QGeoMappingManager *manager = serviceProvider.mappingManager();
+ QGraphicsGeoMap *widget = new QGraphicsGeoMap(manager);</pre>
+<!-- @@@QGraphicsGeoMap -->
+<!-- $$$~QGraphicsGeoMap[overload1]$$$~QGraphicsGeoMap -->
+<h3 class="fn"><a name="dtor.QGraphicsGeoMap"></a>QGraphicsGeoMap::~QGraphicsGeoMap ()<tt> [virtual]</tt></h3>
+<p>Destroys this map widget.</p>
+<!-- @@@~QGraphicsGeoMap -->
+<!-- $$$addMapObject[overload1]$$$addMapObjectQGeoMapObject* -->
+<h3 class="fn"><a name="addMapObject"></a>void QGraphicsGeoMap::addMapObject ( <a href="qgeomapobject.html">QGeoMapObject</a> * <i>mapObject</i> )</h3>
+<p>Adds <i>mapObject</i> to the list of map objects managed by this widget.</p>
+<p>If <i>mapObject</i> is within the viewport of the map and <a href="qgeomapobject.html#visible-prop">QGeoMapObject::isVisible</a>() returns true then the map will display the map object immediately.</p>
+<p>The map will take ownership of the <i>mapObject</i>.</p>
+<p>If supportsCustomMapObject() returns false and <i>mapObject</i> is a custom map object then <i>mapObject</i> will not be added to the map.</p>
+<!-- @@@addMapObject -->
+<!-- $$$addMapOverlay[overload1]$$$addMapOverlayQGeoMapOverlay* -->
+<h3 class="fn"><a name="addMapOverlay"></a>void QGraphicsGeoMap::addMapOverlay ( <a href="qgeomapoverlay.html">QGeoMapOverlay</a> * <i>overlay</i> )</h3>
+<p>Adds <i>overlay</i> to the list of map overlays associated with this map.</p>
+<p>The overlays will be drawn in the order in which they were added.</p>
+<p>The map will take ownership of <i>overlay</i>.</p>
+<!-- @@@addMapOverlay -->
+<!-- $$$bearingChanged[overload1]$$$bearingChangedqreal -->
+<h3 class="fn"><a name="bearingChanged"></a>void QGraphicsGeoMap::bearingChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>bearing</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the bearing of the map changes.</p>
+<p>The new value is <i>bearing</i>.</p>
+<!-- @@@bearingChanged -->
+<!-- $$$centerChanged[overload1]$$$centerChangedconstQGeoCoordinate& -->
+<h3 class="fn"><a name="centerChanged"></a>void QGraphicsGeoMap::centerChanged ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>coordinate</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the center of the map changes.</p>
+<p>The new value is <i>coordinate</i>.</p>
+<!-- @@@centerChanged -->
+<!-- $$$clearMapObjects[overload1]$$$clearMapObjects -->
+<h3 class="fn"><a name="clearMapObjects"></a>void QGraphicsGeoMap::clearMapObjects ()</h3>
+<p>Clears the map objects associated with this map.</p>
+<p>The map objects will be deleted.</p>
+<!-- @@@clearMapObjects -->
+<!-- $$$clearMapOverlays[overload1]$$$clearMapOverlays -->
+<h3 class="fn"><a name="clearMapOverlays"></a>void QGraphicsGeoMap::clearMapOverlays ()</h3>
+<p>Clears the map overlays associated with this map.</p>
+<p>The map overlays will be deleted.</p>
+<!-- @@@clearMapOverlays -->
+<!-- $$$connectivityModeChanged[overload1]$$$connectivityModeChangedQGraphicsGeoMap::ConnectivityMode -->
+<h3 class="fn"><a name="connectivityModeChanged"></a>void QGraphicsGeoMap::connectivityModeChanged ( <a href="qgraphicsgeomap.html#ConnectivityMode-enum">QGraphicsGeoMap::ConnectivityMode</a> <i>connectivityMode</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the connectivity mode used to fetch the map data changes.</p>
+<p>The new value is <i>connectivityMode</i>.</p>
+<!-- @@@connectivityModeChanged -->
+<!-- $$$coordinateToScreenPosition[overload1]$$$coordinateToScreenPositionconstQGeoCoordinate& -->
+<h3 class="fn"><a name="coordinateToScreenPosition"></a><a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a> QGraphicsGeoMap::coordinateToScreenPosition ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>coordinate</i> ) const</h3>
+<p>Returns the position on the screen at which <i>coordinate</i> is displayed.</p>
+<p>An invalid <a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a> will be returned if <i>coordinate</i> is invalid or is not within the current viewport.</p>
+<!-- @@@coordinateToScreenPosition -->
+<!-- $$$fitInViewport[overload1]$$$fitInViewportconstQGeoBoundingBox&bool -->
+<h3 class="fn"><a name="fitInViewport"></a>void QGraphicsGeoMap::fitInViewport ( const <a href="qgeoboundingbox.html">QGeoBoundingBox</a> &amp; <i>bounds</i>, bool <i>preserveViewportCenter</i> = false )</h3>
+<p>Attempts to fit the bounding box <i>bounds</i> into the viewport of the map.</p>
+<p>This method will change the zoom level to the maximum zoom level such that all of <i>bounds</i> is visible within the resulting viewport.</p>
+<p>If <i>preserveViewportCenter</i> is false the map will be centered on the bounding box <i>bounds</i> before the zoom level is changed, otherwise the center of the map will not be changed.</p>
+<!-- @@@fitInViewport -->
+<!-- $$$mapObjects[overload1]$$$mapObjects -->
+<h3 class="fn"><a name="mapObjects"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgeomapobject.html">QGeoMapObject</a> *&gt; QGraphicsGeoMap::mapObjects () const</h3>
+<p>Returns the map objects associated with this map.</p>
+<!-- @@@mapObjects -->
+<!-- $$$mapObjectsAtScreenPosition[overload1]$$$mapObjectsAtScreenPositionconstQPointF& -->
+<h3 class="fn"><a name="mapObjectsAtScreenPosition"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgeomapobject.html">QGeoMapObject</a> *&gt; QGraphicsGeoMap::mapObjectsAtScreenPosition ( const <a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a> &amp; <i>screenPosition</i> ) const</h3>
+<p>Returns the list of visible map objects managed by this widget which contain the point <i>screenPosition</i> within their boundaries.</p>
+<!-- @@@mapObjectsAtScreenPosition -->
+<!-- $$$mapObjectsInScreenRect[overload1]$$$mapObjectsInScreenRectconstQRectF& -->
+<h3 class="fn"><a name="mapObjectsInScreenRect"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgeomapobject.html">QGeoMapObject</a> *&gt; QGraphicsGeoMap::mapObjectsInScreenRect ( const <a href="http://qt.nokia.com/doc/4.7/qrectf.html">QRectF</a> &amp; <i>screenRect</i> ) const</h3>
+<p>Returns the list of visible map objects managed by this widget which are displayed at least partially within the on screen rectangle <i>screenRect</i>.</p>
+<!-- @@@mapObjectsInScreenRect -->
+<!-- $$$mapObjectsInViewport[overload1]$$$mapObjectsInViewport -->
+<h3 class="fn"><a name="mapObjectsInViewport"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgeomapobject.html">QGeoMapObject</a> *&gt; QGraphicsGeoMap::mapObjectsInViewport () const</h3>
+<p>Returns the list of visible map objects manager by this widget which are displayed at least partially within the viewport of the map.</p>
+<!-- @@@mapObjectsInViewport -->
+<!-- $$$mapOverlays[overload1]$$$mapOverlays -->
+<h3 class="fn"><a name="mapOverlays"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgeomapoverlay.html">QGeoMapOverlay</a> *&gt; QGraphicsGeoMap::mapOverlays () const</h3>
+<p>Returns the map overlays associated with this map.</p>
+<!-- @@@mapOverlays -->
+<!-- $$$mapTypeChanged[overload1]$$$mapTypeChangedQGraphicsGeoMap::MapType -->
+<h3 class="fn"><a name="mapTypeChanged"></a>void QGraphicsGeoMap::mapTypeChanged ( <a href="qgraphicsgeomap.html#MapType-enum">QGraphicsGeoMap::MapType</a> <i>mapType</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the map type changes.</p>
+<p>The new value is <i>mapType</i>.</p>
+<!-- @@@mapTypeChanged -->
+<!-- $$$paint[overload1]$$$paintQPainter*constQStyleOptionGraphicsItem*QWidget* -->
+<h3 class="fn"><a name="paint"></a>void QGraphicsGeoMap::paint ( <a href="http://qt.nokia.com/doc/4.7/qpainter.html">QPainter</a> * <i>painter</i>, const <a href="http://qt.nokia.com/doc/4.7/qstyleoptiongraphicsitem.html">QStyleOptionGraphicsItem</a> * <i>option</i>, <a href="http://qt.nokia.com/doc/4.7/qwidget.html">QWidget</a> * <i>parent</i> )<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#paint">QGraphicsItem::paint</a>().</p>
+<!-- @@@paint -->
+<!-- $$$pan[overload1]$$$panintint -->
+<h3 class="fn"><a name="pan"></a>void QGraphicsGeoMap::pan ( int <i>dx</i>, int <i>dy</i> )<tt> [slot]</tt></h3>
+<p>Pans the map view <i>dx</i> pixels in the x direction and <i>dy</i> pixels in the y direction.</p>
+<p>The x and y axes are specified in Graphics View Framework coordinates. By default this will mean that positive values of <i>dx</i> move the viewed area to the right and that positive values of <i>dy</i> move the viewed area down.</p>
+<p>After the panning has occurred the <a href="qgraphicsgeomap.html#centerChanged">centerChanged</a>() signal will be emitted.</p>
+<!-- @@@pan -->
+<!-- $$$removeMapObject[overload1]$$$removeMapObjectQGeoMapObject* -->
+<h3 class="fn"><a name="removeMapObject"></a>void QGraphicsGeoMap::removeMapObject ( <a href="qgeomapobject.html">QGeoMapObject</a> * <i>mapObject</i> )</h3>
+<p>Removes <i>mapObject</i> from the list of map objects managed by this widget.</p>
+<p>If <i>mapObject</i> is within the viewport of the map and <a href="qgeomapobject.html#visible-prop">QGeoMapObject::isVisible</a>() returns true then the map will stop displaying the map object immediately.</p>
+<p>The map will release ownership of the <i>mapObject</i>.</p>
+<!-- @@@removeMapObject -->
+<!-- $$$removeMapOverlay[overload1]$$$removeMapOverlayQGeoMapOverlay* -->
+<h3 class="fn"><a name="removeMapOverlay"></a>void QGraphicsGeoMap::removeMapOverlay ( <a href="qgeomapoverlay.html">QGeoMapOverlay</a> * <i>overlay</i> )</h3>
+<p>Removes <i>overlay</i> from the list of map overlays associated with this map.</p>
+<p>The map will release ownership of <i>overlay</i>.</p>
+<!-- @@@removeMapOverlay -->
+<!-- $$$resizeEvent[overload1]$$$resizeEventQGraphicsSceneResizeEvent* -->
+<h3 class="fn"><a name="resizeEvent"></a>void QGraphicsGeoMap::resizeEvent ( <a href="http://qt.nokia.com/doc/4.7/qgraphicssceneresizeevent.html">QGraphicsSceneResizeEvent</a> * <i>event</i> )<tt> [virtual protected]</tt></h3>
+<p>Reimplemented from <a href="http://qt.nokia.com/doc/4.7/qgraphicswidget.html#resizeEvent">QGraphicsWidget::resizeEvent</a>().</p>
+<!-- @@@resizeEvent -->
+<!-- $$$screenPositionToCoordinate[overload1]$$$screenPositionToCoordinateQPointF -->
+<h3 class="fn"><a name="screenPositionToCoordinate"></a><a href="qgeocoordinate.html">QGeoCoordinate</a> QGraphicsGeoMap::screenPositionToCoordinate ( <a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a> <i>screenPosition</i> ) const</h3>
+<p>Returns the coordinate corresponding to the point in the viewport at <i>screenPosition</i>.</p>
+<p>An invalid <a href="qgeocoordinate.html">QGeoCoordinate</a> will be returned if <i>screenPosition</i> is invalid or is not within the current viewport.</p>
+<!-- @@@screenPositionToCoordinate -->
+<!-- $$$shape[overload1]$$$shape -->
+<h3 class="fn"><a name="shape"></a><a href="http://qt.nokia.com/doc/4.7/qpainterpath.html">QPainterPath</a> QGraphicsGeoMap::shape () const<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#shape">QGraphicsItem::shape</a>().</p>
+<!-- @@@shape -->
+<!-- $$$supportedConnectivityModes[overload1]$$$supportedConnectivityModes -->
+<h3 class="fn"><a name="supportedConnectivityModes"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgraphicsgeomap.html#ConnectivityMode-enum">ConnectivityMode</a>&gt; QGraphicsGeoMap::supportedConnectivityModes () const</h3>
+<p>Returns the connectivity modes supported by the <a href="qgeomappingmanager.html">QGeoMappingManager</a> associated with this widget.</p>
+<!-- @@@supportedConnectivityModes -->
+<!-- $$$supportedMapTypes[overload1]$$$supportedMapTypes -->
+<h3 class="fn"><a name="supportedMapTypes"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgraphicsgeomap.html#MapType-enum">MapType</a>&gt; QGraphicsGeoMap::supportedMapTypes () const</h3>
+<p>Returns the map types supported by the <a href="qgeomappingmanager.html">QGeoMappingManager</a> associated with this widget.</p>
+<!-- @@@supportedMapTypes -->
+<!-- $$$supportsCustomMapObjects[overload1]$$$supportsCustomMapObjects -->
+<h3 class="fn"><a name="supportsCustomMapObjects"></a>bool QGraphicsGeoMap::supportsCustomMapObjects () const</h3>
+<p>Returns whether custom map objects are supported by this engine.</p>
+<p>Custom map objects are map objects based on <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> instances, which are hard to support in cases where the map rendering is not being performed by the Qt Graphics View framwork.</p>
+<!-- @@@supportsCustomMapObjects -->
+<!-- $$$tiltChanged[overload1]$$$tiltChangedqreal -->
+<h3 class="fn"><a name="tiltChanged"></a>void QGraphicsGeoMap::tiltChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>tilt</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the tilt of the map changes.</p>
+<p>The new value is <i>tilt</i>.</p>
+<!-- @@@tiltChanged -->
+<!-- $$$viewport[overload1]$$$viewport -->
+<h3 class="fn"><a name="viewport"></a><a href="qgeoboundingbox.html">QGeoBoundingBox</a> QGraphicsGeoMap::viewport () const</h3>
+<p>Returns a bounding box corresponding to the physical area displayed in the viewport of the map.</p>
+<p>The bounding box which is returned is defined by the upper left and lower right corners of the visible area of the map.</p>
+<!-- @@@viewport -->
+<!-- $$$zoomLevelChanged[overload1]$$$zoomLevelChangedqreal -->
+<h3 class="fn"><a name="zoomLevelChanged"></a>void QGraphicsGeoMap::zoomLevelChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>zoomLevel</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the zoom level of the map changes.</p>
+<p>The new value is <i>zoomLevel</i>.</p>
+<!-- @@@zoomLevelChanged -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

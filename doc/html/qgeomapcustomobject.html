@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgeomapcustomobject.cpp -->
+  <title>Qt 1.2: QGeoMapCustomObject Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QGeoMapCustomObject</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#units-and-coordinates">Units and coordinates</a></li>
+<li class="level2"><a href="#transform-methods">Transform methods</a></li>
+<li class="level2"><a href="#caveats">Caveats</a></li>
+</ul>
+</div>
+<h1 class="title">QGeoMapCustomObject Class Reference</h1>
+<!-- $$$QGeoMapCustomObject-brief -->
+<p>The QGeoMapCustomObject class is a <a href="qgeomapobject.html">QGeoMapObject</a> used to draw a pixmap on a map. <a href="#details">More...</a></p>
+<!-- @@@QGeoMapCustomObject -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QGeoMapCustomObject&gt;</pre><p>Inherits <a href="qgeomapobject.html">QGeoMapObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qgeomapcustomobject-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><a href="qgeomapcustomobject.html#graphicsItem-prop">graphicsItem</a></b> : QGraphicsItem *</li>
+<li class="fn"><b><a href="qgeomapcustomobject.html#offset-prop">offset</a></b> : QPoint</li>
+</ul>
+<ul>
+<li class="fn">6 properties inherited from <a href="qgeomapobject.html#properties">QGeoMapObject</a></li>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#QGeoMapCustomObject">QGeoMapCustomObject</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#QGeoMapCustomObject-2">QGeoMapCustomObject</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i>, const QPoint &amp; <i>offset</i> = QPoint( 0, 0 ) )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#dtor.QGeoMapCustomObject">~QGeoMapCustomObject</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGraphicsItem * </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#graphicsItem-prop">graphicsItem</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPoint </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#offset-prop">offset</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#graphicsItem-prop">setGraphicsItem</a></b> ( QGraphicsItem * <i>graphicsItem</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#offset-prop">setOffset</a></b> ( const QPoint &amp; <i>offset</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#setOrigin">setOrigin</a></b> ( const QGeoCoordinate &amp; <i>origin</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#setTransformType">setTransformType</a></b> ( const TransformType &amp; <i>type</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#setUnits">setUnits</a></b> ( const CoordinateUnit &amp; <i>unit</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#update">update</a></b> ()</td></tr>
+</table>
+<a name="reimplemented-public-functions"></a>
+<h2>Reimplemented Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QGeoMapObject::Type </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#type">type</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">15 public functions inherited from <a href="qgeomapobject.html#public-functions">QGeoMapObject</a></li>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#graphicsItemChanged">graphicsItemChanged</a></b> ( QGraphicsItem * <i>graphicsItem</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#offsetChanged">offsetChanged</a></b> ( const QPoint &amp; <i>offset</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#triggerUpdate">triggerUpdate</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">6 signals inherited from <a href="qgeomapobject.html#signals">QGeoMapObject</a></li>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">3 protected functions inherited from <a href="qgeomapobject.html#protected-functions">QGeoMapObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QGeoMapCustomObject-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QGeoMapCustomObject class is a <a href="qgeomapobject.html">QGeoMapObject</a> used to draw a pixmap on a map.</p>
+<p>Any arbitrary <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> can be associated with a QGeoMapCustomObject, and to this end it contains support for interpreting the coordinates of the <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> in a variety of different ways.</p>
+<p>For example, the following code creates a <a href="http://qt.nokia.com/doc/4.7/qgraphicsellipseitem.html">QGraphicsEllipseItem</a> and a QGeoMapCustomObject to display it. The EllipseItem extends from the origin point, out 20 meters to the east and 30 metres south.</p>
+<pre class="highlightedCode brush: cpp"> QGraphicsEllipseItem *ellipseItem = new QGraphicsEllipseItem;
+ ellipseItem-&gt;setRect(0, 0, 20, 30);
+
+ QGeoMapCustomObject *mapObject = new QGeoMapCustomObject;
+ mapObject-&gt;setGraphicsItem(ellipseItem);
+ mapObject-&gt;setUnits(QGeoMapObject::MeterUnit);
+ mapObject-&gt;setOrigin(QGeoCoordinate(-27.5796, 153.1));</pre>
+<a name="units-and-coordinates"></a>
+<h3>Units and coordinates</h3>
+<p>The local units and coordinates of the <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> are transformed onto the map based on the <i>units</i>, <i>origin</i>, <i>transformType</i> and <i>transform</i> properties. Several systems are available, including pixels, meters and seconds of arc.</p>
+<p>It should be noted that both pixel and meter coordinate systems are south- oriented (ie, positive Y axis faces south on the map). However, the RelativeArcSeconds unit system faces north to align with the standard latitude grid. The Y axis can be flipped if necessary by making use of the GraphicsItem's <i>transform</i> property</p>
+<pre class="highlightedCode brush: cpp"> QTransform northFlip;
+ northFlip.scale(0, -1);
+
+ ellipseItem-&gt;setTransform(northFlip);</pre>
+<a name="transform-methods"></a>
+<h3>Transform methods</h3>
+<p>Normally, the GraphicsItem will be transformed into map coordinates using a bilinear interpolation. Another option is the <a href="qgeomapobject.html#TransformType-enum">ExactTransform</a>, which converts the GraphicsItem exactly into map coordinates, but is only available for certain subclasses of <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a>. Other interpolation methods may be provided in future for greater accuracy near poles and in different map projections, without the limitations of <a href="qgeomapobject.html#TransformType-enum">ExactTransform</a>.</p>
+<p>Calling <a href="qgeomapcustomobject.html#setUnits">setUnits</a>() or setting the units property will result in the default value of <a href="qgeomapobject.html#transformType-prop">transformType</a> being restored. See <a href="qgeomapobject.html#transformType-prop">QGeoMapObject::transformType</a> for more details.</p>
+<a name="caveats"></a>
+<h3>Caveats</h3>
+<p>Other than the coordinate system features, there are a few differences with using QGraphicsItems on a map compared to using them on a standard <a href="http://qt.nokia.com/doc/4.7/qgraphicsscene.html">QGraphicsScene</a>. One of the most important of these is the use of the <i>update()</i> function. When an application changes anything that has an effect upon the appearance, size, shape etc of the <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a>, it must call <i>QGeoMapCustomObject::update()</i> to ensure that the map is updated.</p>
+<p>Another is the use of child items of a <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a>. These are supported in more or less the same manner as in <a href="http://qt.nokia.com/doc/4.7/qgraphicsscene.html">QGraphicsScene</a>, with the exception of use in concert with <i>ExactTransform</i> -- any object with <a href="qgeomapobject.html#transformType-prop">transformType</a> set to <i>ExactTransform</i> will not have children of its <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> drawn on the map.</p>
+</div>
+<!-- @@@QGeoMapCustomObject -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$graphicsItem-prop$$$graphicsItem$$$setGraphicsItemQGraphicsItem*$$$graphicsItemChangedQGraphicsItem* -->
+<h3 class="fn"><a name="graphicsItem-prop"></a>graphicsItem : <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> *</h3>
+<p>This property holds this property holds the graphics item which will be drawn by this custom object.</p>
+<p>If the graphics item is 0 then nothing will be drawn.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QGraphicsItem * </td><td class="memItemRight bottomAlign"><b>graphicsItem</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setGraphicsItem</b> ( QGraphicsItem * <i>graphicsItem</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#graphicsItemChanged">graphicsItemChanged</a></b> ( QGraphicsItem * <i>graphicsItem</i> )</td></tr>
+</table>
+<!-- @@@graphicsItem -->
+<!-- $$$offset-prop$$$offset$$$setOffsetconstQPoint&$$$offsetChangedconstQPoint& -->
+<h3 class="fn"><a name="offset-prop"></a>offset : <a href="http://qt.nokia.com/doc/4.7/qpoint.html">QPoint</a></h3>
+<p>This property holds this property holds the offset in pixels at which the graphics item will be drawn by this custom object.</p>
+<p>The default value of this property is <a href="http://qt.nokia.com/doc/4.7/qpoint.html">QPoint</a>(0, 0). If this value is not changed the upper left coordinate of the graphics item will be drawn at the coordinate specified by QGeoMapCustomObject::coordinate.</p>
+<p>The offset is in pixels and is independent of the zoom level of the map.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QPoint </td><td class="memItemRight bottomAlign"><b>offset</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setOffset</b> ( const QPoint &amp; <i>offset</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapcustomobject.html#offsetChanged">offsetChanged</a></b> ( const QPoint &amp; <i>offset</i> )</td></tr>
+</table>
+<!-- @@@offset -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QGeoMapCustomObject[overload1]$$$QGeoMapCustomObject -->
+<h3 class="fn"><a name="QGeoMapCustomObject"></a>QGeoMapCustomObject::QGeoMapCustomObject ()</h3>
+<p>Constructs a new custom object.</p>
+<!-- @@@QGeoMapCustomObject -->
+<!-- $$$QGeoMapCustomObject$$$QGeoMapCustomObjectconstQGeoCoordinate&constQPoint& -->
+<h3 class="fn"><a name="QGeoMapCustomObject-2"></a>QGeoMapCustomObject::QGeoMapCustomObject ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>coordinate</i>, const <a href="http://qt.nokia.com/doc/4.7/qpoint.html">QPoint</a> &amp; <i>offset</i> = QPoint( 0, 0 ) )</h3>
+<p>Constructs a new custom object which will draw a <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> at an offset of <i>offset</i> pixels from the coordinate <i>coordinate</i>.</p>
+<!-- @@@QGeoMapCustomObject -->
+<!-- $$$~QGeoMapCustomObject[overload1]$$$~QGeoMapCustomObject -->
+<h3 class="fn"><a name="dtor.QGeoMapCustomObject"></a>QGeoMapCustomObject::~QGeoMapCustomObject ()</h3>
+<p>Destroys this custom object.</p>
+<!-- @@@~QGeoMapCustomObject -->
+<!-- $$$graphicsItemChanged[overload1]$$$graphicsItemChangedQGraphicsItem* -->
+<h3 class="fn"><a name="graphicsItemChanged"></a>void QGeoMapCustomObject::graphicsItemChanged ( <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a> * <i>graphicsItem</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the graphics item which this custom object draws is changed.</p>
+<p>The new value will be <i>graphicsItem</i>.</p>
+<!-- @@@graphicsItemChanged -->
+<!-- $$$offsetChanged[overload1]$$$offsetChangedconstQPoint& -->
+<h3 class="fn"><a name="offsetChanged"></a>void QGeoMapCustomObject::offsetChanged ( const <a href="http://qt.nokia.com/doc/4.7/qpoint.html">QPoint</a> &amp; <i>offset</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the on-screen offset from the coordinate at which this custom object should be drawn has changed.</p>
+<p>The new value will be <i>offset</i>.</p>
+<!-- @@@offsetChanged -->
+<!-- $$$setOrigin[overload1]$$$setOriginconstQGeoCoordinate& -->
+<h3 class="fn"><a name="setOrigin"></a>void QGeoMapCustomObject::setOrigin ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>origin</i> )</h3>
+<p>Sets the origin of the object to <i>origin</i>.</p>
+<!-- @@@setOrigin -->
+<!-- $$$setTransformType[overload1]$$$setTransformTypeconstTransformType& -->
+<h3 class="fn"><a name="setTransformType"></a>void QGeoMapCustomObject::setTransformType ( const <a href="qgeomapobject.html#TransformType-enum">TransformType</a> &amp; <i>type</i> )</h3>
+<p>Sets the transform type of the object to <i>type</i>.</p>
+<!-- @@@setTransformType -->
+<!-- $$$setUnits[overload1]$$$setUnitsconstCoordinateUnit& -->
+<h3 class="fn"><a name="setUnits"></a>void QGeoMapCustomObject::setUnits ( const <a href="qgeomapobject.html#CoordinateUnit-enum">CoordinateUnit</a> &amp; <i>unit</i> )</h3>
+<p>Sets the coordinate units of the object to <i>unit</i>.</p>
+<p>Note that setting this property will reset the <a href="qgeomapobject.html#transformType-prop">transformType</a> property to the default for the units given. For <a href="qgeomapobject.html#CoordinateUnit-enum">PixelUnit</a>, this is <a href="qgeomapobject.html#TransformType-enum">ExactTransform</a>, and for all others, <a href="qgeomapobject.html#TransformType-enum">BilinearTransform</a>.</p>
+<!-- @@@setUnits -->
+<!-- $$$triggerUpdate[overload1]$$$triggerUpdate -->
+<h3 class="fn"><a name="triggerUpdate"></a>void QGeoMapCustomObject::triggerUpdate ()<tt> [signal]</tt></h3>
+<!-- @@@triggerUpdate -->
+<!-- $$$type[overload1]$$$type -->
+<h3 class="fn"><a name="type"></a><a href="qgeomapobject.html#Type-enum">QGeoMapObject::Type</a> QGeoMapCustomObject::type () const<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="qgeomapobject.html#type">QGeoMapObject::type</a>().</p>
+<!-- @@@type -->
+<!-- $$$update[overload1]$$$update -->
+<h3 class="fn"><a name="update"></a>void QGeoMapCustomObject::update ()</h3>
+<!-- @@@update -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

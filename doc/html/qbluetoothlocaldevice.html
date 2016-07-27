@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qbluetoothlocaldevice.cpp -->
+  <title>Qt 1.2: QBluetoothLocalDevice Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtconnectivity.html">QtConnectivity</a></li>
+              <li>QBluetoothLocalDevice</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QBluetoothLocalDevice Class Reference</h1>
+<!-- $$$QBluetoothLocalDevice-brief -->
+<p>The QBluetoothLocalDevice class provides access to local Bluetooth devices. <a href="#details">More...</a></p>
+<!-- @@@QBluetoothLocalDevice -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QBluetoothLocalDevice&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qbluetoothlocaldevice-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#Error-enum">Error</a></b> { NoError, PairingError, UnknownError }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#HostMode-enum">HostMode</a></b> { HostPoweredOff, HostConnectable, HostDiscoverable, HostDiscoverableLimitedInquiry }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#Pairing-enum">Pairing</a></b> { Unpaired, Paired, AuthorizedPaired }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#QBluetoothLocalDevice">QBluetoothLocalDevice</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#QBluetoothLocalDevice-2">QBluetoothLocalDevice</a></b> ( const QBluetoothAddress &amp; <i>address</i>, QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#dtor.QBluetoothLocalDevice">~QBluetoothLocalDevice</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBluetoothAddress </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#address">address</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> HostMode </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#hostMode">hostMode</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#isValid">isValid</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#name">name</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Pairing </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#pairingStatus">pairingStatus</a></b> ( const QBluetoothAddress &amp; <i>address</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#powerOn">powerOn</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#requestPairing">requestPairing</a></b> ( const QBluetoothAddress &amp; <i>address</i>, Pairing <i>pairing</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#setHostMode">setHostMode</a></b> ( QBluetoothLocalDevice::HostMode <i>mode</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2>Public Slots</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#pairingConfirmation">pairingConfirmation</a></b> ( bool <i>accept</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#error">error</a></b> ( QBluetoothLocalDevice::Error <i>error</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#hostModeStateChanged">hostModeStateChanged</a></b> ( QBluetoothLocalDevice::HostMode <i>state</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#pairingDisplayConfirmation">pairingDisplayConfirmation</a></b> ( const QBluetoothAddress &amp; <i>address</i>, QString <i>pin</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#pairingDisplayPinCode">pairingDisplayPinCode</a></b> ( const QBluetoothAddress &amp; <i>address</i>, QString <i>pin</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#pairingFinished">pairingFinished</a></b> ( const QBluetoothAddress &amp; <i>address</i>, QBluetoothLocalDevice::Pairing <i>pairing</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QBluetoothHostInfo&gt; </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothlocaldevice.html#allDevices">allDevices</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QBluetoothLocalDevice-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QBluetoothLocalDevice class provides access to local Bluetooth devices.</p>
+<p>QBluetoothLocalDevice provides functions for getting and setting the state of local Bluetooth devices.</p>
+</div>
+<!-- @@@QBluetoothLocalDevice -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Error$$$NoError$$$PairingError$$$UnknownError -->
+<h3 class="fn"><a name="Error-enum"></a>enum QBluetoothLocalDevice::Error</h3>
+<p>This enum describes errors that maybe returned</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QBluetoothLocalDevice::NoError</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">No known error</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothLocalDevice::PairingError</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Error in pairing</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothLocalDevice::UnknownError</tt></td><td class=" topAlign"><tt>100</tt></td><td  class="topAlign">Unknown error</td></tr>
+</table>
+<!-- @@@Error -->
+<!-- $$$HostMode$$$HostPoweredOff$$$HostConnectable$$$HostDiscoverable$$$HostDiscoverableLimitedInquiry -->
+<h3 class="fn"><a name="HostMode-enum"></a>enum QBluetoothLocalDevice::HostMode</h3>
+<p>This enum describes the most of the local Bluetooth device.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QBluetoothLocalDevice::HostPoweredOff</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Powers the device down</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothLocalDevice::HostConnectable</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Remote Bluetooth devices can connect to the local Bluetooth device if they have previously been paired with it or otherwise know its address. This powers up the device if it was powered off.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothLocalDevice::HostDiscoverable</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Remote Bluetooth devices can discover the presence of the local Bluetooth device. The device will also be connectable, and powered on.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothLocalDevice::HostDiscoverableLimitedInquiry</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">Remote Bluetooth devices can discover the presence of the local Bluetooth device when performing a limited inquiry. This should be used for locating services that are only made discoverable for a limited period of time. This can speed up discovery between games for example, since service discovery can be skipped on devices not in limited enquiry more. This is not supported on all platforms. The device will also be connectable, and powered on.</td></tr>
+</table>
+<!-- @@@HostMode -->
+<!-- $$$Pairing$$$Unpaired$$$Paired$$$AuthorizedPaired -->
+<h3 class="fn"><a name="Pairing-enum"></a>enum QBluetoothLocalDevice::Pairing</h3>
+<p>This enum describes the pairing state between two Bluetooth devices.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QBluetoothLocalDevice::Unpaired</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">The Bluetooth devices are not paired.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothLocalDevice::Paired</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">The Bluetooth devices are paired. The system will prompt the user for authorization when the remote device initiates a connection to the local device.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothLocalDevice::AuthorizedPaired</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">The Bluetooth devices are paired. The system will not prompt the user for authorization when the remote device initiates a connection to the local device.</td></tr>
+</table>
+<!-- @@@Pairing -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QBluetoothLocalDevice[overload1]$$$QBluetoothLocalDeviceQObject* -->
+<h3 class="fn"><a name="QBluetoothLocalDevice"></a>QBluetoothLocalDevice::QBluetoothLocalDevice ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qbluetoothlocaldevice.html">QBluetoothLocalDevice</a> with <i>parent</i>.</p>
+<!-- @@@QBluetoothLocalDevice -->
+<!-- $$$QBluetoothLocalDevice$$$QBluetoothLocalDeviceconstQBluetoothAddress&QObject* -->
+<h3 class="fn"><a name="QBluetoothLocalDevice-2"></a>QBluetoothLocalDevice::QBluetoothLocalDevice ( const <a href="qbluetoothaddress.html">QBluetoothAddress</a> &amp; <i>address</i>, <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Construct new <a href="qbluetoothlocaldevice.html">QBluetoothLocalDevice</a> for <i>address</i>.</p>
+<!-- @@@QBluetoothLocalDevice -->
+<!-- $$$~QBluetoothLocalDevice[overload1]$$$~QBluetoothLocalDevice -->
+<h3 class="fn"><a name="dtor.QBluetoothLocalDevice"></a>QBluetoothLocalDevice::~QBluetoothLocalDevice ()<tt> [virtual]</tt></h3>
+<p>Destroys the <a href="qbluetoothlocaldevice.html">QBluetoothLocalDevice</a>.</p>
+<!-- @@@~QBluetoothLocalDevice -->
+<!-- $$$address[overload1]$$$address -->
+<h3 class="fn"><a name="address"></a><a href="qbluetoothaddress.html">QBluetoothAddress</a> QBluetoothLocalDevice::address () const</h3>
+<p>Returns the MAC address of this Bluetooth device.</p>
+<!-- @@@address -->
+<!-- $$$allDevices[overload1]$$$allDevices -->
+<h3 class="fn"><a name="allDevices"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;QBluetoothHostInfo&gt; QBluetoothLocalDevice::allDevices ()<tt> [static]</tt></h3>
+<p>Returns a list of all available local Bluetooth devices.</p>
+<!-- @@@allDevices -->
+<!-- $$$error[overload1]$$$errorQBluetoothLocalDevice::Error -->
+<h3 class="fn"><a name="error"></a>void QBluetoothLocalDevice::error ( <a href="qbluetoothlocaldevice.html#Error-enum">QBluetoothLocalDevice::Error</a> <i>error</i> )<tt> [signal]</tt></h3>
+<p>Signal emitted for pairing if there's an exceptional <i>error</i></p>
+<!-- @@@error -->
+<!-- $$$hostMode[overload1]$$$hostMode -->
+<h3 class="fn"><a name="hostMode"></a><a href="qbluetoothlocaldevice.html#HostMode-enum">HostMode</a> QBluetoothLocalDevice::hostMode () const</h3>
+<p>Returns the current host mode of this local Bluetooth device.</p>
+<p>See also <a href="qbluetoothlocaldevice.html#setHostMode">setHostMode</a>().</p>
+<!-- @@@hostMode -->
+<!-- $$$hostModeStateChanged[overload1]$$$hostModeStateChangedQBluetoothLocalDevice::HostMode -->
+<h3 class="fn"><a name="hostModeStateChanged"></a>void QBluetoothLocalDevice::hostModeStateChanged ( <a href="qbluetoothlocaldevice.html#HostMode-enum">QBluetoothLocalDevice::HostMode</a> <i>state</i> )<tt> [signal]</tt></h3>
+<p>The <i>state</i> of the host has transitioned to a different <a href="qbluetoothlocaldevice.html#HostMode-enum">HostMode</a></p>
+<!-- @@@hostModeStateChanged -->
+<!-- $$$isValid[overload1]$$$isValid -->
+<h3 class="fn"><a name="isValid"></a>bool QBluetoothLocalDevice::isValid () const</h3>
+<p>Returns true the <a href="qbluetoothlocaldevice.html">QBluetoothLocalDevice</a> represents an available local Bluetooth device; otherwise return false.</p>
+<!-- @@@isValid -->
+<!-- $$$name[overload1]$$$name -->
+<h3 class="fn"><a name="name"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QBluetoothLocalDevice::name () const</h3>
+<p>Returns the name assgined by the user to this Bluetooth device.</p>
+<!-- @@@name -->
+<!-- $$$pairingConfirmation[overload1]$$$pairingConfirmationbool -->
+<h3 class="fn"><a name="pairingConfirmation"></a>void QBluetoothLocalDevice::pairingConfirmation ( bool <i>accept</i> )<tt> [slot]</tt></h3>
+<p>To be called after getting a <a href="qbluetoothlocaldevice.html#pairingDisplayConfirmation">pairingDisplayConfirmation</a>(). The <i>accept</i> parameter either accepts the pairing or rejects it.</p>
+<!-- @@@pairingConfirmation -->
+<!-- $$$pairingDisplayConfirmation[overload1]$$$pairingDisplayConfirmationconstQBluetoothAddress&QString -->
+<h3 class="fn"><a name="pairingDisplayConfirmation"></a>void QBluetoothLocalDevice::pairingDisplayConfirmation ( const <a href="qbluetoothaddress.html">QBluetoothAddress</a> &amp; <i>address</i>, <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> <i>pin</i> )<tt> [signal]</tt></h3>
+<p>Signal by some platforms to display a pairing confirmation dialog for <i>address</i>. The user is asked to confirm the <i>pin</i> is the same on both devices. QBluetoothLocalDevice::pairingConfirmation(bool) must be called to indicate if the user accepts or rejects the displayed pin.</p>
+<!-- @@@pairingDisplayConfirmation -->
+<!-- $$$pairingDisplayPinCode[overload1]$$$pairingDisplayPinCodeconstQBluetoothAddress&QString -->
+<h3 class="fn"><a name="pairingDisplayPinCode"></a>void QBluetoothLocalDevice::pairingDisplayPinCode ( const <a href="qbluetoothaddress.html">QBluetoothAddress</a> &amp; <i>address</i>, <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> <i>pin</i> )<tt> [signal]</tt></h3>
+<p>Signal by some platforms to display the <i>pin</i> to the user for <i>address</i>. The pin is automatically generated, and does not need to be confirmed.</p>
+<!-- @@@pairingDisplayPinCode -->
+<!-- $$$pairingFinished[overload1]$$$pairingFinishedconstQBluetoothAddress&QBluetoothLocalDevice::Pairing -->
+<h3 class="fn"><a name="pairingFinished"></a>void QBluetoothLocalDevice::pairingFinished ( const <a href="qbluetoothaddress.html">QBluetoothAddress</a> &amp; <i>address</i>, <a href="qbluetoothlocaldevice.html#Pairing-enum">QBluetoothLocalDevice::Pairing</a> <i>pairing</i> )<tt> [signal]</tt></h3>
+<p>Pairing has completed with <i>address</i>. Current pairing status is in <i>pairing</i>.</p>
+<!-- @@@pairingFinished -->
+<!-- $$$pairingStatus[overload1]$$$pairingStatusconstQBluetoothAddress& -->
+<h3 class="fn"><a name="pairingStatus"></a><a href="qbluetoothlocaldevice.html#Pairing-enum">Pairing</a> QBluetoothLocalDevice::pairingStatus ( const <a href="qbluetoothaddress.html">QBluetoothAddress</a> &amp; <i>address</i> ) const</h3>
+<p>Returns the current bluetooth pairing status of <i>address</i>, if it's unpaired, paired, or paired and authorized.</p>
+<!-- @@@pairingStatus -->
+<!-- $$$powerOn[overload1]$$$powerOn -->
+<h3 class="fn"><a name="powerOn"></a>void QBluetoothLocalDevice::powerOn ()</h3>
+<p>Powers on the device on returning it to the <a href="qbluetoothlocaldevice.html#hostMode">hostMode</a>() state is was in when powered down</p>
+<!-- @@@powerOn -->
+<!-- $$$requestPairing[overload1]$$$requestPairingconstQBluetoothAddress&Pairing -->
+<h3 class="fn"><a name="requestPairing"></a>void QBluetoothLocalDevice::requestPairing ( const <a href="qbluetoothaddress.html">QBluetoothAddress</a> &amp; <i>address</i>, <a href="qbluetoothlocaldevice.html#Pairing-enum">Pairing</a> <i>pairing</i> )</h3>
+<p>Set the <i>pairing</i> status with <i>address</i>. The results are returned via the signal <a href="qbluetoothlocaldevice.html#pairingFinished">pairingFinished</a>(). Caution: creating a pairing may take minutes, and can require the user to acknowledge dialogs.</p>
+<!-- @@@requestPairing -->
+<!-- $$$setHostMode[overload1]$$$setHostModeQBluetoothLocalDevice::HostMode -->
+<h3 class="fn"><a name="setHostMode"></a>void QBluetoothLocalDevice::setHostMode ( <a href="qbluetoothlocaldevice.html#HostMode-enum">QBluetoothLocalDevice::HostMode</a> <i>mode</i> )</h3>
+<p>Sets the host mode the this local Bluetooth device to <i>mode</i>.</p>
+<p>See also <a href="qbluetoothlocaldevice.html#hostMode">hostMode</a>().</p>
+<!-- @@@setHostMode -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

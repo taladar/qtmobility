@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativecamera.cpp -->
+  <title>Qt 1.2: QDeclarativeCamera Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li>QDeclarativeCamera</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QDeclarativeCamera Class Reference</h1>
+<!-- $$$QDeclarativeCamera-brief -->
+<p>The QDeclarativeCamera class provides a camera item that you can add to a <a href="http://qt.nokia.com/doc/4.7/qdeclarativeview.html">QDeclarativeView</a>. <a href="#details">More...</a></p>
+<!-- @@@QDeclarativeCamera -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QDeclarativeCamera&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qdeclarativeitem.html">QDeclarativeItem</a>.</p>
+<ul>
+<li><a href="qdeclarativecamera-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#Error-enum">Error</a></b> { NoError, CameraError, InvalidRequestError, ServiceMissingError, NotSupportedFeatureError }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#ExposureMode-enum">ExposureMode</a></b> { ExposureManual, ExposureAuto, ExposureNight, ExposureBacklight, ..., ExposureModeVendor }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#FlashMode-enum">FlashMode</a></b> { FlashOff, FlashOn, FlashAuto, FlashRedEyeReduction, ..., FlashManual }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#LockStatus-enum">LockStatus</a></b> { Unlocked, Searching, Locked }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#State-enum">State</a></b> { UnloadedState, LoadedState, ActiveState }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#WhiteBalanceMode-enum">WhiteBalanceMode</a></b> { WhiteBalanceManual, WhiteBalanceAuto, WhiteBalanceSunlight, WhiteBalanceCloudy, ..., WhiteBalanceVendor }</td></tr>
+</table>
+<a name="properties"></a>
+<h2>Properties</h2>
+<table class="propsummary">
+<tr><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qdeclarativecamera.html#aperture-prop">aperture</a></b> : const qreal</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#cameraState-prop">cameraState</a></b> : State</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#captureResolution-prop">captureResolution</a></b> : QSize</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#capturedImagePath-prop">capturedImagePath</a></b> : const QString</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#digitalZoom-prop">digitalZoom</a></b> : qreal</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#errorString-prop">errorString</a></b> : const QString</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#exposureCompensation-prop">exposureCompensation</a></b> : qreal</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#exposureMode-prop">exposureMode</a></b> : ExposureMode</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#flashMode-prop">flashMode</a></b> : int</li>
+</ul></td><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qdeclarativecamera.html#iso-prop">iso</a></b> : int</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#lockStatus-prop">lockStatus</a></b> : const LockStatus</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#manualWhiteBalance-prop">manualWhiteBalance</a></b> : int</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#maximumDigitalZoom-prop">maximumDigitalZoom</a></b> : const qreal</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#maximumOpticalZoom-prop">maximumOpticalZoom</a></b> : const qreal</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#opticalZoom-prop">opticalZoom</a></b> : qreal</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#shutterSpeed-prop">shutterSpeed</a></b> : const qreal</li>
+<li class="fn"><b><a href="qdeclarativecamera.html#whiteBalanceMode-prop">whiteBalanceMode</a></b> : WhiteBalanceMode</li>
+</ul>
+</td></tr>
+</table>
+<ul>
+<li class="fn">5 properties inherited from <a href="http://qt.nokia.com/doc/4.7/qdeclarativeitem.html#properties">QDeclarativeItem</a></li>
+<li class="fn">12 properties inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsobject.html#properties">QGraphicsObject</a></li>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#QDeclarativeCamera">QDeclarativeCamera</a></b> ( QDeclarativeItem * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#dtor.QDeclarativeCamera">~QDeclarativeCamera</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#aperture-prop">aperture</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> State </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#cameraState-prop">cameraState</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSize </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#captureResolution-prop">captureResolution</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#capturedImagePath-prop">capturedImagePath</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QImage </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#capturedImagePreview">capturedImagePreview</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#digitalZoom-prop">digitalZoom</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Error </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#error">error</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#errorString-prop">errorString</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#exposureCompensation-prop">exposureCompensation</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ExposureMode </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#exposureMode-prop">exposureMode</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#flashMode-prop">flashMode</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#iso-prop">isoSensitivity</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> LockStatus </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#lockStatus-prop">lockStatus</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#manualWhiteBalance-prop">manualWhiteBalance</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#maximumDigitalZoom-prop">maximumDigitalZoom</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#maximumOpticalZoom-prop">maximumOpticalZoom</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#opticalZoom-prop">opticalZoom</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#shutterSpeed-prop">shutterSpeed</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> WhiteBalanceMode </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#whiteBalanceMode-prop">whiteBalanceMode</a></b> () const</td></tr>
+</table>
+<a name="reimplemented-public-functions"></a>
+<h2>Reimplemented Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#paint">paint</a></b> ( QPainter *, const QStyleOptionGraphicsItem *, QWidget * )</td></tr>
+</table>
+<ul>
+<li class="fn">19 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qdeclarativeitem.html#public-functions">QDeclarativeItem</a></li>
+<li class="fn">2 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsobject.html#public-functions">QGraphicsObject</a></li>
+<li class="fn">2 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qdeclarativeparserstatus.html#public-functions">QDeclarativeParserStatus</a></li>
+<li class="fn">177 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#public-functions">QGraphicsItem</a></li>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2>Public Slots</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#captureImage">captureImage</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#searchAndLock">searchAndLock</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#cameraState-prop">setCameraState</a></b> ( State <i>state</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#captureResolution-prop">setCaptureResolution</a></b> ( const QSize &amp; <i>size</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#digitalZoom-prop">setDigitalZoom</a></b> ( qreal )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#exposureCompensation-prop">setExposureCompensation</a></b> ( qreal <i>ev</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#exposureMode-prop">setExposureMode</a></b> ( QDeclarativeCamera::ExposureMode )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#flashMode-prop">setFlashMode</a></b> ( int )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#iso-prop">setManualIsoSensitivity</a></b> ( int <i>iso</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#manualWhiteBalance-prop">setManualWhiteBalance</a></b> ( int <i>colorTemp</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#opticalZoom-prop">setOpticalZoom</a></b> ( qreal )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#whiteBalanceMode-prop">setWhiteBalanceMode</a></b> ( QDeclarativeCamera::WhiteBalanceMode <i>mode</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#start">start</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#stop">stop</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#unlock">unlock</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#apertureChanged">apertureChanged</a></b> ( qreal )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#cameraStateChanged">cameraStateChanged</a></b> ( QDeclarativeCamera::State )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#captureFailed">captureFailed</a></b> ( const QString &amp; <i>message</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#captureResolutionChanged">captureResolutionChanged</a></b> ( const QSize &amp; )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#digitalZoomChanged">digitalZoomChanged</a></b> ( qreal )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#error-2">error</a></b> ( QDeclarativeCamera::Error <i>error</i>, const QString &amp; <i>errorString</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#errorChanged">errorChanged</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#exposureCompensationChanged">exposureCompensationChanged</a></b> ( qreal )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#exposureModeChanged">exposureModeChanged</a></b> ( QDeclarativeCamera::ExposureMode )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#flashModeChanged">flashModeChanged</a></b> ( int )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#imageCaptured">imageCaptured</a></b> ( const QString &amp; <i>preview</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#imageSaved">imageSaved</a></b> ( const QString &amp; <i>path</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#isoSensitivityChanged">isoSensitivityChanged</a></b> ( int )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#lockStatusChanged">lockStatusChanged</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#manualWhiteBalanceChanged">manualWhiteBalanceChanged</a></b> ( int ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#maximumDigitalZoomChanged">maximumDigitalZoomChanged</a></b> ( qreal )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#maximumOpticalZoomChanged">maximumOpticalZoomChanged</a></b> ( qreal )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#opticalZoomChanged">opticalZoomChanged</a></b> ( qreal )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#shutterSpeedChanged">shutterSpeedChanged</a></b> ( qreal )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#whiteBalanceModeChanged">whiteBalanceModeChanged</a></b> ( QDeclarativeCamera::WhiteBalanceMode ) const</td></tr>
+</table>
+<ul>
+<li class="fn">9 signals inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsobject.html#signals">QGraphicsObject</a></li>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="reimplemented-protected-functions"></a>
+<h2>Reimplemented Protected Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#geometryChanged">geometryChanged</a></b> ( const QRectF &amp; <i>geometry</i>, const QRectF &amp; )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#keyPressEvent">keyPressEvent</a></b> ( QKeyEvent * <i>event</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#keyReleaseEvent">keyReleaseEvent</a></b> ( QKeyEvent * <i>event</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">6 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qdeclarativeitem.html#protected-functions">QDeclarativeItem</a></li>
+<li class="fn">24 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#protected-functions">QGraphicsItem</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">2 public variables inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#public-variables">QGraphicsItem</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">6 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qdeclarativeitem.html#protected-functions">QDeclarativeItem</a></li>
+<li class="fn">24 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#protected-functions">QGraphicsItem</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">1 protected slot inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsobject.html#protected-slots">QGraphicsObject</a></li>
+<li class="fn">1 protected type inherited from <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html#protected-variables">QGraphicsItem</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QDeclarativeCamera-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QDeclarativeCamera class provides a camera item that you can add to a <a href="http://qt.nokia.com/doc/4.7/qdeclarativeview.html">QDeclarativeView</a>.</p>
+</div>
+<!-- @@@QDeclarativeCamera -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Error$$$NoError$$$CameraError$$$InvalidRequestError$$$ServiceMissingError$$$NotSupportedFeatureError -->
+<h3 class="fn"><a name="Error-enum"></a>enum QDeclarativeCamera::Error</h3>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::NoError</tt></td><td class=" topAlign"><tt>QCamera::NoError</tt></td><td  class="topAlign">No errors have occurred.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::CameraError</tt></td><td class=" topAlign"><tt>QCamera::CameraError</tt></td><td  class="topAlign">An error has occurred.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::InvalidRequestError</tt></td><td class=" topAlign"><tt>QCamera::InvalidRequestError</tt></td><td  class="topAlign">System resource doesn't support requested functionality.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ServiceMissingError</tt></td><td class=" topAlign"><tt>QCamera::ServiceMissingError</tt></td><td  class="topAlign">No camera service available.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::NotSupportedFeatureError</tt></td><td class=" topAlign"><tt>QCamera::NotSupportedFeatureError</tt></td><td  class="topAlign">The feature is not supported.</td></tr>
+</table>
+<!-- @@@Error -->
+<!-- $$$ExposureMode$$$ExposureAuto$$$ExposureManual$$$ExposurePortrait$$$ExposureNight$$$ExposureBacklight$$$ExposureSpotlight$$$ExposureSports$$$ExposureSnow$$$ExposureBeach$$$ExposureLargeAperture$$$ExposureSmallAperture$$$ExposureModeVendor -->
+<h3 class="fn"><a name="ExposureMode-enum"></a>enum QDeclarativeCamera::ExposureMode</h3>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureManual</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Manual mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureAuto</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Automatic mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureNight</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">Night mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureBacklight</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">Backlight exposure mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureSpotlight</tt></td><td class=" topAlign"><tt>5</tt></td><td  class="topAlign">Spotlight exposure mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureSports</tt></td><td class=" topAlign"><tt>6</tt></td><td  class="topAlign">Spots exposure mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureSnow</tt></td><td class=" topAlign"><tt>7</tt></td><td  class="topAlign">Snow exposure mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureBeach</tt></td><td class=" topAlign"><tt>8</tt></td><td  class="topAlign">Beach exposure mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureLargeAperture</tt></td><td class=" topAlign"><tt>9</tt></td><td  class="topAlign">Use larger aperture with small depth of field.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureSmallAperture</tt></td><td class=" topAlign"><tt>10</tt></td><td  class="topAlign">Use smaller aperture.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposurePortrait</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Portrait exposure mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ExposureModeVendor</tt></td><td class=" topAlign"><tt>1000</tt></td><td  class="topAlign">The base value for device specific exposure modes.</td></tr>
+</table>
+<!-- @@@ExposureMode -->
+<!-- $$$FlashMode$$$FlashAuto$$$FlashOff$$$FlashOn$$$FlashRedEyeReduction$$$FlashFill$$$FlashTorch$$$FlashSlowSyncFrontCurtain$$$FlashSlowSyncRearCurtain$$$FlashManual -->
+<h3 class="fn"><a name="FlashMode-enum"></a>enum QDeclarativeCamera::FlashMode</h3>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::FlashOff</tt></td><td class=" topAlign"><tt>0x2</tt></td><td  class="topAlign">Flash is Off.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::FlashOn</tt></td><td class=" topAlign"><tt>0x4</tt></td><td  class="topAlign">Flash is On.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::FlashAuto</tt></td><td class=" topAlign"><tt>0x1</tt></td><td  class="topAlign">Automatic flash.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::FlashRedEyeReduction</tt></td><td class=" topAlign"><tt>0x8</tt></td><td  class="topAlign">Red eye reduction flash.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::FlashFill</tt></td><td class=" topAlign"><tt>0x10</tt></td><td  class="topAlign">Use flash to fillin shadows.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::FlashTorch</tt></td><td class=" topAlign"><tt>0x20</tt></td><td  class="topAlign">Constant light source, useful for focusing and video capture.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::FlashSlowSyncFrontCurtain</tt></td><td class=" topAlign"><tt>0x40</tt></td><td  class="topAlign">Use the flash in conjunction with a slow shutter speed. This mode allows better exposure of distant objects and/or motion blur effect.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::FlashSlowSyncRearCurtain</tt></td><td class=" topAlign"><tt>0x80</tt></td><td  class="topAlign">The similar mode to FlashSlowSyncFrontCurtain but flash is fired at the end of exposure.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::FlashManual</tt></td><td class=" topAlign"><tt>0x100</tt></td><td  class="topAlign">Flash power is manually set.</td></tr>
+</table>
+<!-- @@@FlashMode -->
+<!-- $$$LockStatus$$$Unlocked$$$Searching$$$Locked -->
+<h3 class="fn"><a name="LockStatus-enum"></a>enum QDeclarativeCamera::LockStatus</h3>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::Unlocked</tt></td><td class=" topAlign"><tt>QCamera::Unlocked</tt></td><td  class="topAlign">The application is not interested in camera settings value. The camera may keep this parameter without changes, this is common with camera focus, or adjust exposure and white balance constantly to keep the viewfinder image nice.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::Searching</tt></td><td class=" topAlign"><tt>QCamera::Searching</tt></td><td  class="topAlign">The application has requested the camera focus, exposure or white balance lock with <a href="qdeclarativecamera.html#searchAndLock">searchAndLock</a>(). This state indicates the camera is focusing or calculating exposure and white balance.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::Locked</tt></td><td class=" topAlign"><tt>QCamera::Locked</tt></td><td  class="topAlign">The camera focus, exposure or white balance is locked. The camera is ready to capture, application may check the exposure parameters.</td></tr>
+</table>
+<p>The locked state usually means the requested parameter stays the same, except in the cases when the parameter is requested to be constantly updated. For example in continuous focusing mode, the focus is considered locked as long and the object is in focus, even while the actual focusing distance may be constantly changing.</p>
+<!-- @@@LockStatus -->
+<!-- $$$State$$$ActiveState$$$LoadedState$$$UnloadedState -->
+<h3 class="fn"><a name="State-enum"></a>enum QDeclarativeCamera::State</h3>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::UnloadedState</tt></td><td class=" topAlign"><tt>QCamera::UnloadedState</tt></td><td  class="topAlign">The initial camera state, with camera not loaded, the camera capabilities except of supported capture modes are unknown. While the supported settings are unknown in this state, it's allowed to set the camera capture settings like codec, resolution, or frame rate.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::LoadedState</tt></td><td class=" topAlign"><tt>QCamera::LoadedState</tt></td><td  class="topAlign">The camera is loaded and ready to be configured. In the Idle state it's allowed to query camera capabilities, set capture resolution, codecs, etc. The viewfinder is not active in the loaded state.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::ActiveState</tt></td><td class=" topAlign"><tt>QCamera::ActiveState</tt></td><td  class="topAlign">In the active state as soon as camera is started the viewfinder displays video frames and the camera is ready for capture.</td></tr>
+</table>
+<p>The default camera state is ActiveState.</p>
+<!-- @@@State -->
+<!-- $$$WhiteBalanceMode$$$WhiteBalanceAuto$$$WhiteBalanceManual$$$WhiteBalanceSunlight$$$WhiteBalanceCloudy$$$WhiteBalanceShade$$$WhiteBalanceTungsten$$$WhiteBalanceFluorescent$$$WhiteBalanceIncandescent$$$WhiteBalanceFlash$$$WhiteBalanceSunset$$$WhiteBalanceVendor -->
+<h3 class="fn"><a name="WhiteBalanceMode-enum"></a>enum QDeclarativeCamera::WhiteBalanceMode</h3>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceManual</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Manual white balance. In this mode the manual white balance property value is used.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceAuto</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Auto white balance mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceSunlight</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Sunlight white balance mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceCloudy</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">Cloudy white balance mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceShade</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">Shade white balance mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceTungsten</tt></td><td class=" topAlign"><tt>5</tt></td><td  class="topAlign">Tungsten white balance mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceFluorescent</tt></td><td class=" topAlign"><tt>6</tt></td><td  class="topAlign">Fluorescent white balance mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceIncandescent</tt></td><td class=" topAlign"><tt>7</tt></td><td  class="topAlign">Incandescent white balance mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceFlash</tt></td><td class=" topAlign"><tt>8</tt></td><td  class="topAlign">Flash white balance mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceSunset</tt></td><td class=" topAlign"><tt>9</tt></td><td  class="topAlign">Sunset white balance mode.</td></tr>
+<tr><td  class="topAlign"><tt>QDeclarativeCamera::WhiteBalanceVendor</tt></td><td class=" topAlign"><tt>1000</tt></td><td  class="topAlign">Vendor defined white balance mode.</td></tr>
+</table>
+<!-- @@@WhiteBalanceMode -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$aperture-prop$$$aperture$$$apertureChangedqreal -->
+<h3 class="fn"><a name="aperture-prop"></a>aperture : const <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>The lens aperture as an F number (the ratio of the focal length to effective aperture diameter).</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>aperture</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#apertureChanged">apertureChanged</a></b> ( qreal )</td></tr>
+</table>
+<!-- @@@aperture -->
+<!-- $$$cameraState-prop$$$cameraState$$$setCameraStateState$$$cameraStateChangedQDeclarativeCamera::State -->
+<h3 class="fn"><a name="cameraState-prop"></a>cameraState : <a href="qdeclarativecamera.html#State-enum">State</a></h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> State </td><td class="memItemRight bottomAlign"><b>cameraState</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setCameraState</b> ( State <i>state</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#cameraStateChanged">cameraStateChanged</a></b> ( QDeclarativeCamera::State )</td></tr>
+</table>
+<!-- @@@cameraState -->
+<!-- $$$captureResolution-prop$$$captureResolution$$$setCaptureResolutionconstQSize&$$$captureResolutionChangedconstQSize& -->
+<h3 class="fn"><a name="captureResolution-prop"></a>captureResolution : <a href="http://qt.nokia.com/doc/4.7/qsize.html">QSize</a></h3>
+<p>The resolution to capture the image at. If empty, the system will pick a good size.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QSize </td><td class="memItemRight bottomAlign"><b>captureResolution</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setCaptureResolution</b> ( const QSize &amp; <i>size</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#captureResolutionChanged">captureResolutionChanged</a></b> ( const QSize &amp; )</td></tr>
+</table>
+<!-- @@@captureResolution -->
+<!-- $$$capturedImagePath-prop$$$capturedImagePath$$$imageSavedconstQString& -->
+<h3 class="fn"><a name="capturedImagePath-prop"></a>capturedImagePath : const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><b>capturedImagePath</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#imageSaved">imageSaved</a></b> ( const QString &amp; <i>path</i> )</td></tr>
+</table>
+<!-- @@@capturedImagePath -->
+<!-- $$$digitalZoom-prop$$$digitalZoom$$$setDigitalZoomqreal$$$digitalZoomChangedqreal -->
+<h3 class="fn"><a name="digitalZoom-prop"></a>digitalZoom : <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>The current digital zoom factor.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>digitalZoom</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setDigitalZoom</b> ( qreal )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#digitalZoomChanged">digitalZoomChanged</a></b> ( qreal )</td></tr>
+</table>
+<!-- @@@digitalZoom -->
+<!-- $$$errorString-prop$$$errorString$$$errorChanged -->
+<h3 class="fn"><a name="errorString-prop"></a>errorString : const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><b>errorString</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#errorChanged">errorChanged</a></b> ()</td></tr>
+</table>
+<!-- @@@errorString -->
+<!-- $$$exposureCompensation-prop$$$exposureCompensation$$$setExposureCompensationqreal$$$exposureCompensationChangedqreal -->
+<h3 class="fn"><a name="exposureCompensation-prop"></a>exposureCompensation : <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>Adjustment for the automatically calculated exposure. The value is in EV units.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>exposureCompensation</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setExposureCompensation</b> ( qreal <i>ev</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#exposureCompensationChanged">exposureCompensationChanged</a></b> ( qreal )</td></tr>
+</table>
+<!-- @@@exposureCompensation -->
+<!-- $$$exposureMode-prop$$$exposureMode$$$setExposureModeQDeclarativeCamera::ExposureMode$$$exposureModeChangedQDeclarativeCamera::ExposureMode -->
+<h3 class="fn"><a name="exposureMode-prop"></a>exposureMode : <a href="qdeclarativecamera.html#ExposureMode-enum">ExposureMode</a></h3>
+<p>Camera exposure modes.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> ExposureMode </td><td class="memItemRight bottomAlign"><b>exposureMode</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setExposureMode</b> ( QDeclarativeCamera::ExposureMode )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#exposureModeChanged">exposureModeChanged</a></b> ( QDeclarativeCamera::ExposureMode )</td></tr>
+</table>
+<!-- @@@exposureMode -->
+<!-- $$$flashMode-prop$$$flashMode$$$setFlashModeint$$$flashModeChangedint -->
+<h3 class="fn"><a name="flashMode-prop"></a>flashMode : int</h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>flashMode</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setFlashMode</b> ( int )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#flashModeChanged">flashModeChanged</a></b> ( int )</td></tr>
+</table>
+<!-- @@@flashMode -->
+<!-- $$$iso-prop$$$isoSensitivity$$$setManualIsoSensitivityint$$$isoSensitivityChangedint -->
+<h3 class="fn"><a name="iso-prop"></a>iso : int</h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>isoSensitivity</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setManualIsoSensitivity</b> ( int <i>iso</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#isoSensitivityChanged">isoSensitivityChanged</a></b> ( int )</td></tr>
+</table>
+<!-- @@@iso -->
+<!-- $$$lockStatus-prop$$$lockStatus$$$lockStatusChanged -->
+<h3 class="fn"><a name="lockStatus-prop"></a>lockStatus : const <a href="qdeclarativecamera.html#LockStatus-enum">LockStatus</a></h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> LockStatus </td><td class="memItemRight bottomAlign"><b>lockStatus</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#lockStatusChanged">lockStatusChanged</a></b> ()</td></tr>
+</table>
+<!-- @@@lockStatus -->
+<!-- $$$manualWhiteBalance-prop$$$manualWhiteBalance$$$setManualWhiteBalanceint$$$manualWhiteBalanceChangedint -->
+<h3 class="fn"><a name="manualWhiteBalance-prop"></a>manualWhiteBalance : int</h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>manualWhiteBalance</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setManualWhiteBalance</b> ( int <i>colorTemp</i> ) const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#manualWhiteBalanceChanged">manualWhiteBalanceChanged</a></b> ( int ) const</td></tr>
+</table>
+<!-- @@@manualWhiteBalance -->
+<!-- $$$maximumDigitalZoom-prop$$$maximumDigitalZoom$$$maximumDigitalZoomChangedqreal -->
+<h3 class="fn"><a name="maximumDigitalZoom-prop"></a>maximumDigitalZoom : const <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>The maximum digital zoom factor, or 1.0 if digital zoom is not supported.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>maximumDigitalZoom</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#maximumDigitalZoomChanged">maximumDigitalZoomChanged</a></b> ( qreal )</td></tr>
+</table>
+<!-- @@@maximumDigitalZoom -->
+<!-- $$$maximumOpticalZoom-prop$$$maximumOpticalZoom$$$maximumOpticalZoomChangedqreal -->
+<h3 class="fn"><a name="maximumOpticalZoom-prop"></a>maximumOpticalZoom : const <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>The maximum optical zoom factor, or 1.0 if optical zoom is not supported.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>maximumOpticalZoom</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#maximumOpticalZoomChanged">maximumOpticalZoomChanged</a></b> ( qreal )</td></tr>
+</table>
+<!-- @@@maximumOpticalZoom -->
+<!-- $$$opticalZoom-prop$$$opticalZoom$$$setOpticalZoomqreal$$$opticalZoomChangedqreal -->
+<h3 class="fn"><a name="opticalZoom-prop"></a>opticalZoom : <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>The current optical zoom factor.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>opticalZoom</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setOpticalZoom</b> ( qreal )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#opticalZoomChanged">opticalZoomChanged</a></b> ( qreal )</td></tr>
+</table>
+<!-- @@@opticalZoom -->
+<!-- $$$shutterSpeed-prop$$$shutterSpeed$$$shutterSpeedChangedqreal -->
+<h3 class="fn"><a name="shutterSpeed-prop"></a>shutterSpeed : const <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>The camera's shutter speed, in seconds.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>shutterSpeed</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#shutterSpeedChanged">shutterSpeedChanged</a></b> ( qreal )</td></tr>
+</table>
+<!-- @@@shutterSpeed -->
+<!-- $$$whiteBalanceMode-prop$$$whiteBalanceMode$$$setWhiteBalanceModeQDeclarativeCamera::WhiteBalanceMode$$$whiteBalanceModeChangedQDeclarativeCamera::WhiteBalanceMode -->
+<h3 class="fn"><a name="whiteBalanceMode-prop"></a>whiteBalanceMode : <a href="qdeclarativecamera.html#WhiteBalanceMode-enum">WhiteBalanceMode</a></h3>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> WhiteBalanceMode </td><td class="memItemRight bottomAlign"><b>whiteBalanceMode</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setWhiteBalanceMode</b> ( QDeclarativeCamera::WhiteBalanceMode <i>mode</i> ) const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qdeclarativecamera.html#whiteBalanceModeChanged">whiteBalanceModeChanged</a></b> ( QDeclarativeCamera::WhiteBalanceMode ) const</td></tr>
+</table>
+<p>See also <a href="qdeclarativecamera.html#WhiteBalanceMode-enum">WhiteBalanceMode</a>.</p>
+<!-- @@@whiteBalanceMode -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QDeclarativeCamera[overload1]$$$QDeclarativeCameraQDeclarativeItem* -->
+<h3 class="fn"><a name="QDeclarativeCamera"></a>QDeclarativeCamera::QDeclarativeCamera ( <a href="http://qt.nokia.com/doc/4.7/qdeclarativeitem.html">QDeclarativeItem</a> * <i>parent</i> = 0 )</h3>
+<!-- @@@QDeclarativeCamera -->
+<!-- $$$~QDeclarativeCamera[overload1]$$$~QDeclarativeCamera -->
+<h3 class="fn"><a name="dtor.QDeclarativeCamera"></a>QDeclarativeCamera::~QDeclarativeCamera ()</h3>
+<!-- @@@~QDeclarativeCamera -->
+<!-- $$$apertureChanged[overload1]$$$apertureChangedqreal -->
+<h3 class="fn"><a name="apertureChanged"></a>void QDeclarativeCamera::apertureChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> )<tt> [signal]</tt></h3>
+<!-- @@@apertureChanged -->
+<!-- $$$cameraStateChanged[overload1]$$$cameraStateChangedQDeclarativeCamera::State -->
+<h3 class="fn"><a name="cameraStateChanged"></a>void QDeclarativeCamera::cameraStateChanged ( <a href="qdeclarativecamera.html#State-enum">QDeclarativeCamera::State</a> )<tt> [signal]</tt></h3>
+<!-- @@@cameraStateChanged -->
+<!-- $$$captureFailed[overload1]$$$captureFailedconstQString& -->
+<h3 class="fn"><a name="captureFailed"></a>void QDeclarativeCamera::captureFailed ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>message</i> )<tt> [signal]</tt></h3>
+<!-- @@@captureFailed -->
+<!-- $$$captureImage[overload1]$$$captureImage -->
+<h3 class="fn"><a name="captureImage"></a>void QDeclarativeCamera::captureImage ()<tt> [slot]</tt></h3>
+<!-- @@@captureImage -->
+<!-- $$$captureResolutionChanged[overload1]$$$captureResolutionChangedconstQSize& -->
+<h3 class="fn"><a name="captureResolutionChanged"></a>void QDeclarativeCamera::captureResolutionChanged ( const <a href="http://qt.nokia.com/doc/4.7/qsize.html">QSize</a> &amp; )<tt> [signal]</tt></h3>
+<!-- @@@captureResolutionChanged -->
+<!-- $$$capturedImagePreview[overload1]$$$capturedImagePreview -->
+<h3 class="fn"><a name="capturedImagePreview"></a><a href="http://qt.nokia.com/doc/4.7/qimage.html">QImage</a> QDeclarativeCamera::capturedImagePreview () const</h3>
+<!-- @@@capturedImagePreview -->
+<!-- $$$digitalZoomChanged[overload1]$$$digitalZoomChangedqreal -->
+<h3 class="fn"><a name="digitalZoomChanged"></a>void QDeclarativeCamera::digitalZoomChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> )<tt> [signal]</tt></h3>
+<!-- @@@digitalZoomChanged -->
+<!-- $$$error[overload1]$$$error -->
+<h3 class="fn"><a name="error"></a><a href="qdeclarativecamera.html#Error-enum">Error</a> QDeclarativeCamera::error () const</h3>
+<!-- @@@error -->
+<!-- $$$error$$$errorQDeclarativeCamera::ErrorconstQString& -->
+<h3 class="fn"><a name="error-2"></a>void QDeclarativeCamera::error ( <a href="qdeclarativecamera.html#Error-enum">QDeclarativeCamera::Error</a> <i>error</i>, const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>errorString</i> )<tt> [signal]</tt></h3>
+<!-- @@@error -->
+<!-- $$$errorChanged[overload1]$$$errorChanged -->
+<h3 class="fn"><a name="errorChanged"></a>void QDeclarativeCamera::errorChanged ()<tt> [signal]</tt></h3>
+<!-- @@@errorChanged -->
+<!-- $$$exposureCompensationChanged[overload1]$$$exposureCompensationChangedqreal -->
+<h3 class="fn"><a name="exposureCompensationChanged"></a>void QDeclarativeCamera::exposureCompensationChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> )<tt> [signal]</tt></h3>
+<!-- @@@exposureCompensationChanged -->
+<!-- $$$exposureModeChanged[overload1]$$$exposureModeChangedQDeclarativeCamera::ExposureMode -->
+<h3 class="fn"><a name="exposureModeChanged"></a>void QDeclarativeCamera::exposureModeChanged ( <a href="qdeclarativecamera.html#ExposureMode-enum">QDeclarativeCamera::ExposureMode</a> )<tt> [signal]</tt></h3>
+<!-- @@@exposureModeChanged -->
+<!-- $$$flashModeChanged[overload1]$$$flashModeChangedint -->
+<h3 class="fn"><a name="flashModeChanged"></a>void QDeclarativeCamera::flashModeChanged ( int )<tt> [signal]</tt></h3>
+<!-- @@@flashModeChanged -->
+<!-- $$$geometryChanged[overload1]$$$geometryChangedconstQRectF&constQRectF& -->
+<h3 class="fn"><a name="geometryChanged"></a>void QDeclarativeCamera::geometryChanged ( const <a href="http://qt.nokia.com/doc/4.7/qrectf.html">QRectF</a> &amp; <i>geometry</i>, const <a href="http://qt.nokia.com/doc/4.7/qrectf.html">QRectF</a> &amp; )<tt> [virtual protected]</tt></h3>
+<!-- @@@geometryChanged -->
+<!-- $$$imageCaptured[overload1]$$$imageCapturedconstQString& -->
+<h3 class="fn"><a name="imageCaptured"></a>void QDeclarativeCamera::imageCaptured ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>preview</i> )<tt> [signal]</tt></h3>
+<!-- @@@imageCaptured -->
+<!-- $$$imageSaved[overload1]$$$imageSavedconstQString& -->
+<h3 class="fn"><a name="imageSaved"></a>void QDeclarativeCamera::imageSaved ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>path</i> )<tt> [signal]</tt></h3>
+<!-- @@@imageSaved -->
+<!-- $$$isoSensitivityChanged[overload1]$$$isoSensitivityChangedint -->
+<h3 class="fn"><a name="isoSensitivityChanged"></a>void QDeclarativeCamera::isoSensitivityChanged ( int )<tt> [signal]</tt></h3>
+<!-- @@@isoSensitivityChanged -->
+<!-- $$$keyPressEvent[overload1]$$$keyPressEventQKeyEvent* -->
+<h3 class="fn"><a name="keyPressEvent"></a>void QDeclarativeCamera::keyPressEvent ( <a href="http://qt.nokia.com/doc/4.7/qkeyevent.html">QKeyEvent</a> * <i>event</i> )<tt> [virtual protected]</tt></h3>
+<!-- @@@keyPressEvent -->
+<!-- $$$keyReleaseEvent[overload1]$$$keyReleaseEventQKeyEvent* -->
+<h3 class="fn"><a name="keyReleaseEvent"></a>void QDeclarativeCamera::keyReleaseEvent ( <a href="http://qt.nokia.com/doc/4.7/qkeyevent.html">QKeyEvent</a> * <i>event</i> )<tt> [virtual protected]</tt></h3>
+<!-- @@@keyReleaseEvent -->
+<!-- $$$lockStatusChanged[overload1]$$$lockStatusChanged -->
+<h3 class="fn"><a name="lockStatusChanged"></a>void QDeclarativeCamera::lockStatusChanged ()<tt> [signal]</tt></h3>
+<!-- @@@lockStatusChanged -->
+<!-- $$$manualWhiteBalanceChanged[overload1]$$$manualWhiteBalanceChangedint -->
+<h3 class="fn"><a name="manualWhiteBalanceChanged"></a>void QDeclarativeCamera::manualWhiteBalanceChanged ( int ) const<tt> [signal]</tt></h3>
+<!-- @@@manualWhiteBalanceChanged -->
+<!-- $$$maximumDigitalZoomChanged[overload1]$$$maximumDigitalZoomChangedqreal -->
+<h3 class="fn"><a name="maximumDigitalZoomChanged"></a>void QDeclarativeCamera::maximumDigitalZoomChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> )<tt> [signal]</tt></h3>
+<!-- @@@maximumDigitalZoomChanged -->
+<!-- $$$maximumOpticalZoomChanged[overload1]$$$maximumOpticalZoomChangedqreal -->
+<h3 class="fn"><a name="maximumOpticalZoomChanged"></a>void QDeclarativeCamera::maximumOpticalZoomChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> )<tt> [signal]</tt></h3>
+<!-- @@@maximumOpticalZoomChanged -->
+<!-- $$$opticalZoomChanged[overload1]$$$opticalZoomChangedqreal -->
+<h3 class="fn"><a name="opticalZoomChanged"></a>void QDeclarativeCamera::opticalZoomChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> )<tt> [signal]</tt></h3>
+<!-- @@@opticalZoomChanged -->
+<!-- $$$paint[overload1]$$$paintQPainter*constQStyleOptionGraphicsItem*QWidget* -->
+<h3 class="fn"><a name="paint"></a>void QDeclarativeCamera::paint ( <a href="http://qt.nokia.com/doc/4.7/qpainter.html">QPainter</a> *, const <a href="http://qt.nokia.com/doc/4.7/qstyleoptiongraphicsitem.html">QStyleOptionGraphicsItem</a> *, <a href="http://qt.nokia.com/doc/4.7/qwidget.html">QWidget</a> * )<tt> [virtual]</tt></h3>
+<!-- @@@paint -->
+<!-- $$$searchAndLock[overload1]$$$searchAndLock -->
+<h3 class="fn"><a name="searchAndLock"></a>void QDeclarativeCamera::searchAndLock ()<tt> [slot]</tt></h3>
+<!-- @@@searchAndLock -->
+<!-- $$$shutterSpeedChanged[overload1]$$$shutterSpeedChangedqreal -->
+<h3 class="fn"><a name="shutterSpeedChanged"></a>void QDeclarativeCamera::shutterSpeedChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> )<tt> [signal]</tt></h3>
+<!-- @@@shutterSpeedChanged -->
+<!-- $$$start[overload1]$$$start -->
+<h3 class="fn"><a name="start"></a>void QDeclarativeCamera::start ()<tt> [slot]</tt></h3>
+<!-- @@@start -->
+<!-- $$$stop[overload1]$$$stop -->
+<h3 class="fn"><a name="stop"></a>void QDeclarativeCamera::stop ()<tt> [slot]</tt></h3>
+<!-- @@@stop -->
+<!-- $$$unlock[overload1]$$$unlock -->
+<h3 class="fn"><a name="unlock"></a>void QDeclarativeCamera::unlock ()<tt> [slot]</tt></h3>
+<!-- @@@unlock -->
+<!-- $$$whiteBalanceModeChanged[overload1]$$$whiteBalanceModeChangedQDeclarativeCamera::WhiteBalanceMode -->
+<h3 class="fn"><a name="whiteBalanceModeChanged"></a>void QDeclarativeCamera::whiteBalanceModeChanged ( <a href="qdeclarativecamera.html#WhiteBalanceMode-enum">QDeclarativeCamera::WhiteBalanceMode</a> ) const<tt> [signal]</tt></h3>
+<!-- @@@whiteBalanceModeChanged -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgeomapobject.cpp -->
+  <title>Qt 1.2: QGeoMapObject Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QGeoMapObject</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGeoMapObject Class Reference</h1>
+<!-- $$$QGeoMapObject-brief -->
+<p>The QGeoMapObject class is a graphical item to be displayed on a map. <a href="#details">More...</a></p>
+<!-- @@@QGeoMapObject -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QGeoMapObject&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qgeomapcircleobject.html">QGeoMapCircleObject</a>, <a href="qgeomapcustomobject.html">QGeoMapCustomObject</a>, <a href="qgeomapgroupobject.html">QGeoMapGroupObject</a>, <a href="qgeomappixmapobject.html">QGeoMapPixmapObject</a>, <a href="qgeomappolygonobject.html">QGeoMapPolygonObject</a>, <a href="qgeomappolylineobject.html">QGeoMapPolylineObject</a>, <a href="qgeomaprectangleobject.html">QGeoMapRectangleObject</a>, <a href="qgeomaprouteobject.html">QGeoMapRouteObject</a>, and <a href="qgeomaptextobject.html">QGeoMapTextObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qgeomapobject-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#CoordinateUnit-enum">CoordinateUnit</a></b> { PixelUnit, MeterUnit, RelativeArcSecondUnit, AbsoluteArcSecondUnit }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#TransformType-enum">TransformType</a></b> { BilinearTransform, ExactTransform }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#Type-enum">Type</a></b> { NullType, GroupType, RectangleType, CircleType, ..., CustomType }</td></tr>
+</table>
+<a name="properties"></a>
+<h2>Properties</h2>
+<table class="propsummary">
+<tr><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qgeomapobject.html#origin-prop">origin</a></b> : const QGeoCoordinate</li>
+<li class="fn"><b><a href="qgeomapobject.html#selected-prop">selected</a></b> : bool</li>
+<li class="fn"><b><a href="qgeomapobject.html#transformType-prop">transformType</a></b> : const TransformType</li>
+</ul></td><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qgeomapobject.html#units-prop">units</a></b> : const CoordinateUnit</li>
+<li class="fn"><b><a href="qgeomapobject.html#visible-prop">visible</a></b> : bool</li>
+<li class="fn"><b><a href="qgeomapobject.html#zValue-prop">zValue</a></b> : int</li>
+</ul>
+</td></tr>
+</table>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#QGeoMapObject">QGeoMapObject</a></b> ( QGeoMapData * <i>mapData</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#dtor.QGeoMapObject">~QGeoMapObject</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QGeoBoundingBox </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#boundingBox">boundingBox</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#contains">contains</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoMapObjectInfo * </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#info">info</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#selected-prop">isSelected</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#visible-prop">isVisible</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QGeoMapData * </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#mapData">mapData</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#origin-prop">origin</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#setMapData">setMapData</a></b> ( QGeoMapData * <i>mapData</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#selected-prop">setSelected</a></b> ( bool <i>selected</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#visible-prop">setVisible</a></b> ( bool <i>visible</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#zValue-prop">setZValue</a></b> ( int <i>zValue</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> TransformType </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#transformType-prop">transformType</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual Type </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#type">type</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> CoordinateUnit </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#units-prop">units</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#zValue-prop">zValue</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#originChanged">originChanged</a></b> ( QGeoCoordinate <i>origin</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#selectedChanged">selectedChanged</a></b> ( bool <i>selected</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#transformTypeChanged">transformTypeChanged</a></b> ( QGeoMapObject::TransformType <i>transformType</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#unitsChanged">unitsChanged</a></b> ( QGeoMapObject::CoordinateUnit <i>units</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#visibleChanged">visibleChanged</a></b> ( bool <i>visible</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#zValueChanged">zValueChanged</a></b> ( int <i>zValue</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h2>Protected Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#setOrigin">setOrigin</a></b> ( const QGeoCoordinate &amp; <i>origin</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#setTransformType">setTransformType</a></b> ( const TransformType &amp; <i>type</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#setUnits">setUnits</a></b> ( const CoordinateUnit &amp; <i>unit</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QGeoMapObject-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QGeoMapObject class is a graphical item to be displayed on a map.</p>
+<p>QGeoMapObject is the base class used to display graphical items on a map.</p>
+<p>Subclasses of QGeoMapObject exist in order to simplify the task of creating and managing map objects of various kinds.</p>
+<p><a href="qgeomapcustomobject.html">QGeoMapCustomObject</a> is the most generic of these objects in that it allows QGraphicsItems to be added to a map, however as not all mapping plugins use the Qt Graphics View framework so clients should use <a href="qgraphicsgeomap.html#supportsCustomMapObjects">QGraphicsGeoMap::supportsCustomMapObjects</a>() before using <a href="qgeomapcustomobject.html">QGeoMapCustomObject</a>.</p>
+<p>QGeoMapObject instances can also be grouped into heirarchies in order to simplify the process of creating compound objects and managing groups of objects (see <a href="qgeomapgroupobject.html">QGeoMapGroupObject</a>)</p>
+</div>
+<!-- @@@QGeoMapObject -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$CoordinateUnit$$$PixelUnit$$$MeterUnit$$$RelativeArcSecondUnit$$$AbsoluteArcSecondUnit -->
+<h3 class="fn"><a name="CoordinateUnit-enum"></a>enum QGeoMapObject::CoordinateUnit</h3>
+<p>Describes the units of measurement used for a map object's graphics item.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::PixelUnit</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Units are in pixels on the screen. Pixel coordinate (0,0) is translated to the origin coordinate.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::MeterUnit</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Units are in meters on the ground -- a local Transverse Mercator coordinate system (on the WGS84 ellipsoid) is used for translation, centered on the origin coordinate.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::RelativeArcSecondUnit</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Units are in arc seconds relative to the origin coordinate (along the WGS84 ellipsoid).</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::AbsoluteArcSecondUnit</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">Units are in arc seconds on WGS84, origin ignored.</td></tr>
+</table>
+<p>This enum was introduced or modified in Qt Mobility 1.2.</p>
+<!-- @@@CoordinateUnit -->
+<!-- $$$TransformType$$$BilinearTransform$$$ExactTransform -->
+<h3 class="fn"><a name="TransformType-enum"></a>enum QGeoMapObject::TransformType</h3>
+<p>Describes the type of transformation applied to change this object's coordinate system into screen coordinates.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::BilinearTransform</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">This object's bounding box is taken, and transformed at each of its corners into screen coordinates. A bilinear interpolation is then used to draw the rest of the object's GraphicsItem.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::ExactTransform</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Individual key points on the object are transformed and the GraphicsItem is constructed in direct pixel coordinates. This is only available for certain subclasses, depending on the implementation of <a href="qgeomapdata.html">QGeoMapData</a> used.</td></tr>
+</table>
+<p>This enum was introduced or modified in Qt Mobility 1.2.</p>
+<!-- @@@TransformType -->
+<!-- $$$Type$$$NullType$$$GroupType$$$RectangleType$$$CircleType$$$PolylineType$$$PolygonType$$$PixmapType$$$TextType$$$RouteType$$$CustomType -->
+<h3 class="fn"><a name="Type-enum"></a>enum QGeoMapObject::Type</h3>
+<p>Describes the type of a map object.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::NullType</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">An empty <a href="qgeomapobject.html">QGeoMapObject</a>.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::GroupType</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">A <a href="qgeomapobject.html">QGeoMapObject</a> used to organize other map objects into groups.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::RectangleType</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">A <a href="qgeomapobject.html">QGeoMapObject</a> used to display a rectangular region.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::CircleType</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">A <a href="qgeomapobject.html">QGeoMapObject</a> used to display a circular region.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::PolylineType</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">A <a href="qgeomapobject.html">QGeoMapObject</a> used to display a multi-segment line.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::PolygonType</tt></td><td class=" topAlign"><tt>5</tt></td><td  class="topAlign">A <a href="qgeomapobject.html">QGeoMapObject</a> used to display a polygonal region.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::PixmapType</tt></td><td class=" topAlign"><tt>6</tt></td><td  class="topAlign">A <a href="qgeomapobject.html">QGeoMapObject</a> used to display a pixmap on a map.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::TextType</tt></td><td class=" topAlign"><tt>7</tt></td><td  class="topAlign">A <a href="qgeomapobject.html">QGeoMapObject</a> used to display text on a map</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::RouteType</tt></td><td class=" topAlign"><tt>8</tt></td><td  class="topAlign">A <a href="qgeomapobject.html">QGeoMapObject</a> used to display a route.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoMapObject::CustomType</tt></td><td class=" topAlign"><tt>9</tt></td><td  class="topAlign">A <a href="qgeomapobject.html">QGeoMapObject</a> displaying a custom GraphicsItem.</td></tr>
+</table>
+<!-- @@@Type -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$origin-prop$$$origin$$$originChangedQGeoCoordinate -->
+<h3 class="fn"><a name="origin-prop"></a>origin : const <a href="qgeocoordinate.html">QGeoCoordinate</a></h3>
+<p>This property holds this property holds the origin of the object's coordinate system.</p>
+<p>How the origin coordinate is used depends on the selected coordinate system, see <a href="qgeomapobject.html#TransformType-enum">QGeoMapObject::TransformType</a> for more details.</p>
+<p>This property was introduced in Qt Mobility 1.2.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b>origin</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#originChanged">originChanged</a></b> ( QGeoCoordinate <i>origin</i> )</td></tr>
+</table>
+<!-- @@@origin -->
+<!-- $$$selected-prop$$$isSelected$$$setSelectedbool$$$selectedChangedbool -->
+<h3 class="fn"><a name="selected-prop"></a>selected : bool</h3>
+<p>This property holds this property holds whether the map object is selected.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><b>isSelected</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setSelected</b> ( bool <i>selected</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#selectedChanged">selectedChanged</a></b> ( bool <i>selected</i> )</td></tr>
+</table>
+<!-- @@@selected -->
+<!-- $$$transformType-prop$$$transformType$$$transformTypeChangedQGeoMapObject::TransformType -->
+<h3 class="fn"><a name="transformType-prop"></a>transformType : const <a href="qgeomapobject.html#TransformType-enum">TransformType</a></h3>
+<p>This property holds this property holds the transformation type used to draw the object.</p>
+<p>This property was introduced in Qt Mobility 1.2.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> TransformType </td><td class="memItemRight bottomAlign"><b>transformType</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#transformTypeChanged">transformTypeChanged</a></b> ( QGeoMapObject::TransformType <i>transformType</i> )</td></tr>
+</table>
+<p>See also <a href="qgeomapobject.html#TransformType-enum">QGeoMapObject::TransformType</a>.</p>
+<!-- @@@transformType -->
+<!-- $$$units-prop$$$units$$$unitsChangedQGeoMapObject::CoordinateUnit -->
+<h3 class="fn"><a name="units-prop"></a>units : const <a href="qgeomapobject.html#CoordinateUnit-enum">CoordinateUnit</a></h3>
+<p>This property holds this property holds the units of measurement for the object.</p>
+<p>This property was introduced in Qt Mobility 1.2.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> CoordinateUnit </td><td class="memItemRight bottomAlign"><b>units</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#unitsChanged">unitsChanged</a></b> ( QGeoMapObject::CoordinateUnit <i>units</i> )</td></tr>
+</table>
+<p>See also <a href="qgeomapobject.html#CoordinateUnit-enum">QGeoMapObject::CoordinateUnit</a>.</p>
+<!-- @@@units -->
+<!-- $$$visible-prop$$$isVisible$$$setVisiblebool$$$visibleChangedbool -->
+<h3 class="fn"><a name="visible-prop"></a>visible : bool</h3>
+<p>This property holds this property holds whether the map object is visible.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><b>isVisible</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setVisible</b> ( bool <i>visible</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#visibleChanged">visibleChanged</a></b> ( bool <i>visible</i> )</td></tr>
+</table>
+<!-- @@@visible -->
+<!-- $$$zValue-prop$$$zValue$$$setZValueint$$$zValueChangedint -->
+<h3 class="fn"><a name="zValue-prop"></a>zValue : int</h3>
+<p>This property holds this property holds the z-value of the map object.</p>
+<p>The z-value determines the order in which the objects are drawn on the screen. Objects with the same value will be drawn in the order that they were added to the map or map object.</p>
+<p>This is the same behaviour as <a href="http://qt.nokia.com/doc/4.7/qgraphicsitem.html">QGraphicsItem</a>.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>zValue</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setZValue</b> ( int <i>zValue</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomapobject.html#zValueChanged">zValueChanged</a></b> ( int <i>zValue</i> )</td></tr>
+</table>
+<!-- @@@zValue -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QGeoMapObject[overload1]$$$QGeoMapObjectQGeoMapData* -->
+<h3 class="fn"><a name="QGeoMapObject"></a>QGeoMapObject::QGeoMapObject ( <a href="qgeomapdata.html">QGeoMapData</a> * <i>mapData</i> = 0 )</h3>
+<p>Constructs a new map object associated with <i>mapData</i>.</p>
+<p>The object will be in pixel coordinates, with exact transform.</p>
+<!-- @@@QGeoMapObject -->
+<!-- $$$~QGeoMapObject[overload1]$$$~QGeoMapObject -->
+<h3 class="fn"><a name="dtor.QGeoMapObject"></a>QGeoMapObject::~QGeoMapObject ()<tt> [virtual]</tt></h3>
+<p>Destroys this map object.</p>
+<!-- @@@~QGeoMapObject -->
+<!-- $$$boundingBox[overload1]$$$boundingBox -->
+<h3 class="fn"><a name="boundingBox"></a><a href="qgeoboundingbox.html">QGeoBoundingBox</a> QGeoMapObject::boundingBox () const<tt> [virtual]</tt></h3>
+<p>Returns a bounding box which contains this map object.</p>
+<p>The default implementation requires the object to be added to a map before this function returns a valid bounding box.</p>
+<!-- @@@boundingBox -->
+<!-- $$$contains[overload1]$$$containsconstQGeoCoordinate& -->
+<h3 class="fn"><a name="contains"></a>bool QGeoMapObject::contains ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>coordinate</i> ) const<tt> [virtual]</tt></h3>
+<p>Returns whether <i>coordinate</i> is contained with the boundary of this map object.</p>
+<p>The default implementation requires the object to be added to a map before this function is able to return true.</p>
+<!-- @@@contains -->
+<!-- $$$info[overload1]$$$info -->
+<h3 class="fn"><a name="info"></a><a href="qgeomapobjectinfo.html">QGeoMapObjectInfo</a> * QGeoMapObject::info () const</h3>
+<p>Returns the <a href="qgeomapobjectinfo.html">QGeoMapObjectInfo</a> instance which implements the <a href="qgeomapdata.html">QGeoMapData</a> specific behaviours of this map object.</p>
+<p>This will mostly be useful when implementing custom <a href="qgeomapdata.html">QGeoMapData</a> subclasses.</p>
+<!-- @@@info -->
+<!-- $$$mapData[overload1]$$$mapData -->
+<h3 class="fn"><a name="mapData"></a><a href="qgeomapdata.html">QGeoMapData</a> * QGeoMapObject::mapData () const<tt> [virtual]</tt></h3>
+<p>Returns the <a href="qgeomapdata.html">QGeoMapData</a> instance associated with this object.</p>
+<p>Will return 0 if not <a href="qgeomapdata.html">QGeoMapData</a> instance has been set.</p>
+<p>See also <a href="qgeomapobject.html#setMapData">setMapData</a>().</p>
+<!-- @@@mapData -->
+<!-- $$$originChanged[overload1]$$$originChangedQGeoCoordinate -->
+<h3 class="fn"><a name="originChanged"></a>void QGeoMapObject::originChanged ( <a href="qgeocoordinate.html">QGeoCoordinate</a> <i>origin</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the origin of the map object has changed.</p>
+<p>The new value is <i>origin</i>.</p>
+<!-- @@@originChanged -->
+<!-- $$$selectedChanged[overload1]$$$selectedChangedbool -->
+<h3 class="fn"><a name="selectedChanged"></a>void QGeoMapObject::selectedChanged ( bool <i>selected</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the selected state of the map object has changed.</p>
+<p>The new vlaue is <i>selected</i>.</p>
+<!-- @@@selectedChanged -->
+<!-- $$$setMapData[overload1]$$$setMapDataQGeoMapData* -->
+<h3 class="fn"><a name="setMapData"></a>void QGeoMapObject::setMapData ( <a href="qgeomapdata.html">QGeoMapData</a> * <i>mapData</i> )<tt> [virtual]</tt></h3>
+<p>Associates the <a href="qgeomapdata.html">QGeoMapData</a> instance <i>mapData</i> with this map object.</p>
+<p>This will create an appropriate <a href="qgeomapobjectinfo.html">QGeoMapObjectInfo</a> instance for this <a href="qgeomapobject.html">QGeoMapObject</a> and will connect the appropriate signals to it so that it can be kept up to date.</p>
+<p>See also <a href="qgeomapobject.html#mapData">mapData</a>().</p>
+<!-- @@@setMapData -->
+<!-- $$$setOrigin[overload1]$$$setOriginconstQGeoCoordinate& -->
+<h3 class="fn"><a name="setOrigin"></a>void QGeoMapObject::setOrigin ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>origin</i> )<tt> [protected]</tt></h3>
+<p>Sets the origin of the object to <i>origin</i>.</p>
+<p>See also <a href="qgeomapobject.html#origin-prop">origin</a>().</p>
+<!-- @@@setOrigin -->
+<!-- $$$setTransformType[overload1]$$$setTransformTypeconstTransformType& -->
+<h3 class="fn"><a name="setTransformType"></a>void QGeoMapObject::setTransformType ( const <a href="qgeomapobject.html#TransformType-enum">TransformType</a> &amp; <i>type</i> )<tt> [protected]</tt></h3>
+<p>Sets the transform type of the object to <i>type</i>.</p>
+<p>See also <a href="qgeomapobject.html#transformType-prop">transformType</a>().</p>
+<!-- @@@setTransformType -->
+<!-- $$$setUnits[overload1]$$$setUnitsconstCoordinateUnit& -->
+<h3 class="fn"><a name="setUnits"></a>void QGeoMapObject::setUnits ( const <a href="qgeomapobject.html#CoordinateUnit-enum">CoordinateUnit</a> &amp; <i>unit</i> )<tt> [protected]</tt></h3>
+<p>Sets the coordinate units of the object to <i>unit</i>.</p>
+<p>Note that setting this property will reset the <a href="qgeomapobject.html#transformType-prop">transformType</a> property to the default for the units given. For <a href="qgeomapobject.html#CoordinateUnit-enum">PixelUnit</a>, this is <a href="qgeomapobject.html#TransformType-enum">ExactTransform</a>, and for all others, <a href="qgeomapobject.html#TransformType-enum">BilinearTransform</a>.</p>
+<p>See also <a href="qgeomapobject.html#units-prop">units</a>().</p>
+<!-- @@@setUnits -->
+<!-- $$$transformTypeChanged[overload1]$$$transformTypeChangedQGeoMapObject::TransformType -->
+<h3 class="fn"><a name="transformTypeChanged"></a>void QGeoMapObject::transformTypeChanged ( <a href="qgeomapobject.html#TransformType-enum">QGeoMapObject::TransformType</a> <i>transformType</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the transform type of the map object has changed.</p>
+<p>The new value is <i>transformType</i>.</p>
+<!-- @@@transformTypeChanged -->
+<!-- $$$type[overload1]$$$type -->
+<h3 class="fn"><a name="type"></a><a href="qgeomapobject.html#Type-enum">Type</a> QGeoMapObject::type () const<tt> [virtual]</tt></h3>
+<p>Returns the type of this map object.</p>
+<!-- @@@type -->
+<!-- $$$unitsChanged[overload1]$$$unitsChangedQGeoMapObject::CoordinateUnit -->
+<h3 class="fn"><a name="unitsChanged"></a>void QGeoMapObject::unitsChanged ( <a href="qgeomapobject.html#CoordinateUnit-enum">QGeoMapObject::CoordinateUnit</a> <i>units</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the coordinate units of the map object have changed.</p>
+<p>The new value is <i>units</i>.</p>
+<!-- @@@unitsChanged -->
+<!-- $$$visibleChanged[overload1]$$$visibleChangedbool -->
+<h3 class="fn"><a name="visibleChanged"></a>void QGeoMapObject::visibleChanged ( bool <i>visible</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the visible state of the map object has changed.</p>
+<p>The new value is <i>visible</i>.</p>
+<!-- @@@visibleChanged -->
+<!-- $$$zValueChanged[overload1]$$$zValueChangedint -->
+<h3 class="fn"><a name="zValueChanged"></a>void QGeoMapObject::zValueChanged ( int <i>zValue</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the z value of the map object has changed.</p>
+<p>The new value is <i>zValue</i>.</p>
+<!-- @@@zValueChanged -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

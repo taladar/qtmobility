@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qversitcontactexporter.cpp -->
+  <title>Qt 1.2: QVersitContactExporter Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtversit.html">QtVersit</a></li>
+              <li>QVersitContactExporter</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#extension-via-handlers">Extension via handlers</a></li>
+<li class="level2"><a href="#exporting-group-relationships">Exporting group relationships</a></li>
+<li class="level2"><a href="#other-implementation-notes">Other implementation notes</a></li>
+</ul>
+</div>
+<h1 class="title">QVersitContactExporter Class Reference</h1>
+<!-- $$$QVersitContactExporter-brief -->
+<p>The QVersitContactExporter class converts <a href="qcontact.html">QContacts</a> into <a href="qversitdocument.html">QVersitDocuments</a>. <a href="#details">More...</a></p>
+<!-- @@@QVersitContactExporter -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QVersitContactExporter&gt;</pre><ul>
+<li><a href="qversitcontactexporter-members.html">List of all members, including inherited members</a></li>
+<li><a href="qversitcontactexporter-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#Error-enum">Error</a></b> { NoError, EmptyContactError, NoNameError }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#QVersitContactExporter">QVersitContactExporter</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#QVersitContactExporter-2">QVersitContactExporter</a></b> ( const QString &amp; <i>profile</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#QVersitContactExporter-3">QVersitContactExporter</a></b> ( const QStringList &amp; <i>profiles</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#dtor.QVersitContactExporter">~QVersitContactExporter</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVersitContactExporterDetailHandler * </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#detailHandler">detailHandler</a></b> () const<tt> (deprecated)</tt></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QVersitDocument&gt; </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#documents">documents</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMap&lt;int, Error&gt; </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#errorMap">errorMap</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#exportContacts">exportContacts</a></b> ( const QList&lt;QContact&gt; &amp; <i>contacts</i>, QVersitDocument::VersitType <i>versitType</i> = QVersitDocument::VCard30Type )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVersitResourceHandler * </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#resourceHandler">resourceHandler</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#setDetailHandler">setDetailHandler</a></b> ( QVersitContactExporterDetailHandlerV2 * <i>handler</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#setDetailHandler-2">setDetailHandler</a></b> ( QVersitContactExporterDetailHandler * <i>handler</i> )<tt> (deprecated)</tt></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactexporter.html#setResourceHandler">setResourceHandler</a></b> ( QVersitResourceHandler * <i>handler</i> )</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QVersitContactExporter-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QVersitContactExporter class converts <a href="qcontact.html">QContacts</a> into <a href="qversitdocument.html">QVersitDocuments</a>.</p>
+<p>This class is used to convert lists of <a href="qcontact.html">QContacts</a> (which may be stored in a <a href="qcontactmanager.html">QContactManager</a>) into lists of <a href="qversitdocument.html">QVersitDocuments</a> (which may be written to an I/O device using <a href="qversitreader.html">QVersitReader</a>. Unless there is an error, there is a one-to-one mapping between contacts and Versit documents. The exporter can be extended by clients by associating resource and detail handlers.</p>
+<p>Here is a simple example of how to use QVersitContactExporter:</p>
+<pre class="highlightedCode brush: cpp">     QVersitContactExporter contactExporter;
+
+     QContact contact;
+     <span class="comment">// Create a name</span>
+     QContactName name;
+     name.setFirstName(QString::fromAscii(&quot;John&quot;));
+     contact.saveDetail(&amp;name);
+
+     if (!contactExporter.exportContacts(QList&lt;QContact&gt;() &lt;&lt; contact, QVersitDocument::VCard30Type))
+         return;
+     QList&lt;QVersitDocument&gt; versitDocuments = contactExporter.documents();
+
+     <span class="comment">// detailHandler.mUnknownDetails now contains the list of unknown details</span></pre>
+<a name="extension-via-handlers"></a>
+<h3>Extension via handlers</h3>
+<p>A <a href="qversitresourcehandler.html">QVersitResourceHandler</a> is associated with the exporter to supply the behaviour for loading files from persistent storage. By default, this is set to a <a href="qversitdefaultresourcehandler.html">QVersitDefaultResourceHandler</a>, which supports basic resource loading from the file system. An alternative resource handler can be specified with <a href="qversitcontactexporter.html#setResourceHandler">setResourceHandler</a>().</p>
+<p>By associating a <a href="qversitcontactexporterdetailhandlerv2.html">QVersitContactExporterDetailHandlerV2</a> with the exporter using <a href="qversitcontactexporter.html#setDetailHandler">setDetailHandler</a>(), the client can pass in a handler to override the processing of details and/or handle details that QVersitContactExporter doesn't support. Also, handlers can be implicitly associated to an exporter through the <a href="versitplugins.html">handler plugin mechanism</a>. The exporter can be constructed with a profile, which gives hints about what kind of handlers should be added to it. For example, the backup profile can be used to instruct the exporter to encode any unknown details in the vCard such that it can be reconstructed later (a <a href="qversitcontactimporter.html">QVersitContactImporter</a> constructed under the backup profile can be used to decode it). To illustrate, a backup exporter can be constructed with:</p>
+<pre class="highlightedCode brush: cpp"> QVersitContactExporter exporter(QVersitContactHandlerFactory::ProfileBackup);</pre>
+<p>For more details on how the backup plugin works, see <a href="versitplugins.html">Versit Plugins</a></p>
+<a name="exporting-group-relationships"></a>
+<h3>Exporting group relationships</h3>
+<p>The exporter does not handle QContactRelationships at all.</p>
+<p>Some managers use the <a href="qcontactrelationship.html#HasMember-var">HasMember</a> <a href="qcontactrelationship.html">QContactRelationship</a> along with contacts of type <a href="qcontacttype.html#TypeGroup-var">TypeGroup</a> to indicate categorization of contacts. In vCard, categorization is represented by the CATEGORIES property, which has semantics most similar to the <a href="qcontacttag.html">QContactTag</a> detail. For contact manager backends that supports groups but not <a href="qcontacttag.html">QContactTag</a>, if the categorization information needs to be retained through CATEGORIES vCard properties, extra work can be done to convert from group relationships to <a href="qcontacttag.html">QContactTag</a> before passing the contact list to the exporter. Below is some example code that does this translation.</p>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /*! Adds QContactTag details to the \a contacts, based on the \a relationships.
+
+   Tags are created such that if a group contact, B with display label &quot;b&quot;, has a HasMember
+   relationship with a contact, A, then a QContactTag, &quot;b&quot;, is added to A.
+
+   Group contacts can be passed in with the \a contacts list.  If a contact is part of a group which
+   is not in \a contacts, the \a manager is queried to find them.
+   */</span>
+ void createTagsFromGroups(QList&lt;QContact&gt;* contacts,
+                           const QList&lt;QContactRelationship&gt;&amp; relationships,
+                           const QContactManager* manager)
+ {
+     <span class="comment">// Map from QContactIds to group names</span>
+     QMap&lt;QContactId, QString&gt; groupMap;
+
+     <span class="comment">// Map from QContactIds to indices into the contacts list</span>
+     QMap&lt;QContactId, int&gt; indexMap;
+     <span class="comment">// Build up groupMap and indexMap</span>
+     for (int i = 0; i &lt; contacts-&gt;size(); ++i) {
+         QContact contact = contacts-&gt;at(i);
+         if (contact.type() == QContactType::TypeGroup) {
+             <span class="comment">// In practice, you may want to check that there aren't two distinct groups with the</span>
+             <span class="comment">// same name, and you may want to use a field other than display label.</span>
+             groupMap.insert(contact.id(), contact.displayLabel());
+         }
+         indexMap.insert(contact.id(), i);
+     }
+
+     <span class="comment">// Now add all the tags specified by the group relationships</span>
+     foreach (const QContactRelationship&amp; rel, relationships) {
+         if (rel.relationshipType() == QContactRelationship::HasMember
+             &amp;&amp; indexMap.contains(rel.second())) {
+             QString groupName = groupMap.value(rel.first()); <span class="comment">// Have we seen the group before?</span>
+             if (groupName.isEmpty()) {
+                 <span class="comment">// Try and find the group in the manager</span>
+                 QContactId groupId = rel.second();
+                 QContactFetchHint fetchHint;
+                 fetchHint.setDetailDefinitionsHint(QStringList(QContactDisplayLabel::DefinitionName));
+                 QContact contact = manager-&gt;contact(groupId.localId(), fetchHint);
+                 if (!contact.isEmpty()) {
+                     groupName = contact.displayLabel();
+                     groupMap.insert(groupId, groupName); <span class="comment">// Cache the group id/name</span>
+                 }
+             }
+             if (!groupName.isEmpty()) {
+                 <span class="comment">// Add the tag</span>
+                 QContactTag tag;
+                 tag.setTag(groupName);
+                 (*contacts)[indexMap.value(rel.second())].saveDetail(&amp;tag);
+             }
+         }
+     }
+ }</pre>
+<a name="other-implementation-notes"></a>
+<h3>Other implementation notes</h3>
+<p>Some Symbian and Android devices do not properly handle the <tt>FN</tt> vCard property. If a CustomLabel is set on a contact and this class is used to generate a vCard, the receiving device might display this label in an unexpected field (eg. Last Name).</p>
+<p>The vCard specification requires the <tt>FN</tt> property to be present. However, because of this interoperability issue, Qt Versit only generates an FN property if a CustomLabel is set.</p>
+</div>
+<p>See also <a href="qversitdocument.html">QVersitDocument</a>, <a href="qversitproperty.html">QVersitProperty</a>, <a href="qversitresourcehandler.html">QVersitResourceHandler</a>, and <a href="qversitcontactexporterdetailhandlerv2.html">QVersitContactExporterDetailHandlerV2</a>.</p>
+<!-- @@@QVersitContactExporter -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Error$$$NoError$$$EmptyContactError$$$NoNameError -->
+<h3 class="fn"><a name="Error-enum"></a>enum QVersitContactExporter::Error</h3>
+<p>This enum specifies an error that occurred during the most recent call to <a href="qversitcontactexporter.html#exportContacts">exportContacts</a>()</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QVersitContactExporter::NoError</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">The most recent operation was successful</td></tr>
+<tr><td  class="topAlign"><tt>QVersitContactExporter::EmptyContactError</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">One of the contacts was empty</td></tr>
+<tr><td  class="topAlign"><tt>QVersitContactExporter::NoNameError</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">One of the contacts has no <a href="qcontactname.html">QContactName</a> field</td></tr>
+</table>
+<!-- @@@Error -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QVersitContactExporter[overload1]$$$QVersitContactExporter -->
+<h3 class="fn"><a name="QVersitContactExporter"></a>QVersitContactExporter::QVersitContactExporter ()</h3>
+<p>Constructs a new contact exporter</p>
+<!-- @@@QVersitContactExporter -->
+<!-- $$$QVersitContactExporter$$$QVersitContactExporterconstQString& -->
+<h3 class="fn"><a name="QVersitContactExporter-2"></a>QVersitContactExporter::QVersitContactExporter ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>profile</i> )</h3>
+<p>Constructs a new exporter for the given <i>profile</i>. The profile strings should be one of those defined by <a href="qversitcontacthandlerfactory.html">QVersitContactHandlerFactory</a>, or a value otherwise agreed to by a <a href="versitplugins.html">Versit plugin</a>.</p>
+<p>The profile determines which plugins will be loaded to supplement the exporter.</p>
+<!-- @@@QVersitContactExporter -->
+<!-- $$$QVersitContactExporter$$$QVersitContactExporterconstQStringList& -->
+<h3 class="fn"><a name="QVersitContactExporter-3"></a>QVersitContactExporter::QVersitContactExporter ( const <a href="http://qt.nokia.com/doc/4.7/qstringlist.html">QStringList</a> &amp; <i>profiles</i> )</h3>
+<p>Constructs a new exporter for the given <i>profiles</i>. The profile strings should be one of those defined by <a href="qversitcontacthandlerfactory.html">QVersitContactHandlerFactory</a>, or a value otherwise agreed to by a <a href="versitplugins.html">Versit plugin</a>.</p>
+<p>The profiles determine which plugins will be loaded to supplement the exporter.</p>
+<!-- @@@QVersitContactExporter -->
+<!-- $$$~QVersitContactExporter[overload1]$$$~QVersitContactExporter -->
+<h3 class="fn"><a name="dtor.QVersitContactExporter"></a>QVersitContactExporter::~QVersitContactExporter ()</h3>
+<p>Frees any memory in use by this contact exporter.</p>
+<!-- @@@~QVersitContactExporter -->
+<!-- $$$detailHandler[overload1]$$$detailHandler -->
+<h3 class="fn"><a name="detailHandler"></a><a href="qversitcontactexporterdetailhandler.html">QVersitContactExporterDetailHandler</a> * QVersitContactExporter::detailHandler () const</h3>
+<p>This function is deprecated.</p>
+<p>Gets the handler for processing QContactDetails.</p>
+<p>See also <a href="qversitcontactexporter.html#setDetailHandler">setDetailHandler</a>().</p>
+<!-- @@@detailHandler -->
+<!-- $$$documents[overload1]$$$documents -->
+<h3 class="fn"><a name="documents"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qversitdocument.html">QVersitDocument</a>&gt; QVersitContactExporter::documents () const</h3>
+<p>Returns the documents exported in the most recent call to <a href="qversitcontactexporter.html#exportContacts">exportContacts</a>().</p>
+<p>See also <a href="qversitcontactexporter.html#exportContacts">exportContacts</a>().</p>
+<!-- @@@documents -->
+<!-- $$$errorMap[overload1]$$$errorMap -->
+<h3 class="fn"><a name="errorMap"></a><a href="http://qt.nokia.com/doc/4.7/qmap.html">QMap</a>&lt;int, <a href="qversitcontactexporter.html#Error-enum">Error</a>&gt; QVersitContactExporter::errorMap () const</h3>
+<p>Returns the map of errors encountered in the most recent call to <a href="qversitcontactexporter.html#exportContacts">exportContacts</a>(). The key is the index into the input list of contacts and the value is the error that occurred on that contact.</p>
+<p>See also <a href="qversitcontactexporter.html#exportContacts">exportContacts</a>().</p>
+<!-- @@@errorMap -->
+<!-- $$$exportContacts[overload1]$$$exportContactsconstQList<QContact>&QVersitDocument::VersitType -->
+<h3 class="fn"><a name="exportContacts"></a>bool QVersitContactExporter::exportContacts ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qcontact.html">QContact</a>&gt; &amp; <i>contacts</i>, <a href="qversitdocument.html#VersitType-enum">QVersitDocument::VersitType</a> <i>versitType</i> = QVersitDocument::VCard30Type )</h3>
+<p>Converts <i>contacts</i> into a list of corresponding QVersitDocuments, using the format given by <i>versitType</i>.</p>
+<p>Returns true on success. If any of the contacts could not be exported, false is returned and <a href="qversitcontactexporter.html#errorMap">errorMap</a>() will return a list describing the errors that occurred. The successfully exported documents will still be available via <a href="qversitcontactexporter.html#documents">documents</a>().</p>
+<p>See also <a href="qversitcontactexporter.html#documents">documents</a>() and <a href="qversitcontactexporter.html#errorMap">errorMap</a>().</p>
+<!-- @@@exportContacts -->
+<!-- $$$resourceHandler[overload1]$$$resourceHandler -->
+<h3 class="fn"><a name="resourceHandler"></a><a href="qversitresourcehandler.html">QVersitResourceHandler</a> * QVersitContactExporter::resourceHandler () const</h3>
+<p>Returns the associated resource handler.</p>
+<p>See also <a href="qversitcontactexporter.html#setResourceHandler">setResourceHandler</a>().</p>
+<!-- @@@resourceHandler -->
+<!-- $$$setDetailHandler[overload1]$$$setDetailHandlerQVersitContactExporterDetailHandlerV2* -->
+<h3 class="fn"><a name="setDetailHandler"></a>void QVersitContactExporter::setDetailHandler ( <a href="qversitcontactexporterdetailhandlerv2.html">QVersitContactExporterDetailHandlerV2</a> * <i>handler</i> )</h3>
+<p>Sets <i>handler</i> to be the handler for processing QContactDetails, or 0 to have no handler.</p>
+<p>Does not take ownership of the handler. The client should ensure the handler remains valid for the lifetime of the exporter. This function is used for version 2 and higher handlers.</p>
+<p>Only one detail handler can be set. If another detail handler (of any version) was previously set, it will no longer be associated with the exporter.</p>
+<p>See also <a href="qversitcontactexporter.html#detailHandler">detailHandler</a>().</p>
+<!-- @@@setDetailHandler -->
+<!-- $$$setDetailHandler$$$setDetailHandlerQVersitContactExporterDetailHandler* -->
+<h3 class="fn"><a name="setDetailHandler-2"></a>void QVersitContactExporter::setDetailHandler ( <a href="qversitcontactexporterdetailhandler.html">QVersitContactExporterDetailHandler</a> * <i>handler</i> )</h3>
+<p>This function is deprecated.</p>
+<p>Sets <i>handler</i> to be the handler for processing QContactDetails, or 0 to have no handler.</p>
+<p>Does not take ownership of the handler. The client should ensure the handler remains valid for the lifetime of the exporter. This function is used for version 1 handlers.</p>
+<p>Only one detail handler can be set. If another detail handler (of any version) was previously set, it will no longer be associated with the exporter.</p>
+<!-- @@@setDetailHandler -->
+<!-- $$$setResourceHandler[overload1]$$$setResourceHandlerQVersitResourceHandler* -->
+<h3 class="fn"><a name="setResourceHandler"></a>void QVersitContactExporter::setResourceHandler ( <a href="qversitresourcehandler.html">QVersitResourceHandler</a> * <i>handler</i> )</h3>
+<p>Sets <i>handler</i> to be the handler to load files with, or 0 to have no handler.</p>
+<p>Does not take ownership of the handler. The client should ensure the handler remains valid for the lifetime of the exporter.</p>
+<p>See also <a href="qversitcontactexporter.html#resourceHandler">resourceHandler</a>().</p>
+<!-- @@@setResourceHandler -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qcamerafocus.cpp -->
+  <title>Qt 1.2: QCameraFocus Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtmultimediakit.html">QtMultimediaKit</a></li>
+              <li>QCameraFocus</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QCameraFocus Class Reference</h1>
+<!-- $$$QCameraFocus-brief -->
+<p>The QCameraFocus class provides interface for focus and zoom related camera settings. <a href="#details">More...</a></p>
+<!-- @@@QCameraFocus -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QCameraFocus&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qcamerafocus-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#FocusMode-enum">FocusMode</a></b> { ManualFocus, AutoFocus, ContinuousFocus, InfinityFocus, HyperfocalFocus, MacroFocus }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#FocusMode-enum">FocusModes</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#FocusPointMode-enum">FocusPointMode</a></b> { FocusPointAuto, FocusPointCenter, FocusPointFaceDetection, FocusPointCustom }</td></tr>
+</table>
+<a name="properties"></a>
+<h2>Properties</h2>
+<table class="propsummary">
+<tr><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qcamerafocus.html#customFocusPoint-prop">customFocusPoint</a></b> : QPointF</li>
+<li class="fn"><b><a href="qcamerafocus.html#digitalZoom-prop">digitalZoom</a></b> : const qreal</li>
+<li class="fn"><b><a href="qcamerafocus.html#focusMode-prop">focusMode</a></b> : FocusMode</li>
+</ul></td><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qcamerafocus.html#focusPointMode-prop">focusPointMode</a></b> : FocusPointMode</li>
+<li class="fn"><b><a href="qcamerafocus.html#focusZones-prop">focusZones</a></b> : const QCameraFocusZoneList</li>
+<li class="fn"><b><a href="qcamerafocus.html#opticalZoom-prop">opticalZoom</a></b> : const qreal</li>
+</ul>
+</td></tr>
+</table>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#customFocusPoint-prop">customFocusPoint</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#digitalZoom-prop">digitalZoom</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> FocusMode </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#focusMode-prop">focusMode</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> FocusPointMode </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#focusPointMode-prop">focusPointMode</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QCameraFocusZoneList </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#focusZones-prop">focusZones</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#isAvailable">isAvailable</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#isFocusModeSupported">isFocusModeSupported</a></b> ( FocusMode <i>mode</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#isFocusPointModeSupported">isFocusPointModeSupported</a></b> ( FocusPointMode <i>mode</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#maximumDigitalZoom">maximumDigitalZoom</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#maximumOpticalZoom">maximumOpticalZoom</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#opticalZoom-prop">opticalZoom</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#customFocusPoint-prop">setCustomFocusPoint</a></b> ( const QPointF &amp; <i>point</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#focusMode-prop">setFocusMode</a></b> ( FocusMode <i>mode</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#focusPointMode-prop">setFocusPointMode</a></b> ( FocusPointMode <i>mode</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#zoomTo">zoomTo</a></b> ( qreal <i>optical</i>, qreal <i>digital</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#digitalZoomChanged">digitalZoomChanged</a></b> ( qreal <i>value</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#focusZonesChanged">focusZonesChanged</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#maximumDigitalZoomChanged">maximumDigitalZoomChanged</a></b> ( qreal <i>zoom</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#maximumOpticalZoomChanged">maximumOpticalZoomChanged</a></b> ( qreal <i>zoom</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#opticalZoomChanged">opticalZoomChanged</a></b> ( qreal <i>value</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QCameraFocus-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QCameraFocus class provides interface for focus and zoom related camera settings.</p>
+</div>
+<!-- @@@QCameraFocus -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$FocusMode$$$ManualFocus$$$HyperfocalFocus$$$InfinityFocus$$$AutoFocus$$$ContinuousFocus$$$MacroFocus -->
+<h3 class="flags"><a name="FocusMode-enum"></a>enum QCameraFocus::FocusMode<br/>flags QCameraFocus::FocusModes</h3>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QCameraFocus::ManualFocus</tt></td><td class=" topAlign"><tt>0x1</tt></td><td  class="topAlign">Manual or fixed focus mode.</td></tr>
+<tr><td  class="topAlign"><tt>QCameraFocus::AutoFocus</tt></td><td class=" topAlign"><tt>0x8</tt></td><td  class="topAlign">One-shot auto focus mode.</td></tr>
+<tr><td  class="topAlign"><tt>QCameraFocus::ContinuousFocus</tt></td><td class=" topAlign"><tt>0x10</tt></td><td  class="topAlign">Continuous auto focus mode.</td></tr>
+<tr><td  class="topAlign"><tt>QCameraFocus::InfinityFocus</tt></td><td class=" topAlign"><tt>0x04</tt></td><td  class="topAlign">Focus strictly to infinity.</td></tr>
+<tr><td  class="topAlign"><tt>QCameraFocus::HyperfocalFocus</tt></td><td class=" topAlign"><tt>0x02</tt></td><td  class="topAlign">Focus to hyperfocal distance, with with the maximum depth of field achieved. All objects at distances from half of this distance out to infinity will be acceptably sharp.</td></tr>
+<tr><td  class="topAlign"><tt>QCameraFocus::MacroFocus</tt></td><td class=" topAlign"><tt>0x20</tt></td><td  class="topAlign">One shot auto focus to objects close to camera.</td></tr>
+</table>
+<p>The FocusModes type is a typedef for <a href="qflags.html">QFlags</a>&lt;FocusMode&gt;. It stores an OR combination of FocusMode values.</p>
+<!-- @@@FocusMode -->
+<!-- $$$FocusPointMode$$$FocusPointAuto$$$FocusPointCenter$$$FocusPointFaceDetection$$$FocusPointCustom -->
+<h3 class="fn"><a name="FocusPointMode-enum"></a>enum QCameraFocus::FocusPointMode</h3>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QCameraFocus::FocusPointAuto</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Automatically select one or multiple focus points.</td></tr>
+<tr><td  class="topAlign"><tt>QCameraFocus::FocusPointCenter</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Focus to the frame center.</td></tr>
+<tr><td  class="topAlign"><tt>QCameraFocus::FocusPointFaceDetection</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Focus on faces in the frame.</td></tr>
+<tr><td  class="topAlign"><tt>QCameraFocus::FocusPointCustom</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">Focus to the custom point, defined by <a href="qcamerafocus.html#customFocusPoint-prop">QCameraFocus::customFocusPoint</a> property.</td></tr>
+</table>
+<!-- @@@FocusPointMode -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$customFocusPoint-prop$$$customFocusPoint$$$setCustomFocusPointconstQPointF& -->
+<h3 class="fn"><a name="customFocusPoint-prop"></a>customFocusPoint : <a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a></h3>
+<p>Position of custom focus point, in relative frame coordinates: <a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a>(0,0) points to the left top frame point, <a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a>(0.5,0.5) points to the frame center.</p>
+<p>Custom focus point is used only in <a href="qcamerafocus.html#FocusPointMode-enum">FocusPointCustom</a> focus mode.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QPointF </td><td class="memItemRight bottomAlign"><b>customFocusPoint</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setCustomFocusPoint</b> ( const QPointF &amp; <i>point</i> )</td></tr>
+</table>
+<!-- @@@customFocusPoint -->
+<!-- $$$digitalZoom-prop$$$digitalZoom$$$digitalZoomChangedqreal -->
+<h3 class="fn"><a name="digitalZoom-prop"></a>digitalZoom : const <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds the current digital zoom value.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>digitalZoom</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#digitalZoomChanged">digitalZoomChanged</a></b> ( qreal <i>value</i> )</td></tr>
+</table>
+<p>See also <a href="qcamerafocus.html#opticalZoom-prop">QCameraFocus::opticalZoom</a>.</p>
+<!-- @@@digitalZoom -->
+<!-- $$$focusMode-prop$$$focusMode$$$setFocusModeFocusMode -->
+<h3 class="fn"><a name="focusMode-prop"></a>focusMode : <a href="qcamerafocus.html#FocusMode-enum">FocusMode</a></h3>
+<p>This property holds the current camera focus mode.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> FocusMode </td><td class="memItemRight bottomAlign"><b>focusMode</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setFocusMode</b> ( FocusMode <i>mode</i> )</td></tr>
+</table>
+<p>See also <a href="qcamerafocus.html#isFocusModeSupported">QCameraFocus::isFocusModeSupported</a>().</p>
+<!-- @@@focusMode -->
+<!-- $$$focusPointMode-prop$$$focusPointMode$$$setFocusPointModeFocusPointMode -->
+<h3 class="fn"><a name="focusPointMode-prop"></a>focusPointMode : <a href="qcamerafocus.html#FocusPointMode-enum">FocusPointMode</a></h3>
+<p>This property holds the current camera focus point selection mode.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> FocusPointMode </td><td class="memItemRight bottomAlign"><b>focusPointMode</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setFocusPointMode</b> ( FocusPointMode <i>mode</i> )</td></tr>
+</table>
+<p>See also <a href="qcamerafocus.html#isFocusPointModeSupported">QCameraFocus::isFocusPointModeSupported</a>().</p>
+<!-- @@@focusPointMode -->
+<!-- $$$focusZones-prop$$$focusZones$$$focusZonesChanged -->
+<h3 class="fn"><a name="focusZones-prop"></a>focusZones : const QCameraFocusZoneList</h3>
+<p>Returns the list of active focus zones.</p>
+<p>If QCamera::FocusPointAuto or QCamera::FocusPointFaceDetection focus mode is selected this method returns the list of zones the camera is actually focused on.</p>
+<p>The coordinates system is the same as for custom focus points: <a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a>(0,0) points to the left top frame point, <a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a>(0.5,0.5) points to the frame center.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QCameraFocusZoneList </td><td class="memItemRight bottomAlign"><b>focusZones</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#focusZonesChanged">focusZonesChanged</a></b> ()</td></tr>
+</table>
+<!-- @@@focusZones -->
+<!-- $$$opticalZoom-prop$$$opticalZoom$$$opticalZoomChangedqreal -->
+<h3 class="fn"><a name="opticalZoom-prop"></a>opticalZoom : const <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds the current optical zoom value.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><b>opticalZoom</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcamerafocus.html#opticalZoomChanged">opticalZoomChanged</a></b> ( qreal <i>value</i> )</td></tr>
+</table>
+<p>See also <a href="qcamerafocus.html#digitalZoom-prop">QCameraFocus::digitalZoom</a>.</p>
+<!-- @@@opticalZoom -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$digitalZoomChanged[overload1]$$$digitalZoomChangedqreal -->
+<h3 class="fn"><a name="digitalZoomChanged"></a>void QCameraFocus::digitalZoomChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>value</i> )<tt> [signal]</tt></h3>
+<p>Signal emitted when digital zoom value changes to new <i>value</i>.</p>
+<!-- @@@digitalZoomChanged -->
+<!-- $$$focusZonesChanged[overload1]$$$focusZonesChanged -->
+<h3 class="fn"><a name="focusZonesChanged"></a>void QCameraFocus::focusZonesChanged ()<tt> [signal]</tt></h3>
+<p>Signal is emitted when the set of zones, camera focused on is changed.</p>
+<p>Usually the zones list is changed when the camera is focused.</p>
+<!-- @@@focusZonesChanged -->
+<!-- $$$isAvailable[overload1]$$$isAvailable -->
+<h3 class="fn"><a name="isAvailable"></a>bool QCameraFocus::isAvailable () const</h3>
+<p>Returns true if focus related settings are supported by this camera.</p>
+<!-- @@@isAvailable -->
+<!-- $$$isFocusModeSupported[overload1]$$$isFocusModeSupportedFocusMode -->
+<h3 class="fn"><a name="isFocusModeSupported"></a>bool QCameraFocus::isFocusModeSupported ( <a href="qcamerafocus.html#FocusMode-enum">FocusMode</a> <i>mode</i> ) const</h3>
+<p>Returns true if the focus <i>mode</i> is supported by camera.</p>
+<!-- @@@isFocusModeSupported -->
+<!-- $$$isFocusPointModeSupported[overload1]$$$isFocusPointModeSupportedFocusPointMode -->
+<h3 class="fn"><a name="isFocusPointModeSupported"></a>bool QCameraFocus::isFocusPointModeSupported ( <a href="qcamerafocus.html#FocusPointMode-enum">FocusPointMode</a> <i>mode</i> ) const</h3>
+<p>Returns true if focus point <i>mode</i> is supported.</p>
+<!-- @@@isFocusPointModeSupported -->
+<!-- $$$maximumDigitalZoom[overload1]$$$maximumDigitalZoom -->
+<h3 class="fn"><a name="maximumDigitalZoom"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> QCameraFocus::maximumDigitalZoom () const</h3>
+<p>Returns the maximum digital zoom</p>
+<!-- @@@maximumDigitalZoom -->
+<!-- $$$maximumDigitalZoomChanged[overload1]$$$maximumDigitalZoomChangedqreal -->
+<h3 class="fn"><a name="maximumDigitalZoomChanged"></a>void QCameraFocus::maximumDigitalZoomChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>zoom</i> )<tt> [signal]</tt></h3>
+<p>Signal emitted when the maximum supported digital <i>zoom</i> value changed.</p>
+<p>The maximum supported zoom value can depend on other camera settings, like capture mode or resolution.</p>
+<!-- @@@maximumDigitalZoomChanged -->
+<!-- $$$maximumOpticalZoom[overload1]$$$maximumOpticalZoom -->
+<h3 class="fn"><a name="maximumOpticalZoom"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> QCameraFocus::maximumOpticalZoom () const</h3>
+<p>Returns the maximum optical zoom</p>
+<!-- @@@maximumOpticalZoom -->
+<!-- $$$maximumOpticalZoomChanged[overload1]$$$maximumOpticalZoomChangedqreal -->
+<h3 class="fn"><a name="maximumOpticalZoomChanged"></a>void QCameraFocus::maximumOpticalZoomChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>zoom</i> )<tt> [signal]</tt></h3>
+<p>Signal emitted when the maximum supported optical <i>zoom</i> value changed.</p>
+<!-- @@@maximumOpticalZoomChanged -->
+<!-- $$$opticalZoomChanged[overload1]$$$opticalZoomChangedqreal -->
+<h3 class="fn"><a name="opticalZoomChanged"></a>void QCameraFocus::opticalZoomChanged ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>value</i> )<tt> [signal]</tt></h3>
+<p>Signal emitted when optical zoom value changes to new <i>value</i>.</p>
+<!-- @@@opticalZoomChanged -->
+<!-- $$$zoomTo[overload1]$$$zoomToqrealqreal -->
+<h3 class="fn"><a name="zoomTo"></a>void QCameraFocus::zoomTo ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>optical</i>, <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>digital</i> )</h3>
+<p>Set the camera <i>optical</i> and <i>digital</i> zoom values.</p>
+<!-- @@@zoomTo -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- feedback.qdoc -->
+  <title>Qt 1.2: Feedback</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li>Feedback</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#namespace">Namespace</a></li>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level2"><a href="#platform-issues">Platform Issues</a></li>
+<li class="level1"><a href="#using-effects">Using Effects</a></li>
+<li class="level2"><a href="#theme-effects">Theme Effects</a></li>
+<li class="level2"><a href="#custom-effects">Custom Effects</a></li>
+<li class="level1"><a href="#main-classes">Main Classes</a></li>
+<li class="level1"><a href="#examples">Examples</a></li>
+<li class="level1"><a href="#qml-elements">QML Elements</a></li>
+</ul>
+</div>
+<h1 class="title">Feedback</h1>
+<span class="subtitle"></span>
+<!-- $$$feedback.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The Feedback API enables a client to control and provide tactile and audio feedback to the user. The feedback is in response to user actions. For example, touching an onscreen button. Control of the feedback involves control of the vibration of the device, when a vibrator is used, or the piezo feedback from the screen.</p>
+<p>This is part of the QtMobility Project.</p>
+<a name="namespace"></a>
+<h2>Namespace</h2>
+<p>The QtMobility APIs are placed into the <i>QtMobility</i> namespace. This is done to facilitate the future migration of QtMobility APIs into Qt. See the <a href="quickstart.html">Quickstart guide</a> for an example on how the namespace impacts on application development.</p>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>The Feedback API allows application developers to implement feedback and programmatic vibration in their applications. The API provides abstractions for various types of feedback, and allows custom implementations of these types of feedback.</p>
+<p>The <a href="qfeedbackeffect.html">QFeedbackEffect</a> class provides a simple interface to allow developers to start, stop or pause the playback of an effect. It is an abstract class which is implemented by <a href="qfeedbackhapticseffect.html">QFeedbackHapticsEffect</a> and <a href="qfeedbackfileeffect.html">QFeedbackFileEffect</a>. In addition, it allows the instantaneous playback of feedback effects which match the system theme.</p>
+<p>A <a href="qfeedbackhapticseffect.html">QFeedbackHapticsEffect</a> is a custom effect which allows a program to play a haptic effect on an actuator. Such an effect might have a duration, intensity, and envelope of playback (including attack time and intensity, and fade time and intensity), as well as a period if it is a periodic (repeating) effect.</p>
+<p>A <a href="qfeedbackfileeffect.html">QFeedbackFileEffect</a> is a haptic tune or audio file saved in a file which may be played back. These effects must be created by third-party applications, and a plugin which supports the specific file format must be installed. In particular, note that audio effects are generally limited to simple formats, to reduce latency. You can check what formats are supported by the system by calling <a href="qfeedbackfileeffect.html#supportedMimeTypes">QFeedbackFileEffect::supportedMimeTypes</a>().</p>
+<p>For the vast majority of use cases, the <a href="qfeedbackeffect.html">QFeedbackEffect</a>, <a href="qfeedbackhapticseffect.html">QFeedbackHapticsEffect</a> and <a href="qfeedbackfileeffect.html">QFeedbackFileEffect</a> classes are the only classes which developers will use in their programs. There are some special cases, however, where they may wish to implement their own feedback plugin. The QtMobility Feedback API allows third party developers to implement <a href="qfeedbackinterface.html">QFeedbackInterface</a> in a plugin which may be loaded by the plugin loading mechanism to play feedback effects.</p>
+<p>Note that in any application, only the highest priority plugin for each of the three types of feedback will be used to provide the feedback effects, except for file feedback plugins (where only the highest priority plugin for each supported mime-type is used). The interface classes which must be implemented by a plugin to provide effects to clients are:</p>
+<ul>
+<li><a href="qfeedbackhapticsinterface.html">QFeedbackHapticsInterface</a> for <a href="qfeedbackhapticseffect.html">QFeedbackHapticsEffect</a></li>
+<li><a href="qfeedbackfileinterface.html">QFeedbackFileInterface</a> for <a href="qfeedbackfileeffect.html">QFeedbackFileEffect</a></li>
+<li><a href="qfeedbackthemeinterface.html">QFeedbackThemeInterface</a> for the built-in theme effects (<a href="qfeedbackeffect.html#ThemeEffect-enum">QFeedbackEffect::ThemeEffect</a>).</li>
+</ul>
+<p>Generally, the device platform will provide an implementation of each of the three different interfaces, which will be the default plugins used for the various <a href="qfeedbackeffect.html">QFeedbackEffect</a>s.</p>
+<a name="platform-issues"></a>
+<h3>Platform Issues</h3>
+<p><b>Note:</b> On Symbian, vibration feature needs to be enabled in the user profile for the API to work. <b>Note:</b> On Maemo5, periodic vibration does not support attack or fade.</p>
+<a name="using-effects"></a>
+<h2>Using Effects</h2>
+<a name="theme-effects"></a>
+<h3>Theme Effects</h3>
+<p>The most common use of the API is to play system theme effects for user interface interaction notifications, for example, button clicks. These system theme effects can be played instantaneously, but cannot be paused or stopped. They are played via the static <a href="qfeedbackeffect.html#playThemeEffect">QFeedbackEffect::playThemeEffect</a>() function:</p>
+<pre class="highlightedCode brush: cpp">     QFeedbackEffect::playThemeEffect(QFeedbackEffect::ThemeBasicButton);</pre>
+<p>There are many different theme effects defined, to cover a variety of interactions and notifications, to allow an application to maintain greater consistency with the platform user experience.</p>
+<pre class="highlightedCode brush: cpp">     QFeedbackEffect::playThemeEffect(QFeedbackEffect::ThemeBounceEffect);</pre>
+<a name="custom-effects"></a>
+<h3>Custom Effects</h3>
+<p>The next most common use of the API is to define a custom effect which can be used to notify the user of application-specific events or to increase the immersiveness of an application. A custom effect may be either periodic or non-periodic.</p>
+<p>The following diagram shows the graph of intensity over time of a non-periodic effect which was started at time <tt>t</tt> and ended at time <tt>q</tt>, with an <a href="qfeedbackhapticseffect.html#intensity-prop">intensity</a> of <tt>I</tt>, an <a href="qfeedbackhapticseffect.html#attackIntensity-prop">attack intensity</a> of <tt>AI</tt>, a <a href="qfeedbackhapticseffect.html#fadeIntensity-prop">fade intensity</a> of <tt>FI</tt>, an <a href="qfeedbackhapticseffect.html#attackTime-prop">attack time</a> of <tt>AT</tt>, and a <a href="qfeedbackhapticseffect.html#fadeTime-prop">fade time</a> of <tt>FT</tt>, with a total <a href="qfeedbackeffect.html#duration-prop">duration</a> of <tt>Duration</tt> milliseconds:</p>
+<p class="centerAlign"><img src="images/non-periodic-effect.png" /></p><p>The following diagram shows the graph of intensity over time of a periodic effect which was started at time <tt>t</tt> and ended at time <tt>q</tt>, with an <a href="qfeedbackhapticseffect.html#intensity-prop">intensity</a> of <tt>I</tt>, an <a href="qfeedbackhapticseffect.html#attackIntensity-prop">attack intensity</a> of <tt>AI</tt>, a <a href="qfeedbackhapticseffect.html#fadeIntensity-prop">fade intensity</a> of <tt>FI</tt>, an <a href="qfeedbackhapticseffect.html#attackTime-prop">attack time</a> of <tt>AT</tt>, and a <a href="qfeedbackhapticseffect.html#fadeTime-prop">fade time</a> of <tt>FT</tt>, with a <a href="qfeedbackhapticseffect.html#period-prop">period</a> of <tt>Period</tt> milliseconds and a total <a href="qfeedbackeffect.html#duration-prop">duration</a> of <tt>Duration</tt> milliseconds:</p>
+<p class="centerAlign"><img src="images/periodic-effect.png" /></p><p>A custom haptic effect may be defined in the following manner:</p>
+<pre class="highlightedCode brush: cpp">     QFeedbackHapticsEffect rumble;
+     rumble.setAttackIntensity(0.0);
+     rumble.setAttackTime(250);
+     rumble.setIntensity(1.0);
+     rumble.setDuration(1000);
+     rumble.setFadeTime(250);
+     rumble.setFadeIntensity(0.0);</pre>
+<p><b>Note:</b> No periodicity was defined for the effect, although that can be done by calling <a href="qfeedbackhapticseffect.html#period-prop">QFeedbackHapticsEffect::setPeriod</a>() if required.</p>
+<p>Once the effect has been defined, it may be played via the API offered in the <a href="qfeedbackeffect.html">QFeedbackEffect</a> base class:</p>
+<pre class="highlightedCode brush: cpp">     rumble.start();</pre>
+<p>Custom haptic effects are stateful, and so they may be paused:</p>
+<pre class="highlightedCode brush: cpp">     rumble.pause();</pre>
+<p>Or stopped:</p>
+<pre class="highlightedCode brush: cpp">     rumble.stop();</pre>
+<p>Certain operations cannot be performed on an effect if it is in a certain state. The current state of the effect may be queried via the base-class API:</p>
+<pre class="highlightedCode brush: cpp">     if (rumble.state() == QFeedbackEffect::Stopped)
+         qDebug() &lt;&lt; &quot;The device has stopped rumbling!&quot;;</pre>
+<p>All custom effects are played using a specific <a href="qfeedbackactuator.html">device actuator</a>. By default, the effect is played via the actuator which the current haptic effect provider plugin considers to be the system default actuator, and so most application developers will not need to change which actuator is used. In some cases, however, it may be desirable to set which actuator the effect is played on; doing so requires prior knowledge of either the name or the id of the actuator on which the developer wishes the effect to be played:</p>
+<pre class="highlightedCode brush: cpp">     QFeedbackActuator *actuator = 0; <span class="comment">// default system actuator</span>
+     QList&lt;QFeedbackActuator*&gt; actuators = QFeedbackActuator::actuators();
+     foreach (QFeedbackActuator* temp, actuators) {
+         if (temp-&gt;name() == &quot;ExampleActuatorName&quot;) {
+             actuator = temp;
+         }
+     }
+     rumble.setActuator(actuator);</pre>
+<p>Finally, there is software available which allows &quot;haptic tunes&quot; to be saved to file, for later playback. If the haptic file effect provider plugin on the system understands that file format, the file can be played on device:</p>
+<pre class="highlightedCode brush: cpp">     QFeedbackFileEffect hapticTune;
+     hapticTune.setSource(QUrl::fromLocalFile(&quot;mySavedRumble.ifr&quot;));
+     hapticTune.load();
+     hapticTune.start();</pre>
+<p>In addition, small audio effects can be played as feedback.</p>
+<p>If you wish to see a simple example application which demonstrates some of the above code in use, please see the <a href="hapticsquare.html">Haptic Square</a> example application.</p>
+<a name="main-classes"></a>
+<h2>Main Classes</h2>
+<ul>
+<li><a href="qfeedbackeffect.html">QFeedbackEffect</a></li>
+<li><a href="qfeedbackhapticseffect.html">QFeedbackHapticsEffect</a></li>
+<li><a href="qfeedbackfileeffect.html">QFeedbackFileEffect</a></li>
+<li><a href="qfeedbackactuator.html">QFeedbackActuator</a></li>
+<li><a href="qfeedbackinterface.html">QFeedbackInterface</a></li>
+</ul>
+<a name="examples"></a>
+<h2>Examples</h2>
+<ul>
+<li><a href="hapticsquare.html">Haptic Square</a></li>
+<li><a href="hapticsplayer.html">Haptics Player</a></li>
+</ul>
+<a name="qml-elements"></a>
+<h2>QML Elements</h2>
+<p>For details on the QML support provided for the Feedback API see the documentation for the <a href="qml-feedback-api.html">Feedback QML Plugin</a>.</p>
+</div>
+<!-- @@@feedback.html -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

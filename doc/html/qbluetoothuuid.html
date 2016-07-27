@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qbluetoothuuid.cpp -->
+  <title>Qt 1.2: QBluetoothUuid Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtconnectivity.html">QtConnectivity</a></li>
+              <li>QBluetoothUuid</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QBluetoothUuid Class Reference</h1>
+<!-- $$$QBluetoothUuid-brief -->
+<p>The QBluetoothUuid class provides a Bluetooth UUID. <a href="#details">More...</a></p>
+<!-- @@@QBluetoothUuid -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QBluetoothUuid&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/quuid.html">QUuid</a>.</p>
+<p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qbluetoothuuid-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#ProtocolUuid-enum">ProtocolUuid</a></b> { Sdp, Udp, Rfcomm, Tcp, ..., L2cap }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#ServiceClassUuid-enum">ServiceClassUuid</a></b> { PublicBrowseGroup, ObexObjectPush, ServiceDiscoveryServer, BrowseGroupDescriptor, ..., HDPSink }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#QBluetoothUuid">QBluetoothUuid</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#QBluetoothUuid-2">QBluetoothUuid</a></b> ( ProtocolUuid <i>uuid</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#QBluetoothUuid-3">QBluetoothUuid</a></b> ( ServiceClassUuid <i>uuid</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#QBluetoothUuid-4">QBluetoothUuid</a></b> ( quint16 <i>uuid</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#QBluetoothUuid-5">QBluetoothUuid</a></b> ( quint32 <i>uuid</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#QBluetoothUuid-6">QBluetoothUuid</a></b> ( quint128 <i>uuid</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#QBluetoothUuid-7">QBluetoothUuid</a></b> ( const QString &amp; <i>uuid</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#QBluetoothUuid-8">QBluetoothUuid</a></b> ( const QBluetoothUuid &amp; <i>uuid</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#QBluetoothUuid-9">QBluetoothUuid</a></b> ( const QUuid &amp; <i>uuid</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#dtor.QBluetoothUuid">~QBluetoothUuid</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#minimumSize">minimumSize</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint16 </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#toUInt16">toUInt16</a></b> ( bool * <i>ok</i> = 0 ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint32 </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#toUInt32">toUInt32</a></b> ( bool * <i>ok</i> = 0 ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint128 </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#toUInt128">toUInt128</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbluetoothuuid.html#operator-eq-eq">operator==</a></b> ( const QBluetoothUuid &amp; <i>other</i> ) const</td></tr>
+</table>
+<ul>
+<li class="fn">13 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/quuid.html#public-functions">QUuid</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">4 public variables inherited from <a href="http://qt.nokia.com/doc/4.7/quuid.html#public-variables">QUuid</a></li>
+<li class="fn">1 static public member inherited from <a href="http://qt.nokia.com/doc/4.7/quuid.html#static-public-members">QUuid</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QBluetoothUuid-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QBluetoothUuid class provides a Bluetooth UUID.</p>
+</div>
+<!-- @@@QBluetoothUuid -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$ProtocolUuid$$$Sdp$$$Udp$$$Rfcomm$$$Tcp$$$TcsBin$$$TcsAt$$$Obex$$$Ip$$$Ftp$$$Http$$$Wsp$$$Bnep$$$Upnp$$$Hidp$$$HardcopyControlChannel$$$HardcopyDataChannel$$$HardcopyNotification$$$Avctp$$$Avdtp$$$Cmtp$$$UdiCPlain$$$McapControlChannel$$$McapDataChannel$$$L2cap -->
+<h3 class="fn"><a name="ProtocolUuid-enum"></a>enum QBluetoothUuid::ProtocolUuid</h3>
+<p>This enum is a convienience type for Bluetooth protocol UUIDs. Values of this type will be implicitly converted into a <a href="qbluetoothuuid.html">QBluetoothUuid</a> when necessary.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Sdp</tt></td><td class=" topAlign"><tt>0x0001</tt></td><td  class="topAlign">SDP protocol UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Udp</tt></td><td class=" topAlign"><tt>0x0002</tt></td><td  class="topAlign">UDP protocol UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Rfcomm</tt></td><td class=" topAlign"><tt>0x0003</tt></td><td  class="topAlign">RFCOMM protocol UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Tcp</tt></td><td class=" topAlign"><tt>0x0004</tt></td><td  class="topAlign">TCP protocol UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::TcsBin</tt></td><td class=" topAlign"><tt>0x0005</tt></td><td  class="topAlign">Telephony Control Specification UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::TcsAt</tt></td><td class=" topAlign"><tt>0x0006</tt></td><td  class="topAlign">Telephony Control Specification AT UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Obex</tt></td><td class=" topAlign"><tt>0x0008</tt></td><td  class="topAlign">OBEX protocol UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Ip</tt></td><td class=" topAlign"><tt>0x0009</tt></td><td  class="topAlign">IP protocol UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Ftp</tt></td><td class=" topAlign"><tt>0x000A</tt></td><td  class="topAlign">FTP protocol UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Http</tt></td><td class=" topAlign"><tt>0x000C</tt></td><td  class="topAlign">HTTP protocol UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Wsp</tt></td><td class=" topAlign"><tt>0x000E</tt></td><td  class="topAlign">WSP UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Bnep</tt></td><td class=" topAlign"><tt>0x000F</tt></td><td  class="topAlign">Bluetooth Network Encapsulation Protocol UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Upnp</tt></td><td class=" topAlign"><tt>0x0010</tt></td><td  class="topAlign">Extended Service Discovery Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Hidp</tt></td><td class=" topAlign"><tt>0x0011</tt></td><td  class="topAlign">Human Interface Device Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HardcopyControlChannel</tt></td><td class=" topAlign"><tt>0x0012</tt></td><td  class="topAlign">Hardcopy Cable Replacement Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HardcopyDataChannel</tt></td><td class=" topAlign"><tt>0x0014</tt></td><td  class="topAlign">Hardcopy Cable Replacement Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HardcopyNotification</tt></td><td class=" topAlign"><tt>0x0016</tt></td><td  class="topAlign">Hardcopy Cable Replacement Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Avctp</tt></td><td class=" topAlign"><tt>0x0017</tt></td><td  class="topAlign">Audio/Video Control Transport Protocol UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Avdtp</tt></td><td class=" topAlign"><tt>0x0019</tt></td><td  class="topAlign">Audio/Video Distribution Transport Protocol UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Cmtp</tt></td><td class=" topAlign"><tt>0x001B</tt></td><td  class="topAlign">Common ISDN Access Profile</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::UdiCPlain</tt></td><td class=" topAlign"><tt>0x001D</tt></td><td  class="topAlign">UDI protocol UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::McapControlChannel</tt></td><td class=" topAlign"><tt>0x001E</tt></td><td  class="topAlign">Multi-Channel Adaptation Protocol UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::McapDataChannel</tt></td><td class=" topAlign"><tt>0x001F</tt></td><td  class="topAlign">Multi-Channel Adaptation Protocol UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::L2cap</tt></td><td class=" topAlign"><tt>0x0100</tt></td><td  class="topAlign">L2CAP protocol UUID.</td></tr>
+</table>
+<!-- @@@ProtocolUuid -->
+<!-- $$$ServiceClassUuid$$$ServiceDiscoveryServer$$$BrowseGroupDescriptor$$$PublicBrowseGroup$$$SerialPort$$$LANAccessUsingPPP$$$DialupNetworking$$$IrMCSync$$$ObexObjectPush$$$OBEXFileTransfer$$$IrMCSyncCommand$$$Headset$$$AudioSource$$$AudioSink$$$AV_RemoteControlTarget$$$AdvancedAudioDistribution$$$AV_RemoteControl$$$AV_RemoteControlController$$$HeadsetAG$$$PANU$$$NAP$$$GN$$$DirectPrinting$$$ReferencePrinting$$$ImagingResponder$$$ImagingAutomaticArchive$$$Handsfree$$$HandsfreeAudioGateway$$$DirectPrintingReferenceObjectsService$$$ReflectedUI$$$BasicPrinting$$$PrintingStatus$$$HumanInterfaceDeviceService$$$HardcopyCableReplacement$$$HCRPrint$$$HCRScan$$$SIMAccess$$$PhonebookAccessPCE$$$PhonebookAccessPSE$$$PhonebookAccess$$$HeadsetHS$$$MessageAccessServer$$$MessageNotificationServer$$$MessageAccessProfile$$$PnPInformation$$$GenericNetworking$$$GenericFileTransfer$$$GenericAudio$$$GenericTelephony$$$VideoSource$$$VideoSink$$$VideoDistribution$$$HDP$$$HDPSource$$$HDPSink -->
+<h3 class="fn"><a name="ServiceClassUuid-enum"></a>enum QBluetoothUuid::ServiceClassUuid</h3>
+<p>This enum is a convienience type for Bluetooth service class UUIDs. Values of this type will be implicitly converted into a <a href="qbluetoothuuid.html">QBluetoothUuid</a> when necessary.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::PublicBrowseGroup</tt></td><td class=" topAlign"><tt>0x1002</tt></td><td  class="topAlign">Public browse group service class. Services which have the public browse group in their <a href="qbluetoothserviceinfo.html#AttributeId-enum">browse group list</a> are discoverable by remote devices.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::ObexObjectPush</tt></td><td class=" topAlign"><tt>0x1105</tt></td><td  class="topAlign">OBEX object push service UUID.</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::ServiceDiscoveryServer</tt></td><td class=" topAlign"><tt>0x1000</tt></td><td  class="topAlign">&nbsp;</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::BrowseGroupDescriptor</tt></td><td class=" topAlign"><tt>0x1001</tt></td><td  class="topAlign">Browser group descriptor</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::SerialPort</tt></td><td class=" topAlign"><tt>0x1101</tt></td><td  class="topAlign">Serial Port Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::LANAccessUsingPPP</tt></td><td class=" topAlign"><tt>0x1102</tt></td><td  class="topAlign">LAN Access Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::DialupNetworking</tt></td><td class=" topAlign"><tt>0x1103</tt></td><td  class="topAlign">Dial-up Networking Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::IrMCSync</tt></td><td class=" topAlign"><tt>0x1104</tt></td><td  class="topAlign">Synchronization Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::OBEXFileTransfer</tt></td><td class=" topAlign"><tt>0x1106</tt></td><td  class="topAlign">File Transfer Profile (FTP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::IrMCSyncCommand</tt></td><td class=" topAlign"><tt>0x1107</tt></td><td  class="topAlign">Synchronization Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Headset</tt></td><td class=" topAlign"><tt>0x1108</tt></td><td  class="topAlign">Headset Profile (HSP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::AudioSource</tt></td><td class=" topAlign"><tt>0x110a</tt></td><td  class="topAlign">Advanced Audio Distribution Profile (A2DP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::AudioSink</tt></td><td class=" topAlign"><tt>0x110b</tt></td><td  class="topAlign">Advanced Audio Distribution Profile (A2DP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::AV_RemoteControlTarget</tt></td><td class=" topAlign"><tt>0x110c</tt></td><td  class="topAlign">Audio/Video Remote Control Profile (AVRCP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::AdvancedAudioDistribution</tt></td><td class=" topAlign"><tt>0x110d</tt></td><td  class="topAlign">Advanced Audio Distribution Profile (A2DP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::AV_RemoteControl</tt></td><td class=" topAlign"><tt>0x110e</tt></td><td  class="topAlign">Audio/Video Remote Control Profile (AVRCP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::AV_RemoteControlController</tt></td><td class=" topAlign"><tt>0x110f</tt></td><td  class="topAlign">Audio/Video Remote Control Profile UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HeadsetAG</tt></td><td class=" topAlign"><tt>0x1112</tt></td><td  class="topAlign">Headset Profile (HSP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::PANU</tt></td><td class=" topAlign"><tt>0x1115</tt></td><td  class="topAlign">Personal Area Networking Profile (PAN) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::NAP</tt></td><td class=" topAlign"><tt>0x1116</tt></td><td  class="topAlign">Personal Area Networking Profile (PAN) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::GN</tt></td><td class=" topAlign"><tt>0x1117</tt></td><td  class="topAlign">Personal Area Networking Profile (PAN) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::DirectPrinting</tt></td><td class=" topAlign"><tt>0x1118</tt></td><td  class="topAlign">Basic Printing Profile (BPP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::ReferencePrinting</tt></td><td class=" topAlign"><tt>0x1119</tt></td><td  class="topAlign">Related to Basic Printing Profile (BPP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::ImagingResponder</tt></td><td class=" topAlign"><tt>0x111b</tt></td><td  class="topAlign">Basic Imaging Profile (BIP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::ImagingResponder</tt></td><td class=" topAlign"><tt>0x111b</tt></td><td  class="topAlign">Basic Imaging Profile (BIP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::ImagingAutomaticArchive</tt></td><td class=" topAlign"><tt>0x111c</tt></td><td  class="topAlign">Basic Imaging Profile (BIP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::Handsfree</tt></td><td class=" topAlign"><tt>0x111d</tt></td><td  class="topAlign">Hands-Free Profile (HFP) Service Class Identifier and Profile Identifier</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HandsfreeAudioGateway</tt></td><td class=" topAlign"><tt>0x111f</tt></td><td  class="topAlign">Hands-free Profile (HFP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::DirectPrintingReferenceObjectsService</tt></td><td class=" topAlign"><tt>0x1120</tt></td><td  class="topAlign">Basic Printing Profile (BPP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::ReflectedUI</tt></td><td class=" topAlign"><tt>0x1121</tt></td><td  class="topAlign">Basic Printing Profile (BPP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::BasicPrinting</tt></td><td class=" topAlign"><tt>0x1122</tt></td><td  class="topAlign">Basic Printing Profile (BPP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::PrintingStatus</tt></td><td class=" topAlign"><tt>0x1123</tt></td><td  class="topAlign">Basic Printing Profile (BPP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HumanInterfaceDeviceService</tt></td><td class=" topAlign"><tt>0x1124</tt></td><td  class="topAlign">Human Interface Device (HID) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HardcopyCableReplacement</tt></td><td class=" topAlign"><tt>0x1125</tt></td><td  class="topAlign">Hardcopy Cable Replacement Profile (HCRP)</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HCRPrint</tt></td><td class=" topAlign"><tt>0x1126</tt></td><td  class="topAlign">Hardcopy Cable Replacement Profile (HCRP)</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HCRScan</tt></td><td class=" topAlign"><tt>0x1127</tt></td><td  class="topAlign">Hardcopy Cable Replacement Profile (HCRP)</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::SIMAccess</tt></td><td class=" topAlign"><tt>0x112d</tt></td><td  class="topAlign">SIM Access Profile (SAP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::PhonebookAccessPCE</tt></td><td class=" topAlign"><tt>0x112e</tt></td><td  class="topAlign">Phonebook Access Profile (PBAP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::PhonebookAccessPSE</tt></td><td class=" topAlign"><tt>0x112f</tt></td><td  class="topAlign">Phonebook Access Profile (PBAP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::PhonebookAccess</tt></td><td class=" topAlign"><tt>0x1130</tt></td><td  class="topAlign">Phonebook Access Profile (PBAP)</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HeadsetHS</tt></td><td class=" topAlign"><tt>0x1131</tt></td><td  class="topAlign">Headset Profile (HSP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::MessageAccessServer</tt></td><td class=" topAlign"><tt>0x1132</tt></td><td  class="topAlign">Message Access Profile (MAP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::MessageNotificationServer</tt></td><td class=" topAlign"><tt>0x1133</tt></td><td  class="topAlign">Message Access Profile (MAP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::MessageAccessProfile</tt></td><td class=" topAlign"><tt>0x1134</tt></td><td  class="topAlign">Message Access Profile (MAP) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::PnPInformation</tt></td><td class=" topAlign"><tt>0x1135</tt></td><td  class="topAlign">Device Identification (DID) UUID</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::GenericNetworking</tt></td><td class=" topAlign"><tt>0x1201</tt></td><td  class="topAlign">Generic networking</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::GenericFileTransfer</tt></td><td class=" topAlign"><tt>0x1202</tt></td><td  class="topAlign">Generic file transfer</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::GenericAudio</tt></td><td class=" topAlign"><tt>0x1203</tt></td><td  class="topAlign">Generic audio</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::GenericTelephony</tt></td><td class=" topAlign"><tt>0x1204</tt></td><td  class="topAlign">Generic telephone</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::VideoSource</tt></td><td class=" topAlign"><tt>0x1303</tt></td><td  class="topAlign">Video Distribution Profile (VDP)</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::VideoSink</tt></td><td class=" topAlign"><tt>0x1304</tt></td><td  class="topAlign">Video Distribution Profile (VDP)</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::VideoDistribution</tt></td><td class=" topAlign"><tt>0x1305</tt></td><td  class="topAlign">Video Distribution Profile (VDP)</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HDP</tt></td><td class=" topAlign"><tt>0x1400</tt></td><td  class="topAlign">Health Device Profile</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HDPSource</tt></td><td class=" topAlign"><tt>0x1401</tt></td><td  class="topAlign">Health Device Profile</td></tr>
+<tr><td  class="topAlign"><tt>QBluetoothUuid::HDPSink</tt></td><td class=" topAlign"><tt>0x1402</tt></td><td  class="topAlign">Health Device Profile</td></tr>
+</table>
+<!-- @@@ServiceClassUuid -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QBluetoothUuid[overload1]$$$QBluetoothUuid -->
+<h3 class="fn"><a name="QBluetoothUuid"></a>QBluetoothUuid::QBluetoothUuid ()</h3>
+<p>Constructs a new null Bluetooth UUID.</p>
+<!-- @@@QBluetoothUuid -->
+<!-- $$$QBluetoothUuid$$$QBluetoothUuidProtocolUuid -->
+<h3 class="fn"><a name="QBluetoothUuid-2"></a>QBluetoothUuid::QBluetoothUuid ( <a href="qbluetoothuuid.html#ProtocolUuid-enum">ProtocolUuid</a> <i>uuid</i> )</h3>
+<p>Constructs a new Bluetooth UUID from the protocol UUID <i>uuid</i>.</p>
+<!-- @@@QBluetoothUuid -->
+<!-- $$$QBluetoothUuid$$$QBluetoothUuidServiceClassUuid -->
+<h3 class="fn"><a name="QBluetoothUuid-3"></a>QBluetoothUuid::QBluetoothUuid ( <a href="qbluetoothuuid.html#ServiceClassUuid-enum">ServiceClassUuid</a> <i>uuid</i> )</h3>
+<p>Constructs a new Bluetooth UUID from the service class UUID <i>uuid</i>.</p>
+<!-- @@@QBluetoothUuid -->
+<!-- $$$QBluetoothUuid$$$QBluetoothUuidquint16 -->
+<h3 class="fn"><a name="QBluetoothUuid-4"></a>QBluetoothUuid::QBluetoothUuid ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#quint16-typedef">quint16</a> <i>uuid</i> )</h3>
+<p>Constructs a new Bluetooth UUID from the 16 bit UUID <i>uuid</i>.</p>
+<!-- @@@QBluetoothUuid -->
+<!-- $$$QBluetoothUuid$$$QBluetoothUuidquint32 -->
+<h3 class="fn"><a name="QBluetoothUuid-5"></a>QBluetoothUuid::QBluetoothUuid ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#quint32-typedef">quint32</a> <i>uuid</i> )</h3>
+<p>Constructs a new Bluetooth UUID from the 32 bit UUID <i>uuid</i>.</p>
+<!-- @@@QBluetoothUuid -->
+<!-- $$$QBluetoothUuid$$$QBluetoothUuidquint128 -->
+<h3 class="fn"><a name="QBluetoothUuid-6"></a>QBluetoothUuid::QBluetoothUuid ( quint128 <i>uuid</i> )</h3>
+<p>Constructs a new Bluetooth UUID from the 128 bit UUID <i>uuid</i>.</p>
+<!-- @@@QBluetoothUuid -->
+<!-- $$$QBluetoothUuid$$$QBluetoothUuidconstQString& -->
+<h3 class="fn"><a name="QBluetoothUuid-7"></a>QBluetoothUuid::QBluetoothUuid ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>uuid</i> )</h3>
+<p>Constructs a new Bluetooth UUID from the string <i>uuid</i>.</p>
+<p>The string must be in the form XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.</p>
+<!-- @@@QBluetoothUuid -->
+<!-- $$$QBluetoothUuid$$$QBluetoothUuidconstQBluetoothUuid& -->
+<h3 class="fn"><a name="QBluetoothUuid-8"></a>QBluetoothUuid::QBluetoothUuid ( const QBluetoothUuid &amp; <i>uuid</i> )</h3>
+<p>Constructs a new Bluetooth UUID that is a copy of <i>uuid</i>.</p>
+<!-- @@@QBluetoothUuid -->
+<!-- $$$QBluetoothUuid$$$QBluetoothUuidconstQUuid& -->
+<h3 class="fn"><a name="QBluetoothUuid-9"></a>QBluetoothUuid::QBluetoothUuid ( const <a href="http://qt.nokia.com/doc/4.7/quuid.html">QUuid</a> &amp; <i>uuid</i> )</h3>
+<p>Constructs a new Bluetooth UUID that is a copy of <i>uuid</i>.</p>
+<!-- @@@QBluetoothUuid -->
+<!-- $$$~QBluetoothUuid[overload1]$$$~QBluetoothUuid -->
+<h3 class="fn"><a name="dtor.QBluetoothUuid"></a>QBluetoothUuid::~QBluetoothUuid ()</h3>
+<p>Destroys the Bluetooth UUID.</p>
+<!-- @@@~QBluetoothUuid -->
+<!-- $$$minimumSize[overload1]$$$minimumSize -->
+<h3 class="fn"><a name="minimumSize"></a>int QBluetoothUuid::minimumSize () const</h3>
+<p>Returns the minimum size in bytes that this UUID can be represented in. For non-null UUIDs 2, 4 or 16 is returned. 0 is returned for null UUIDs.</p>
+<p>See also <a href="http://qt.nokia.com/doc/4.7/quuid.html#isNull">isNull</a>(), <a href="qbluetoothuuid.html#toUInt16">toUInt16</a>(), <a href="qbluetoothuuid.html#toUInt32">toUInt32</a>(), and <a href="qbluetoothuuid.html#toUInt128">toUInt128</a>().</p>
+<!-- @@@minimumSize -->
+<!-- $$$toUInt16[overload1]$$$toUInt16bool* -->
+<h3 class="fn"><a name="toUInt16"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#quint16-typedef">quint16</a> QBluetoothUuid::toUInt16 ( bool * <i>ok</i> = 0 ) const</h3>
+<p>Returns the 16 bit representation of this UUID. If <i>ok</i> is passed it is set to true if the conversion is possible otherwise it is set to false. The return value is undefined if <i>ok</i> is set to false.</p>
+<!-- @@@toUInt16 -->
+<!-- $$$toUInt32[overload1]$$$toUInt32bool* -->
+<h3 class="fn"><a name="toUInt32"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#quint32-typedef">quint32</a> QBluetoothUuid::toUInt32 ( bool * <i>ok</i> = 0 ) const</h3>
+<p>Returns the 32 bit representation of this UUID. If <i>ok</i> is passed it is set to true if the conversion is possible otherwise it is set to false. The return value is undefined if <i>ok</i> is set to false.</p>
+<!-- @@@toUInt32 -->
+<!-- $$$toUInt128[overload1]$$$toUInt128 -->
+<h3 class="fn"><a name="toUInt128"></a>quint128 QBluetoothUuid::toUInt128 () const</h3>
+<p>Returns the 128 bit representation of this UUID.</p>
+<!-- @@@toUInt128 -->
+<!-- $$$operator==[overload1]$$$operator==constQBluetoothUuid& -->
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QBluetoothUuid::operator== ( const QBluetoothUuid &amp; <i>other</i> ) const</h3>
+<p>Returns true if <i>other</i> is equal to this Bluetooth UUID; otherwise returns false.</p>
+<!-- @@@operator== -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qcontactdetails.cpp -->
+  <title>Qt 1.2: QContactAvatar Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li>QContactAvatar</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QContactAvatar Class Reference</h1>
+<!-- $$$QContactAvatar-brief -->
+<p>The QContactAvatar class contains avatar URLs of a contact. <a href="#details">More...</a></p>
+<!-- @@@QContactAvatar -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QContactAvatar&gt;</pre><p>Inherits <a href="qcontactdetail.html">QContactDetail</a>.</p>
+<p>This class was introduced in Qt Mobility 1.0.</p>
+<ul>
+<li><a href="qcontactavatar-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QUrl </td><td class="memItemRight bottomAlign"><b><a href="qcontactavatar.html#imageUrl">imageUrl</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactavatar.html#setImageUrl">setImageUrl</a></b> ( const QUrl &amp; <i>imageUrl</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactavatar.html#setVideoUrl">setVideoUrl</a></b> ( const QUrl &amp; <i>videoUrl</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QUrl </td><td class="memItemRight bottomAlign"><b><a href="qcontactavatar.html#videoUrl">videoUrl</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="qcontactdetail.html#public-functions">QContactDetail</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qcontactavatar.html#DefinitionName-var">DefinitionName</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qcontactavatar.html#FieldImageUrl-var">FieldImageUrl</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qcontactavatar.html#FieldVideoUrl-var">FieldVideoUrl</a></b></td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QContactAvatar-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QContactAvatar class contains avatar URLs of a contact.</p>
+<p>Users can specify avatar URLs for a contact using this detail. Generally, a URL will specify the location of a full-sized image (or video) avatar. Support for the detail is backend-specific; some managers will automatically load the URL and synthesize a (possibly scaled) thumbnail detail for the contact if no thumbnail was explicitly set, while others will not.</p>
+<p>The URLs which are contained in the detail may point to a file or resource whose content may dynamically change. This is in contrast to the thumbnail detail which is static; once set it remains as that image until set to something else. That is, the content of a <a href="qcontactthumbnail.html">QContactThumbnail</a> detail is set by the user who has created the contact, but the content of a resource identified by a URL specified in a QContactAvatar detail is set by whoever owns the resource which the URL identifies.</p>
+<p>This leaf-class has been part of the default schema since version 1.0 of the Qt Mobility project.</p>
+</div>
+<p>See also <a href="qcontactthumbnail.html">QContactThumbnail</a>.</p>
+<!-- @@@QContactAvatar -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$imageUrl[overload1]$$$imageUrl -->
+<h3 class="fn"><a name="imageUrl"></a><a href="http://qt.nokia.com/doc/4.7/qurl.html">QUrl</a> QContactAvatar::imageUrl () const</h3>
+<p>Returns the url of an avatar image associated with the contact</p>
+<p>See also <a href="qcontactavatar.html#setImageUrl">setImageUrl</a>().</p>
+<!-- @@@imageUrl -->
+<!-- $$$setImageUrl[overload1]$$$setImageUrlconstQUrl& -->
+<h3 class="fn"><a name="setImageUrl"></a>void QContactAvatar::setImageUrl ( const <a href="http://qt.nokia.com/doc/4.7/qurl.html">QUrl</a> &amp; <i>imageUrl</i> )</h3>
+<p>Sets the url of an avatar image associated with the contact to <i>imageUrl</i></p>
+<p>See also <a href="qcontactavatar.html#imageUrl">imageUrl</a>().</p>
+<!-- @@@setImageUrl -->
+<!-- $$$setVideoUrl[overload1]$$$setVideoUrlconstQUrl& -->
+<h3 class="fn"><a name="setVideoUrl"></a>void QContactAvatar::setVideoUrl ( const <a href="http://qt.nokia.com/doc/4.7/qurl.html">QUrl</a> &amp; <i>videoUrl</i> )</h3>
+<p>Sets the url of an avatar video associated with the contact to <i>videoUrl</i></p>
+<p>See also <a href="qcontactavatar.html#videoUrl">videoUrl</a>().</p>
+<!-- @@@setVideoUrl -->
+<!-- $$$videoUrl[overload1]$$$videoUrl -->
+<h3 class="fn"><a name="videoUrl"></a><a href="http://qt.nokia.com/doc/4.7/qurl.html">QUrl</a> QContactAvatar::videoUrl () const</h3>
+<p>Returns the url of an avatar video associated with the contact</p>
+<p>See also <a href="qcontactavatar.html#setVideoUrl">setVideoUrl</a>().</p>
+<!-- @@@videoUrl -->
+</div>
+<div class="vars">
+<h2>Member Variable Documentation</h2>
+<!-- $$$DefinitionName -->
+<h3 class="fn"><a name="DefinitionName-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QContactAvatar::DefinitionName</h3>
+<p>The string constant for the definition name of <a href="qcontactavatar.html">QContactAvatar</a> details.</p>
+<!-- @@@DefinitionName -->
+<!-- $$$FieldImageUrl -->
+<h3 class="fn"><a name="FieldImageUrl-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QContactAvatar::FieldImageUrl</h3>
+<p>The field key constant for the value containing the URL of the avatar image.</p>
+<p>See also <a href="qcontactavatar.html#imageUrl">imageUrl</a>() and <a href="qcontactavatar.html#setImageUrl">setImageUrl</a>().</p>
+<!-- @@@FieldImageUrl -->
+<!-- $$$FieldVideoUrl -->
+<h3 class="fn"><a name="FieldVideoUrl-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QContactAvatar::FieldVideoUrl</h3>
+<p>The field key constant for the value containing the URL of a video avatar.</p>
+<p>See also <a href="qcontactavatar.html#videoUrl">videoUrl</a>() and <a href="qcontactavatar.html#setVideoUrl">setVideoUrl</a>().</p>
+<!-- @@@FieldVideoUrl -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

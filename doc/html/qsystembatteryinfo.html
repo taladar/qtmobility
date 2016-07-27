@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qsystembatteryinfo.cpp -->
+  <title>Qt 1.2: QSystemBatteryInfo Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtsysteminfo.html">QtSystemInfo</a></li>
+              <li>QSystemBatteryInfo</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QSystemBatteryInfo Class Reference</h1>
+<!-- $$$QSystemBatteryInfo-brief -->
+<p>The QSystemBatteryInfo class provides access to battery and power information from the system. <a href="#details">More...</a></p>
+<!-- @@@QSystemBatteryInfo -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QSystemBatteryInfo&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qsystembatteryinfo-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#BatteryStatus-enum">BatteryStatus</a></b> { BatteryUnknown, BatteryEmpty, BatteryCritical, BatteryVeryLow, ..., BatteryFull }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#ChargerType-enum">ChargerType</a></b> { UnknownCharger, NoCharger, WallCharger, USBCharger, ..., VariableCurrentCharger }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#ChargingState-enum">ChargingState</a></b> { NotCharging, Charging, ChargingError }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#EnergyUnit-enum">EnergyUnit</a></b> { UnitUnknown, UnitmAh, UnitmWh }</td></tr>
+</table>
+<a name="properties"></a>
+<h2>Properties</h2>
+<table class="propsummary">
+<tr><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qsystembatteryinfo.html#batteryStatus-prop">batteryStatus</a></b> : const BatteryStatus</li>
+<li class="fn"><b><a href="qsystembatteryinfo.html#chargerType-prop">chargerType</a></b> : const ChargerType</li>
+<li class="fn"><b><a href="qsystembatteryinfo.html#chargingState-prop">chargingState</a></b> : const ChargingState</li>
+<li class="fn"><b><a href="qsystembatteryinfo.html#currentFlow-prop">currentFlow</a></b> : const int</li>
+<li class="fn"><b><a href="qsystembatteryinfo.html#energyMeasurementUnit-prop">energyMeasurementUnit</a></b> : const EnergyUnit</li>
+<li class="fn"><b><a href="qsystembatteryinfo.html#maxBars-prop">maxBars</a></b> : const int</li>
+</ul></td><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qsystembatteryinfo.html#nominalCapacity-prop">nominalCapacity</a></b> : const int</li>
+<li class="fn"><b><a href="qsystembatteryinfo.html#remainingCapacity-prop">remainingCapacity</a></b> : const int</li>
+<li class="fn"><b><a href="qsystembatteryinfo.html#remainingCapacityBars-prop">remainingCapacityBars</a></b> : const int</li>
+<li class="fn"><b><a href="qsystembatteryinfo.html#remainingCapacityPercent-prop">remainingCapacityPercent</a></b> : const int</li>
+<li class="fn"><b><a href="qsystembatteryinfo.html#remainingChargingTime-prop">remainingChargingTime</a></b> : const int</li>
+<li class="fn"><b><a href="qsystembatteryinfo.html#voltage-prop">voltage</a></b> : const int</li>
+</ul>
+</td></tr>
+</table>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#QSystemBatteryInfo">QSystemBatteryInfo</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#dtor.QSystemBatteryInfo">~QSystemBatteryInfo</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSystemBatteryInfo::BatteryStatus </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#batteryStatus-prop">batteryStatus</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSystemBatteryInfo::ChargerType </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#chargerType-prop">chargerType</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSystemBatteryInfo::ChargingState </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#chargingState-prop">chargingState</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#currentFlow-prop">currentFlow</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSystemBatteryInfo::EnergyUnit </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#energyMeasurementUnit-prop">energyMeasurementUnit</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#maxBars-prop">maxBars</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#nominalCapacity-prop">nominalCapacity</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingCapacity-prop">remainingCapacity</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingCapacityBars-prop">remainingCapacityBars</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingCapacityPercent-prop">remainingCapacityPercent</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingChargingTime-prop">remainingChargingTime</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#voltage-prop">voltage</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#batteryStatusChanged">batteryStatusChanged</a></b> ( QSystemBatteryInfo::BatteryStatus <i>batteryStatus</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#chargerTypeChanged">chargerTypeChanged</a></b> ( QSystemBatteryInfo::ChargerType <i>chargerType</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#chargingStateChanged">chargingStateChanged</a></b> ( QSystemBatteryInfo::ChargingState <i>chargingState</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#currentFlowChanged">currentFlowChanged</a></b> ( int <i>level</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#nominalCapacityChanged">nominalCapacityChanged</a></b> ( int <i>level</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingCapacityBarsChanged">remainingCapacityBarsChanged</a></b> ( int <i>level</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingCapacityChanged">remainingCapacityChanged</a></b> ( int <i>level</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingCapacityPercentChanged">remainingCapacityPercentChanged</a></b> ( int <i>level</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingChargingTimeChanged">remainingChargingTimeChanged</a></b> ( int <i>level</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QSystemBatteryInfo-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QSystemBatteryInfo class provides access to battery and power information from the system.</p>
+</div>
+<!-- @@@QSystemBatteryInfo -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$BatteryStatus$$$BatteryUnknown$$$BatteryEmpty$$$BatteryCritical$$$BatteryVeryLow$$$BatteryLow$$$BatteryOk$$$BatteryFull -->
+<h3 class="fn"><a name="BatteryStatus-enum"></a>enum QSystemBatteryInfo::BatteryStatus</h3>
+<p>This enum describes the status of the main battery.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::BatteryUnknown</tt></td><td class=" topAlign"><tt>-1</tt></td><td  class="topAlign">Battery level undetermined.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::BatteryEmpty</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Battery level reported as 0, system will shutdown.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::BatteryCritical</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Battery level is critical 3% or less.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::BatteryVeryLow</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Battery level is very low, 10% or less.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::BatteryLow</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">Battery level is low 40% or less.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::BatteryOk</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">Battery level is above 40%.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::BatteryFull</tt></td><td class=" topAlign"><tt>5</tt></td><td  class="topAlign">Battery level is 100%.</td></tr>
+</table>
+<!-- @@@BatteryStatus -->
+<!-- $$$ChargerType$$$UnknownCharger$$$NoCharger$$$WallCharger$$$USBCharger$$$USB_500mACharger$$$USB_100mACharger$$$VariableCurrentCharger -->
+<h3 class="fn"><a name="ChargerType-enum"></a>enum QSystemBatteryInfo::ChargerType</h3>
+<p>This enum describes the type of charger used.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::UnknownCharger</tt></td><td class=" topAlign"><tt>-1</tt></td><td  class="topAlign">Charger type unknown, or error.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::NoCharger</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">No charger.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::WallCharger</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Using wall (mains) charger.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::USBCharger</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Using USB charger when the system cannot differentiate the current.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::USB_500mACharger</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">Using USB charger at 500 mA.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::USB_100mACharger</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">Using USB charger at 100 mA.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::VariableCurrentCharger</tt></td><td class=" topAlign"><tt>5</tt></td><td  class="topAlign">Using variable current charger such as bicycle or solar.</td></tr>
+</table>
+<!-- @@@ChargerType -->
+<!-- $$$ChargingState$$$ChargingError$$$NotCharging$$$Charging -->
+<h3 class="fn"><a name="ChargingState-enum"></a>enum QSystemBatteryInfo::ChargingState</h3>
+<p>This enum describes the charging state:</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::NotCharging</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Battery is not charging.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::Charging</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Battery is charging.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::ChargingError</tt></td><td class=" topAlign"><tt>-1</tt></td><td  class="topAlign">Error.</td></tr>
+</table>
+<!-- @@@ChargingState -->
+<!-- $$$EnergyUnit$$$UnitUnknown$$$UnitmAh$$$UnitmWh -->
+<h3 class="fn"><a name="EnergyUnit-enum"></a>enum QSystemBatteryInfo::EnergyUnit</h3>
+<p>This enum describes the energy unit used by the system.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::UnitUnknown</tt></td><td class=" topAlign"><tt>-1</tt></td><td  class="topAlign">Energy unit unknown.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::UnitmAh</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Energy described in milli Amp hours (mAh)</td></tr>
+<tr><td  class="topAlign"><tt>QSystemBatteryInfo::UnitmWh</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Energy described in milli watt hours (mWh)</td></tr>
+</table>
+<!-- @@@EnergyUnit -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$batteryStatus-prop$$$batteryStatus$$$batteryStatusChangedQSystemBatteryInfo::BatteryStatus -->
+<h3 class="fn"><a name="batteryStatus-prop"></a>batteryStatus : const <a href="qsystembatteryinfo.html#BatteryStatus-enum">BatteryStatus</a></h3>
+<p>This property holds the battery status.</p>
+<p>Returns the battery charge status.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QSystemBatteryInfo::BatteryStatus </td><td class="memItemRight bottomAlign"><b>batteryStatus</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#batteryStatusChanged">batteryStatusChanged</a></b> ( QSystemBatteryInfo::BatteryStatus <i>batteryStatus</i> )</td></tr>
+</table>
+<!-- @@@batteryStatus -->
+<!-- $$$chargerType-prop$$$chargerType$$$chargerTypeChangedQSystemBatteryInfo::ChargerType -->
+<h3 class="fn"><a name="chargerType-prop"></a>chargerType : const <a href="qsystembatteryinfo.html#ChargerType-enum">ChargerType</a></h3>
+<p>This property holds the charger type. Returns the currently used charger type.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QSystemBatteryInfo::ChargerType </td><td class="memItemRight bottomAlign"><b>chargerType</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#chargerTypeChanged">chargerTypeChanged</a></b> ( QSystemBatteryInfo::ChargerType <i>chargerType</i> )</td></tr>
+</table>
+<!-- @@@chargerType -->
+<!-- $$$chargingState-prop$$$chargingState$$$chargingStateChangedQSystemBatteryInfo::ChargingState -->
+<h3 class="fn"><a name="chargingState-prop"></a>chargingState : const <a href="qsystembatteryinfo.html#ChargingState-enum">ChargingState</a></h3>
+<p>This property holds the charging state. Returns the charging state.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QSystemBatteryInfo::ChargingState </td><td class="memItemRight bottomAlign"><b>chargingState</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#chargingStateChanged">chargingStateChanged</a></b> ( QSystemBatteryInfo::ChargingState <i>chargingState</i> )</td></tr>
+</table>
+<!-- @@@chargingState -->
+<!-- $$$currentFlow-prop$$$currentFlow$$$currentFlowChangedint -->
+<h3 class="fn"><a name="currentFlow-prop"></a>currentFlow : const int</h3>
+<p>This property holds the battery current flow.</p>
+<p>Returns the amount of current flowing out from the battery (a short term averge), milliapmeres (mA). Positive current means discharging and negative current means charging.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>currentFlow</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#currentFlowChanged">currentFlowChanged</a></b> ( int <i>level</i> )</td></tr>
+</table>
+<!-- @@@currentFlow -->
+<!-- $$$energyMeasurementUnit-prop$$$energyMeasurementUnit -->
+<h3 class="fn"><a name="energyMeasurementUnit-prop"></a>energyMeasurementUnit : const <a href="qsystembatteryinfo.html#EnergyUnit-enum">EnergyUnit</a></h3>
+<p>This property holds the energy unit used by the system. Returns the QSystemBatteryInfo::EnergyUnit that the system uses.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QSystemBatteryInfo::EnergyUnit </td><td class="memItemRight bottomAlign"><b>energyMeasurementUnit</b> () const</td></tr>
+</table>
+<!-- @@@energyMeasurementUnit -->
+<!-- $$$maxBars-prop$$$maxBars -->
+<h3 class="fn"><a name="maxBars-prop"></a>maxBars : const int</h3>
+<p>This property holds the maximum number of bars the system uses.</p>
+<p>Returns the Maximum number of bars the system uses. In the case that the system has no default number of battery bars, 0 is returned.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>maxBars</b> () const</td></tr>
+</table>
+<!-- @@@maxBars -->
+<!-- $$$nominalCapacity-prop$$$nominalCapacity$$$nominalCapacityChangedint -->
+<h3 class="fn"><a name="nominalCapacity-prop"></a>nominalCapacity : const int</h3>
+<p>This property holds the nominal battery capacity.</p>
+<p>Returns the nominal (maximum) capacity of the battery, in <a href="qsystembatteryinfo.html#EnergyUnit-enum">QSystemBatteryInfo::EnergyUnit</a>. If no battery is found, -1.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>nominalCapacity</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#nominalCapacityChanged">nominalCapacityChanged</a></b> ( int <i>level</i> )</td></tr>
+</table>
+<!-- @@@nominalCapacity -->
+<!-- $$$remainingCapacity-prop$$$remainingCapacity$$$remainingCapacityChangedint -->
+<h3 class="fn"><a name="remainingCapacity-prop"></a>remainingCapacity : const int</h3>
+<p>This property holds the battery level in QSystemBatteryInfo::EnergyUnit.</p>
+<p>Returns the remaining battery level of the battery in <a href="qsystembatteryinfo.html#EnergyUnit-enum">QSystemBatteryInfo::EnergyUnit</a>.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>remainingCapacity</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingCapacityChanged">remainingCapacityChanged</a></b> ( int <i>level</i> )</td></tr>
+</table>
+<p>See also <a href="qsystembatteryinfo.html#energyMeasurementUnit-prop">QSystemBatteryInfo::energyMeasurementUnit</a>().</p>
+<!-- @@@remainingCapacity -->
+<!-- $$$remainingCapacityBars-prop$$$remainingCapacityBars$$$remainingCapacityBarsChangedint -->
+<h3 class="fn"><a name="remainingCapacityBars-prop"></a>remainingCapacityBars : const int</h3>
+<p>This property holds the remaining capacity in number of bars.</p>
+<p>Returns the remaining capacity in number of bars. The bar count will not necessarily always reflect one to one on the remaining capacity percentage.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>remainingCapacityBars</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingCapacityBarsChanged">remainingCapacityBarsChanged</a></b> ( int <i>level</i> )</td></tr>
+</table>
+<!-- @@@remainingCapacityBars -->
+<!-- $$$remainingCapacityPercent-prop$$$remainingCapacityPercent$$$remainingCapacityPercentChangedint -->
+<h3 class="fn"><a name="remainingCapacityPercent-prop"></a>remainingCapacityPercent : const int</h3>
+<p>This property holds the battery level in percent.</p>
+<p>Returns the remaining battery level of the battery in percent. If no battery is found, -1.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>remainingCapacityPercent</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingCapacityPercentChanged">remainingCapacityPercentChanged</a></b> ( int <i>level</i> )</td></tr>
+</table>
+<!-- @@@remainingCapacityPercent -->
+<!-- $$$remainingChargingTime-prop$$$remainingChargingTime$$$remainingChargingTimeChangedint -->
+<h3 class="fn"><a name="remainingChargingTime-prop"></a>remainingChargingTime : const int</h3>
+<p>This property holds the remaining time of charging.</p>
+<p>Returns the remaining time of charging in seconds if charging, In the case of battery is full and not charging 0 will be returned. In the case where no battery is found or the platform does not provide this information, -1 will be returned.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>remainingChargingTime</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystembatteryinfo.html#remainingChargingTimeChanged">remainingChargingTimeChanged</a></b> ( int <i>level</i> )</td></tr>
+</table>
+<!-- @@@remainingChargingTime -->
+<!-- $$$voltage-prop$$$voltage -->
+<h3 class="fn"><a name="voltage-prop"></a>voltage : const int</h3>
+<p>This property holds the battery voltage.</p>
+<p>Returns the voltage of the battery, in millivolts (mV). If no battery is found, -1.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>voltage</b> () const</td></tr>
+</table>
+<!-- @@@voltage -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QSystemBatteryInfo[overload1]$$$QSystemBatteryInfoQObject* -->
+<h3 class="fn"><a name="QSystemBatteryInfo"></a>QSystemBatteryInfo::QSystemBatteryInfo ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qsystembatteryinfo.html">QSystemBatteryInfo</a> object with the given <i>parent</i>.</p>
+<!-- @@@QSystemBatteryInfo -->
+<!-- $$$~QSystemBatteryInfo[overload1]$$$~QSystemBatteryInfo -->
+<h3 class="fn"><a name="dtor.QSystemBatteryInfo"></a>QSystemBatteryInfo::~QSystemBatteryInfo ()</h3>
+<p>Destroys the <a href="qsystembatteryinfo.html">QSystemBatteryInfo</a> object.</p>
+<!-- @@@~QSystemBatteryInfo -->
+<!-- $$$batteryStatusChanged[overload1]$$$batteryStatusChangedQSystemBatteryInfo::BatteryStatus -->
+<h3 class="fn"><a name="batteryStatusChanged"></a>void QSystemBatteryInfo::batteryStatusChanged ( <a href="qsystembatteryinfo.html#BatteryStatus-enum">QSystemBatteryInfo::BatteryStatus</a> <i>batteryStatus</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when battery status has changed. <i>batteryStatus</i> is the new battery status.</p>
+<p>See also <a href="qsystembatteryinfo.html#ChargingState-enum">QSystemBatteryInfo::ChargingState</a>.</p>
+<!-- @@@batteryStatusChanged -->
+<!-- $$$chargerTypeChanged[overload1]$$$chargerTypeChangedQSystemBatteryInfo::ChargerType -->
+<h3 class="fn"><a name="chargerTypeChanged"></a>void QSystemBatteryInfo::chargerTypeChanged ( <a href="qsystembatteryinfo.html#ChargerType-enum">QSystemBatteryInfo::ChargerType</a> <i>chargerType</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the charger type has changed, such as when a phone gets plugged in to the wall, or usb. <i>chargerType</i> is the new charger type.</p>
+<!-- @@@chargerTypeChanged -->
+<!-- $$$chargingStateChanged[overload1]$$$chargingStateChangedQSystemBatteryInfo::ChargingState -->
+<h3 class="fn"><a name="chargingStateChanged"></a>void QSystemBatteryInfo::chargingStateChanged ( <a href="qsystembatteryinfo.html#ChargingState-enum">QSystemBatteryInfo::ChargingState</a> <i>chargingState</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when charging state has changed. <i>chargingState</i> is the new <a href="qsystembatteryinfo.html#chargingState-prop">chargingState</a>.</p>
+<!-- @@@chargingStateChanged -->
+<!-- $$$currentFlowChanged[overload1]$$$currentFlowChangedint -->
+<h3 class="fn"><a name="currentFlowChanged"></a>void QSystemBatteryInfo::currentFlowChanged ( int <i>level</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the short term averge battery current has changed, or on some systems at regular intervals.</p>
+<p>On some systems where this can lead to a CPU intensive process, you should disconnect from this signal when you are finished.</p>
+<p><i>level</i> is the new level.</p>
+<!-- @@@currentFlowChanged -->
+<!-- $$$nominalCapacityChanged[overload1]$$$nominalCapacityChangedint -->
+<h3 class="fn"><a name="nominalCapacityChanged"></a>void QSystemBatteryInfo::nominalCapacityChanged ( int <i>level</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when nominal (maximum) battery level has changed. <i>level</i> is the new level.</p>
+<!-- @@@nominalCapacityChanged -->
+<!-- $$$remainingCapacityBarsChanged[overload1]$$$remainingCapacityBarsChangedint -->
+<h3 class="fn"><a name="remainingCapacityBarsChanged"></a>void QSystemBatteryInfo::remainingCapacityBarsChanged ( int <i>level</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when battery level has changed. <i>level</i> is the new level.</p>
+<!-- @@@remainingCapacityBarsChanged -->
+<!-- $$$remainingCapacityChanged[overload1]$$$remainingCapacityChangedint -->
+<h3 class="fn"><a name="remainingCapacityChanged"></a>void QSystemBatteryInfo::remainingCapacityChanged ( int <i>level</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when battery capacity has changed, reported in <a href="qsystembatteryinfo.html#EnergyUnit-enum">QSystemBatteryInfo::EnergyUnit</a>. <i>level</i> is the new level.</p>
+<!-- @@@remainingCapacityChanged -->
+<!-- $$$remainingCapacityPercentChanged[overload1]$$$remainingCapacityPercentChangedint -->
+<h3 class="fn"><a name="remainingCapacityPercentChanged"></a>void QSystemBatteryInfo::remainingCapacityPercentChanged ( int <i>level</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when battery capacity in percent has changed. <i>level</i> is the new level.</p>
+<!-- @@@remainingCapacityPercentChanged -->
+<!-- $$$remainingChargingTimeChanged[overload1]$$$remainingChargingTimeChangedint -->
+<h3 class="fn"><a name="remainingChargingTimeChanged"></a>void QSystemBatteryInfo::remainingChargingTimeChanged ( int <i>level</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when remianing charge time has changed. <i>level</i> is the new level.</p>
+<!-- @@@remainingChargingTimeChanged -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

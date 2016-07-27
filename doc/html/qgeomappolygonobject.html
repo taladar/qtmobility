@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgeomappolygonobject.cpp -->
+  <title>Qt 1.2: QGeoMapPolygonObject Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QGeoMapPolygonObject</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGeoMapPolygonObject Class Reference</h1>
+<!-- $$$QGeoMapPolygonObject-brief -->
+<p>The QGeoMapPolygonObject class is a <a href="qgeomapobject.html">QGeoMapObject</a> used to draw a polygon on a map. <a href="#details">More...</a></p>
+<!-- @@@QGeoMapPolygonObject -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QGeoMapPolygonObject&gt;</pre><p>Inherits <a href="qgeomapobject.html">QGeoMapObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qgeomappolygonobject-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><a href="qgeomappolygonobject.html#brush-prop">brush</a></b> : QBrush</li>
+<li class="fn"><b><a href="qgeomappolygonobject.html#path-prop">path</a></b> : QList&lt;QGeoCoordinate&gt;</li>
+<li class="fn"><b><a href="qgeomappolygonobject.html#pen-prop">pen</a></b> : QPen</li>
+</ul>
+<ul>
+<li class="fn">6 properties inherited from <a href="qgeomapobject.html#properties">QGeoMapObject</a></li>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#QGeoMapPolygonObject">QGeoMapPolygonObject</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#dtor.QGeoMapPolygonObject">~QGeoMapPolygonObject</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBrush </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#brush-prop">brush</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QGeoCoordinate&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#path-prop">path</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPen </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#pen-prop">pen</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#brush-prop">setBrush</a></b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#path-prop">setPath</a></b> ( const QList&lt;QGeoCoordinate&gt; &amp; <i>path</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#pen-prop">setPen</a></b> ( const QPen &amp; <i>pen</i> )</td></tr>
+</table>
+<a name="reimplemented-public-functions"></a>
+<h2>Reimplemented Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QGeoMapObject::Type </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#type">type</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">15 public functions inherited from <a href="qgeomapobject.html#public-functions">QGeoMapObject</a></li>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#brushChanged">brushChanged</a></b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#pathChanged">pathChanged</a></b> ( const QList&lt;QGeoCoordinate&gt; &amp; <i>path</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#penChanged">penChanged</a></b> ( const QPen &amp; <i>pen</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">6 signals inherited from <a href="qgeomapobject.html#signals">QGeoMapObject</a></li>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">3 protected functions inherited from <a href="qgeomapobject.html#protected-functions">QGeoMapObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QGeoMapPolygonObject-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QGeoMapPolygonObject class is a <a href="qgeomapobject.html">QGeoMapObject</a> used to draw a polygon on a map.</p>
+<p>The polygon is specified by a set of at least 3 valid <a href="qgeocoordinate.html">QGeoCoordinate</a> instances listed in the same order in which the coordinates would be traversed when traveling around the border of the polygon.</p>
+</div>
+<!-- @@@QGeoMapPolygonObject -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$brush-prop$$$brush$$$setBrushconstQBrush&$$$brushChangedconstQBrush& -->
+<h3 class="fn"><a name="brush-prop"></a>brush : <a href="http://qt.nokia.com/doc/4.7/qbrush.html">QBrush</a></h3>
+<p>This property holds this property holds the brush that will be used to draw this object.</p>
+<p>The brush is used to fill in polygon.</p>
+<p>The outline around the perimeter of the polygon is drawn using the <a href="qgeomappolygonobject.html#pen-prop">QGeoMapPolygonObject::pen</a> property.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QBrush </td><td class="memItemRight bottomAlign"><b>brush</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setBrush</b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#brushChanged">brushChanged</a></b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+</table>
+<!-- @@@brush -->
+<!-- $$$path-prop$$$path$$$setPathconstQList<QGeoCoordinate>&$$$pathChangedconstQList<QGeoCoordinate>& -->
+<h3 class="fn"><a name="path-prop"></a>path : <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgeocoordinate.html">QGeoCoordinate</a>&gt;</h3>
+<p>This property holds this property holds the ordered list of coordinates which define the polygon to be drawn by this polygon object.</p>
+<p>The default value of this property is an empty list of coordinates.</p>
+<p>The coordinates should be listed in the order in which they would be traversed when traveling around the border of the polygon.</p>
+<p>Invalid coordinates in the list will be ignored, and if the list of coordinates contains less than 3 valid coordinates then the polygon object will not be displayed.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QList&lt;QGeoCoordinate&gt; </td><td class="memItemRight bottomAlign"><b>path</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setPath</b> ( const QList&lt;QGeoCoordinate&gt; &amp; <i>path</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#pathChanged">pathChanged</a></b> ( const QList&lt;QGeoCoordinate&gt; &amp; <i>path</i> )</td></tr>
+</table>
+<!-- @@@path -->
+<!-- $$$pen-prop$$$pen$$$setPenconstQPen&$$$penChangedconstQPen& -->
+<h3 class="fn"><a name="pen-prop"></a>pen : <a href="http://qt.nokia.com/doc/4.7/qpen.html">QPen</a></h3>
+<p>This property holds this property holds the pen that will be used to draw this object.</p>
+<p>The pen is used to draw an outline around the polygon. The polygon is filled using the <a href="qgeomappolygonobject.html#brush-prop">QGeoMapPolygonObject::brush</a> property.</p>
+<p>The pen will be treated as a cosmetic pen, which means that the width of the pen will be independent of the zoom level of the map.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QPen </td><td class="memItemRight bottomAlign"><b>pen</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setPen</b> ( const QPen &amp; <i>pen</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomappolygonobject.html#penChanged">penChanged</a></b> ( const QPen &amp; <i>pen</i> )</td></tr>
+</table>
+<!-- @@@pen -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QGeoMapPolygonObject[overload1]$$$QGeoMapPolygonObject -->
+<h3 class="fn"><a name="QGeoMapPolygonObject"></a>QGeoMapPolygonObject::QGeoMapPolygonObject ()</h3>
+<p>Constructs a new polygon object.</p>
+<!-- @@@QGeoMapPolygonObject -->
+<!-- $$$~QGeoMapPolygonObject[overload1]$$$~QGeoMapPolygonObject -->
+<h3 class="fn"><a name="dtor.QGeoMapPolygonObject"></a>QGeoMapPolygonObject::~QGeoMapPolygonObject ()</h3>
+<p>Destroys this polygon object.</p>
+<!-- @@@~QGeoMapPolygonObject -->
+<!-- $$$brushChanged[overload1]$$$brushChangedconstQBrush& -->
+<h3 class="fn"><a name="brushChanged"></a>void QGeoMapPolygonObject::brushChanged ( const <a href="http://qt.nokia.com/doc/4.7/qbrush.html">QBrush</a> &amp; <i>brush</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the brush used to fill in the interior of this polygon object has changed.</p>
+<p>The new value is <i>brush</i>.</p>
+<!-- @@@brushChanged -->
+<!-- $$$pathChanged[overload1]$$$pathChangedconstQList<QGeoCoordinate>& -->
+<h3 class="fn"><a name="pathChanged"></a>void QGeoMapPolygonObject::pathChanged ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgeocoordinate.html">QGeoCoordinate</a>&gt; &amp; <i>path</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the ordered list of coordinates that define the polygon to be drawn by this polygon object has changed.</p>
+<p>The new value is <i>path</i>.</p>
+<!-- @@@pathChanged -->
+<!-- $$$penChanged[overload1]$$$penChangedconstQPen& -->
+<h3 class="fn"><a name="penChanged"></a>void QGeoMapPolygonObject::penChanged ( const <a href="http://qt.nokia.com/doc/4.7/qpen.html">QPen</a> &amp; <i>pen</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the pen used to draw the edge of this polygon object has changed.</p>
+<p>The new value is <i>pen</i>.</p>
+<!-- @@@penChanged -->
+<!-- $$$type[overload1]$$$type -->
+<h3 class="fn"><a name="type"></a><a href="qgeomapobject.html#Type-enum">QGeoMapObject::Type</a> QGeoMapPolygonObject::type () const<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="qgeomapobject.html#type">QGeoMapObject::type</a>().</p>
+<!-- @@@type -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

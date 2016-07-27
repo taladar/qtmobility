@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qorganizeritemdetails.cpp -->
+  <title>Qt 1.2: QOrganizerItemEmailReminder Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtorganizer.html">QtOrganizer</a></li>
+              <li>QOrganizerItemEmailReminder</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-variables">Public Variables</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QOrganizerItemEmailReminder Class Reference</h1>
+<!-- $$$QOrganizerItemEmailReminder-brief -->
+<p>The QOrganizerItemEmailReminder class contains information about an email reminder of an item. <a href="#details">More...</a></p>
+<!-- @@@QOrganizerItemEmailReminder -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QOrganizerItemEmailReminder&gt;</pre><p>Inherits <a href="qorganizeritemreminder.html">QOrganizerItemReminder</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qorganizeritememailreminder-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QVariantList </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#attachments">attachments</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#body">body</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#recipients">recipients</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#setContents">setContents</a></b> ( const QString &amp; <i>subject</i>, const QString &amp; <i>body</i>, const QVariantList &amp; <i>attachments</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#setRecipients">setRecipients</a></b> ( const QStringList &amp; <i>recipients</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#subject">subject</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">6 public functions inherited from <a href="qorganizeritemreminder.html#public-functions">QOrganizerItemReminder</a></li>
+<li class="fn">21 public functions inherited from <a href="qorganizeritemdetail.html#public-functions">QOrganizerItemDetail</a></li>
+</ul>
+<a name="public-variables"></a>
+<h2>Public Variables</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> const char * </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#DefinitionName-var">DefinitionName</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const char * </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#FieldAttachments-var">FieldAttachments</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const char * </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#FieldBody-var">FieldBody</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const char * </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#FieldRecipients-var">FieldRecipients</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const char * </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritememailreminder.html#FieldSubject-var">FieldSubject</a></b></td></tr>
+</table>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">4 static public members inherited from <a href="qorganizeritemreminder.html#static-public-members">QOrganizerItemReminder</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QOrganizerItemEmailReminder-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QOrganizerItemEmailReminder class contains information about an email reminder of an item.</p>
+<p>An email reminder is a reminder which alerts the user (or other users) about the item, by sending an email. Note that the Organizer API does not enforce that the email is sent, or that any other sort of reminder occurs; rather, it simply allows clients to store and manipulate data which might be used by the platform to implement alarms and reminders.</p>
+</div>
+<!-- @@@QOrganizerItemEmailReminder -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$attachments[overload1]$$$attachments -->
+<h3 class="fn"><a name="attachments"></a><a href="http://qt.nokia.com/doc/4.7/qvariant.html#QVariantList-typedef">QVariantList</a> QOrganizerItemEmailReminder::attachments () const</h3>
+<p>Returns the attachments of the email.</p>
+<!-- @@@attachments -->
+<!-- $$$body[overload1]$$$body -->
+<h3 class="fn"><a name="body"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QOrganizerItemEmailReminder::body () const</h3>
+<p>Returns the body of the email.</p>
+<!-- @@@body -->
+<!-- $$$recipients[overload1]$$$recipients -->
+<h3 class="fn"><a name="recipients"></a><a href="http://qt.nokia.com/doc/4.7/qstringlist.html">QStringList</a> QOrganizerItemEmailReminder::recipients () const</h3>
+<p>Returns the list of recipients that the user wishes to be sent an email as part of the reminder.</p>
+<p>See also <a href="qorganizeritememailreminder.html#setRecipients">setRecipients</a>().</p>
+<!-- @@@recipients -->
+<!-- $$$setContents[overload1]$$$setContentsconstQString&constQString&constQVariantList& -->
+<h3 class="fn"><a name="setContents"></a>void QOrganizerItemEmailReminder::setContents ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>subject</i>, const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>body</i>, const <a href="http://qt.nokia.com/doc/4.7/qvariant.html#QVariantList-typedef">QVariantList</a> &amp; <i>attachments</i> )</h3>
+<p>Sets the contents of the email reminder to be the given <i>subject</i>, <i>body</i> and <i>attachments</i>.</p>
+<!-- @@@setContents -->
+<!-- $$$setRecipients[overload1]$$$setRecipientsconstQStringList& -->
+<h3 class="fn"><a name="setRecipients"></a>void QOrganizerItemEmailReminder::setRecipients ( const <a href="http://qt.nokia.com/doc/4.7/qstringlist.html">QStringList</a> &amp; <i>recipients</i> )</h3>
+<p>Sets the list of recipients that the user wishes to be sent an email as part of the reminder to <i>recipients</i>.</p>
+<p>See also <a href="qorganizeritememailreminder.html#recipients">recipients</a>().</p>
+<!-- @@@setRecipients -->
+<!-- $$$subject[overload1]$$$subject -->
+<h3 class="fn"><a name="subject"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QOrganizerItemEmailReminder::subject () const</h3>
+<p>Returns the subject of the email.</p>
+<!-- @@@subject -->
+</div>
+<div class="vars">
+<h2>Member Variable Documentation</h2>
+<!-- $$$DefinitionName -->
+<h3 class="fn"><a name="DefinitionName-var"></a>const char * QOrganizerItemEmailReminder::DefinitionName</h3>
+<p>The constant string which identifies the definition of details which contain email reminder information of an organizer item.</p>
+<!-- @@@DefinitionName -->
+<!-- $$$FieldAttachments -->
+<h3 class="fn"><a name="FieldAttachments-var"></a>const char * QOrganizerItemEmailReminder::FieldAttachments</h3>
+<p>The constant key for which the attachments of the email which the user wishes to be sent as a reminder, is stored.</p>
+<!-- @@@FieldAttachments -->
+<!-- $$$FieldBody -->
+<h3 class="fn"><a name="FieldBody-var"></a>const char * QOrganizerItemEmailReminder::FieldBody</h3>
+<p>The constant key for which the body field of the email which the user wishes to be sent as a reminder, is stored.</p>
+<!-- @@@FieldBody -->
+<!-- $$$FieldRecipients -->
+<h3 class="fn"><a name="FieldRecipients-var"></a>const char * QOrganizerItemEmailReminder::FieldRecipients</h3>
+<p>The constant key for which the recipients field of the email which the user wishes to be sent as a reminder, is stored.</p>
+<!-- @@@FieldRecipients -->
+<!-- $$$FieldSubject -->
+<h3 class="fn"><a name="FieldSubject-var"></a>const char * QOrganizerItemEmailReminder::FieldSubject</h3>
+<p>The constant key for which the subject field of the email which the user wishes to be sent as a reminder, is stored.</p>
+<!-- @@@FieldSubject -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- mapsdemo.qdoc -->
+  <title>Qt 1.2: Part 3 - Listening to satellites</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="all-examples.html">Examples</a></li>              <li>Part 3 - Listening to satellites</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+  <link rel="prev" href="tutorials-mapsdemo-part2.html" />
+  <link rel="next" href="tutorials-mapsdemo-part4.html" />
+  <link rel="start" href="tutorials-mapsdemo.html" />
+<p class="naviNextPrevious headerNavi">
+[Previous: <a href="tutorials-mapsdemo-part2.html">Part 2 - Searching for locations</a>]
+[Next: <a href="tutorials-mapsdemo-part4.html">Part 4 - Stopping for directions</a>]
+</p><p/>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#animated-status-bar">Animated status bar</a></li>
+<li class="level1"><a href="#getting-gps-data">Getting GPS data</a></li>
+<li class="level1"><a href="#following-and-animated-panning">Following and animated panning</a></li>
+</ul>
+</div>
+<h1 class="title">Part 3 - Listening to satellites</h1>
+<span class="subtitle"></span>
+<!-- $$$tutorials/mapsdemo/part3-description -->
+<div class="descr"> <a name="details"></a>
+<p>Another useful part of the Location API is the ability to receive updates of the user's present geographic location from methods such as GPS or network positioning. We're going to add support to our MapsDemo for using these methods to update the &quot;my location&quot; marker we've already added in parts 1 and 2 of this tutorial.</p>
+<p>But first we need an attractive way to present status messages to the user while they are busy looking at the map. We're going to do this using an animated translucent rectangle at the bottom of the display.</p>
+<a name="animated-status-bar"></a>
+<h2>Animated status bar</h2>
+<p>First, set up the map to resize automatically:</p>
+<pre class="highlightedCode brush: cpp"> class MapsWidget : public QWidget
+ {
+     ...
+ private:
+     void resizeEvent(QResizeEvent *event);
+     void showEvent(QShowEvent *event);
+ };
+
+ void MapsWidget::resizeEvent(QResizeEvent *event)
+ {
+     if (d-&gt;view &amp;&amp; d-&gt;map) {
+         d-&gt;view-&gt;resize(size());
+         d-&gt;map-&gt;resize(size());
+         d-&gt;view-&gt;centerOn(d-&gt;map);
+     }
+ }
+
+ void MapsWidget::showEvent(QShowEvent *event)
+ {
+     if (d-&gt;view &amp;&amp; d-&gt;map) {
+         d-&gt;view-&gt;resize(size());
+         d-&gt;map-&gt;resize(size());
+         d-&gt;view-&gt;centerOn(d-&gt;map);
+     }
+ }</pre>
+<p>And now we add our new StatusBarItem class:</p>
+<pre class="highlightedCode brush: cpp"> class StatusBarItemPrivate;
+ class StatusBarItem : public QObject, public QGraphicsRectItem
+ {
+     Q_OBJECT
+     Q_PROPERTY(int offset READ offset WRITE setOffset)
+
+ public:
+     StatusBarItem();
+     ~StatusBarItem();
+
+     int offset() const;
+     void setRect(qreal x, qreal y, qreal w, qreal h);
+
+ public slots:
+     void setText(QString text);
+
+     void showText(QString text, quint32 timeout=3000);
+     void show();
+     void hide();
+
+     void setOffset(int offset);
+
+ private:
+     StatusBarItemPrivate *d;
+ };</pre>
+<p>Note that the order of base classes here is very important: <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> and then <a href="http://qt.nokia.com/doc/4.7/qgraphicsrectitem.html">QGraphicsRectItem</a>. Re-ordering the base classes will cause the code not to compile, as <a href="http://qt.nokia.com/doc/4.7/qgraphicsrectitem.html">QGraphicsRectItem</a> does not have a meta-object (for more details consult the documentation in Qt).</p>
+<p>The <i>offset</i> property here is added so that when we come to animating our status bar, we can handle the case where the bar is sliding in and the window is being resized simultaneously. If we simply animated the <i>y</i> property of the GraphicsItem instead we would have difficulty handling this case.</p>
+<p>Now add a pointer to one of these in MapsWidgetPrivate (and matching accessor methods):</p>
+<pre class="highlightedCode brush: cpp"> class MapsWidgetPrivate
+ {
+ public:
+     ...
+     StatusBarItem *statusBarItem;
+ };</pre>
+<p>And we're ready for the implementation. The constructor is not terribly exciting, but sets the defaults for everything:</p>
+<pre class="highlightedCode brush: cpp"> class StatusBarItemPrivate
+ {
+ public:
+     int offset;
+     QGraphicsSimpleTextItem *textItem;
+ };
+
+ StatusBarItem::StatusBarItem() :
+     d(new StatusBarItemPrivate)
+ {
+     d-&gt;offset = 0;
+
+     setPen(QPen(QBrush(), 0));
+     setBrush(QBrush(QColor(0,0,0,120)));
+
+     d-&gt;textItem = new QGraphicsSimpleTextItem(this);
+     d-&gt;textItem-&gt;setBrush(QBrush(Qt::white));
+
+     setText(&quot;&quot;);
+ }</pre>
+<p>The <i>setText</i> function, however, is more interesting;</p>
+<pre class="highlightedCode brush: cpp"> void StatusBarItem::setText(QString text)
+ {
+     d-&gt;textItem-&gt;setText(text);
+     QRectF rect = d-&gt;textItem-&gt;boundingRect();
+     QPointF delta = this-&gt;rect().center() - rect.center();
+     d-&gt;textItem-&gt;setPos(delta.x(), delta.y());
+ }</pre>
+<p>This re-centers the <i>textItem</i> inside its parent (the StatusBarItem) every time the text changes.</p>
+<p>Also, the <i>setRect</i> method is used to update the size and position of the status bar:</p>
+<pre class="highlightedCode brush: cpp"> void StatusBarItem::setRect(qreal x, qreal y, qreal w, qreal h)
+ {
+     QGraphicsRectItem::setRect(x, y + d-&gt;offset, w, h);
+     setText(d-&gt;textItem-&gt;text());
+ }</pre>
+<p>Here we see the use of the <i>offset</i> property for the first time. The idea is to call <i>setRect</i> to specify a rectangle that is below the bottom of the visible area in the <a href="http://qt.nokia.com/doc/4.7/qgraphicsview.html">QGraphicsView</a>. Then <i>offset</i> is used to bump the status bar up into the visible area when needed.</p>
+<p>Whenever we change the offset we should re-calculate our own <i>y</i> value using the rect and the offset together:</p>
+<pre class="highlightedCode brush: cpp"> void StatusBarItem::setOffset(int offset)
+ {
+     this-&gt;setY(this-&gt;y() - d-&gt;offset + offset);
+     d-&gt;offset = offset;
+ }</pre>
+<p>And now finally, the animations:</p>
+<pre class="highlightedCode brush: cpp"> void StatusBarItem::show()
+ {
+     QPropertyAnimation *anim = new QPropertyAnimation(this, &quot;offset&quot;);
+     anim-&gt;setStartValue(0);
+     anim-&gt;setEndValue(-1 * rect().height());
+     anim-&gt;setDuration(500);
+     anim-&gt;start(QAbstractAnimation::DeleteWhenStopped);
+ }
+
+ void StatusBarItem::hide()
+ {
+     QPropertyAnimation *anim = new QPropertyAnimation(this, &quot;offset&quot;);
+     anim-&gt;setStartValue(d-&gt;offset);
+     anim-&gt;setEndValue(0);
+     anim-&gt;setDuration(500);
+     anim-&gt;start(QAbstractAnimation::DeleteWhenStopped);
+ }</pre>
+<p>You can see here that we simply use QPropertyAnimations on the <i>offset</i> property we just defined. This produces a nice linear slide in and out whenever <i>show()</i> or <i>hide()</i> are called.</p>
+<p>Lastly, one convenience method:</p>
+<pre class="highlightedCode brush: cpp"> void StatusBarItem::showText(QString text, quint32 timeout)
+ {
+     setText(text);
+     show();
+     QTimer::singleShot(timeout, this, SLOT(hide()));
+ }</pre>
+<p>This lets us more easily display a status message when we only want it to appear and disappear soon afterwards.</p>
+<p>Then we have only to add this into our MapsWidget:</p>
+<pre class="highlightedCode brush: cpp"> void MapsWidget::initialize(QGeoMappingManager *manager)
+ {
+     QGraphicsScene *sc;
+     ...
+     d-&gt;statusBarItem = new StatusBarItem;
+     sc-&gt;addItem(d-&gt;statusBarItem);
+ }
+
+ void MapsWidget::resizeEvent(QResizeEvent *event)
+ {
+     if (d-&gt;view &amp;&amp; d-&gt;map) {
+         ...
+         d-&gt;statusBarItem-&gt;setRect(0, height(), width(), 20);
+     }
+ }
+
+<span class="comment"> // and similarly in MapsWidget::showEvent()</span></pre>
+<a name="getting-gps-data"></a>
+<h2>Getting GPS data</h2>
+<p>Now we move on to the focus of this section: GPS data and how to get it. The <a href="qgeopositioninfosource.html">QGeoPositionInfoSource</a> class gives a convenient interface to receive position updates. We're going to add one to our <a href="http://qt.nokia.com/doc/4.7/designer-to-know.html">MainWindow</a>:</p>
+<pre class="highlightedCode brush: cpp"> class MainWindow : public QMainWindow
+ {
+ private:
+     QGeoPositionInfoSource *positionSource;
+
+ private slots:
+     <span class="comment">// slot to receive updates</span>
+     void updateMyPosition(QGeoPositionInfo info);
+ };</pre>
+<p>And in <i>initialize()</i> we'll set it up. We're just using whatever the default position source for the platform happens to be, at an update interval of 1000ms, which is plenty for a basic maps application. Once set up, we call the source's <i>startUpdates()</i> method to begin receiving position updates.</p>
+<pre class="highlightedCode brush: cpp"> void MainWindow::initialize()
+ {
+     ...
+     if (positionSource)
+         delete positionSource;
+
+     positionSource = QGeoPositionInfoSource::createDefaultSource(this);
+
+     if (!positionSource) {
+         mapsWidget-&gt;statusBar()-&gt;showText(&quot;Could not open GPS&quot;, 5000);
+         mapsWidget-&gt;setMyLocation(QGeoCoordinate(-27.5796, 153.1));
+     } else {
+         positionSource-&gt;setUpdateInterval(1000);
+         connect(positionSource, SIGNAL(positionUpdated(QGeoPositionInfo)),
+                 this, SLOT(updateMyPosition(QGeoPositionInfo)));
+         positionSource-&gt;startUpdates();
+         mapsWidget-&gt;statusBar()-&gt;showText(&quot;Opening GPS...&quot;);
+     }
+ }</pre>
+<p>Here we also make use of the StatusBarItem to display a message when we are able or unable to open the <a href="qgeopositioninfosource.html">QGeoPositionInfoSource</a>.</p>
+<p>And then in the slot <i>updateMyPosition</i>, we use this to set the myLocation marker.</p>
+<pre class="highlightedCode brush: cpp"> void MainWindow::updateMyPosition(QGeoPositionInfo info)
+ {
+     if (mapsWidget) {
+         mapsWidget-&gt;setMyLocation(info.coordinate());
+     }
+ }</pre>
+<p>So, running the code as is, we have a moving marker for &quot;My Location&quot; that follows our actual GPS or network-sourced location. If you start driving your car with this app running however, you'll quickly notice the fact that the viewport does not pan to follow you as you leave the map area.</p>
+<p>We could simply add a call to <i>setCenter()</i> on the map object in the <i>updateMyPosition</i> slot, but in the interests of prettiness, we are going to make a nice smoothly animated transition instead.</p>
+<a name="following-and-animated-panning"></a>
+<h2>Following and animated panning</h2>
+<p>First, add a new boolean member variable to <a href="http://qt.nokia.com/doc/4.7/designer-to-know.html">MainWindow</a>, called <i>tracking</i>, to keep track of whether the viewport is currently following the My Location marker:</p>
+<pre class="highlightedCode brush: cpp"> class MainWindow : public QMainWindow
+ {
+ private:
+     bool tracking;
+     ...
+ };</pre>
+<p>Our intended design is that initially, the viewport will be in tracking mode. It will continue this way until the view is manually panned by the user, at which point tracking will stop. Then, if the user clicks the &quot;My Location&quot; menu option to re-center the map, we resume tracking once again.</p>
+<p>So we will need a way to notify the <a href="http://qt.nokia.com/doc/4.7/designer-to-know.html">MainWindow</a> that the user has panned the view. Add a new signal <i>mapPanned()</i> to MapsWidget, and a corresponding signal <i>panned()</i> to GeoMap, as we did for <i>clicked()</i>.</p>
+<pre class="highlightedCode brush: cpp"> class MapsWidget : public QWidget
+ {
+ signals:
+     void mapPanned();
+     ...
+ };
+
+ class GeoMap : public QGraphicsGeoMap
+ {
+ signals:
+     void panned();
+     ...
+ };
+
+ void MapsWidget::initialize(QGeoMappingManager *manager)
+ {
+     ...
+     connect(geoMap, SIGNAL(panned()),
+             this, SIGNAL(mapPanned()));
+     ...
+ }</pre>
+<p>And now we simply emit it when a user pan takes place:</p>
+<pre class="highlightedCode brush: cpp"> void GeoMap::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+ {
+     if (panActive) {
+         ...
+         emit panned();
+     }
+     ...
+ }</pre>
+<p>Back up in <a href="http://qt.nokia.com/doc/4.7/designer-to-know.html">MainWindow</a>, we create a slot <i>disableTracking</i> and hook up the new signal to it:</p>
+<pre class="highlightedCode brush: cpp"> class MainWindow : public QMainWindow
+ {
+     ...
+ private slots:
+     ...
+     void disableTracking();
+     ...
+ };
+
+ void MainWindow::initialize()
+ {
+     ...
+     connect(mapsWidget, SIGNAL(mapPanned()),
+             this, SLOT(disableTracking()));
+     ...
+ }</pre>
+<p>And finally in the slot itself we simply set the flag we created earlier:</p>
+<pre class="highlightedCode brush: cpp"> void MainWindow::disableTracking()
+ {
+     tracking = false;
+ }</pre>
+<p>Next we want animated panning to be available. Add a new method on MapsWidget:</p>
+<pre class="highlightedCode brush: cpp"> class MapsWidget : public QWidget
+ {
+ public:
+     ...
+     void animatedPanTo(QGeoCoordinate center);
+     ...
+ };</pre>
+<p>To do animations in Qt, it's always easiest if we can make use of a <a href="http://qt.nokia.com/doc/4.7/qpropertyanimation.html">QPropertyAnimation</a>, and to do this you need a Q_PROPERTY to act upon. We'll use two animations in parallel, one moving latitude and one moving longitude, so we need two Q_PROPERTIES:</p>
+<pre class="highlightedCode brush: cpp"> class GeoMap : public QGraphicsGeoMap
+ {
+     Q_OBJECT
+
+     Q_PROPERTY(double centerLatitude READ centerLatitude WRITE setCenterLatitude)
+     Q_PROPERTY(double centerLongitude READ centerLongitude WRITE setCenterLongitude)
+
+ public:
+     ...
+     double centerLatitude() const;
+     void setCenterLatitude(double lat);
+     double centerLongitude() const;
+     void setCenterLongitude(double lon);
+     ...
+ };</pre>
+<p>These functions simply adjust the corresponding value on <i>center()</i> and then call <i>setCenter()</i> with the new <i>QGeoCoordinate</i>.</p>
+<p>Now we can implement our <i>animatedPanTo()</i> method:</p>
+<pre class="highlightedCode brush: cpp"> void MapsWidget::animatedPanTo(QGeoCoordinate center)
+ {
+     if (!d-&gt;map)
+         return;
+
+     QPropertyAnimation *latAnim = new QPropertyAnimation(d-&gt;map, &quot;centerLatitude&quot;);
+     latAnim-&gt;setEndValue(center.latitude());
+     latAnim-&gt;setDuration(200);
+     QPropertyAnimation *lonAnim = new QPropertyAnimation(d-&gt;map, &quot;centerLongitude&quot;);
+     lonAnim-&gt;setEndValue(center.longitude());
+     lonAnim-&gt;setDuration(200);
+
+     QParallelAnimationGroup *group = new QParallelAnimationGroup;
+     group-&gt;addAnimation(latAnim);
+     group-&gt;addAnimation(lonAnim);
+     group-&gt;start(QAbstractAnimation::DeleteWhenStopped);
+ }</pre>
+<p>To bring it all together, we make the last few changes in <a href="http://qt.nokia.com/doc/4.7/designer-to-know.html">MainWindow</a>:</p>
+<pre class="highlightedCode brush: cpp"> void MainWindow::goToMyLocation()
+ {
+     mapsWidget-&gt;animatedPanTo(markerManager-&gt;myLocation());
+     tracking = true;
+ }
+
+ void MainWindow::updateMyPosition(QGeoPositionInfo info)
+ {
+     if (mapsWidget) {
+         mapsWidget-&gt;setMyLocation(info.coordinate());
+         if (tracking)
+             mapsWidget-&gt;animatedPanTo(info.coordinate());
+     }
+ }</pre>
+<p>And now we have the simple location tracking functionality we set out to implement.</p>
+</div>
+<!-- @@@tutorials/mapsdemo/part3 -->
+<p class="naviNextPrevious footerNavi">
+[Previous: <a href="tutorials-mapsdemo-part2.html">Part 2 - Searching for locations</a>]
+[Next: <a href="tutorials-mapsdemo-part4.html">Part 4 - Stopping for directions</a>]
+</p>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

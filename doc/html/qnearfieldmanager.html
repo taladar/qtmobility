@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qnearfieldmanager.cpp -->
+  <title>Qt 1.2: QNearFieldManager Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtconnectivity.html">QtConnectivity</a></li>
+              <li>QNearFieldManager</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#automatically-launching-ndef-message-handlers">Automatically launching NDEF message handlers</a></li>
+<li class="level3"><a href="#symbian-3">Symbian^3</a></li>
+<li class="level3"><a href="#maemo6">Maemo6</a></li>
+</ul>
+</div>
+<h1 class="title">QNearFieldManager Class Reference</h1>
+<!-- $$$QNearFieldManager-brief -->
+<p>The QNearFieldManager class provides access to notifications for NFC events. <a href="#details">More...</a></p>
+<!-- @@@QNearFieldManager -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QNearFieldManager&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qnearfieldmanager-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#TargetAccessMode-enum">TargetAccessMode</a></b> { NoTargetAccess, NdefReadTargetAccess, NdefWriteTargetAccess, TagTypeSpecificTargetAccess }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#TargetAccessMode-enum">TargetAccessModes</a></b></td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#QNearFieldManager">QNearFieldManager</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#dtor.QNearFieldManager">~QNearFieldManager</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#isAvailable">isAvailable</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#registerNdefMessageHandler">registerNdefMessageHandler</a></b> ( QObject * <i>object</i>, const char * <i>method</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#registerNdefMessageHandler-2">registerNdefMessageHandler</a></b> ( QObject * <i>object</i>, const char * <i>method</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#registerNdefMessageHandler-3">registerNdefMessageHandler</a></b> ( QNdefRecord::TypeNameFormat <i>typeNameFormat</i>, const QByteArray &amp; <i>type</i>, QObject * <i>object</i>, const char * <i>method</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#registerNdefMessageHandler-4">registerNdefMessageHandler</a></b> ( const QNdefFilter &amp; <i>filter</i>, QObject * <i>object</i>, const char * <i>method</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#setTargetAccessModes">setTargetAccessModes</a></b> ( TargetAccessModes <i>accessModes</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#startTargetDetection">startTargetDetection</a></b> ( const QList&lt;QNearFieldTarget::Type&gt; &amp; <i>targetTypes</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#startTargetDetection-2">startTargetDetection</a></b> ( QNearFieldTarget::Type <i>targetType</i> = QNearFieldTarget::AnyTarget )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#stopTargetDetection">stopTargetDetection</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> TargetAccessModes </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#targetAccessModes">targetAccessModes</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#unregisterNdefMessageHandler">unregisterNdefMessageHandler</a></b> ( int <i>handlerId</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#targetDetected">targetDetected</a></b> ( QNearFieldTarget * <i>target</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#targetLost">targetLost</a></b> ( QNearFieldTarget * <i>target</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qnearfieldmanager.html#transactionDetected">transactionDetected</a></b> ( const QByteArray &amp; <i>applicationIdentifier</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QNearFieldManager-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QNearFieldManager class provides access to notifications for NFC events.</p>
+<p>NFC Forum devices support two modes of communications. The first mode, peer-to-peer communications, is used to communicate between two NFC Forum devices. The second mode, master/slave communications, is used to communicate between an NFC Forum device and an NFC Forum Tag or Contactless Card. The <a href="qnearfieldmanager.html#targetDetected">targetDetected</a>() signal is emitted when a target device enters communications range. Communications can be initiated from the slot connected to this signal.</p>
+<p>NFC Forum devices generally operate as the master in master/slave communications. Some devices are also capable of operating as the slave, so called Card Emulation mode. In this mode the local NFC device emulates a NFC Forum Tag or Contactless Card and can be used to perform transactions. The transaction happens entirely within a secure element on the device and only a notification of the transaction is provided. The <a href="qnearfieldmanager.html#transactionDetected">transactionDetected</a>() signal is emitted whenever a transaction occurs.</p>
+<p>NFC Forum Tags can contain one or more messages in a standardized format. These messages are encapsulated by the <a href="qndefmessage.html">QNdefMessage</a> class. Use the <a href="qnearfieldmanager.html#registerNdefMessageHandler">registerNdefMessageHandler</a>() functions to register message handlers with particular criteria. Handlers can be unregistered with the <a href="qnearfieldmanager.html#unregisterNdefMessageHandler">unregisterNdefMessageHandler</a>() function.</p>
+<p>Applications can connect to the <a href="qnearfieldmanager.html#targetDetected">targetDetected</a>() and <a href="qnearfieldmanager.html#targetLost">targetLost</a>() signals to get notified when an NFC Forum Device or NFC Forum Tag enters or leaves proximity. Before these signals are emitted target detection must be started with the <a href="qnearfieldmanager.html#startTargetDetection">startTargetDetection</a>() function, which takes a parameter to limit the type of device or tags detected. Target detection can be stopped with the <a href="qnearfieldmanager.html#stopTargetDetection">stopTargetDetection</a>() function. Before a detected target can be accessed it is necessary to request access rights. This must be done before the target device is touched. The <a href="qnearfieldmanager.html#setTargetAccessModes">setTargetAccessModes</a>() function is used to set the types of access the application wants to perform on the detected target. When access is no longer required the target access modes should be set to <a href="qnearfieldmanager.html#TargetAccessMode-enum">NoTargetAccess</a> as other applications may be blocked from accessing targets. The current target access modes can be retried with the <a href="qnearfieldmanager.html#targetAccessModes">targetAccessModes</a>() function.</p>
+<a name="automatically-launching-ndef-message-handlers"></a>
+<h3>Automatically launching NDEF message handlers</h3>
+<p>It is possible to pre-register an application to receive NDEF messages matching a given criteria. This is useful to get the system to automatically launch your application when a matching NDEF message is received. This removes the need to have the user manually launch NDEF handling applications, prior to touching a tag, or to have those applications always running and using system resources.</p>
+<p>The process of registering the handler is different on each platform. The platform specifics are documented in the sections below. Qt Mobility provides a tool, <tt>ndefhandlergen</tt>, to generate the platform specific registration files. The output of <tt>ndefhandlergen -help</tt> is reproduced here for convenience:</p>
+<pre class="highlightedCode brush: cpp"> Generate platform specific NFC message handler registration files.
+ Usage: nfcxmlgen [options]
+
+     -template TEMPLATE    Template to use.
+     -appname APPNAME      Name of the application.
+     -apppath APPPATH      Path to installed application binary.
+     -datatype DATATYPE    URN of the NDEF message type to match.
+     -match MATCHSTRING    Platform specific match string.
+
+ The -datatype and -match options are mutually exclusive.
+
+ Available templates: maemo6, symbian</pre>
+<p>A typical invocation of the <tt>ndefhandlergen</tt> tool for Symbian^3 target:</p>
+<pre class="highlightedCode brush: cpp"> ndefhandlergen -template symbian -appname myapplication -datatype urn:nfc:ext:com.example:f</pre>
+<p>and for Maemo6 target:</p>
+<pre class="highlightedCode brush: cpp"> ndefhandlergen -template maemo6 -appname myapplication -apppath /usr/bin/myapplication -datatype urn:nfc:ext:com.example:f</pre>
+<p>Once the application has been registered as an NDEF message handler, the application only needs to call the <a href="qnearfieldmanager.html#registerNdefMessageHandler">registerNdefMessageHandler</a>() function:</p>
+<pre class="highlightedCode brush: cpp"> QNearFieldManager *manager = new QNearFieldManager;
+ manager-&gt;registerNdefMessageHandler(this,
+                                     SLOT(handleNdefMessage(QNdefMessage,QNearFieldTarget)));</pre>
+<a name="symbian-3"></a>
+<h4>Symbian^3</h4>
+<p>On Symbian^3 an xml file needs to be created and installed into a particular directory on the device. The format of the xml is given below.</p>
+<pre class="highlightedCode brush: cpp"> &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+ &lt;SFW version=&quot;1.1&quot;&gt;
+     &lt;service&gt;
+         &lt;name&gt;%APPNAME%&lt;/name&gt;
+         &lt;ipcaddress&gt;%APPNAME%&lt;/ipcaddress&gt;
+         &lt;description&gt;NFC NDEF message handler for %APPNAME%&lt;/description&gt;
+         &lt;interface&gt;
+             &lt;name&gt;com.nokia.symbian.NdefMessageHandler&lt;/name&gt;
+             &lt;version&gt;1.0&lt;/version&gt;
+             &lt;description&gt;NFC NDEF message handler for %APPNAME%&lt;/description&gt;
+             &lt;capabilities&gt;&lt;/capabilities&gt;
+             &lt;customproperty key=&quot;datatype&quot;&gt;%DATATYPE%&lt;/customproperty&gt;
+         &lt;/interface&gt;
+     &lt;/service&gt;
+ &lt;/SFW&gt;</pre>
+<p>The <i>%APPNAME%</i> tags need to be changed to match the name of the application. The <i>description</i> xml tags should be used to describe the application, however these values are not used. The <i>%DATATYPE%</i> tag must be set with the NDEF record type to match For example the following would be used to match NDEF messages that contain a RTD-URI record:</p>
+<pre class="highlightedCode brush: cpp"> &lt;customproperty key=&quot;datatype&quot;&gt;urn:nfc:wkt:U&lt;/customproperty&gt;</pre>
+<p>The following would be used to match NDEF messages that contain a custom type urn:nfc:ext:example.com:f:</p>
+<pre class="highlightedCode brush: cpp"> &lt;customproperty key=&quot;datatype&quot;&gt;urn:nfc:ext:com.example:f&lt;/customproperty&gt;</pre>
+<p>The value of the <i>customproperty</i> xml tag can be set to any valid match string supported by the Symbian^3 platform.</p>
+<p>It is recommended to name the xml file after the application package name. For example myapplication.xml. To install the above xml file into the correct location the following should be added to the application .pro file:</p>
+<pre class="highlightedCode brush: cpp"> symbian {
+     ndefhandler.sources = myapplication.xml
+     ndefhandler.path = /private/2002AC7F/import/
+     DEPLOYMENT += ndefhandler
+ }</pre>
+<a name="maemo6"></a>
+<h4>Maemo6</h4>
+<p>On Maemo6 the NDEF message handler notifications are passed over D-Bus. Registration of the NDEF message match criteria is done via a D-Bus call. The application must also ensure that it has registered a D-Bus service name so that the application can be automatically launched when a notification message is sent to the registered service.</p>
+<p>To register the D-Bus service the two files need to be created and installed into particular directories on the device. The first file is the D-Bus bus configuration file:</p>
+<pre class="highlightedCode brush: cpp"> &lt;busconfig&gt;
+     &lt;!-- we trust that no one else is going to squat on our service --&gt;
+     &lt;policy context=&quot;default&quot;&gt;
+         &lt;allow own=&quot;com.nokia.qtmobility.nfc.%APPNAME%&quot;/&gt;
+     &lt;/policy&gt;
+ &lt;/busconfig&gt;</pre>
+<p>The <i>%APPNAME%</i> tag must be replaced with the name of your application binary.</p>
+<p>The second file is a D-Bus service file which is used by the D-Bus daemon to launch your application.</p>
+<pre class="highlightedCode brush: cpp"> [D-BUS Service]
+ Name=com.nokia.qtmobility.nfc.%APPNAME%
+ Exec=%APPPATH%
+ User=user</pre>
+<p>The <i>%APPNAME%</i> tag must be replace with the name of your application binary and the <i>%APPPATH%</i> tag must be replaced with the path to your installed application binary.</p>
+<p>It is recommended to name these files after the application package name. For example myapplication.conf and myapplication.service. To install the above files into the correct location the following should be added to the application .pro file:</p>
+<pre class="highlightedCode brush: cpp"> maemo6 {
+     ndefhandler_conf.sources = myapplication.conf
+     ndefhandler_conf.path = /etc/dbus-1/system.d/
+
+     ndefhandler_service.sources = myapplication.service
+     ndefhandler_service.path = /usr/share/dbus-1/system-services/
+
+     DEPLOYMENT += ndefhandler_conf ndefhandler_service
+ }</pre>
+<p>The NDEF message handler is registered with the following D-Bus command. Applications should ensure that the following command (or similar) is executed once at installation time. For example in the packages post-installation script.</p>
+<pre class="highlightedCode brush: cpp"> #!/bin/sh
+
+ dbus-send --system --type=method_call --dest=com.nokia.nfc / \
+     com.nokia.nfc.Manager.RegisterNDEFHandler \
+         string:system \
+         string:com.nokia.qtmobility.nfc.%APPNAME% \
+         objpath:/com/nokia/nfc/ndefhandler \
+         string:any \
+         string:&quot;%DATATYPE%&quot; \
+         string:%APPNAME%</pre>
+<p>The <i>%APPNAME%</i> string must be replaced with the name of the application binary. The <i>%DATATYPE%</i> string must be replaced with the NDEF record type to match. For example the following would be used to match NDEF messages that contain a RTD-URI record:</p>
+<pre class="highlightedCode brush: cpp"> string:&quot;urn:nfc:wkt:U[1:*];&quot;</pre>
+<p>The following would be used to match NDEF messages that contain a custom type urn:nfc:ext:example.com:f:</p>
+<pre class="highlightedCode brush: cpp"> string:&quot;urn:nfc:ext:example.com:f[1:*];&quot;</pre>
+<p>Note that <tt>[1:*]</tt> indicates one or more records of the specified type must be in the NDEF message. The value of the datatype string argument can be set to any valid match string supported by the Maemo6 platform.</p>
+<p>The NDEF message handler should be unregistered at uninstallation time. For example in the packages pre-removal script.</p>
+<pre class="highlightedCode brush: cpp"> #!/bin/sh
+
+ dbus-send --system --type=method_call --dest=com.nokia.nfc / \
+     com.nokia.nfc.Manager.UnregisterNDEFHandler \
+         string:system \
+         string:com.nokia.qtmobility.nfc.%APPNAME% \
+         objpath:/com/nokia/nfc/ndefhandler</pre>
+<p>The <i>%APPNAME%</i> string must be replace with the name of the application binary.</p>
+</div>
+<!-- @@@QNearFieldManager -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$TargetAccessMode$$$NoTargetAccess$$$NdefReadTargetAccess$$$NdefWriteTargetAccess$$$TagTypeSpecificTargetAccess -->
+<h3 class="flags"><a name="TargetAccessMode-enum"></a>enum QNearFieldManager::TargetAccessMode<br/>flags QNearFieldManager::TargetAccessModes</h3>
+<p>This enum describes the different access modes an application can have.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QNearFieldManager::NoTargetAccess</tt></td><td class=" topAlign"><tt>0x00</tt></td><td  class="topAlign">The application cannot access NFC capabilities.</td></tr>
+<tr><td  class="topAlign"><tt>QNearFieldManager::NdefReadTargetAccess</tt></td><td class=" topAlign"><tt>0x01</tt></td><td  class="topAlign">The application can read NDEF messages from targets by calling <a href="qnearfieldtarget.html#readNdefMessages">QNearFieldTarget::readNdefMessages</a>().</td></tr>
+<tr><td  class="topAlign"><tt>QNearFieldManager::NdefWriteTargetAccess</tt></td><td class=" topAlign"><tt>0x02</tt></td><td  class="topAlign">The application can write NDEF messages to targets by calling <a href="qnearfieldtarget.html#writeNdefMessages">QNearFieldTarget::writeNdefMessages</a>().</td></tr>
+<tr><td  class="topAlign"><tt>QNearFieldManager::TagTypeSpecificTargetAccess</tt></td><td class=" topAlign"><tt>0x04</tt></td><td  class="topAlign">The application can access targets using raw commands by calling <a href="qnearfieldtarget.html#sendCommand">QNearFieldTarget::sendCommand</a>().</td></tr>
+</table>
+<p>The TargetAccessModes type is a typedef for <a href="qflags.html">QFlags</a>&lt;TargetAccessMode&gt;. It stores an OR combination of TargetAccessMode values.</p>
+<!-- @@@TargetAccessMode -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QNearFieldManager[overload1]$$$QNearFieldManagerQObject* -->
+<h3 class="fn"><a name="QNearFieldManager"></a>QNearFieldManager::QNearFieldManager ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new near field manager with <i>parent</i>.</p>
+<!-- @@@QNearFieldManager -->
+<!-- $$$~QNearFieldManager[overload1]$$$~QNearFieldManager -->
+<h3 class="fn"><a name="dtor.QNearFieldManager"></a>QNearFieldManager::~QNearFieldManager ()</h3>
+<p>Destroys the near field manager.</p>
+<!-- @@@~QNearFieldManager -->
+<!-- $$$isAvailable[overload1]$$$isAvailable -->
+<h3 class="fn"><a name="isAvailable"></a>bool QNearFieldManager::isAvailable () const</h3>
+<p>Returns true if NFC functionality is available; otherwise returns false.</p>
+<!-- @@@isAvailable -->
+<!-- $$$registerNdefMessageHandler[overload1]$$$registerNdefMessageHandlerQObject*constchar* -->
+<h3 class="fn"><a name="registerNdefMessageHandler"></a>int QNearFieldManager::registerNdefMessageHandler ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>object</i>, const char * <i>method</i> )</h3>
+<p>Registers <i>object</i> to receive notifications on <i>method</i> when a tag has been detected and has an NDEF message that matches a pre-registered message format. The <i>method</i> on <i>object</i> should have the prototype 'void targetDetected(const <a href="qndefmessage.html">QNdefMessage</a> &amp;message, <a href="qnearfieldtarget.html">QNearFieldTarget</a> *target)'.</p>
+<p>Returns an identifier, which can be used to unregister the handler, on success; otherwise returns -1.</p>
+<p>This function is used to register a <a href="qnearfieldmanager.html">QNearFieldManager</a> instance to receive notifications when a NDEF message matching a pre-registered message format is received. See the section on <a href="qnearfieldmanager.html#automatically-launching-ndef-message-handlers">Automatically launching NDEF message handlers</a>.</p>
+<p><b>Note:</b> The <i>target</i> parameter of <i>method</i> may not be available on all platforms, in which case <i>target</i> will be 0.</p>
+<!-- @@@registerNdefMessageHandler -->
+<!-- $$$registerNdefMessageHandler$$$registerNdefMessageHandlerQObject*constchar* -->
+<h3 class="fn"><a name="registerNdefMessageHandler-2"></a>int QNearFieldManager::registerNdefMessageHandler ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>object</i>, const char * <i>method</i> )</h3>
+<!-- @@@registerNdefMessageHandler -->
+<!-- $$$registerNdefMessageHandler$$$registerNdefMessageHandlerQNdefRecord::TypeNameFormatconstQByteArray&QObject*constchar* -->
+<h3 class="fn"><a name="registerNdefMessageHandler-3"></a>int QNearFieldManager::registerNdefMessageHandler ( <a href="qndefrecord.html#TypeNameFormat-enum">QNdefRecord::TypeNameFormat</a> <i>typeNameFormat</i>, const <a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a> &amp; <i>type</i>, <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>object</i>, const char * <i>method</i> )</h3>
+<p>Registers <i>object</i> to receive notifications on <i>method</i> when a tag has been detected and has an NDEF record that matches <i>typeNameFormat</i> and <i>type</i>. The <i>method</i> on <i>object</i> should have the prototype 'void targetDetected(const <a href="qndefmessage.html">QNdefMessage</a> &amp;message, <a href="qnearfieldtarget.html">QNearFieldTarget</a> *target)'.</p>
+<p>Returns an identifier, which can be used to unregister the handler, on success; otherwise returns -1.</p>
+<p><b>Note:</b> The <i>target</i> parameter of <i>method</i> may not be available on all platforms, in which case <i>target</i> will be 0.</p>
+<!-- @@@registerNdefMessageHandler -->
+<!-- $$$registerNdefMessageHandler$$$registerNdefMessageHandlerconstQNdefFilter&QObject*constchar* -->
+<h3 class="fn"><a name="registerNdefMessageHandler-4"></a>int QNearFieldManager::registerNdefMessageHandler ( const <a href="qndeffilter.html">QNdefFilter</a> &amp; <i>filter</i>, <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>object</i>, const char * <i>method</i> )</h3>
+<p>Registers <i>object</i> to receive notifications on <i>method</i> when a tag has been detected and has an NDEF message that matches <i>filter</i> is detected. The <i>method</i> on <i>object</i> should have the prototype 'void targetDetected(const <a href="qndefmessage.html">QNdefMessage</a> &amp;message, <a href="qnearfieldtarget.html">QNearFieldTarget</a> *target)'.</p>
+<p>Returns an identifier, which can be used to unregister the handler, on success; otherwise returns -1.</p>
+<p><b>Note:</b> The <i>target</i> parameter of <i>method</i> may not be available on all platforms, in which case <i>target</i> will be 0.</p>
+<!-- @@@registerNdefMessageHandler -->
+<!-- $$$setTargetAccessModes[overload1]$$$setTargetAccessModesTargetAccessModes -->
+<h3 class="fn"><a name="setTargetAccessModes"></a>void QNearFieldManager::setTargetAccessModes ( <a href="qnearfieldmanager.html#TargetAccessMode-enum">TargetAccessModes</a> <i>accessModes</i> )</h3>
+<p>Sets the requested target access modes to <i>accessModes</i>.</p>
+<p>See also <a href="qnearfieldmanager.html#targetAccessModes">targetAccessModes</a>().</p>
+<!-- @@@setTargetAccessModes -->
+<!-- $$$startTargetDetection[overload1]$$$startTargetDetectionconstQList<QNearFieldTarget::Type>& -->
+<h3 class="fn"><a name="startTargetDetection"></a>bool QNearFieldManager::startTargetDetection ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qnearfieldtarget.html#Type-enum">QNearFieldTarget::Type</a>&gt; &amp; <i>targetTypes</i> )</h3>
+<p>Starts detecting targets of type <i>targetTypes</i>. Returns true if target detection is successfully started; otherwise returns false.</p>
+<p>Causes the <a href="qnearfieldmanager.html#targetDetected">targetDetected</a>() signal to be emitted when a target with a type in <i>targetTypes</i> is within proximity. If <i>targetTypes</i> is empty targets of all types will be detected.</p>
+<p>See also <a href="qnearfieldmanager.html#stopTargetDetection">stopTargetDetection</a>().</p>
+<!-- @@@startTargetDetection -->
+<!-- $$$startTargetDetection$$$startTargetDetectionQNearFieldTarget::Type -->
+<h3 class="fn"><a name="startTargetDetection-2"></a>bool QNearFieldManager::startTargetDetection ( <a href="qnearfieldtarget.html#Type-enum">QNearFieldTarget::Type</a> <i>targetType</i> = QNearFieldTarget::AnyTarget )</h3>
+<p>This is an overloaded function.</p>
+<p>Starts detecting targets of type <i>targetType</i>. Returns true if target detection is successfully started; otherwise returns false. Causes the <a href="qnearfieldmanager.html#targetDetected">targetDetected</a>() signal to be emitted when a target with the type <i>targetType</i> is within proximity.</p>
+<!-- @@@startTargetDetection -->
+<!-- $$$stopTargetDetection[overload1]$$$stopTargetDetection -->
+<h3 class="fn"><a name="stopTargetDetection"></a>void QNearFieldManager::stopTargetDetection ()</h3>
+<p>Stops detecting targets. The <a href="qnearfieldmanager.html#targetDetected">targetDetected</a>() signal will no longer be emitted until another call to <a href="qnearfieldmanager.html#startTargetDetection">startTargetDetection</a>() is made.</p>
+<!-- @@@stopTargetDetection -->
+<!-- $$$targetAccessModes[overload1]$$$targetAccessModes -->
+<h3 class="fn"><a name="targetAccessModes"></a><a href="qnearfieldmanager.html#TargetAccessMode-enum">TargetAccessModes</a> QNearFieldManager::targetAccessModes () const</h3>
+<p>Returns current requested target access modes.</p>
+<p>See also <a href="qnearfieldmanager.html#setTargetAccessModes">setTargetAccessModes</a>().</p>
+<!-- @@@targetAccessModes -->
+<!-- $$$targetDetected[overload1]$$$targetDetectedQNearFieldTarget* -->
+<h3 class="fn"><a name="targetDetected"></a>void QNearFieldManager::targetDetected ( <a href="qnearfieldtarget.html">QNearFieldTarget</a> * <i>target</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a target is detected. The <i>target</i> parameter represents the detected target.</p>
+<p>This signal will be emitted for all detected targets.</p>
+<p><a href="qnearfieldmanager.html">QNearFieldManager</a> maintains ownership of <i>target</i>, however, it will not be destroyed until the <a href="qnearfieldmanager.html">QNearFieldManager</a> destructor is called. Ownership may be transferred by calling <a href="http://qt.nokia.com/doc/4.7/qobject.html#setParent">setParent</a>().</p>
+<p>Do not delete <i>target</i> from the slot connected to this signal, instead call <a href="http://qt.nokia.com/doc/4.7/qobject.html#deleteLater">deleteLater</a>().</p>
+<p><b>Note:</b> that if <i>target</i> is deleted before it moves out of proximity the <a href="qnearfieldmanager.html#targetLost">targetLost</a>() signal will not be emitted.</p>
+<p>See also <a href="qnearfieldmanager.html#targetLost">targetLost</a>().</p>
+<!-- @@@targetDetected -->
+<!-- $$$targetLost[overload1]$$$targetLostQNearFieldTarget* -->
+<h3 class="fn"><a name="targetLost"></a>void QNearFieldManager::targetLost ( <a href="qnearfieldtarget.html">QNearFieldTarget</a> * <i>target</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a target moves out of proximity. The <i>target</i> parameter represents the lost target.</p>
+<p>Do not delete <i>target</i> from the slot connected to this signal, instead use <a href="http://qt.nokia.com/doc/4.7/qobject.html#deleteLater">deleteLater</a>().</p>
+<p>See also <a href="qnearfieldtarget.html#disconnected">QNearFieldTarget::disconnected</a>().</p>
+<!-- @@@targetLost -->
+<!-- $$$transactionDetected[overload1]$$$transactionDetectedconstQByteArray& -->
+<h3 class="fn"><a name="transactionDetected"></a>void QNearFieldManager::transactionDetected ( const <a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a> &amp; <i>applicationIdentifier</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when ever a transaction is performed with the application identified by <i>applicationIdentifier</i>.</p>
+<p>The <i>applicationIdentifier</i> is a byte array of up to 16 bytes as defined by ISO 7816-4 and uniquely identifies the application and application vendor that was involved in the transaction.</p>
+<!-- @@@transactionDetected -->
+<!-- $$$unregisterNdefMessageHandler[overload1]$$$unregisterNdefMessageHandlerint -->
+<h3 class="fn"><a name="unregisterNdefMessageHandler"></a>bool QNearFieldManager::unregisterNdefMessageHandler ( int <i>handlerId</i> )</h3>
+<p>Unregisters the target detect handler identified by <i>handlerId</i>.</p>
+<p>Returns true on success; otherwise returns false.</p>
+<!-- @@@unregisterNdefMessageHandler -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

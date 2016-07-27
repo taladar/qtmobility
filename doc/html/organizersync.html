@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- organizersync.qdoc -->
+  <title>Qt 1.2: Organizer Synchronous API</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li>Organizer Synchronous API</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#introduction">Introduction</a></li>
+<li class="level1"><a href="#using-the-api">Using The API</a></li>
+<li class="level2"><a href="#organizer-item-manipulation">Organizer Item Manipulation</a></li>
+<li class="level2"><a href="#item-collection-manipulation">Item Collection Manipulation</a></li>
+<li class="level2"><a href="#schema-manipulation">Schema Manipulation</a></li>
+<li class="level2"><a href="#error-reporting">Error Reporting</a></li>
+</ul>
+</div>
+<h1 class="title">Organizer Synchronous API</h1>
+<span class="subtitle"></span>
+<!-- $$$organizersync.html-description -->
+<div class="descr"> <a name="details"></a>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p>The Organizer Items Synchronous API enables a client to synchronously fetch, update, or remove item data from an item manager. A synchronous API is of most use to clients who wish to perform simple requests where user interface responsiveness is not critical. Synchronous calls to an item manager will block until they are completed, and therefore should not be performed in the GUI thread (especially if the manager is a frontend to an online service or long-latency datastore). The main advantage of the synchronous API is its simplicity and convenience.</p>
+<p>Most operations which may be performed using the synchronous API may also be performed using the asynchronous API. It is recommended for most applications that the asynchronous API be used where possible.</p>
+<a name="using-the-api"></a>
+<h2>Using The API</h2>
+<p>The synchronous API offered by the Organizer Items module is available through the <a href="qorganizermanager.html">QOrganizerManager</a> class. It consists of three major categories:</p>
+<ul>
+<li>Organizer Item Manipulation</li>
+<li>Item Collection Manipulation</li>
+<li>Schema Manipulation</li>
+</ul>
+<a name="organizer-item-manipulation"></a>
+<h3>Organizer Item Manipulation</h3>
+<p>The most common type of operation that clients will perform involves retrieval or modification of organizer items. For in-depth information about item manipulation, please refer to the main <a href="organizer.html">Organizer</a> API page.</p>
+<p>The <a href="qorganizermanager.html">QOrganizerManager</a> class provides API for accessing the IDs of items which are stored in the manager:</p>
+<ul>
+<li><a href="qorganizermanager.html#itemIds">QOrganizerManager::itemIds</a>()</li>
+</ul>
+<p>The synchronous, singular item manipulation functions offered by the <a href="qorganizermanager.html">QOrganizerManager</a> class are:</p>
+<ul>
+<li><a href="qorganizermanager.html#item">QOrganizerManager::item</a>()</li>
+<li><a href="qorganizermanager.html#saveItem">QOrganizerManager::saveItem</a>()</li>
+<li><a href="qorganizermanager.html#removeItem">QOrganizerManager::removeItem</a>()</li>
+</ul>
+<p>The synchronous, batch item manipulation functions offered by the <a href="qorganizermanager.html">QOrganizerManager</a> class are:</p>
+<ul>
+<li><a href="qorganizermanager.html#items">QOrganizerManager::items</a>() which returns persistent and generated items within a given time period</li>
+<li><a href="qorganizermanager.html#itemsForExport">QOrganizerManager::itemsForExport</a>() which returns only persistent items</li>
+<li><a href="qorganizermanager.html#itemOccurrences">QOrganizerManager::itemOccurrences</a>() which returns the occurrences of a specific recurring item</li>
+<li><a href="qorganizermanager.html#saveItems">QOrganizerManager::saveItems</a>() which may be used to update a recurring item, or save an exceptional occurrence</li>
+<li><a href="qorganizermanager.html#removeItems">QOrganizerManager::removeItems</a>() which may be used to remove a recurring item or exceptional occurrence</li>
+</ul>
+<a name="item-collection-manipulation"></a>
+<h3>Item Collection Manipulation</h3>
+<p>Every item is saved in a collection in a manager. Each collection has various properties which, if the manager supports such operations, may be modified by clients. For in-depth information about collections, please refer to the main <a href="organizer.html">Organizer</a> API page.</p>
+<p>The synchronous API offers the following functions to manipulate collections:</p>
+<ul>
+<li><a href="qorganizermanager.html#defaultCollection">QOrganizerManager::defaultCollection</a>() returns the default collection of the manager</li>
+<li><a href="qorganizermanager.html#collections">QOrganizerManager::collections</a>() returns all collections in the manager</li>
+<li><a href="qorganizermanager.html#saveCollection">QOrganizerManager::saveCollection</a>() updates an existing collection or adds a new collection</li>
+<li><a href="qorganizermanager.html#removeCollection">QOrganizerManager::removeCollection</a>() removes an existing collection (and deletes any items it contains)</li>
+</ul>
+<p>It also offers a convenience function which returns a collection with a given collection id.</p>
+<a name="schema-manipulation"></a>
+<h3>Schema Manipulation</h3>
+<p>The schema supported by a engine is the list of detail definitions which are supported by the engine. For in-depth information about the schema, please refer to the main <a href="organizerschema.html">Qt Organizer Schema</a> page.</p>
+<p>The synchronous API offers several functions to retrieve or modify the schema supported by an engine. Engines which support these types of operations must report to clients that they support the <a href="qorganizermanager.html#ManagerFeature-enum">QOrganizerManager::MutableDefinitions</a> feature.</p>
+<ul>
+<li><a href="qorganizermanager.html#detailDefinitions">QOrganizerManager::detailDefinitions</a>() returns all definitions in the schema for a particular item type</li>
+<li><a href="qorganizermanager.html#detailDefinition">QOrganizerManager::detailDefinition</a>() returns the definition of a particular name from the schema for a particular item type</li>
+<li><a href="qorganizermanager.html#saveDetailDefinition">QOrganizerManager::saveDetailDefinition</a>() which updates or adds a definition to the schema for a particular item type</li>
+<li><a href="qorganizermanager.html#removeDetailDefinition">QOrganizerManager::removeDetailDefinition</a>() which removes a definition from the schema for a particular item type</li>
+</ul>
+<a name="error-reporting"></a>
+<h3>Error Reporting</h3>
+<p>When a synchronous operation fails, clients need to be able to retrieve error information associated with that synchronous operation. You can call the <a href="qorganizermanager.html#error">QOrganizerManager::error</a>() function directly after a failing synchronous operation to determine why it failed.</p>
+<p>For some synchronous operations (for example, batch save or remove operations) it is possible that multiple errors may occur during the operation. In those cases, clients can call <a href="qorganizermanager.html#errorMap">QOrganizerManager::errorMap</a>() to retrieve a map of input index to error, which will be filled by the function as required. The <a href="qorganizermanager.html#error">QOrganizerManager::error</a>() function will report the overall operation error.</p>
+</div>
+<!-- @@@organizersync.html -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

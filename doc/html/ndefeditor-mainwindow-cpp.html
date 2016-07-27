@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt 1.2: mainwindow.cpp Example File (ndefeditor/mainwindow.cpp)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<h1 class="title">mainwindow.cpp Example File</h1>
+<span class="small-subtitle">ndefeditor/mainwindow.cpp</span>
+<!-- $$$ndefeditor/mainwindow.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** You may use this file under the terms of the BSD license as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+ **     the names of its contributors may be used to endorse or promote
+ **     products derived from this software without specific prior written
+ **     permission.
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;mainwindow.h&quot;
+ #include &quot;ui_mainwindow.h&quot;
+
+ #include &quot;textrecordeditor.h&quot;
+ #include &quot;urirecordeditor.h&quot;
+ #include &quot;mimeimagerecordeditor.h&quot;
+
+ #include &lt;QtCore/QTime&gt;
+ #include &lt;QtGui/QMenu&gt;
+ #include &lt;QtGui/QVBoxLayout&gt;
+ #include &lt;QtGui/QFrame&gt;
+ #include &lt;QtGui/QLabel&gt;
+ #include &lt;QtGui/QFileDialog&gt;
+
+ #include &lt;qnearfieldmanager.h&gt;
+ #include &lt;qnearfieldtarget.h&gt;
+ #include &lt;qndefrecord.h&gt;
+ #include &lt;qndefnfctextrecord.h&gt;
+ #include &lt;qndefnfcurirecord.h&gt;
+ #include &lt;qndefmessage.h&gt;
+
+ #include &lt;QtCore/QDebug&gt;
+
+ class EmptyRecordLabel : public QLabel
+ {
+     Q_OBJECT
+
+ public:
+     EmptyRecordLabel() : QLabel(tr(&quot;Empty Record&quot;)) { }
+     ~EmptyRecordLabel() { }
+
+     void setRecord(const QNdefRecord &amp;record)
+     {
+         Q_UNUSED(record);
+     }
+
+     QNdefRecord record() const
+     {
+         return QNdefRecord();
+     }
+ };
+
+ class UnknownRecordLabel : public QLabel
+ {
+     Q_OBJECT
+
+ public:
+     UnknownRecordLabel() : QLabel(tr(&quot;Unknown Record Type&quot;)) { }
+     ~UnknownRecordLabel() { }
+
+     void setRecord(const QNdefRecord &amp;record) { m_record = record; }
+     QNdefRecord record() const { return m_record; }
+
+ private:
+     QNdefRecord m_record;
+ };
+
+ template &lt;typename T&gt;
+ void addRecord(Ui::MainWindow *ui, const QNdefRecord &amp;record = QNdefRecord())
+ {
+     QVBoxLayout *vbox = qobject_cast&lt;QVBoxLayout *&gt;(ui-&gt;scrollAreaWidgetContents-&gt;layout());
+     if (!vbox)
+         return;
+
+     if (!vbox-&gt;isEmpty()) {
+         QFrame *hline = new QFrame;
+         hline-&gt;setFrameShape(QFrame::HLine);
+         hline-&gt;setObjectName(QLatin1String(&quot;line-spacer&quot;));
+
+         vbox-&gt;addWidget(hline);
+     }
+
+     T *recordEditor = new T;
+     recordEditor-&gt;setObjectName(QLatin1String(&quot;record-editor&quot;));
+
+     if (!record.isEmpty())
+         recordEditor-&gt;setRecord(record);
+
+     vbox-&gt;addWidget(recordEditor);
+ }
+
+ MainWindow::MainWindow(QWidget *parent)
+ :   QMainWindow(parent), ui(new Ui::MainWindow), m_manager(new QNearFieldManager(this)),
+     m_touchAction(NoAction)
+ {
+     ui-&gt;setupUi(this);
+
+     QMenu *addRecordMenu = new QMenu(this);
+     addRecordMenu-&gt;addAction(tr(&quot;NFC Text Record&quot;), this, SLOT(addNfcTextRecord()));
+     addRecordMenu-&gt;addAction(tr(&quot;NFC URI Record&quot;), this, SLOT(addNfcUriRecord()));
+     addRecordMenu-&gt;addAction(tr(&quot;MIME Image Record&quot;), this, SLOT(addMimeImageRecord()));
+     addRecordMenu-&gt;addAction(tr(&quot;Empty Record&quot;), this, SLOT(addEmptyRecord()));
+     ui-&gt;addRecord-&gt;setMenu(addRecordMenu);
+
+     QVBoxLayout *vbox = new QVBoxLayout;
+     ui-&gt;scrollAreaWidgetContents-&gt;setLayout(vbox);
+
+     connect(m_manager, SIGNAL(targetDetected(QNearFieldTarget*)),
+             this, SLOT(targetDetected(QNearFieldTarget*)));
+     connect(m_manager, SIGNAL(targetLost(QNearFieldTarget*)),
+             this, SLOT(targetLost(QNearFieldTarget*)));
+ }
+
+ MainWindow::~MainWindow()
+ {
+     delete ui;
+ }
+
+ void MainWindow::addNfcTextRecord()
+ {
+     addRecord&lt;TextRecordEditor&gt;(ui);
+ }
+
+ void MainWindow::addNfcUriRecord()
+ {
+     addRecord&lt;UriRecordEditor&gt;(ui);
+ }
+
+ void MainWindow::addMimeImageRecord()
+ {
+     addRecord&lt;MimeImageRecordEditor&gt;(ui);
+ }
+
+ void MainWindow::addEmptyRecord()
+ {
+     addRecord&lt;EmptyRecordLabel&gt;(ui);
+ }
+
+ void MainWindow::loadMessage()
+ {
+     QString filename = QFileDialog::getOpenFileName(this, tr(&quot;Select NDEF Message&quot;));
+     if (filename.isEmpty())
+         return;
+
+     QFile file(filename);
+     if (!file.open(QIODevice::ReadOnly))
+         return;
+
+     QByteArray ndef = file.readAll();
+
+     ndefMessageRead(QNdefMessage::fromByteArray(ndef));
+
+     file.close();
+ }
+
+ void MainWindow::saveMessage()
+ {
+     QString filename = QFileDialog::getSaveFileName(this, tr(&quot;Select NDEF Message&quot;));
+     if (filename.isEmpty())
+         return;
+
+     QFile file(filename);
+     if (!file.open(QIODevice::WriteOnly))
+         return;
+
+     file.write(ndefMessage().toByteArray());
+
+     file.close();
+ }
+
+ void MainWindow::touchReceive()
+ {
+     ui-&gt;status-&gt;setStyleSheet(QLatin1String(&quot;background: blue&quot;));
+
+     m_touchAction = ReadNdef;
+
+     m_manager-&gt;setTargetAccessModes(QNearFieldManager::NdefReadTargetAccess);
+     m_manager-&gt;startTargetDetection();
+ }
+
+ void MainWindow::touchStore()
+ {
+     ui-&gt;status-&gt;setStyleSheet(QLatin1String(&quot;background: yellow&quot;));
+
+     m_touchAction = WriteNdef;
+
+     m_manager-&gt;setTargetAccessModes(QNearFieldManager::NdefWriteTargetAccess);
+     m_manager-&gt;startTargetDetection();
+ }
+
+ void MainWindow::targetDetected(QNearFieldTarget *target)
+ {
+     switch (m_touchAction) {
+     case NoAction:
+         break;
+     case ReadNdef:
+         connect(target, SIGNAL(ndefMessageRead(QNdefMessage)),
+                 this, SLOT(ndefMessageRead(QNdefMessage)));
+         connect(target, SIGNAL(error(QNearFieldTarget::Error,QNearFieldTarget::RequestId)),
+                 this, SLOT(targetError(QNearFieldTarget::Error,QNearFieldTarget::RequestId)));
+
+         m_request = target-&gt;readNdefMessages();
+         break;
+     case WriteNdef:
+         connect(target, SIGNAL(ndefMessagesWritten()), this, SLOT(ndefMessageWritten()));
+         connect(target, SIGNAL(error(QNearFieldTarget::Error,QNearFieldTarget::RequestId)),
+                 this, SLOT(targetError(QNearFieldTarget::Error,QNearFieldTarget::RequestId)));
+
+         m_request = target-&gt;writeNdefMessages(QList&lt;QNdefMessage&gt;() &lt;&lt; ndefMessage());
+         break;
+     }
+ }
+
+ void MainWindow::targetLost(QNearFieldTarget *target)
+ {
+     target-&gt;deleteLater();
+ }
+
+ void MainWindow::ndefMessageRead(const QNdefMessage &amp;message)
+ {
+     clearMessage();
+
+     foreach (const QNdefRecord &amp;record, message) {
+         if (record.isRecordType&lt;QNdefNfcTextRecord&gt;()) {
+             addRecord&lt;TextRecordEditor&gt;(ui, record);
+         } else if (record.isRecordType&lt;QNdefNfcUriRecord&gt;()) {
+             addRecord&lt;UriRecordEditor&gt;(ui, record);
+         } else if (record.typeNameFormat() == QNdefRecord::Mime &amp;&amp;
+                    record.type().startsWith(&quot;image/&quot;)) {
+             addRecord&lt;MimeImageRecordEditor&gt;(ui, record);
+         } else if (record.isEmpty()) {
+             addRecord&lt;EmptyRecordLabel&gt;(ui);
+         } else {
+             addRecord&lt;UnknownRecordLabel&gt;(ui, record);
+         }
+     }
+
+     ui-&gt;status-&gt;setStyleSheet(QString());
+     m_manager-&gt;setTargetAccessModes(QNearFieldManager::NoTargetAccess);
+     m_manager-&gt;stopTargetDetection();
+     m_request = QNearFieldTarget::RequestId();
+     ui-&gt;statusBar-&gt;clearMessage();
+ }
+
+ void MainWindow::ndefMessageWritten()
+ {
+     ui-&gt;status-&gt;setStyleSheet(QString());
+     m_manager-&gt;setTargetAccessModes(QNearFieldManager::NoTargetAccess);
+     m_manager-&gt;stopTargetDetection();
+     m_request = QNearFieldTarget::RequestId();
+     ui-&gt;statusBar-&gt;clearMessage();
+ }
+
+ void MainWindow::targetError(QNearFieldTarget::Error error, const QNearFieldTarget::RequestId &amp;id)
+ {
+     Q_UNUSED(error);
+     Q_UNUSED(id);
+
+     if (m_request == id) {
+         switch (error) {
+         case QNearFieldTarget::NoError:
+             ui-&gt;statusBar-&gt;clearMessage();
+             break;
+         case QNearFieldTarget::UnsupportedError:
+             ui-&gt;statusBar-&gt;showMessage(tr(&quot;Unsupported tag&quot;));
+             break;
+         case QNearFieldTarget::TargetOutOfRangeError:
+             ui-&gt;statusBar-&gt;showMessage(tr(&quot;Tag removed from field&quot;));
+             break;
+         case QNearFieldTarget::NoResponseError:
+             ui-&gt;statusBar-&gt;showMessage(tr(&quot;No response from tag&quot;));
+             break;
+         case QNearFieldTarget::ChecksumMismatchError:
+             ui-&gt;statusBar-&gt;showMessage(tr(&quot;Checksum mismatch&quot;));
+             break;
+         case QNearFieldTarget::InvalidParametersError:
+             ui-&gt;statusBar-&gt;showMessage(tr(&quot;Invalid parameters&quot;));
+             break;
+         case QNearFieldTarget::NdefReadError:
+             ui-&gt;statusBar-&gt;showMessage(tr(&quot;NDEF read error&quot;));
+             break;
+         case QNearFieldTarget::NdefWriteError:
+             ui-&gt;statusBar-&gt;showMessage(tr(&quot;NDEF write error&quot;));
+             break;
+         default:
+             ui-&gt;statusBar-&gt;showMessage(tr(&quot;Unknown error&quot;));
+         }
+
+         ui-&gt;status-&gt;setStyleSheet(QString());
+         m_manager-&gt;setTargetAccessModes(QNearFieldManager::NoTargetAccess);
+         m_manager-&gt;stopTargetDetection();
+         m_request = QNearFieldTarget::RequestId();
+     }
+ }
+
+ void MainWindow::clearMessage()
+ {
+     QWidget *scrollArea = ui-&gt;scrollAreaWidgetContents;
+
+     qDeleteAll(scrollArea-&gt;findChildren&lt;QWidget *&gt;(QLatin1String(&quot;line-spacer&quot;)));
+     qDeleteAll(scrollArea-&gt;findChildren&lt;QWidget *&gt;(QLatin1String(&quot;record-editor&quot;)));
+ }
+
+ QNdefMessage MainWindow::ndefMessage() const
+ {
+     QVBoxLayout *vbox = qobject_cast&lt;QVBoxLayout *&gt;(ui-&gt;scrollAreaWidgetContents-&gt;layout());
+     if (!vbox)
+         return QNdefMessage();
+
+     QNdefMessage message;
+
+     for (int i = 0; i &lt; vbox-&gt;count(); ++i) {
+         QWidget *widget = vbox-&gt;itemAt(i)-&gt;widget();
+
+         if (TextRecordEditor *editor = qobject_cast&lt;TextRecordEditor *&gt;(widget)) {
+             message.append(editor-&gt;record());
+         } else if (UriRecordEditor *editor = qobject_cast&lt;UriRecordEditor *&gt;(widget)) {
+             message.append(editor-&gt;record());
+         } else if (MimeImageRecordEditor *editor = qobject_cast&lt;MimeImageRecordEditor *&gt;(widget)) {
+             message.append(editor-&gt;record());
+         } else if (qobject_cast&lt;EmptyRecordLabel *&gt;(widget)) {
+             message.append(QNdefRecord());
+         } else if (UnknownRecordLabel *label = qobject_cast&lt;UnknownRecordLabel *&gt;(widget)) {
+             message.append(label-&gt;record());
+         }
+     }
+
+     return message;
+ }
+
+ #include &quot;mainwindow.moc&quot;</pre>
+</div>
+<!-- @@@ndefeditor/mainwindow.cpp -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

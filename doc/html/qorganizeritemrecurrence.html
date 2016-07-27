@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qorganizeritemdetails.cpp -->
+  <title>Qt 1.2: QOrganizerItemRecurrence Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtorganizer.html">QtOrganizer</a></li>
+              <li>QOrganizerItemRecurrence</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QOrganizerItemRecurrence Class Reference</h1>
+<!-- $$$QOrganizerItemRecurrence-brief -->
+<p>The QOrganizerItemRecurrence class contains a list of rules and dates on which the recurrent item occurs, and a list of rules and dates on which exceptions occur. <a href="#details">More...</a></p>
+<!-- @@@QOrganizerItemRecurrence -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QOrganizerItemRecurrence&gt;</pre><p>Inherits <a href="qorganizeritemdetail.html">QOrganizerItemDetail</a>.</p>
+<ul>
+<li><a href="qorganizeritemrecurrence-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;QDate&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#exceptionDates">exceptionDates</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;QOrganizerRecurrenceRule&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#exceptionRules">exceptionRules</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;QDate&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#recurrenceDates">recurrenceDates</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;QOrganizerRecurrenceRule&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#recurrenceRules">recurrenceRules</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#setExceptionDates">setExceptionDates</a></b> ( const QSet&lt;QDate&gt; &amp; <i>xdates</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#setExceptionRules">setExceptionRules</a></b> ( const QSet&lt;QOrganizerRecurrenceRule&gt; &amp; <i>xrules</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#setRecurrenceDates">setRecurrenceDates</a></b> ( const QSet&lt;QDate&gt; &amp; <i>rdates</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#setRecurrenceRules">setRecurrenceRules</a></b> ( const QSet&lt;QOrganizerRecurrenceRule&gt; &amp; <i>rrules</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#operator-eq-eq">operator==</a></b> ( const QOrganizerItemRecurrence &amp; <i>other</i> ) const</td></tr>
+</table>
+<ul>
+<li class="fn">21 public functions inherited from <a href="qorganizeritemdetail.html#public-functions">QOrganizerItemDetail</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#DefinitionName-var">DefinitionName</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#FieldExceptionDates-var">FieldExceptionDates</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#FieldExceptionRules-var">FieldExceptionRules</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#FieldRecurrenceDates-var">FieldRecurrenceDates</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qorganizeritemrecurrence.html#FieldRecurrenceRules-var">FieldRecurrenceRules</a></b></td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QOrganizerItemRecurrence-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QOrganizerItemRecurrence class contains a list of rules and dates on which the recurrent item occurs, and a list of rules and dates on which exceptions occur.</p>
+</div>
+<!-- @@@QOrganizerItemRecurrence -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$exceptionDates[overload1]$$$exceptionDates -->
+<h3 class="fn"><a name="exceptionDates"></a><a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="http://qt.nokia.com/doc/4.7/qdate.html">QDate</a>&gt; QOrganizerItemRecurrence::exceptionDates () const</h3>
+<p>Returns the set of exception dates.</p>
+<p>See also <a href="qorganizeritemrecurrence.html#setExceptionDates">setExceptionDates</a>().</p>
+<!-- @@@exceptionDates -->
+<!-- $$$exceptionRules[overload1]$$$exceptionRules -->
+<h3 class="fn"><a name="exceptionRules"></a><a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="qorganizerrecurrencerule.html">QOrganizerRecurrenceRule</a>&gt; QOrganizerItemRecurrence::exceptionRules () const</h3>
+<p>Returns the set of exception rules.</p>
+<p>See also <a href="qorganizeritemrecurrence.html#setExceptionRules">setExceptionRules</a>().</p>
+<!-- @@@exceptionRules -->
+<!-- $$$recurrenceDates[overload1]$$$recurrenceDates -->
+<h3 class="fn"><a name="recurrenceDates"></a><a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="http://qt.nokia.com/doc/4.7/qdate.html">QDate</a>&gt; QOrganizerItemRecurrence::recurrenceDates () const</h3>
+<p>Returns the set of recurrence dates.</p>
+<p>See also <a href="qorganizeritemrecurrence.html#setRecurrenceDates">setRecurrenceDates</a>().</p>
+<!-- @@@recurrenceDates -->
+<!-- $$$recurrenceRules[overload1]$$$recurrenceRules -->
+<h3 class="fn"><a name="recurrenceRules"></a><a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="qorganizerrecurrencerule.html">QOrganizerRecurrenceRule</a>&gt; QOrganizerItemRecurrence::recurrenceRules () const</h3>
+<p>Returns the set of recurrence rules.</p>
+<p>See also <a href="qorganizeritemrecurrence.html#setRecurrenceRules">setRecurrenceRules</a>().</p>
+<!-- @@@recurrenceRules -->
+<!-- $$$setExceptionDates[overload1]$$$setExceptionDatesconstQSet<QDate>& -->
+<h3 class="fn"><a name="setExceptionDates"></a>void QOrganizerItemRecurrence::setExceptionDates ( const <a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="http://qt.nokia.com/doc/4.7/qdate.html">QDate</a>&gt; &amp; <i>xdates</i> )</h3>
+<p>Sets the set of exception dates to <i>xdates</i>.</p>
+<p>See also <a href="qorganizeritemrecurrence.html#exceptionDates">exceptionDates</a>().</p>
+<!-- @@@setExceptionDates -->
+<!-- $$$setExceptionRules[overload1]$$$setExceptionRulesconstQSet<QOrganizerRecurrenceRule>& -->
+<h3 class="fn"><a name="setExceptionRules"></a>void QOrganizerItemRecurrence::setExceptionRules ( const <a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="qorganizerrecurrencerule.html">QOrganizerRecurrenceRule</a>&gt; &amp; <i>xrules</i> )</h3>
+<p>Sets the set of exception rules to <i>xrules</i>.</p>
+<p>See also <a href="qorganizeritemrecurrence.html#exceptionRules">exceptionRules</a>().</p>
+<!-- @@@setExceptionRules -->
+<!-- $$$setRecurrenceDates[overload1]$$$setRecurrenceDatesconstQSet<QDate>& -->
+<h3 class="fn"><a name="setRecurrenceDates"></a>void QOrganizerItemRecurrence::setRecurrenceDates ( const <a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="http://qt.nokia.com/doc/4.7/qdate.html">QDate</a>&gt; &amp; <i>rdates</i> )</h3>
+<p>Sets the set of recurrence dates to <i>rdates</i>.</p>
+<p>See also <a href="qorganizeritemrecurrence.html#recurrenceDates">recurrenceDates</a>().</p>
+<!-- @@@setRecurrenceDates -->
+<!-- $$$setRecurrenceRules[overload1]$$$setRecurrenceRulesconstQSet<QOrganizerRecurrenceRule>& -->
+<h3 class="fn"><a name="setRecurrenceRules"></a>void QOrganizerItemRecurrence::setRecurrenceRules ( const <a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="qorganizerrecurrencerule.html">QOrganizerRecurrenceRule</a>&gt; &amp; <i>rrules</i> )</h3>
+<p>Sets the set of recurrence rules to <i>rrules</i>.</p>
+<p>See also <a href="qorganizeritemrecurrence.html#recurrenceRules">recurrenceRules</a>().</p>
+<!-- @@@setRecurrenceRules -->
+<!-- $$$operator==[overload1]$$$operator==constQOrganizerItemRecurrence& -->
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QOrganizerItemRecurrence::operator== ( const QOrganizerItemRecurrence &amp; <i>other</i> ) const</h3>
+<p>Returns true if the <i>other</i> recurrence detail is equal to this detail; otherwise, false.</p>
+<p>Since the data types stored in this detail are custom data types, the base class operator==() doesn't know how to perform the comparison without calling this function. However, it means that if (in the future) a backend were to extend the detail with more fields, this operator== would no longer work; it'd have to be updated to compare the other fields also.</p>
+<!-- @@@operator== -->
+</div>
+<div class="vars">
+<h2>Member Variable Documentation</h2>
+<!-- $$$DefinitionName -->
+<h3 class="fn"><a name="DefinitionName-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QOrganizerItemRecurrence::DefinitionName</h3>
+<p>The constant string which identifies the definition of details which are organizer item recurrence specifications.</p>
+<!-- @@@DefinitionName -->
+<!-- $$$FieldExceptionDates -->
+<h3 class="fn"><a name="FieldExceptionDates-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QOrganizerItemRecurrence::FieldExceptionDates</h3>
+<p>The constant key for the value which is stored in details of the <a href="qorganizeritemrecurrence.html">QOrganizerItemRecurrence</a> type which describes the dates on which an item should not recur.</p>
+<p>If a recurrence rule or the recurrence dates list specifies that an item should occur on a particular date and that date appears in the exception dates list, the item should not occur on that date.</p>
+<!-- @@@FieldExceptionDates -->
+<!-- $$$FieldExceptionRules -->
+<h3 class="fn"><a name="FieldExceptionRules-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QOrganizerItemRecurrence::FieldExceptionRules</h3>
+<p>The constant key for the value which is stored in details of the <a href="qorganizeritemrecurrence.html">QOrganizerItemRecurrence</a> type which describes the rules for when an item should not recur.</p>
+<p>If a recurrence rule or the recurrence dates list specifies that an item should occur on a particular date and any of the exception rules include that date, the item should not occur on that date.</p>
+<!-- @@@FieldExceptionRules -->
+<!-- $$$FieldRecurrenceDates -->
+<h3 class="fn"><a name="FieldRecurrenceDates-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QOrganizerItemRecurrence::FieldRecurrenceDates</h3>
+<p>The constant key for the value which is stored in details of the <a href="qorganizeritemrecurrence.html">QOrganizerItemRecurrence</a> type which describes the dates on which an item should recur.</p>
+<!-- @@@FieldRecurrenceDates -->
+<!-- $$$FieldRecurrenceRules -->
+<h3 class="fn"><a name="FieldRecurrenceRules-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QOrganizerItemRecurrence::FieldRecurrenceRules</h3>
+<p>The constant key for the value which is stored in details of the <a href="qorganizeritemrecurrence.html">QOrganizerItemRecurrence</a> type which describes the rules for when an item should recur.</p>
+<p>When multiple rules are specified, the list of recurrence dates are calculated separately for each rule and the results are unioned.</p>
+<!-- @@@FieldRecurrenceRules -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

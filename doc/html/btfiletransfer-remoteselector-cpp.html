@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt 1.2: remoteselector.cpp Example File (btfiletransfer/remoteselector.cpp)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<h1 class="title">remoteselector.cpp Example File</h1>
+<span class="small-subtitle">btfiletransfer/remoteselector.cpp</span>
+<!-- $$$btfiletransfer/remoteselector.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** You may use this file under the terms of the BSD license as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+ **     the names of its contributors may be used to endorse or promote
+ **     products derived from this software without specific prior written
+ **     permission.
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;remoteselector.h&quot;
+ #include &quot;ui_remoteselector.h&quot;
+
+ #include &lt;qbluetoothdeviceinfo.h&gt;
+ #include &lt;qbluetoothaddress.h&gt;
+ #include &lt;qbluetoothtransferrequest.h&gt;
+ #include &lt;qbluetoothtransferreply.h&gt;
+ #include &lt;qbluetoothlocaldevice.h&gt;
+
+ #include &lt;QMovie&gt;
+ #include &lt;QMessageBox&gt;
+ #include &lt;QFileDialog&gt;
+ #include &lt;QCheckBox&gt;
+
+ #include &quot;progress.h&quot;
+ #include &quot;pindisplay.h&quot;
+
+ QTM_USE_NAMESPACE
+
+ RemoteSelector::RemoteSelector(QWidget *parent)
+ :   QDialog(parent), ui(new Ui::RemoteSelector),
+     m_discoveryAgent(new QBluetoothServiceDiscoveryAgent), m_localDevice(new QBluetoothLocalDevice), m_pindisplay(0)
+ {
+     ui-&gt;setupUi(this);
+
+     connect(m_discoveryAgent, SIGNAL(serviceDiscovered(QBluetoothServiceInfo)),
+             this, SLOT(serviceDiscovered(QBluetoothServiceInfo)));
+     connect(m_discoveryAgent, SIGNAL(finished()), this, SLOT(discoveryFinished()));
+
+     ui-&gt;remoteDevices-&gt;setColumnWidth(3, 75);
+     ui-&gt;remoteDevices-&gt;setColumnWidth(4, 100);
+
+     connect(m_localDevice, SIGNAL(pairingDisplayPinCode(const QBluetoothAddress &amp;,QString)), this, SLOT(displayPin(const QBluetoothAddress &amp;, QString)));
+     connect(m_localDevice, SIGNAL(pairingDisplayConfirmation(QBluetoothAddress,QString)), this, SLOT(displayConfirmation(QBluetoothAddress,QString)));
+     connect(m_localDevice, SIGNAL(pairingFinished(QBluetoothAddress,QBluetoothLocalDevice::Pairing)), this, SLOT(pairingFinished(QBluetoothAddress,QBluetoothLocalDevice::Pairing)));
+
+     ui-&gt;busyWidget-&gt;setMovie(new QMovie(&quot;:/icons/busy.gif&quot;));
+     ui-&gt;busyWidget-&gt;movie()-&gt;start();
+
+     ui-&gt;pairingBusy-&gt;setMovie(new QMovie(&quot;:/icons/pairing.gif&quot;));
+     ui-&gt;pairingBusy-&gt;hide();
+
+     ui-&gt;remoteDevices-&gt;clearContents();
+     ui-&gt;remoteDevices-&gt;setRowCount(0);
+
+ }
+
+ RemoteSelector::~RemoteSelector()
+ {
+     delete ui;
+     delete m_discoveryAgent;
+     delete m_localDevice;
+ }
+
+ void RemoteSelector::startDiscovery(const QBluetoothUuid &amp;uuid)
+ {
+     ui-&gt;stopButton-&gt;setDisabled(false);
+     if (m_discoveryAgent-&gt;isActive())
+         m_discoveryAgent-&gt;stop();
+
+     m_discoveryAgent-&gt;setUuidFilter(uuid);
+     m_discoveryAgent-&gt;start();
+
+     ui-&gt;status-&gt;setText(tr(&quot;Scanning...&quot;));
+     ui-&gt;busyWidget-&gt;show();
+     ui-&gt;busyWidget-&gt;movie()-&gt;start();
+ }
+
+ QBluetoothServiceInfo RemoteSelector::service() const
+ {
+     return m_service;
+ }
+
+ void RemoteSelector::serviceDiscovered(const QBluetoothServiceInfo &amp;serviceInfo)
+ {
+ #if 0
+     qDebug() &lt;&lt; &quot;Discovered service on&quot;
+              &lt;&lt; serviceInfo.device().name() &lt;&lt; serviceInfo.device().address().toString();
+     qDebug() &lt;&lt; &quot;\tService name:&quot; &lt;&lt; serviceInfo.serviceName();
+     qDebug() &lt;&lt; &quot;\tDescription:&quot;
+              &lt;&lt; serviceInfo.attribute(QBluetoothServiceInfo::ServiceDescription).toString();
+     qDebug() &lt;&lt; &quot;\tProvider:&quot;
+              &lt;&lt; serviceInfo.attribute(QBluetoothServiceInfo::ServiceProvider).toString();
+     qDebug() &lt;&lt; &quot;\tL2CAP protocol service multiplexer:&quot;
+              &lt;&lt; serviceInfo.protocolServiceMultiplexer();
+     qDebug() &lt;&lt; &quot;\tRFCOMM server channel:&quot; &lt;&lt; serviceInfo.serverChannel();
+ #endif
+
+     QString remoteName;
+     if (serviceInfo.device().name().isEmpty())
+         remoteName = serviceInfo.device().address().toString();
+     else
+         remoteName = serviceInfo.device().name();
+
+<span class="comment"> //    QListWidgetItem *item =</span>
+<span class="comment"> //        new QListWidgetItem(QString::fromLatin1(&quot;%1\t%2\t%3&quot;).arg(serviceInfo.device().address().toString(),</span>
+<span class="comment"> //                                                             serviceInfo.device().name(), serviceInfo.serviceName()));</span>
+
+     QMutableMapIterator&lt;int, QBluetoothServiceInfo&gt; i(m_discoveredServices);
+     while(i.hasNext()){
+         i.next();
+         if(serviceInfo.device().address() == i.value().device().address()){
+             i.setValue(serviceInfo);
+             return;
+         }
+     }
+
+     int row = ui-&gt;remoteDevices-&gt;rowCount();
+     ui-&gt;remoteDevices-&gt;insertRow(row);
+     QTableWidgetItem *item = new QTableWidgetItem(serviceInfo.device().address().toString());
+     ui-&gt;remoteDevices-&gt;setItem(row, 0, item);
+     item = new QTableWidgetItem(serviceInfo.device().name());
+     ui-&gt;remoteDevices-&gt;setItem(row, 1, item);
+     item = new QTableWidgetItem(serviceInfo.serviceName());
+
+     ui-&gt;remoteDevices-&gt;setItem(row, 2, item);
+
+     QBluetoothLocalDevice::Pairing p;
+
+     p = m_localDevice-&gt;pairingStatus(serviceInfo.device().address());
+
+     ui-&gt;remoteDevices-&gt;blockSignals(true);
+
+     item = new QTableWidgetItem();
+     if((p&amp;QBluetoothLocalDevice::Paired) || (p&amp;QBluetoothLocalDevice::AuthorizedPaired))
+         item-&gt;setCheckState(Qt::Checked);
+     else
+         item-&gt;setCheckState(Qt::Unchecked);
+     ui-&gt;remoteDevices-&gt;setItem(row, 3, item);
+
+     item = new QTableWidgetItem();
+     if(p&amp;QBluetoothLocalDevice::AuthorizedPaired)
+         item-&gt;setCheckState(Qt::Checked);
+     else
+         item-&gt;setCheckState(Qt::Unchecked);
+
+     ui-&gt;remoteDevices-&gt;setItem(row, 4, item);
+
+     ui-&gt;remoteDevices-&gt;blockSignals(false);
+
+     m_discoveredServices.insert(row, serviceInfo);
+ }
+
+ void RemoteSelector::discoveryFinished()
+ {
+     ui-&gt;status-&gt;setText(tr(&quot;Select the device to send to.&quot;));
+     ui-&gt;stopButton-&gt;setDisabled(true);
+     ui-&gt;busyWidget-&gt;movie()-&gt;stop();
+     ui-&gt;busyWidget-&gt;hide();
+ }
+
+ void RemoteSelector::startDiscovery()
+ {
+     startDiscovery(QBluetoothUuid(QBluetoothUuid::ObexObjectPush));
+ }
+
+ void RemoteSelector::on_refreshPB_clicked()
+ {
+     startDiscovery();
+     ui-&gt;stopButton-&gt;setDisabled(false);
+ }
+
+ void RemoteSelector::on_fileSelectPB_clicked()
+ {
+     ui-&gt;fileName-&gt;setText(QFileDialog::getOpenFileName());
+     if(m_service.isValid())
+         ui-&gt;sendButton-&gt;setDisabled(false);
+ }
+
+ void RemoteSelector::on_sendButton_clicked()
+ {
+     QBluetoothTransferManager mgr;
+     QBluetoothTransferRequest req(m_service.device().address());
+
+     m_file = new QFile(ui-&gt;fileName-&gt;text());
+
+     Progress *p = new Progress;
+     p-&gt;setStatus(&quot;Sending to: &quot; + m_service.device().name(), &quot;Waiting for start&quot;);
+     p-&gt;show();
+
+     QBluetoothTransferReply *reply = mgr.put(req, m_file);
+     if(reply-&gt;error()){
+         qDebug() &lt;&lt; &quot;Failed to send file&quot;;
+         delete reply;
+         p-&gt;finished(reply);
+         return;
+     }
+
+     connect(reply, SIGNAL(uploadProgress(qint64,qint64)), p, SLOT(uploadProgress(qint64,qint64)));
+     connect(reply, SIGNAL(finished(QBluetoothTransferReply*)), p, SLOT(finished(QBluetoothTransferReply*)));
+     connect(p, SIGNAL(rejected()), reply, SLOT(abort()));
+ }
+
+ void RemoteSelector::on_stopButton_clicked()
+ {
+     m_discoveryAgent-&gt;stop();
+ }
+
+ QString RemoteSelector::addressToName(const QBluetoothAddress &amp;address)
+ {
+     QMapIterator&lt;int, QBluetoothServiceInfo&gt; i(m_discoveredServices);
+     while(i.hasNext()){
+         i.next();
+         if(i.value().device().address() == address)
+             return i.value().device().name();
+     }
+     return address.toString();
+ }
+
+ void RemoteSelector::displayPin(const QBluetoothAddress &amp;address, QString pin)
+ {
+     if(m_pindisplay)
+         m_pindisplay-&gt;deleteLater();
+     m_pindisplay = new pinDisplay(QString(&quot;Enter pairing pin on: %1&quot;).arg(addressToName(address)), pin, this);
+     m_pindisplay-&gt;show();
+ }
+
+ void RemoteSelector::displayConfirmation(const QBluetoothAddress &amp;address, QString pin)
+ {
+     Q_UNUSED(address);
+
+     if(m_pindisplay)
+         m_pindisplay-&gt;deleteLater();
+     m_pindisplay = new pinDisplay(QString(&quot;Confirm this pin is the same&quot;), pin, this);
+     connect(m_pindisplay, SIGNAL(accepted()), this, SLOT(displayConfAccepted()));
+     connect(m_pindisplay, SIGNAL(rejected()), this, SLOT(displayConfReject()));
+     m_pindisplay-&gt;setOkCancel();
+     m_pindisplay-&gt;show();
+ }
+
+ void RemoteSelector::displayConfAccepted()
+ {
+     m_localDevice-&gt;pairingConfirmation(true);
+ }
+ void RemoteSelector::displayConfReject()
+ {
+     m_localDevice-&gt;pairingConfirmation(false);
+ }
+
+ void RemoteSelector::pairingFinished(const QBluetoothAddress &amp;address, QBluetoothLocalDevice::Pairing status)
+ {
+     QBluetoothServiceInfo service;
+     int row = 0;
+
+     ui-&gt;pairingBusy-&gt;hide();
+     ui-&gt;pairingBusy-&gt;movie()-&gt;stop();
+
+     ui-&gt;remoteDevices-&gt;blockSignals(true);
+
+     for(int i = 0; i &lt; m_discoveredServices.count(); i++){
+         if(m_discoveredServices.value(i).device().address() == address){
+             service = m_discoveredServices.value(i);
+             row = i;
+             break;
+         }
+     }
+
+     if(m_pindisplay)
+         delete m_pindisplay;
+
+     QMessageBox msgBox;
+     if(status == QBluetoothLocalDevice::Paired ||
+        status == QBluetoothLocalDevice::AuthorizedPaired){
+         msgBox.setText(&quot;Paired successfully with&quot; + address.toString());
+     }
+     else {
+         msgBox.setText(&quot;Pairing failed with &quot; + address.toString());
+     }
+
+     if(service.isValid()){
+         if(status == QBluetoothLocalDevice::AuthorizedPaired){
+             ui-&gt;remoteDevices-&gt;item(row, 3)-&gt;setCheckState(Qt::Checked);
+             ui-&gt;remoteDevices-&gt;item(row, 4)-&gt;setCheckState(Qt::Checked);
+         }
+         else if(status == QBluetoothLocalDevice::Paired){
+             ui-&gt;remoteDevices-&gt;item(row, 3)-&gt;setCheckState(Qt::Checked);
+             ui-&gt;remoteDevices-&gt;item(row, 4)-&gt;setCheckState(Qt::Unchecked);
+         }
+         else {
+             ui-&gt;remoteDevices-&gt;item(row, 3)-&gt;setCheckState(Qt::Unchecked);
+             ui-&gt;remoteDevices-&gt;item(row, 4)-&gt;setCheckState(Qt::Unchecked);
+         }
+     }
+
+     msgBox.exec();
+
+     ui-&gt;remoteDevices-&gt;blockSignals(false);
+
+ }
+
+ void RemoteSelector::on_remoteDevices_cellClicked(int row, int column)
+ {
+     Q_UNUSED(column);
+
+     m_service = m_discoveredServices.value(row);
+     if(!ui-&gt;fileName-&gt;text().isEmpty()) {
+         ui-&gt;sendButton-&gt;setDisabled(false);
+     }
+ }
+
+ void RemoteSelector::on_remoteDevices_itemChanged(QTableWidgetItem* item)
+ {
+     int row = item-&gt;row();
+     int column = item-&gt;column();
+     m_service = m_discoveredServices.value(row);
+
+     if(column &lt; 3)
+         return;
+
+     if(item-&gt;checkState() == Qt::Unchecked &amp;&amp; column == 3){
+         m_localDevice-&gt;requestPairing(m_service.device().address(), QBluetoothLocalDevice::Unpaired);
+         return; <span class="comment">// don't continue and start movie</span>
+     }
+     else if((item-&gt;checkState() == Qt::Checked &amp;&amp; column == 3) ||
+             (item-&gt;checkState() == Qt::Unchecked &amp;&amp; column == 4)){
+         m_localDevice-&gt;requestPairing(m_service.device().address(), QBluetoothLocalDevice::Paired);
+         ui-&gt;remoteDevices-&gt;blockSignals(true);
+         ui-&gt;remoteDevices-&gt;item(row, column)-&gt;setCheckState(Qt::PartiallyChecked);
+         ui-&gt;remoteDevices-&gt;blockSignals(false);
+     }
+     else if(item-&gt;checkState() == Qt::Checked &amp;&amp; column == 4){
+         m_localDevice-&gt;requestPairing(m_service.device().address(), QBluetoothLocalDevice::AuthorizedPaired);
+         ui-&gt;remoteDevices-&gt;blockSignals(true);
+         ui-&gt;remoteDevices-&gt;item(row, column)-&gt;setCheckState(Qt::PartiallyChecked);
+         ui-&gt;remoteDevices-&gt;blockSignals(false);
+     }
+     ui-&gt;pairingBusy-&gt;show();
+     ui-&gt;pairingBusy-&gt;movie()-&gt;start();
+ }</pre>
+</div>
+<!-- @@@btfiletransfer/remoteselector.cpp -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

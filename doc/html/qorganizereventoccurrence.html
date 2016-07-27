@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qorganizereventoccurrence.cpp -->
+  <title>Qt 1.2: QOrganizerEventOccurrence Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtorganizer.html">QtOrganizer</a></li>
+              <li>QOrganizerEventOccurrence</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QOrganizerEventOccurrence Class Reference</h1>
+<!-- $$$QOrganizerEventOccurrence-brief -->
+<p>The <a href="qorganizereventoccurrence.html#QOrganizerEventOccurrence-var">QOrganizerEventOccurrence</a> class provides an occurrence of an event. <a href="#details">More...</a></p>
+<!-- @@@QOrganizerEventOccurrence -->
+<pre class="highlightedCode brush: cpp"> #include &lt;<a href="qorganizereventoccurrence.html#QOrganizerEventOccurrence-var">QOrganizerEventOccurrence</a>&gt;</pre><p>Inherits <a href="qorganizeritem.html">QOrganizerItem</a>.</p>
+<ul>
+<li><a href="qorganizereventoccurrence-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QDateTime </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#endDateTime">endDateTime</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#location">location</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QDate </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#originalDate">originalDate</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerItemId </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#parentId">parentId</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerItemPriority::Priority </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#priority">priority</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#setEndDateTime">setEndDateTime</a></b> ( const QDateTime &amp; <i>endDateTime</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#setLocation">setLocation</a></b> ( const QString &amp; <i>location</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#setOriginalDate">setOriginalDate</a></b> ( const QDate &amp; <i>date</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#setParentId">setParentId</a></b> ( const QOrganizerItemId &amp; <i>parentId</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#setPriority">setPriority</a></b> ( QOrganizerItemPriority::Priority <i>priority</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#setStartDateTime">setStartDateTime</a></b> ( const QDateTime &amp; <i>startDateTime</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QDateTime </td><td class="memItemRight bottomAlign"><b><a href="qorganizereventoccurrence.html#startDateTime">startDateTime</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">39 public functions inherited from <a href="qorganizeritem.html#public-functions">QOrganizerItem</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QOrganizerEventOccurrence-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The <a href="qorganizereventoccurrence.html#QOrganizerEventOccurrence-var">QOrganizerEventOccurrence</a> class provides an occurrence of an event.</p>
+<p>An event occurrence is where the occurrence differs from the generating event in some way. An occurrence which is retrieved from a manager may not actually be persisted in that manager (for example, it may be generated automatically from the recurrence rule of the parent event stored in the manager), in which case it will have a zero-id and differ from the parent event only in its start date. Alternatively, it may be persisted in the manager (that is, the client has saved the occurrence previously) where it is stored as an exception to its parent event.</p>
+</div>
+<!-- @@@QOrganizerEventOccurrence -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$endDateTime[overload1]$$$endDateTime -->
+<h3 class="fn"><a name="endDateTime"></a><a href="http://qt.nokia.com/doc/4.7/qdatetime.html">QDateTime</a> QOrganizerEventOccurrence::endDateTime () const</h3>
+<p>Returns the date time at which the event occurrence ends. For all-day events, the time part is meaningless, and the date is to be interpreted as the inclusive end date.</p>
+<p>See also <a href="qorganizereventoccurrence.html#setEndDateTime">setEndDateTime</a>().</p>
+<!-- @@@endDateTime -->
+<!-- $$$location[overload1]$$$location -->
+<h3 class="fn"><a name="location"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QOrganizerEventOccurrence::location () const</h3>
+<p>Returns the label of the location at which the event occurrence is held, if known</p>
+<p>See also <a href="qorganizereventoccurrence.html#setLocation">setLocation</a>().</p>
+<!-- @@@location -->
+<!-- $$$originalDate[overload1]$$$originalDate -->
+<h3 class="fn"><a name="originalDate"></a><a href="http://qt.nokia.com/doc/4.7/qdate.html">QDate</a> QOrganizerEventOccurrence::originalDate () const</h3>
+<p>Returns the date at which the occurrence was originally going to occur.</p>
+<p>See also <a href="qorganizereventoccurrence.html#setOriginalDate">setOriginalDate</a>().</p>
+<!-- @@@originalDate -->
+<!-- $$$parentId[overload1]$$$parentId -->
+<h3 class="fn"><a name="parentId"></a><a href="qorganizeritemid.html">QOrganizerItemId</a> QOrganizerEventOccurrence::parentId () const</h3>
+<p>Returns the id of the event which is this occurrence's parent</p>
+<p>See also <a href="qorganizereventoccurrence.html#setParentId">setParentId</a>().</p>
+<!-- @@@parentId -->
+<!-- $$$priority[overload1]$$$priority -->
+<h3 class="fn"><a name="priority"></a><a href="qorganizeritempriority.html#Priority-enum">QOrganizerItemPriority::Priority</a> QOrganizerEventOccurrence::priority () const</h3>
+<p>Returns the priority of the event occurrence</p>
+<p>See also <a href="qorganizereventoccurrence.html#setPriority">setPriority</a>().</p>
+<!-- @@@priority -->
+<!-- $$$setEndDateTime[overload1]$$$setEndDateTimeconstQDateTime& -->
+<h3 class="fn"><a name="setEndDateTime"></a>void QOrganizerEventOccurrence::setEndDateTime ( const <a href="http://qt.nokia.com/doc/4.7/qdatetime.html">QDateTime</a> &amp; <i>endDateTime</i> )</h3>
+<p>Sets the end date time of the event occurrence to <i>endDateTime</i>. For all-day events, the time part can be set to any valid value, and the date is to be interpreted as the inclusive end date.</p>
+<p>See also <a href="qorganizereventoccurrence.html#endDateTime">endDateTime</a>().</p>
+<!-- @@@setEndDateTime -->
+<!-- $$$setLocation[overload1]$$$setLocationconstQString& -->
+<h3 class="fn"><a name="setLocation"></a>void QOrganizerEventOccurrence::setLocation ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>location</i> )</h3>
+<p>Sets the label of the location at which the event occurrence is held to <i>location</i></p>
+<p>See also <a href="qorganizereventoccurrence.html#location">location</a>().</p>
+<!-- @@@setLocation -->
+<!-- $$$setOriginalDate[overload1]$$$setOriginalDateconstQDate& -->
+<h3 class="fn"><a name="setOriginalDate"></a>void QOrganizerEventOccurrence::setOriginalDate ( const <a href="http://qt.nokia.com/doc/4.7/qdate.html">QDate</a> &amp; <i>date</i> )</h3>
+<p>Sets the date at which this occurrence was originally going to occur, to the given <i>date</i>.</p>
+<p>See also <a href="qorganizereventoccurrence.html#originalDate">originalDate</a>().</p>
+<!-- @@@setOriginalDate -->
+<!-- $$$setParentId[overload1]$$$setParentIdconstQOrganizerItemId& -->
+<h3 class="fn"><a name="setParentId"></a>void QOrganizerEventOccurrence::setParentId ( const <a href="qorganizeritemid.html">QOrganizerItemId</a> &amp; <i>parentId</i> )</h3>
+<p>Sets the event occurrence's parent to be the event identified by the given <i>parentId</i></p>
+<p>See also <a href="qorganizereventoccurrence.html#parentId">parentId</a>().</p>
+<!-- @@@setParentId -->
+<!-- $$$setPriority[overload1]$$$setPriorityQOrganizerItemPriority::Priority -->
+<h3 class="fn"><a name="setPriority"></a>void QOrganizerEventOccurrence::setPriority ( <a href="qorganizeritempriority.html#Priority-enum">QOrganizerItemPriority::Priority</a> <i>priority</i> )</h3>
+<p>Sets the priority of the event occurrence to <i>priority</i></p>
+<p>See also <a href="qorganizereventoccurrence.html#priority">priority</a>().</p>
+<!-- @@@setPriority -->
+<!-- $$$setStartDateTime[overload1]$$$setStartDateTimeconstQDateTime& -->
+<h3 class="fn"><a name="setStartDateTime"></a>void QOrganizerEventOccurrence::setStartDateTime ( const <a href="http://qt.nokia.com/doc/4.7/qdatetime.html">QDateTime</a> &amp; <i>startDateTime</i> )</h3>
+<p>Sets the start date time of the event occurrence to <i>startDateTime</i>. instance). For all-day events, the time part is meaningless.</p>
+<p>See also <a href="qorganizereventoccurrence.html#startDateTime">startDateTime</a>().</p>
+<!-- @@@setStartDateTime -->
+<!-- $$$startDateTime[overload1]$$$startDateTime -->
+<h3 class="fn"><a name="startDateTime"></a><a href="http://qt.nokia.com/doc/4.7/qdatetime.html">QDateTime</a> QOrganizerEventOccurrence::startDateTime () const</h3>
+<p>Returns the date time at which the event occurrence begins. For all-day events, the time part can be set to any valid value.</p>
+<p>See also <a href="qorganizereventoccurrence.html#setStartDateTime">setStartDateTime</a>().</p>
+<!-- @@@startDateTime -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

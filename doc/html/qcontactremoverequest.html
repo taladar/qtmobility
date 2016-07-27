@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qcontactremoverequest.cpp -->
+  <title>Qt 1.2: QContactRemoveRequest Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtcontacts.html">QtContacts</a></li>
+              <li>QContactRemoveRequest</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QContactRemoveRequest Class Reference</h1>
+<!-- $$$QContactRemoveRequest-brief -->
+<p>The QContactRemoveRequest class allows a client to asynchronously request that certain contacts be removed from a contacts store. <a href="#details">More...</a></p>
+<!-- @@@QContactRemoveRequest -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QContactRemoveRequest&gt;</pre><p>Inherits <a href="qcontactabstractrequest.html">QContactAbstractRequest</a>.</p>
+<p>This class was introduced in Qt Mobility 1.0.</p>
+<ul>
+<li><a href="qcontactremoverequest-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactremoverequest.html#QContactRemoveRequest">QContactRemoveRequest</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactremoverequest.html#dtor.QContactRemoveRequest">~QContactRemoveRequest</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QContactLocalId&gt; </td><td class="memItemRight bottomAlign"><b><a href="qcontactremoverequest.html#contactIds">contactIds</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMap&lt;int, QContactManager::Error&gt; </td><td class="memItemRight bottomAlign"><b><a href="qcontactremoverequest.html#errorMap">errorMap</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactremoverequest.html#setContactId">setContactId</a></b> ( const QContactLocalId &amp; <i>contactId</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactremoverequest.html#setContactIds">setContactIds</a></b> ( const QList&lt;QContactLocalId&gt; &amp; <i>contactIds</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">9 public functions inherited from <a href="qcontactabstractrequest.html#public-functions">QContactAbstractRequest</a></li>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+<li class="fn">3 public slots inherited from <a href="qcontactabstractrequest.html#public-slots">QContactAbstractRequest</a></li>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">2 signals inherited from <a href="qcontactabstractrequest.html#signals">QContactAbstractRequest</a></li>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QContactRemoveRequest-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QContactRemoveRequest class allows a client to asynchronously request that certain contacts be removed from a contacts store.</p>
+<p>For a QContactRemoveRequest, the resultsUpdated() signal will be emitted when the individual item errors (which may be retrieved by calling <a href="qcontactremoverequest.html#errorMap">errorMap</a>()) are updated, or if the overall operation error (which may be retrieved by calling <a href="qcontactabstractrequest.html#error">error</a>()) is updated.</p>
+<p>Please see the class documentation of <a href="qcontactabstractrequest.html">QContactAbstractRequest</a> for more information about the usage of request classes and ownership semantics.</p>
+</div>
+<!-- @@@QContactRemoveRequest -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QContactRemoveRequest[overload1]$$$QContactRemoveRequestQObject* -->
+<h3 class="fn"><a name="QContactRemoveRequest"></a>QContactRemoveRequest::QContactRemoveRequest ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new contact remove request whose parent is the specified <i>parent</i></p>
+<!-- @@@QContactRemoveRequest -->
+<!-- $$$~QContactRemoveRequest[overload1]$$$~QContactRemoveRequest -->
+<h3 class="fn"><a name="dtor.QContactRemoveRequest"></a>QContactRemoveRequest::~QContactRemoveRequest ()</h3>
+<p>Frees any memory used by this request</p>
+<!-- @@@~QContactRemoveRequest -->
+<!-- $$$contactIds[overload1]$$$contactIds -->
+<h3 class="fn"><a name="contactIds"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qcontactid.html#QContactLocalId-typedef">QContactLocalId</a>&gt; QContactRemoveRequest::contactIds () const</h3>
+<p>Returns the list of ids of contacts which will be removed</p>
+<p>See also <a href="qcontactremoverequest.html#setContactIds">setContactIds</a>().</p>
+<!-- @@@contactIds -->
+<!-- $$$errorMap[overload1]$$$errorMap -->
+<h3 class="fn"><a name="errorMap"></a><a href="http://qt.nokia.com/doc/4.7/qmap.html">QMap</a>&lt;int, <a href="qcontactmanager.html#Error-enum">QContactManager::Error</a>&gt; QContactRemoveRequest::errorMap () const</h3>
+<p>Returns the map of input contact list indices to errors which occurred</p>
+<!-- @@@errorMap -->
+<!-- $$$setContactId[overload1]$$$setContactIdconstQContactLocalId& -->
+<h3 class="fn"><a name="setContactId"></a>void QContactRemoveRequest::setContactId ( const <a href="qcontactid.html#QContactLocalId-typedef">QContactLocalId</a> &amp; <i>contactId</i> )</h3>
+<p>Sets the id of the contact which will be removed to <i>contactId</i>. Equivalent to calling:</p>
+<pre class="highlightedCode brush: cpp"> setContactIds(QList&lt;QContactLocalId&gt;() &lt;&lt; contactIds);</pre>
+<!-- @@@setContactId -->
+<!-- $$$setContactIds[overload1]$$$setContactIdsconstQList<QContactLocalId>& -->
+<h3 class="fn"><a name="setContactIds"></a>void QContactRemoveRequest::setContactIds ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qcontactid.html#QContactLocalId-typedef">QContactLocalId</a>&gt; &amp; <i>contactIds</i> )</h3>
+<p>Sets the list of ids of contacts which will be removed to <i>contactIds</i></p>
+<p>See also <a href="qcontactremoverequest.html#contactIds">contactIds</a>().</p>
+<!-- @@@setContactIds -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- player.qdoc -->
+  <title>Qt 1.2: Media Player Example</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="all-examples.html">Examples</a></li>              <li>Media Player Example</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<h1 class="title">Media Player Example</h1>
+<span class="subtitle"></span>
+<!-- $$$player-description -->
+<div class="descr"> <a name="details"></a>
+<p>Files:</p>
+<ul>
+<li><a href="player-player-cpp.html">player/player.cpp</a></li>
+<li><a href="player-player-h.html">player/player.h</a></li>
+<li><a href="player-playercontrols-cpp.html">player/playercontrols.cpp</a></li>
+<li><a href="player-playercontrols-h.html">player/playercontrols.h</a></li>
+<li><a href="player-playlistmodel-cpp.html">player/playlistmodel.cpp</a></li>
+<li><a href="player-playlistmodel-h.html">player/playlistmodel.h</a></li>
+<li><a href="player-videowidget-cpp.html">player/videowidget.cpp</a></li>
+<li><a href="player-videowidget-h.html">player/videowidget.h</a></li>
+<li><a href="player-main-cpp.html">player/main.cpp</a></li>
+<li><a href="player-player-pro.html">player/player.pro</a></li>
+</ul>
+<p>This example creates a simple multimedia player. We can play audio and or video files using various codecs.</p>
+<p>The example uses a <a href="qmediaplayer.html">QMediaPlayer</a> object passed into a <a href="qvideowidget.html">QVideoWidget</a> to control the video output. To give the application playlist capability we also use a QPlayList object.</p>
+<p>To activate the various functions such as play and stop on the dialog we connect clicked() signals to slots that emit the play() and stop() signals and in turn which we connect to the play() and stop() slots in <a href="qmediaplayer.html">QMediaPlayer</a>.</p>
+<pre class="highlightedCode brush: cpp"> connect(controls, SIGNAL(play()), player, SLOT(play()));
+ connect(controls, SIGNAL(pause()), player, SLOT(pause()));
+ connect(controls, SIGNAL(stop()), player, SLOT(stop()));</pre>
+<p>We can get the volume (and set our user interface representation)</p>
+<pre class="highlightedCode brush: cpp"> controls-&gt;setVolume(player-&gt;volume());</pre>
+<p>and we can make widget 'volume' changes change the volume</p>
+<pre class="highlightedCode brush: cpp"> connect(controls, SIGNAL(changeVolume(int)), player, SLOT(setVolume(int)));</pre>
+<p>The example also allows us to change various video properties by means of the <a href="qvideowidget.html">QVideoWidget</a> object. We can go to Full Screen mode with a single button click, and back again. Or if we press the &quot;Color Options&quot; dialog button we can have access to more subtle influences. The dialog has a set of sliders so that we can change the brightness, contrast, hue and saturation of the video being watched. The connect() statements are in pairs so that changes to either the user interface widget (the relevant slider) or the <a href="qvideowidget.html">QVideoWidget</a> object will update the other object.</p>
+<pre class="highlightedCode brush: cpp">     connect(brightnessSlider, SIGNAL(sliderMoved(int)), videoWidget,
+         SLOT(setBrightness(int)));
+     connect(videoWidget, SIGNAL(brightnessChanged(int)),
+         brightnessSlider, SLOT(setValue(int)));
+
+     connect(contrastSlider, SIGNAL(sliderMoved(int)), videoWidget,
+         SLOT(setContrast(int)));
+     connect(videoWidget, SIGNAL(contrastChanged(int)), contrastSlider,
+         SLOT(setValue(int)));
+
+     connect(hueSlider, SIGNAL(sliderMoved(int)), videoWidget,
+         SLOT(setHue(int)));
+     connect(videoWidget, SIGNAL(hueChanged(int)), hueSlider,
+         SLOT(setValue(int)));
+
+     connect(saturationSlider, SIGNAL(sliderMoved(int)), videoWidget,
+         SLOT(setSaturation(int)));
+     connect(videoWidget, SIGNAL(saturationChanged(int)),
+         saturationSlider, SLOT(setValue(int)));</pre>
+</div>
+<!-- @@@player -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

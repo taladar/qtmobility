@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qcontactactiontarget.cpp -->
+  <title>Qt 1.2: QContactActionTarget Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtcontacts.html">QtContacts</a></li>
+              <li>QContactActionTarget</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QContactActionTarget Class Reference</h1>
+<!-- $$$QContactActionTarget-brief -->
+<p>The QContactActionTarget class provides information about the target of an action. It may be either a contact, a contact and a detail of that contact, or a contact and a list of the details of the contact, which together should be used by the action. <a href="#details">More...</a></p>
+<!-- @@@QContactActionTarget -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QContactActionTarget&gt;</pre><p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qcontactactiontarget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#Type-enum">Type</a></b> { Invalid, WholeContact, SingleDetail, MultipleDetails }</td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#QContactActionTarget">QContactActionTarget</a></b> ( const QContact &amp; <i>contact</i> = QContact(), const QList&lt;QContactDetail&gt; &amp; <i>details</i> = QList&lt;QContactDetail&gt; () )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#QContactActionTarget-2">QContactActionTarget</a></b> ( const QContact &amp; <i>contact</i>, const QContactDetail &amp; <i>detail</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#QContactActionTarget-3">QContactActionTarget</a></b> ( const QContactActionTarget &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#dtor.QContactActionTarget">~QContactActionTarget</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QContact </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#contact">contact</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QContactDetail&gt; </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#details">details</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#isValid">isValid</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#setContact">setContact</a></b> ( const QContact &amp; <i>contact</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#setDetails">setDetails</a></b> ( const QList&lt;QContactDetail&gt; &amp; <i>details</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Type </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#type">type</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#operator-not-eq">operator!=</a></b> ( const QContactActionTarget &amp; <i>other</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QContactActionTarget &amp; </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#operator-eq">operator=</a></b> ( const QContactActionTarget &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiontarget.html#operator-eq-eq">operator==</a></b> ( const QContactActionTarget &amp; <i>other</i> ) const</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QContactActionTarget-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QContactActionTarget class provides information about the target of an action. It may be either a contact, a contact and a detail of that contact, or a contact and a list of the details of the contact, which together should be used by the action.</p>
+</div>
+<!-- @@@QContactActionTarget -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Type$$$Invalid$$$WholeContact$$$SingleDetail$$$MultipleDetails -->
+<h3 class="fn"><a name="Type-enum"></a>enum QContactActionTarget::Type</h3>
+<p>This enumerator defines the type of a <a href="qcontactactiontarget.html">QContactActionTarget</a>.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QContactActionTarget::Invalid</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">The type is invalid.</td></tr>
+<tr><td  class="topAlign"><tt>QContactActionTarget::WholeContact</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">The type is a complete contact.</td></tr>
+<tr><td  class="topAlign"><tt>QContactActionTarget::SingleDetail</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">The type is only a single detail.</td></tr>
+<tr><td  class="topAlign"><tt>QContactActionTarget::MultipleDetails</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">The type contains multiple details.</td></tr>
+</table>
+<!-- @@@Type -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QContactActionTarget[overload1]$$$QContactActionTargetconstQContact&constQList<QContactDetail>& -->
+<h3 class="fn"><a name="QContactActionTarget"></a>QContactActionTarget::QContactActionTarget ( const <a href="qcontact.html">QContact</a> &amp; <i>contact</i> = QContact(), const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qcontactdetail.html">QContactDetail</a>&gt; &amp; <i>details</i> = QList&lt;QContactDetail&gt; () )</h3>
+<p>Constructs a new action target from the given <i>contact</i> and the given list of that contact's <i>details</i>. If no <i>contact</i> is specified, the target will be invalid. If a <i>contact</i> but no <i>details</i> are specified, the target will be valid, but the action which operates on the target may fail (for example, if it requires a certain detail to be specified in order to perform the action).</p>
+<!-- @@@QContactActionTarget -->
+<!-- $$$QContactActionTarget$$$QContactActionTargetconstQContact&constQContactDetail& -->
+<h3 class="fn"><a name="QContactActionTarget-2"></a>QContactActionTarget::QContactActionTarget ( const <a href="qcontact.html">QContact</a> &amp; <i>contact</i>, const <a href="qcontactdetail.html">QContactDetail</a> &amp; <i>detail</i> )</h3>
+<p>Constructs a new action target from the given <i>contact</i> and a specific <i>detail</i> of that contact</p>
+<!-- @@@QContactActionTarget -->
+<!-- $$$QContactActionTarget$$$QContactActionTargetconstQContactActionTarget& -->
+<h3 class="fn"><a name="QContactActionTarget-3"></a>QContactActionTarget::QContactActionTarget ( const QContactActionTarget &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> action target</p>
+<!-- @@@QContactActionTarget -->
+<!-- $$$~QContactActionTarget[overload1]$$$~QContactActionTarget -->
+<h3 class="fn"><a name="dtor.QContactActionTarget"></a>QContactActionTarget::~QContactActionTarget ()</h3>
+<p>Cleans up any memory in use by the action target</p>
+<!-- @@@~QContactActionTarget -->
+<!-- $$$contact[overload1]$$$contact -->
+<h3 class="fn"><a name="contact"></a><a href="qcontact.html">QContact</a> QContactActionTarget::contact () const</h3>
+<p>Returns the contact that this action target will operate on.</p>
+<p>See also <a href="qcontactactiontarget.html#setContact">setContact</a>() and <a href="qcontactactiontarget.html#details">details</a>().</p>
+<!-- @@@contact -->
+<!-- $$$details[overload1]$$$details -->
+<h3 class="fn"><a name="details"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qcontactdetail.html">QContactDetail</a>&gt; QContactActionTarget::details () const</h3>
+<p>Returns the details that this action target will operate on.</p>
+<p>See also <a href="qcontactactiontarget.html#setDetails">setDetails</a>() and <a href="qcontactactiontarget.html#contact">contact</a>().</p>
+<!-- @@@details -->
+<!-- $$$isValid[overload1]$$$isValid -->
+<h3 class="fn"><a name="isValid"></a>bool QContactActionTarget::isValid () const</h3>
+<p>Returns true if the target contact is not the default constructed contact. The validity of any specified details is not checked by this function.</p>
+<!-- @@@isValid -->
+<!-- $$$setContact[overload1]$$$setContactconstQContact& -->
+<h3 class="fn"><a name="setContact"></a>void QContactActionTarget::setContact ( const <a href="qcontact.html">QContact</a> &amp; <i>contact</i> )</h3>
+<p>Sets the contact that this action target will operate on to <i>contact</i>.</p>
+<p>See also <a href="qcontactactiontarget.html#contact">contact</a>() and <a href="qcontactactiontarget.html#setDetails">setDetails</a>().</p>
+<!-- @@@setContact -->
+<!-- $$$setDetails[overload1]$$$setDetailsconstQList<QContactDetail>& -->
+<h3 class="fn"><a name="setDetails"></a>void QContactActionTarget::setDetails ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qcontactdetail.html">QContactDetail</a>&gt; &amp; <i>details</i> )</h3>
+<p>Sets the details that this action target will operate on to <i>details</i>.</p>
+<p>See also <a href="qcontactactiontarget.html#details">details</a>() and <a href="qcontactactiontarget.html#setContact">setContact</a>().</p>
+<!-- @@@setDetails -->
+<!-- $$$type[overload1]$$$type -->
+<h3 class="fn"><a name="type"></a><a href="qcontactactiontarget.html#Type-enum">Type</a> QContactActionTarget::type () const</h3>
+<p>Returns the type of this action target.</p>
+<p>The type is determined by the properties that have been set on this target.</p>
+<!-- @@@type -->
+<!-- $$$operator!=[overload1]$$$operator!=constQContactActionTarget& -->
+<h3 class="fn"><a name="operator-not-eq"></a>bool QContactActionTarget::operator!= ( const QContactActionTarget &amp; <i>other</i> ) const</h3>
+<p>Returns true if the contacts or details specified by this action target are different to that specified by <i>other</i></p>
+<!-- @@@operator!= -->
+<!-- $$$operator=[overload1]$$$operator=constQContactActionTarget& -->
+<h3 class="fn"><a name="operator-eq"></a>QContactActionTarget &amp; QContactActionTarget::operator= ( const QContactActionTarget &amp; <i>other</i> )</h3>
+<p>Assigns this action target to be equal to <i>other</i></p>
+<!-- @@@operator= -->
+<!-- $$$operator==[overload1]$$$operator==constQContactActionTarget& -->
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QContactActionTarget::operator== ( const QContactActionTarget &amp; <i>other</i> ) const</h3>
+<p>Returns true if the contacts and details specified by this action target are equal to those specified by <i>other</i></p>
+<!-- @@@operator== -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

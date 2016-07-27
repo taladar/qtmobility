@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qml-gallery.qdoc -->
+  <title>Qt 1.2: Gallery QML Plugin</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li>Gallery QML Plugin</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level2"><a href="#search-filters">Search Filters</a></li>
+<li class="level2"><a href="#gallery-item">Gallery Item</a></li>
+<li class="level2"><a href="#query-requests">Query Requests</a></li>
+<li class="level1"><a href="#classes">Classes</a></li>
+</ul>
+</div>
+<h1 class="title">Gallery QML Plugin</h1>
+<span class="subtitle"></span>
+<!-- $$$qml-gallery.html-description -->
+<div class="descr"> <a name="details"></a>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>The QML Gallery plugin contains features that can be used to search for and retrieve documents from the Document Gallery.</p>
+<a name="search-filters"></a>
+<h3>Search Filters</h3>
+<p>Searching is performed by creating a filter based on a derived gallery filter class. This results in a set of Gallery QML elements for filtering. The Search parameters can be set by specifying property values which refer to the meta-data of the documents. For example, a meta-data key might be &quot;author&quot;. Then, for example, by setting the filter property to &quot;author&quot; and the value to &quot;torvalds&quot; the filter is ready to enable a search for all documents authored by &quot;torvalds&quot;.</p>
+<p>Available filters include</p>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-gallerycontainsfilter.html">QML GalleryContainsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryContainsFilter element provides a filter which tests if a meta-data property contains a string.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-galleryendswithfilter.html">QML GalleryEndsWithFilter Element</a></p></td><td class="tblDescr"><p>The GalleryEndsWithFilter element provides a filter which tests if a meta-data property ends with a string.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-galleryequalsfilter.html">QML GalleryEqualsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryEqualsFilter element provides a filter which tests if a meta-data property is equal to a value.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-galleryfilterintersection.html">QML GalleryFilterIntersection Element</a></p></td><td class="tblDescr"><p>The GalleryFilterIntersection elements provides a intersection of gallery filters.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-galleryfilterunion.html">QML GalleryFilterUnion Element</a></p></td><td class="tblDescr"><p>The GalleryFilterUnion elements provides a union of gallery filters.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerygreaterthanequalsfilter.html">QML GalleryGreaterThanEqualsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryGreaterThanEqualsFilter element provides a filter which tests if a meta-data property is greater than or equal to a value.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-gallerygreaterthanfilter.html">QML GalleryGreaterThanFilter Element</a></p></td><td class="tblDescr"><p>The GalleryGreaterThanFilter element provides a filter which tests if a meta-data property is greater than a value.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerylessthanequalsfilter.html">QML GalleryLessThanEqualsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryLessThanEqualsFilter element provides a filter which tests if a meta-data property is less than or equal to a value.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-gallerylessthanfilter.html">QML GalleryLessThanFilter Element</a></p></td><td class="tblDescr"><p>The GalleryLessThanEqualsFilter element provides a filter which tests if a meta-data property is less than a value.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerystartswithfilter.html">QML GalleryStartsWithFilter Element</a></p></td><td class="tblDescr"><p>The GalleryStartsWithFilter element provides a filter which tests if a meta-data property starts with a string.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-gallerywildcardfilter.html">QML GalleryWildcardFilter Element</a></p></td><td class="tblDescr"><p>The GalleryWildcardFilter element provides a filter which tests a meta-data property against a value using wildcard matching.</p></td></tr>
+</table>
+<p>There is nothing to prevent the developer creating a number of filters. Then she could use either a <a href="qml-galleryfilterunion.html">GalleryFilterUnion</a> or a <a href="qml-galleryfilterintersection.html">GalleryFilterIntersection</a> to find the result of OR-ing or AND-ing the criteria respectively to create a more complex search requirement.</p>
+<a name="gallery-item"></a>
+<h3>Gallery Item</h3>
+<p><a href="qml-documentgalleryitem.html">DocumentGalleryItem</a>s are elements that are a means to request information about a single item from a gallery. The information may include monitoring the state of the request, reading the meta-data for the document or writing meta-data.</p>
+<p>When a request is made the <a href="qml-documentgalleryitem.html#status-prop">status</a> property contains the current status of the request including whether it is active or canceled.</p>
+<p>Progress of the request is available through the <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> (floating point number) item property <a href="qml-documentgalleryitem.html#progress-prop">progress</a>.</p>
+<a name="query-requests"></a>
+<h3>Query Requests</h3>
+<p>The <a href="qml-documentgallerymodel.html">DocumentGalleryModel</a> element is used to perform the requests on a document gallery. The following snippet of QML from the <a href="qml-documentgallerymodel.html">DocumentGalleryModel</a> documentation is worth a closer look because it puts together several of the elements discussed in this overview.</p>
+<pre class="highlightedCode brush: cpp"> import QtMobility.gallery 1.1
+
+     ...
+
+     model: DocumentGalleryModel {
+         rootType: DocumentGallery.Image
+         properties: [&quot;url&quot;]
+         filter: GalleryWildcardFilter {
+             property: &quot;fileName&quot;;
+             value: &quot;*.jpg&quot;;
+         }
+     }
+
+     ...</pre>
+<p>Here we have a model using a DocumentGalleryQueryModel. Within Qt the term 'model' usually refers to the Model part of a variation on the Model-View-Controller design pattern. In essence it is a data-oriented part of the Gallery query object, what data types are part of this query. For a clearer understanding <a href="http://doc.qt.nokia.com/4.7/model-view-programming.html">see the Qt documentation</a>.</p>
+<a name="classes"></a>
+<h2>Classes</h2>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-documentgalleryitem.html">QML DocumentGalleryItem Element</a></p></td><td class="tblDescr"><p>The DocumentGalleryItem element allows you to request information about a single item from the document gallery</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-documentgallerymodel.html">QML DocumentGalleryModel Element</a></p></td><td class="tblDescr"><p>The DocumentGalleryModel element is used to specify a model containing items from the document gallery.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-documentgallerytype.html">QML DocumentGalleryType Element</a></p></td><td class="tblDescr"><p>The DocumentGalleryType element allows you to request information about an item type from the document gallery.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerycontainsfilter.html">QML GalleryContainsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryContainsFilter element provides a filter which tests if a meta-data property contains a string.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-galleryendswithfilter.html">QML GalleryEndsWithFilter Element</a></p></td><td class="tblDescr"><p>The GalleryEndsWithFilter element provides a filter which tests if a meta-data property ends with a string.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-galleryequalsfilter.html">QML GalleryEqualsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryEqualsFilter element provides a filter which tests if a meta-data property is equal to a value.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-galleryfilterintersection.html">QML GalleryFilterIntersection Element</a></p></td><td class="tblDescr"><p>The GalleryFilterIntersection elements provides a intersection of gallery filters.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-galleryfilterunion.html">QML GalleryFilterUnion Element</a></p></td><td class="tblDescr"><p>The GalleryFilterUnion elements provides a union of gallery filters.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-gallerygreaterthanequalsfilter.html">QML GalleryGreaterThanEqualsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryGreaterThanEqualsFilter element provides a filter which tests if a meta-data property is greater than or equal to a value.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerygreaterthanfilter.html">QML GalleryGreaterThanFilter Element</a></p></td><td class="tblDescr"><p>The GalleryGreaterThanFilter element provides a filter which tests if a meta-data property is greater than a value.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-gallerylessthanequalsfilter.html">QML GalleryLessThanEqualsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryLessThanEqualsFilter element provides a filter which tests if a meta-data property is less than or equal to a value.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerylessthanfilter.html">QML GalleryLessThanFilter Element</a></p></td><td class="tblDescr"><p>The GalleryLessThanEqualsFilter element provides a filter which tests if a meta-data property is less than a value.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-gallerystartswithfilter.html">QML GalleryStartsWithFilter Element</a></p></td><td class="tblDescr"><p>The GalleryStartsWithFilter element provides a filter which tests if a meta-data property starts with a string.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerywildcardfilter.html">QML GalleryWildcardFilter Element</a></p></td><td class="tblDescr"><p>The GalleryWildcardFilter element provides a filter which tests a meta-data property against a value using wildcard matching.</p></td></tr>
+</table>
+</div>
+<!-- @@@qml-gallery.html -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

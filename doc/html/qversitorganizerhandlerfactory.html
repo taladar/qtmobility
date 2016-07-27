@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qversitorganizerhandler.cpp -->
+  <title>Qt 1.2: QVersitOrganizerHandlerFactory Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtversit.html">QtVersit</a></li>
+              <li>QVersitOrganizerHandlerFactory</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QVersitOrganizerHandlerFactory Class Reference</h1>
+<!-- $$$QVersitOrganizerHandlerFactory-brief -->
+<p>The QVersitOrganizerHandlerFactory class provides the interface for Versit plugins. <a href="#details">More...</a></p>
+<!-- @@@QVersitOrganizerHandlerFactory -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QVersitOrganizerHandlerFactory&gt;</pre><p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qversitorganizerhandlerfactory-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qversitorganizerhandlerfactory.html#dtor.QVersitOrganizerHandlerFactory">~QVersitOrganizerHandlerFactory</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVersitOrganizerHandler * </td><td class="memItemRight bottomAlign"><b><a href="qversitorganizerhandlerfactory.html#createHandler">createHandler</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual int </td><td class="memItemRight bottomAlign"><b><a href="qversitorganizerhandlerfactory.html#index">index</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QString </td><td class="memItemRight bottomAlign"><b><a href="qversitorganizerhandlerfactory.html#name">name</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QSet&lt;QString&gt; </td><td class="memItemRight bottomAlign"><b><a href="qversitorganizerhandlerfactory.html#profiles">profiles</a></b> () const</td></tr>
+</table>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qversitorganizerhandlerfactory.html#ProfileBackup-var">ProfileBackup</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qversitorganizerhandlerfactory.html#ProfileSync-var">ProfileSync</a></b></td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QVersitOrganizerHandlerFactory-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QVersitOrganizerHandlerFactory class provides the interface for Versit plugins.</p>
+<p>This class provides a simple interface for the creation of <a href="qversitorganizerhandler.html">QVersitOrganizerHandler</a> instances. Implement this interface to write a Versit plugin. For more details, see <a href="versitplugins.html">Versit Plugins</a>.</p>
+</div>
+<!-- @@@QVersitOrganizerHandlerFactory -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$~QVersitOrganizerHandlerFactory[overload1]$$$~QVersitOrganizerHandlerFactory -->
+<h3 class="fn"><a name="dtor.QVersitOrganizerHandlerFactory"></a>QVersitOrganizerHandlerFactory::~QVersitOrganizerHandlerFactory ()<tt> [virtual]</tt></h3>
+<p>This frees any memory used by the <a href="qversitorganizerhandlerfactory.html">QVersitOrganizerHandlerFactory</a>.</p>
+<!-- @@@~QVersitOrganizerHandlerFactory -->
+<!-- $$$createHandler[overload1]$$$createHandler -->
+<h3 class="fn"><a name="createHandler"></a><a href="qversitorganizerhandler.html">QVersitOrganizerHandler</a> * QVersitOrganizerHandlerFactory::createHandler () const<tt> [pure virtual]</tt></h3>
+<p>This function is called by the Versit importer or exporter class to create an instance of the handler provided by this factory.</p>
+<!-- @@@createHandler -->
+<!-- $$$index[overload1]$$$index -->
+<h3 class="fn"><a name="index"></a>int QVersitOrganizerHandlerFactory::index () const<tt> [virtual]</tt></h3>
+<p>This function should return an index that helps with determining the order in which to run the plugins. Plugins are run in the following order:</p>
+<ul>
+<li>Positively-indexed, ascending</li>
+<li>Zero-indexed</li>
+<li>Negatively-indexed, ascending</li>
+</ul>
+<p>For example, plugins with an index of 1 are run first and plugins of index -1 are run last. If more than one plugin share an index, the order of execution between them is undefined.</p>
+<p>By default, this returns 0, which is recommended for plugins with no special ordering requirements.</p>
+<!-- @@@index -->
+<!-- $$$name[overload1]$$$name -->
+<h3 class="fn"><a name="name"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QVersitOrganizerHandlerFactory::name () const<tt> [pure virtual]</tt></h3>
+<p>This function should return a unique string that identifies the handlers provided by this factory. Typically, this will be of the form &quot;com.nokia.qt.mobility.versit.samplehandler&quot; with the appropriate domain and handler name substituted.</p>
+<!-- @@@name -->
+<!-- $$$profiles[overload1]$$$profiles -->
+<h3 class="fn"><a name="profiles"></a><a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a>&gt; QVersitOrganizerHandlerFactory::profiles () const<tt> [virtual]</tt></h3>
+<p>This function can be overridden to allow a plugin to report which profiles it is to be active under. If this (as in the default case) returns the empty set, it indicates that the plugin should be loaded under all profiles. If it returns a non-empty set, it will only be loaded for those profiles that are specified by the importer/exporter class.</p>
+<!-- @@@profiles -->
+</div>
+<div class="vars">
+<h2>Member Variable Documentation</h2>
+<!-- $$$ProfileBackup -->
+<h3 class="fn"><a name="ProfileBackup-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QVersitOrganizerHandlerFactory::ProfileBackup</h3>
+<p>The constant string signifying a plugin that is relevant to import and export in a backup/restore context.</p>
+<p>See also <a href="qversitorganizerhandlerfactory.html#profiles">profiles</a>(), <a href="qversitorganizerimporter.html#QVersitOrganizerImporter">QVersitOrganizerImporter::QVersitOrganizerImporter</a>(), and <a href="qversitorganizerexporter.html#QVersitOrganizerExporter">QVersitOrganizerExporter::QVersitOrganizerExporter</a>().</p>
+<!-- @@@ProfileBackup -->
+<!-- $$$ProfileSync -->
+<h3 class="fn"><a name="ProfileSync-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QVersitOrganizerHandlerFactory::ProfileSync</h3>
+<p>The constant string signifying a plugin that is relevant to import and export in a synchronization context.</p>
+<p>See also <a href="qversitorganizerhandlerfactory.html#profiles">QVersitOrganizerHandlerFactory::profiles</a>(), <a href="qversitorganizerimporter.html">QVersitOrganizerImporter</a>, and <a href="qversitorganizerexporter.html">QVersitOrganizerExporter</a>.</p>
+<!-- @@@ProfileSync -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

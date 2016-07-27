@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt 1.2: explorer.cpp Example File (sensors/sensor_explorer/explorer.cpp)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<h1 class="title">explorer.cpp Example File</h1>
+<span class="small-subtitle">sensors/sensor_explorer/explorer.cpp</span>
+<!-- $$$sensors/sensor_explorer/explorer.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the examples of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** You may use this file under the terms of the BSD license as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+ **     the names of its contributors may be used to endorse or promote
+ **     products derived from this software without specific prior written
+ **     permission.
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;explorer.h&quot;
+ #include &lt;QTimer&gt;
+ #include &lt;QDebug&gt;
+ #include &lt;qsensor.h&gt;
+ #include &lt;QMetaObject&gt;
+ #include &lt;QMetaProperty&gt;
+
+ QTM_USE_NAMESPACE
+
+ Explorer::Explorer(QWidget *parent)
+     : QMainWindow(parent)
+     , m_sensor(0)
+     , ignoreItemChanged(false)
+ {
+     ui.setupUi(this);
+ #ifdef MAEMO5
+     ui.label-&gt;hide();
+ #endif
+     <span class="comment">// Clear out example data from the .ui file</span>
+     ui.sensors-&gt;clear();
+     clearSensorProperties();
+     clearReading();
+
+     <span class="comment">// Force types to be registered</span>
+     (void)QSensor::sensorTypes();
+     <span class="comment">// Listen for changes to the registered types</span>
+     QSensor *sensor = new QSensor(QByteArray(), this);
+     connect(sensor, SIGNAL(availableSensorsChanged()), this, SLOT(loadSensors()));
+ }
+
+ Explorer::~Explorer()
+ {
+ }
+
+ void Explorer::loadSensors()
+ {
+     qDebug() &lt;&lt; &quot;Explorer::loadSensors&quot;;
+
+     <span class="comment">// Clear out anything that's in there now</span>
+     ui.sensors-&gt;clear();
+
+     foreach (const QByteArray &amp;type, QSensor::sensorTypes()) {
+         qDebug() &lt;&lt; &quot;Found type&quot; &lt;&lt; type;
+         foreach (const QByteArray &amp;identifier, QSensor::sensorsForType(type)) {
+             qDebug() &lt;&lt; &quot;Found identifier&quot; &lt;&lt; identifier;
+             <span class="comment">// Don't put in sensors we can't connect to</span>
+             QSensor sensor(type);
+             sensor.setIdentifier(identifier);
+             if (!sensor.connectToBackend()) {
+                 qDebug() &lt;&lt; &quot;Couldn't connect to&quot; &lt;&lt; identifier;
+                 continue;
+             }
+
+             qDebug() &lt;&lt; &quot;Adding identifier&quot; &lt;&lt; identifier;
+             QTreeWidgetItem *item = new QTreeWidgetItem(QStringList() &lt;&lt; QString::fromLatin1(identifier));
+             item-&gt;setData(0, Qt::UserRole, QString::fromLatin1(type));
+             ui.sensors-&gt;addTopLevelItem(item);
+         }
+     }
+
+     if (ui.sensors-&gt;topLevelItemCount() == 0) {
+         QTreeWidgetItem *item = new QTreeWidgetItem(QStringList() &lt;&lt; tr(&quot;No Sensors Found&quot;));
+         item-&gt;setData(0, Qt::UserRole, QString());
+         ui.sensors-&gt;addTopLevelItem(item);
+     }
+
+     ui.sensors-&gt;setCurrentItem(0);
+     ui.scrollArea-&gt;hide();
+
+     resizeSensors();
+ }
+
+ void Explorer::resizeSensors()
+ {
+     ui.sensors-&gt;resizeColumnToContents(0);
+     int length = ui.sensors-&gt;header()-&gt;length() + 4;
+     ui.sensors-&gt;setFixedWidth(length);
+ }
+
+ void Explorer::on_sensors_currentItemChanged()
+ {
+     qDebug() &lt;&lt; &quot;Explorer::sensorSelected&quot;;
+
+     <span class="comment">// Clear out anything that's in there now</span>
+     if (m_sensor) {
+         delete m_sensor;
+         m_sensor = 0;
+     }
+     clearSensorProperties();
+     clearReading();
+     ui.scrollArea-&gt;hide();
+
+     <span class="comment">// Check that we've selected an item</span>
+     QTreeWidgetItem *item = ui.sensors-&gt;currentItem();
+     if (!item) {
+         qWarning() &lt;&lt; &quot;Didn't select an item!&quot;;
+         return;
+     }
+
+     QByteArray type = item-&gt;data(0, Qt::UserRole).toString().toLatin1();
+     QByteArray identifier = item-&gt;data(0, Qt::DisplayRole).toString().toLatin1();
+
+     if (type.isEmpty()) {
+         <span class="comment">// Uh oh, there aren't any sensors.</span>
+         <span class="comment">// The user has clicked the dummy list entry so just ignore it.</span>
+         return;
+     }
+
+     <span class="comment">// Connect to the sensor so we can probe it</span>
+     m_sensor = new QSensor(type, this);
+     connect(m_sensor, SIGNAL(readingChanged()), this, SLOT(sensor_changed()));
+     m_sensor-&gt;setIdentifier(identifier);
+     if (!m_sensor-&gt;connectToBackend()) {
+         delete m_sensor;
+         m_sensor = 0;
+         qWarning() &lt;&lt; &quot;Can't connect to the sensor!&quot;;
+         return;
+     }
+
+     ui.scrollArea-&gt;show();
+     loadSensorProperties();
+     loadReading();
+
+     adjustTableColumns(ui.sensorprops);
+     adjustTableColumns(ui.reading);
+     QTimer::singleShot(100, this, SLOT(adjustSizes()));
+ }
+
+ void Explorer::clearReading()
+ {
+     ui.reading-&gt;setRowCount(0);
+ }
+
+ void Explorer::loadReading()
+ {
+     <span class="comment">// Probe the reading using Qt's meta-object facilities</span>
+     QSensorReading *reading = m_sensor-&gt;reading();
+     const QMetaObject *mo = reading-&gt;metaObject();
+     int firstProperty = QSensorReading::staticMetaObject.propertyOffset();
+
+     ui.reading-&gt;setRowCount(mo-&gt;propertyCount() - firstProperty);
+
+     for(int i = firstProperty; i &lt; mo-&gt;propertyCount(); ++i) {
+         int row = i - firstProperty;
+         QTableWidgetItem *index;
+         if (row == 0)
+             <span class="comment">// timestamp is not available via index</span>
+             index = new QTableWidgetItem(QLatin1String(&quot;N/A&quot;));
+         else
+             index = new QTableWidgetItem(QVariant(row - 1).toString());
+         QTableWidgetItem *prop = new QTableWidgetItem(mo-&gt;property(i).name());
+         QString typeName = QLatin1String(mo-&gt;property(i).typeName());
+         int crap = typeName.lastIndexOf(&quot;::&quot;);
+         if (crap != -1)
+             typeName = typeName.mid(crap + 2);
+         QTableWidgetItem *type = new QTableWidgetItem(typeName);
+         QTableWidgetItem *value = new QTableWidgetItem();
+
+         index-&gt;setFlags(value-&gt;flags() ^ Qt::ItemIsEditable);
+         prop-&gt;setFlags(value-&gt;flags() ^ Qt::ItemIsEditable);
+         type-&gt;setFlags(value-&gt;flags() ^ Qt::ItemIsEditable);
+         value-&gt;setFlags(value-&gt;flags() ^ Qt::ItemIsEditable);
+
+         ui.reading-&gt;setItem(row, 0, index);
+         ui.reading-&gt;setItem(row, 1, prop);
+         ui.reading-&gt;setItem(row, 2, type);
+         ui.reading-&gt;setItem(row, 3, value);
+     }
+ }
+
+ void Explorer::clearSensorProperties()
+ {
+     ui.sensorprops-&gt;setRowCount(0);
+ }
+
+ void Explorer::loadSensorProperties()
+ {
+     ignoreItemChanged = true;
+
+     <span class="comment">// Probe the sensor using Qt's meta-object facilities</span>
+     const QMetaObject *mo = m_sensor-&gt;metaObject();
+     int firstProperty = QSensor::staticMetaObject.propertyOffset();
+
+     int rows = mo-&gt;propertyCount() - firstProperty;
+     ui.sensorprops-&gt;setRowCount(rows);
+
+     int offset = 0;
+     for(int i = firstProperty; i &lt; mo-&gt;propertyCount(); ++i) {
+         int row = i - firstProperty - offset;
+         QLatin1String name(mo-&gt;property(i).name());
+         if (name == &quot;sensorid&quot; ||
+             <span class="comment">//name == &quot;type&quot; ||</span>
+             name == &quot;reading&quot; ||
+             name == &quot;connected&quot; ||
+             name == &quot;running&quot; ||
+             name == &quot;supportsPolling&quot;) {
+             ++offset;
+             continue;
+         }
+         QTableWidgetItem *prop = new QTableWidgetItem(name);
+         QString typeName = QLatin1String(mo-&gt;property(i).typeName());
+         int crap = typeName.lastIndexOf(&quot;::&quot;);
+         if (crap != -1)
+             typeName = typeName.mid(crap + 2);
+         QTableWidgetItem *type = new QTableWidgetItem(typeName);
+         QVariant v = mo-&gt;property(i).read(m_sensor);
+         QString val;
+         if (typeName == &quot;qrangelist&quot;) {
+             qrangelist rl = v.value&lt;qrangelist&gt;();
+             QStringList out;
+             foreach (const qrange &amp;r, rl) {
+                 if (r.first == r.second)
+                     out &lt;&lt; QString(&quot;%1 Hz&quot;).arg(r.first);
+                 else
+                     out &lt;&lt; QString(&quot;%1-%2 Hz&quot;).arg(r.first).arg(r.second);
+             }
+             val = out.join(&quot;, &quot;);
+         } else if (typeName == &quot;qoutputrangelist&quot;) {
+             qoutputrangelist rl = v.value&lt;qoutputrangelist&gt;();
+             QStringList out;
+             foreach (const qoutputrange &amp;r, rl) {
+                 out &lt;&lt; QString(&quot;(%1, %2) += %3&quot;).arg(r.minimum).arg(r.maximum).arg(r.accuracy);
+             }
+             val = out.join(&quot;, &quot;);
+         } else {
+             val = v.toString();
+         }
+         QTableWidgetItem *value = new QTableWidgetItem(val);
+
+         prop-&gt;setFlags(value-&gt;flags() ^ Qt::ItemIsEditable);
+         type-&gt;setFlags(value-&gt;flags() ^ Qt::ItemIsEditable);
+         if (!mo-&gt;property(i).isWritable()) {
+             <span class="comment">// clear the editable flag</span>
+             value-&gt;setFlags(value-&gt;flags() ^ Qt::ItemIsEditable);
+         }
+
+         ui.sensorprops-&gt;setItem(row, 0, prop);
+         ui.sensorprops-&gt;setItem(row, 1, type);
+         ui.sensorprops-&gt;setItem(row, 2, value);
+     }
+
+     <span class="comment">// We don't add all properties</span>
+     ui.sensorprops-&gt;setRowCount(rows - offset);
+
+     ignoreItemChanged = false;
+ }
+
+ void Explorer::showEvent(QShowEvent *event)
+ {
+     <span class="comment">// Once we're visible, load the sensors</span>
+     <span class="comment">// (don't delay showing the UI while we load plugins, connect to backends, etc.)</span>
+     QTimer::singleShot(0, this, SLOT(loadSensors()));
+
+     QMainWindow::showEvent(event);
+ }
+
+<span class="comment"> // Resize columns to fit the space.</span>
+<span class="comment"> // This shouldn't be so hard</span>!
+ void Explorer::adjustTableColumns(QTableWidget *table)
+ {
+     if (table-&gt;rowCount() == 0) {
+         table-&gt;setFixedHeight(0);
+         return;
+     }
+
+     <span class="comment">// At least this is easy to do</span>
+     table-&gt;resizeColumnsToContents();
+     int length = table-&gt;verticalHeader()-&gt;length();
+     length += (length / static_cast&lt;qreal&gt;(table-&gt;verticalHeader()-&gt;count())); <span class="comment">// Add 1 more (the header itself)</span>
+ #ifdef MAEMO5
+     length += 10; <span class="comment">// required for N900 UI</span>
+ #endif
+     table-&gt;setFixedHeight(length);
+
+     int columns = table-&gt;columnCount();
+     QList&lt;int&gt; width;
+     int suggestedWidth = 0;
+     for (int i = 0; i &lt; columns; ++i) {
+         int cwidth = table-&gt;columnWidth(i);
+         width &lt;&lt; cwidth;
+         suggestedWidth += cwidth;
+     }
+
+     int actualWidth = table-&gt;size().width();
+     <span class="comment">//qDebug() &lt;&lt; &quot;suggestedWidth&quot; &lt;&lt; suggestedWidth &lt;&lt; &quot;actualWidth&quot; &lt;&lt; actualWidth;</span>
+
+     <span class="comment">// We only scale the columns up, we don't scale down</span>
+     if (actualWidth &lt;= suggestedWidth)
+         return;
+
+     qreal multiplier = actualWidth / static_cast&lt;qreal&gt;(suggestedWidth);
+     int currentSpace = 4;
+     for (int i = 0; i &lt; columns; ++i) {
+         width[i] = multiplier * width[i];
+         currentSpace += width[i];
+     }
+
+     <span class="comment">// It ends up too big due to cell decorations or something.</span>
+     <span class="comment">// Make things smaller one pixel at a time in round robin fashion until we're good.</span>
+     int i = 0;
+     while (currentSpace &gt; actualWidth) {
+         --width[i];
+         --currentSpace;
+         i = (i + 1) % columns;
+     }
+
+     for (int i = 0; i &lt; columns; ++i) {
+         table-&gt;setColumnWidth(i, width[i]);
+     }
+
+     table-&gt;setMinimumWidth(suggestedWidth);
+ }
+
+ void Explorer::adjustSizes()
+ {
+     adjustTableColumns(ui.reading);
+     adjustTableColumns(ui.sensorprops);
+ }
+
+ void Explorer::resizeEvent(QResizeEvent *event)
+ {
+     resizeSensors();
+     adjustSizes();
+
+     QMainWindow::resizeEvent(event);
+ }
+
+ void Explorer::on_start_clicked()
+ {
+     m_sensor-&gt;start();
+     QTimer::singleShot(0, this, SLOT(loadSensorProperties()));
+ }
+
+ void Explorer::on_stop_clicked()
+ {
+     m_sensor-&gt;stop();
+     QTimer::singleShot(0, this, SLOT(loadSensorProperties()));
+ }
+
+ void Explorer::sensor_changed()
+ {
+     QSensorReading *reading = m_sensor-&gt;reading();
+     filter(reading);
+ }
+
+ bool Explorer::filter(QSensorReading *reading)
+ {
+     const QMetaObject *mo = reading-&gt;metaObject();
+     int firstProperty = QSensorReading::staticMetaObject.propertyOffset();
+
+     for(int i = firstProperty; i &lt; mo-&gt;propertyCount(); ++i) {
+         int row = i - firstProperty;
+         QString typeName = QLatin1String(mo-&gt;property(i).typeName());
+         int crap = typeName.lastIndexOf(&quot;::&quot;);
+         if (crap != -1)
+             typeName = typeName.mid(crap + 2);
+         QLatin1String name(mo-&gt;property(i).name());
+         QTableWidgetItem *value = ui.reading-&gt;item(row, 3);
+         QVariant val = mo-&gt;property(i).read(reading);
+         if (typeName == &quot;qtimestamp&quot;) {
+             value-&gt;setText(QString(&quot;%1&quot;).arg(val.value&lt;qtimestamp&gt;()));
+         } else if (typeName == &quot;LightLevel&quot;) {
+             QString text;
+             switch (val.toInt()) {
+             case 1:
+                 text = &quot;Dark&quot;;
+                 break;
+             case 2:
+                 text = &quot;Twilight&quot;;
+                 break;
+             case 3:
+                 text = &quot;Light&quot;;
+                 break;
+             case 4:
+                 text = &quot;Bright&quot;;
+                 break;
+             case 5:
+                 text = &quot;Sunny&quot;;
+                 break;
+             default:
+                 text = &quot;Undefined&quot;;
+                 break;
+             }
+             value-&gt;setText(text);
+         } else {
+             value-&gt;setText(val.toString());
+         }
+     }
+
+     adjustTableColumns(ui.reading);
+     <span class="comment">//QTimer::singleShot(0, this, SLOT(adjustSizes()));</span>
+
+     return false;
+ }
+
+ void Explorer::on_sensorprops_itemChanged(QTableWidgetItem *item)
+ {
+     if (ignoreItemChanged)
+         return;
+     if (!(item-&gt;flags() &amp; Qt::ItemIsEditable))
+         return;
+
+     int row = item-&gt;row();
+     QString name = ui.sensorprops-&gt;item(row, 0)-&gt;text();
+     QVariant value = item-&gt;text();
+
+     qDebug() &lt;&lt; &quot;setProperty&quot; &lt;&lt; name &lt;&lt; value;
+     m_sensor-&gt;setProperty(name.toLatin1().constData(), QVariant(value));
+
+     QTimer::singleShot(0, this, SLOT(loadSensorProperties()));
+ }</pre>
+</div>
+<!-- @@@sensors/sensor_explorer/explorer.cpp -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

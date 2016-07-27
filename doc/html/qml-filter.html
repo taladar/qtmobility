@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativecontactfilter.cpp -->
+  <title>Qt 1.2: QML Filter Element</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="qdeclarativeelements.html">QML Elements</a></li>              <li>QML Filter Element</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QML Filter Element</h1>
+<span class="subtitle"></span>
+<!-- $$$Filter-brief -->
+<p>The Filter element is used as a property of <a href="qml-contactmodel.html">ContactModel</a>, to allow selection of contacts which have certain details or properties. <a href="#details">More...</a></p>
+<!-- @@@Filter -->
+<li><a href="qml-filter-members.html">List of all members, including inherited members</a></li>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-filter.html#type-prop">type</a></b></b> : enumeration</li>
+</ul>
+<!-- $$$Filter-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>This element is part of the <b>QtMobility.contacts 1.1</b> module.</p>
+<p>See also <a href="qcontactfilter.html">QContactFilter</a>.</p>
+<!-- @@@Filter -->
+<h2>Property Documentation</h2>
+<!-- $$$type -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="type-prop"></a>type : enumeration</p></td></tr></table></div><div class="qmldoc"><p>This property holds the type value of this filter. It can be one of:</p>
+<ul>
+<li>Filter.DefaultFilter - A filter which matches everything (default).</li>
+<li>Filter.<a href="qml-invalidfilter.html">InvalidFilter</a> - An invalid filter which matches nothing.</li>
+<li>Filter.<a href="qml-detailfilter.html">DetailFilter</a> - A filter which matches contacts containing one or more details of a particular definition with a particular value.</li>
+<li>Filter.<a href="qml-detailrangefilter.html">DetailRangeFilter</a> - A filter which matches contacts containing one or more details of a particular definition whose values are within a particular range.</li>
+<li>Filter.<a href="qml-changelogfilter.html">ChangeLogFilter</a> - A filter which matches contacts whose timestamps have been updated since some particular date and time.</li>
+<li>Filter.<a href="qml-actionfilter.html">ActionFilter</a> - A filter which matches contacts for which a particular action is available, or which contain a detail with a particular value for which a particular action is available.</li>
+<li>Filter.<a href="qml-relationshipfilter.html">RelationshipFilter</a> - A filter which matches contacts which participate in a particular type of relationship, or relationship with a specified contact.</li>
+<li>Filter.<a href="qml-intersectionfilter.html">IntersectionFilter</a> - A filter which matches all contacts that are matched by all filters it includes.</li>
+<li>Filter.<a href="qml-unionfilter.html">UnionFilter</a> - A filter which matches any contact that is matched by any of the filters it includes.</li>
+<li>Filter.<a href="qml-idfilter.html">IdFilter</a> - A filter which matches any contact whose local id is contained in a particular list of contact local ids.</li>
+</ul>
+</div></div><!-- @@@type -->
+<br/>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativebatteryinfo.cpp -->
+  <title>Qt 1.2: QML BatteryInfo Element</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="qdeclarativeelements.html">QML Elements</a></li>              <li>QML BatteryInfo Element</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<p class="naviNextPrevious headerNavi">
+</p><p/>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QML BatteryInfo Element</h1>
+<span class="subtitle"></span>
+<!-- $$$BatteryInfo-brief -->
+<p>The BatteryInfo element allows you to receive battery change notifications from the device. <a href="#details">More...</a></p>
+<!-- @@@BatteryInfo -->
+<li><a href="qml-batteryinfo-members.html">List of all members, including inherited members</a></li>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#batteryStatus-prop">batteryStatus</a></b></b> : BatteryStatus</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#chargerType-prop">chargerType</a></b></b> : ChargerType</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#chargingState-prop">chargingState</a></b></b> : ChargingState</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#currentFlow-prop">currentFlow</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#energyMeasurementUnit-prop">energyMeasurementUnit</a></b></b> : EnergyUnit</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#maxBars-prop">maxBars</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#monitorBatteryStatusChanges-28-29-prop">monitorBatteryStatusChanges()</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#monitorChargerTypeChanges-prop">monitorChargerTypeChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#monitorChargingStateChanges-prop">monitorChargingStateChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#monitorCurrentFlowChanges-prop">monitorCurrentFlowChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#monitorNominalCapacityChanges-prop">monitorNominalCapacityChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#monitorRemainingCapacityBarsChanges-prop">monitorRemainingCapacityBarsChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#monitorRemainingCapacityChanges-prop">monitorRemainingCapacityChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#monitorRemainingCapacityPercentChanges-prop">monitorRemainingCapacityPercentChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#monitorRemainingChargingTimeChanges-prop">monitorRemainingChargingTimeChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#nominalCapacity-prop">nominalCapacity</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#remainingCapacity-prop">remainingCapacity</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#remainingCapacityBars-prop">remainingCapacityBars</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#remainingCapacityPercent-prop">remainingCapacityPercent</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#remainingChargingTime-prop">remainingChargingTime</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#voltage-prop">voltage</a></b></b> : int</li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#batteryStatusChanged-signal">batteryStatusChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#chargerTypeChanged-signal">chargerTypeChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#chargingStateChanged-signal">chargingStateChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#currentFlowChanged-signal">currentFlowChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#nominalCapacityChanged-signal">nominalCapacityChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#remainingCapacityBarsChanged-signal">remainingCapacityBarsChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#remainingCapacityChanged-signal">remainingCapacityChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#remainingCapacityPercentChanged-signal">remainingCapacityPercentChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-batteryinfo.html#remainingChargingTimeChanged-signal">remainingChargingTimeChanged</a></b></b></li>
+</ul>
+<!-- $$$BatteryInfo-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>This element is part of the <b>QtMobility.systeminfo 1.2</b> module. It is a convience class to make QML usage easier.</p>
+<p>Note: To use notification signals, you need to set the monitor* properties to true.</p>
+<pre class="highlightedCode brush: cpp">     DeviceInfo {
+     id: devinfo
+         monitorChargerTypeChanges: true
+         monitorChargingStateChanges: true
+ }</pre>
+<p>See also <a href="qsystembatteryinfo.html">QSystemBatteryInfo</a>.</p>
+<!-- @@@BatteryInfo -->
+<h2>Property Documentation</h2>
+<!-- $$$batteryStatus -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="batteryStatus-prop"></a>batteryStatus : BatteryStatus</p></td></tr></table></div><div class="qmldoc"><p>Returns the battery charge status.</p>
+</div></div><!-- @@@batteryStatus -->
+<br/>
+<!-- $$$chargerType -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="chargerType-prop"></a>chargerType : ChargerType</p></td></tr></table></div><div class="qmldoc"><p>Returns the currently used charger type.</p>
+</div></div><!-- @@@chargerType -->
+<br/>
+<!-- $$$chargingState -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="chargingState-prop"></a>chargingState : ChargingState</p></td></tr></table></div><div class="qmldoc"><p>Returns the charging state.</p>
+</div></div><!-- @@@chargingState -->
+<br/>
+<!-- $$$currentFlow -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="currentFlow-prop"></a>currentFlow : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the amount of current flowing out from the battery (a short term averge), milliapmeres (mA). Positive current means discharging and negative current means charging.</p>
+</div></div><!-- @@@currentFlow -->
+<br/>
+<!-- $$$energyMeasurementUnit -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="energyMeasurementUnit-prop"></a>energyMeasurementUnit : EnergyUnit</p></td></tr></table></div><div class="qmldoc"><p>Returns the <a href="qsystembatteryinfo.html#EnergyUnit-enum">QSystemBatteryInfo::EnergyUnit</a> that the system uses.</p>
+</div></div><!-- @@@energyMeasurementUnit -->
+<br/>
+<!-- $$$maxBars -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="maxBars-prop"></a>maxBars : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the Maximum number of bars the system uses. In the case that the system has no default number of battery bars, 0 is returned.</p>
+</div></div><!-- @@@maxBars -->
+<br/>
+<!-- $$$monitorBatteryStatusChanges() -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorBatteryStatusChanges-28-29-prop"></a>monitorBatteryStatusChanges() : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-batteryinfo.html#batteryStatusChanged-signal">batteryStatusChanged</a> signal.</p>
+</div></div><!-- @@@monitorBatteryStatusChanges() -->
+<br/>
+<!-- $$$monitorChargerTypeChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorChargerTypeChanges-prop"></a>monitorChargerTypeChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-batteryinfo.html#chargerTypeChanged-signal">chargerTypeChanged</a> signal.</p>
+</div></div><!-- @@@monitorChargerTypeChanges -->
+<br/>
+<!-- $$$monitorChargingStateChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorChargingStateChanges-prop"></a>monitorChargingStateChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-batteryinfo.html#chargingStateChanged-signal">chargingStateChanged</a> signal.</p>
+</div></div><!-- @@@monitorChargingStateChanges -->
+<br/>
+<!-- $$$monitorCurrentFlowChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorCurrentFlowChanges-prop"></a>monitorCurrentFlowChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-batteryinfo.html#currentFlowChanged-signal">currentFlowChanged</a> signal.</p>
+</div></div><!-- @@@monitorCurrentFlowChanges -->
+<br/>
+<!-- $$$monitorNominalCapacityChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorNominalCapacityChanges-prop"></a>monitorNominalCapacityChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-batteryinfo.html#nominalCapacityChanged-signal">nominalCapacityChanged</a> signal.</p>
+</div></div><!-- @@@monitorNominalCapacityChanges -->
+<br/>
+<!-- $$$monitorRemainingCapacityBarsChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorRemainingCapacityBarsChanges-prop"></a>monitorRemainingCapacityBarsChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-batteryinfo.html#remainingCapacityBarsChanged-signal">remainingCapacityBarsChanged</a> signal.</p>
+</div></div><!-- @@@monitorRemainingCapacityBarsChanges -->
+<br/>
+<!-- $$$monitorRemainingCapacityChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorRemainingCapacityChanges-prop"></a>monitorRemainingCapacityChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-batteryinfo.html#remainingCapacityChanged-signal">remainingCapacityChanged</a> signal.</p>
+</div></div><!-- @@@monitorRemainingCapacityChanges -->
+<br/>
+<!-- $$$monitorRemainingCapacityPercentChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorRemainingCapacityPercentChanges-prop"></a>monitorRemainingCapacityPercentChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-batteryinfo.html#remainingCapacityPercentChanged-signal">remainingCapacityPercentChanged</a> signal.</p>
+</div></div><!-- @@@monitorRemainingCapacityPercentChanges -->
+<br/>
+<!-- $$$monitorRemainingChargingTimeChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorRemainingChargingTimeChanges-prop"></a>monitorRemainingChargingTimeChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-batteryinfo.html#remainingChargingTimeChanged-signal">remainingChargingTimeChanged</a> signal.</p>
+</div></div><!-- @@@monitorRemainingChargingTimeChanges -->
+<br/>
+<!-- $$$nominalCapacity -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="nominalCapacity-prop"></a>nominalCapacity : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the nominal (maximum) capacity of the battery, in milliampere-hours (mAh). If no battery is found, -1.</p>
+</div></div><!-- @@@nominalCapacity -->
+<br/>
+<!-- $$$remainingCapacity -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="remainingCapacity-prop"></a>remainingCapacity : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the remaining battery level of the battery in BatteryInfo::EnergyUnit.</p>
+<p>See also <a href="qsystembatteryinfo.html#EnergyUnit-enum">QSystemBatteryInfo::EnergyUnit</a>.</p>
+</div></div><!-- @@@remainingCapacity -->
+<br/>
+<!-- $$$remainingCapacityBars -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="remainingCapacityBars-prop"></a>remainingCapacityBars : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the remaining capacity in number of bars. The bar count will not necessarily always reflect one to one on the remaining capacity percentage.</p>
+</div></div><!-- @@@remainingCapacityBars -->
+<br/>
+<!-- $$$remainingCapacityPercent -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="remainingCapacityPercent-prop"></a>remainingCapacityPercent : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the remaining battery level of the battery in percent. If no battery is found, -1.</p>
+</div></div><!-- @@@remainingCapacityPercent -->
+<br/>
+<!-- $$$remainingChargingTime -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="remainingChargingTime-prop"></a>remainingChargingTime : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the remaining time of charging in seconds if charging, 0 if battery is full and not charging, or -1 no battery found.</p>
+</div></div><!-- @@@remainingChargingTime -->
+<br/>
+<!-- $$$voltage -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="voltage-prop"></a>voltage : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the voltage of the battery, in millivolts (mV). If no battery is found, -1.</p>
+</div></div><!-- @@@voltage -->
+<br/>
+<h2>Signal Documentation</h2>
+<!-- $$$batteryStatusChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="batteryStatusChanged-signal"></a>BatteryInfo::batteryStatusChanged ( BatteryInfo::BatteryStatus )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted when battery status has changed.</p>
+<p>See also <a href="qsystembatteryinfo.html#ChargingState-enum">QSystemBatteryInfo::ChargingState</a>.</p>
+</div></div><!-- @@@batteryStatusChanged -->
+<br/>
+<!-- $$$chargerTypeChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="chargerTypeChanged-signal"></a>BatteryInfo::chargerTypeChanged ( BatteryInfo::ChargerType )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted when the charger type has changed, such as when a phone gets plugged in to the wall, or usb.</p>
+<p>See also <a href="qsystembatteryinfo.html#ChargerType-enum">QSystemBatteryInfo::ChargerType</a>.</p>
+</div></div><!-- @@@chargerTypeChanged -->
+<br/>
+<!-- $$$chargingStateChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="chargingStateChanged-signal"></a>BatteryInfo::chargingStateChanged ( BatteryInfo::ChargingState )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted when charging state has changed.</p>
+<p>See also <a href="qsystembatteryinfo.html#ChargingState-enum">QSystemBatteryInfo::ChargingState</a>.</p>
+</div></div><!-- @@@chargingStateChanged -->
+<br/>
+<!-- $$$currentFlowChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="currentFlowChanged-signal"></a>BatteryInfo::currentFlowChanged ( int )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted when the short term averge battery current has changed, or on some systems at regular intervals.</p>
+<p>On some systems where this can lead to a CPU intensive process, you should disconnect from this signal when you are finished.</p>
+<p>See also <a href="qsystembatteryinfo.html#currentFlow-prop">QSystemBatteryInfo::currentFlow</a>.</p>
+</div></div><!-- @@@currentFlowChanged -->
+<br/>
+<!-- $$$nominalCapacityChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="nominalCapacityChanged-signal"></a>BatteryInfo::nominalCapacityChanged ( int )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted when nominal (maximum) battery level has changed.</p>
+<p>See also <a href="qsystembatteryinfo.html#nominalCapacity-prop">QSystemBatteryInfo::nominalCapacity</a>.</p>
+</div></div><!-- @@@nominalCapacityChanged -->
+<br/>
+<!-- $$$remainingCapacityBarsChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="remainingCapacityBarsChanged-signal"></a>BatteryInfo::remainingCapacityBarsChanged ( int )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted when battery level has changed.</p>
+<p>See also <a href="qsystembatteryinfo.html#remainingCapacityBars-prop">QSystemBatteryInfo::remainingCapacityBars</a>.</p>
+</div></div><!-- @@@remainingCapacityBarsChanged -->
+<br/>
+<!-- $$$remainingCapacityChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="remainingCapacityChanged-signal"></a>BatteryInfo::remainingCapacityChanged ( <a href="qsystembatteryinfo.html#EnergyUnit-enum">QSystemBatteryInfo::EnergyUnit</a> )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted when battery capacity has changed, reported in <a href="qsystembatteryinfo.html#EnergyUnit-enum">QSystemBatteryInfo::EnergyUnit</a>.</p>
+<p>See also <a href="qsystembatteryinfo.html#remainingCapacity-prop">QSystemBatteryInfo::remainingCapacity</a>.</p>
+</div></div><!-- @@@remainingCapacityChanged -->
+<br/>
+<!-- $$$remainingCapacityPercentChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="remainingCapacityPercentChanged-signal"></a>BatteryInfo::remainingCapacityPercentChanged ( int )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted when battery capacity in percent has changed.</p>
+<p>See also <a href="qsystembatteryinfo.html#remainingCapacityPercent-prop">QSystemBatteryInfo::remainingCapacityPercent</a>.</p>
+</div></div><!-- @@@remainingCapacityPercentChanged -->
+<br/>
+<!-- $$$remainingChargingTimeChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="remainingChargingTimeChanged-signal"></a>BatteryInfo::remainingChargingTimeChanged ( int )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted when remianing charge time has changed.</p>
+<p>See also <a href="qsystembatteryinfo.html#remainingChargingTime-prop">QSystemBatteryInfo::remainingChargingTime</a>.</p>
+</div></div><!-- @@@remainingChargingTimeChanged -->
+<br/>
+<p class="naviNextPrevious footerNavi">
+</p>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativegraphicsgeomap.cpp -->
+  <title>Qt 1.2: QML Map Element</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="qdeclarativeelements.html">QML Elements</a></li>              <li>QML Map Element</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<p class="naviNextPrevious headerNavi">
+</p><p/>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QML Map Element</h1>
+<span class="subtitle"></span>
+<!-- $$$Map-brief -->
+<p>The Map element displays a map. <a href="#details">More...</a></p>
+<!-- @@@Map -->
+<li><a href="qml-map-members.html">List of all members, including inherited members</a></li>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-map.html#center-prop">center</a></b></b> : Coordinate</li>
+<li class="fn"><b><b><a href="qml-map.html#connectivityMode-prop">connectivityMode</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-map.html#mapType-prop">mapType</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-map.html#maximumZoomLevel-prop">maximumZoomLevel</a></b></b> : qreal</li>
+<li class="fn"><b><b><a href="qml-map.html#minimumZoomLevel-prop">minimumZoomLevel</a></b></b> : qreal</li>
+<li class="fn"><b><b><a href="qml-map.html#objects-prop">objects</a></b></b> : list&lt;QGeoMapObject&gt;</li>
+<li class="fn"><b><b><a href="qml-map.html#plugin-prop">plugin</a></b></b> : Plugin</li>
+<li class="fn"><b><b><a href="qml-map.html#size-prop">size</a></b></b> : QSizeF</li>
+<li class="fn"><b><b><a href="qml-map.html#zoomLevel-prop">zoomLevel</a></b></b> : qreal</li>
+</ul>
+<a name="methods"></a>
+<h2>Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-map.html#addMapObject-method">addMapObject</a></b></b></li>
+<li class="fn"><b><b><a href="qml-map.html#removeMapObject-method">removeMapObject</a></b></b></li>
+<li class="fn"><b><b><a href="qml-map.html#toCoordinate-method">toCoordinate</a></b></b></li>
+<li class="fn"><b><b><a href="qml-map.html#toScreenPosition-method">toScreenPosition</a></b></b></li>
+</ul>
+<!-- $$$Map-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>The Map element can be used be used to display a map of the world. The bulk of the functionality is provided by a mapping plugin described by the Plugin element associated with the Map.</p>
+<p>Various map objects can be added to the map. These map objects are specified in terms of coordinates and metres.</p>
+<p>MapObjects can be directly added to the Map element and it will display them automatically. The various objects that can be added include:</p>
+<ul>
+<li><a href="qml-maprectangle.html">MapRectangle</a></li>
+<li><a href="qml-mapcircle.html">MapCircle</a></li>
+<li><a href="qml-maptext.html">MapText</a></li>
+<li><a href="qml-mapimage.html">MapImage</a></li>
+<li><a href="qml-mappolygon.html">MapPolygon</a></li>
+<li><a href="qml-mappolyline.html">MapPolyline</a></li>
+<li><a href="qml-mapgroup.html">MapGroup</a></li>
+<li><a href="qml-mapobjectview.html">MapObjectView</a></li>
+</ul>
+<p>Of the above list, <a href="qml-mapobjectview.html">MapObjectView</a> is a special case and not a MapObject as such. Here is a small example to illustrate this:</p>
+<pre class="highlightedCode brush: cpp">         Map {
+             id: map
+             plugin : Plugin {name : &quot;nokia&quot;}
+             anchors.fill: parent
+             size.width: parent.width
+             size.height: parent.height
+             zoomLevel: 10
+
+             MapObjectView {
+                 id: allLandmarks
+                 model: landmarkModelAll
+                 delegate: Component {
+                     MapCircle {
+                         color: &quot;green&quot;
+                         radius: 1000
+                         center: Coordinate {
+                             latitude: landmark.coordinate.latitude
+                             longitude: landmark.coordinate.longitude
+                         }
+                     }
+                 }
+             }
+
+             MapCircle {
+                 id: myPosition
+                 color: &quot;yellow&quot;
+                 radius: 1000
+                 center: myPositionSource.position.coordinate
+             }</pre>
+<p>Mouse handling is done by adding <a href="qml-mapmousearea.html">MapMouseArea</a> items as children of either MapObjects or the Map item itself.</p>
+<p>The Map element is part of the <b>QtMobility.location 1.2</b> module.</p>
+<!-- @@@Map -->
+<h2>Property Documentation</h2>
+<!-- $$$center -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="center-prop"></a>center : <a href="qml-coordinate.html">Coordinate</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the coordinate which occupies the center of the mapping viewport.</p>
+<p>The default value is an arbitrary valid coordinate.</p>
+</div></div><!-- @@@center -->
+<br/>
+<!-- $$$connectivityMode -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="connectivityMode-prop"></a>connectivityMode : enumeration</p></td></tr></table></div><div class="qmldoc"><p>This property holds the connectivity mode used to fetch the map data.</p>
+<p>The mode can be one of:</p>
+<ul>
+<li>Map.OfflineMode</li>
+<li>Map.OnlineMode</li>
+<li>Map.HybridMode</li>
+</ul>
+<p>The default value is determined by the plugin.</p>
+</div></div><!-- @@@connectivityMode -->
+<br/>
+<!-- $$$mapType -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="mapType-prop"></a>mapType : enumeration</p></td></tr></table></div><div class="qmldoc"><p>This property holds the type of map to display.</p>
+<p>The type can be one of:</p>
+<ul>
+<li>Map.StreetMap</li>
+<li>Map.SatelliteMapDay</li>
+<li>Map.SatelliteMapNight</li>
+<li>Map.TerrainMap</li>
+</ul>
+<p>The default value is determined by the plugin.</p>
+</div></div><!-- @@@mapType -->
+<br/>
+<!-- $$$maximumZoomLevel -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="maximumZoomLevel-prop"></a>maximumZoomLevel : <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the maximum valid zoom level for the map.</p>
+</div></div><!-- @@@maximumZoomLevel -->
+<br/>
+<!-- $$$minimumZoomLevel -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="minimumZoomLevel-prop"></a>minimumZoomLevel : <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the minimum valid zoom level for the map.</p>
+</div></div><!-- @@@minimumZoomLevel -->
+<br/>
+<!-- $$$objects -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="objects-prop"></a><span class="qmldefault">default</span>objects : list&lt;<a href="qgeomapobject.html">QGeoMapObject</a>&gt;</p></td></tr></table></div><div class="qmldoc"><p>This property holds the list of objects associated with this map.</p>
+<p>The various objects that can be added include:</p>
+<ul>
+<li><a href="qml-maprectangle.html">MapRectangle</a></li>
+<li><a href="qml-mapcircle.html">MapCircle</a></li>
+<li><a href="qml-maptext.html">MapText</a></li>
+<li><a href="qml-mapimage.html">MapImage</a></li>
+<li><a href="qml-mappolygon.html">MapPolygon</a></li>
+<li><a href="qml-mappolyline.html">MapPolyline</a></li>
+<li><a href="qml-mapgroup.html">MapGroup</a></li>
+</ul>
+</div></div><!-- @@@objects -->
+<br/>
+<!-- $$$plugin -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="plugin-prop"></a>plugin : <a href="qml-plugin.html">Plugin</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the plugin which provides the mapping functionality.</p>
+<p>This is write-once property. Once the map has a plugin associated with it any attempted modifications of the plugin will be ignored.</p>
+</div></div><!-- @@@plugin -->
+<br/>
+<!-- $$$size -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="size-prop"></a>size : <a href="http://qt.nokia.com/doc/4.7/qsizef.html">QSizeF</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the size of the map viewport.</p>
+</div></div><!-- @@@size -->
+<br/>
+<!-- $$$zoomLevel -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="zoomLevel-prop"></a>zoomLevel : <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the zoom level for the map.</p>
+<p>Larger values for the zoom level provide more detail.</p>
+<p>The default value is 8.0&#x2e;</p>
+</div></div><!-- @@@zoomLevel -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$addMapObject -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="addMapObject-method"></a>Map::addMapObject ( MapObject )</p></td></tr></table></div><div class="qmldoc"><p>Adds the given MapOject to the Map. If the object already is on the Map, it will not be added again.</p>
+<p>As an example, consider you have a <a href="qml-mapcircle.html">MapCircle</a> presenting your current position:</p>
+<pre class="highlightedCode brush: cpp">             MapCircle {
+                 id: myPositionMarker
+                 center: myPositionSource.position.coordinate
+                 radius: 100
+                 color: &quot;yellow&quot;
+             }</pre>
+<p>You can add it to Map (alterntively it can be defined as a child element of the Map):</p>
+<pre class="highlightedCode brush: cpp">             onButton2Clicked: {
+                 map.addMapObject(myPositionMarker)
+             }</pre>
+<p>Note: MapObjectViews can not be added with this method.</p>
+</div></div><!-- @@@addMapObject -->
+<br/>
+<!-- $$$removeMapObject -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="removeMapObject-method"></a>Map::removeMapObject ( MapObject )</p></td></tr></table></div><div class="qmldoc"><p>Removes the given MapObject from the Map. If the MapObject does not exist, function does nothing.</p>
+<p>As an example, consider you have a <a href="qml-mapcircle.html">MapCircle</a> presenting your current position:</p>
+<pre class="highlightedCode brush: cpp">             MapCircle {
+                 id: myPositionMarker
+                 center: myPositionSource.position.coordinate
+                 radius: 100
+                 color: &quot;yellow&quot;
+             }</pre>
+<p>You can remove it from the Map element:</p>
+<pre class="highlightedCode brush: cpp">             onButton1Clicked: {
+                 map.removeMapObject(myPositionMarker)
+             }</pre>
+</div></div><!-- @@@removeMapObject -->
+<br/>
+<!-- $$$toCoordinate -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="toCoordinate-method"></a>Map::toCoordinate ( <a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a> <i>screenPosition</i> )</p></td></tr></table></div><div class="qmldoc"><p>Returns the coordinate which corresponds to the screen position <i>screenPosition</i>.</p>
+<p>Returns an invalid coordinate if <i>screenPosition</i> is not within the current viewport.</p>
+<p>An example to constraint landmarks of a model to just those currently on Map:</p>
+<pre class="highlightedCode brush: cpp">     LandmarkBoxFilter {
+         id: boxFilter
+         topLeft: map.toCoordinate(Qt.point(0,0))
+         bottomRight: map.toCoordinate(Qt.point(map.width, map.height))
+     }</pre>
+</div></div><!-- @@@toCoordinate -->
+<br/>
+<!-- $$$toScreenPosition -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="toScreenPosition-method"></a>Map::toScreenPosition ( <a href="qml-coordinate.html">Coordinate</a> <i>coordinate</i> )</p></td></tr></table></div><div class="qmldoc"><p>Returns the screen position which corresponds to the coordinate <i>coordinate</i>.</p>
+<p>Returns an invalid <a href="http://qt.nokia.com/doc/4.7/qpointf.html">QPointF</a> if <i>coordinate</i> is not within the current viewport.</p>
+</div></div><!-- @@@toScreenPosition -->
+<br/>
+<p class="naviNextPrevious footerNavi">
+</p>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

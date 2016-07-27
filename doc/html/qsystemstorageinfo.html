@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qsystemstorageinfo.cpp -->
+  <title>Qt 1.2: QSystemStorageInfo Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtsysteminfo.html">QtSystemInfo</a></li>
+              <li>QSystemStorageInfo</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QSystemStorageInfo Class Reference</h1>
+<!-- $$$QSystemStorageInfo-brief -->
+<p>The QSystemStorageInfo class provides access to disk storage information from the system. <a href="#details">More...</a></p>
+<!-- @@@QSystemStorageInfo -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QSystemStorageInfo&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qsystemstorageinfo-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#DriveType-enum">DriveType</a></b> { NoDrive, InternalDrive, RemovableDrive, RemoteDrive, ..., RamDrive }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#StorageState-enum">StorageState</a></b> { UnknownStorageState, NormalStorageState, LowStorageState, VeryLowStorageState, CriticalStorageState }</td></tr>
+</table>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><a href="qsystemstorageinfo.html#logicalDrives-prop">logicalDrives</a></b> : const QStringList</li>
+</ul>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#QSystemStorageInfo">QSystemStorageInfo</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#dtor.QSystemStorageInfo">~QSystemStorageInfo</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qlonglong </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#availableDiskSpace">availableDiskSpace</a></b> ( const QString &amp; <i>volumeDrive</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSystemStorageInfo::StorageState </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#getStorageState">getStorageState</a></b> ( const QString &amp; <i>driveVolume</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qlonglong </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#totalDiskSpace">totalDiskSpace</a></b> ( const QString &amp; <i>volumeDrive</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSystemStorageInfo::DriveType </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#typeForDrive">typeForDrive</a></b> ( const QString &amp; <i>driveVolume</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#uriForDrive">uriForDrive</a></b> ( const QString &amp; <i>driveVolume</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#logicalDriveChanged">logicalDriveChanged</a></b> ( bool <i>added</i>, const QString &amp; <i>vol</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#storageStateChanged">storageStateChanged</a></b> ( const QString &amp; <i>vol</i>, QSystemStorageInfo::StorageState <i>state</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#logicalDrives-prop">logicalDrives</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QSystemStorageInfo-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QSystemStorageInfo class provides access to disk storage information from the system.</p>
+</div>
+<!-- @@@QSystemStorageInfo -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$DriveType$$$NoDrive$$$InternalDrive$$$RemovableDrive$$$RemoteDrive$$$CdromDrive$$$InternalFlashDrive$$$RamDrive -->
+<h3 class="fn"><a name="DriveType-enum"></a>enum QSystemStorageInfo::DriveType</h3>
+<p>This enum describes the type of drive or volume</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::NoDrive</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Drive type undetermined.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::InternalDrive</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Is internal mass storage drive like a hard drive.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::RemovableDrive</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Is a removable disk like MMC.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::RemoteDrive</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">Is a network drive.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::CdromDrive</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">Is a cd rom drive.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::InternalFlashDrive</tt></td><td class=" topAlign"><tt>5</tt></td><td  class="topAlign">Is an internal flash disk, or Phone Memory.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::RamDrive</tt></td><td class=" topAlign"><tt>6</tt></td><td  class="topAlign">Is a virtual drive made in RAM memory.</td></tr>
+</table>
+<!-- @@@DriveType -->
+<!-- $$$StorageState$$$UnknownStorageState$$$NormalStorageState$$$LowStorageState$$$VeryLowStorageState$$$CriticalStorageState -->
+<h3 class="fn"><a name="StorageState-enum"></a>enum QSystemStorageInfo::StorageState</h3>
+<p>This enum describes the state of the storage level of drive or volume.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::UnknownStorageState</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">Storage level indicates an error, offline or unknown.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::NormalStorageState</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">Storage level indicates normal.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::LowStorageState</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Storage level indicates below 40%.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::VeryLowStorageState</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">Storage level indicates below 10%.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemStorageInfo::CriticalStorageState</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">Storage level indicates below 2%.</td></tr>
+</table>
+<!-- @@@StorageState -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$logicalDrives-prop$$$logicalDrives$$$logicalDriveChangedboolconstQString& -->
+<h3 class="fn"><a name="logicalDrives-prop"></a>logicalDrives : const <a href="http://qt.nokia.com/doc/4.7/qstringlist.html">QStringList</a></h3>
+<p>This property holds the logical drives.</p>
+<p>Returns a <a href="http://qt.nokia.com/doc/4.7/qstringlist.html">QStringList</a> of volumes or partitions, or an empty list if no drives are found.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QStringList </td><td class="memItemRight bottomAlign"><b>logicalDrives</b> ()</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemstorageinfo.html#logicalDriveChanged">logicalDriveChanged</a></b> ( bool <i>added</i>, const QString &amp; <i>vol</i> )</td></tr>
+</table>
+<!-- @@@logicalDrives -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QSystemStorageInfo[overload1]$$$QSystemStorageInfoQObject* -->
+<h3 class="fn"><a name="QSystemStorageInfo"></a>QSystemStorageInfo::QSystemStorageInfo ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qsystemstorageinfo.html">QSystemStorageInfo</a> with the given <i>parent</i>.</p>
+<!-- @@@QSystemStorageInfo -->
+<!-- $$$~QSystemStorageInfo[overload1]$$$~QSystemStorageInfo -->
+<h3 class="fn"><a name="dtor.QSystemStorageInfo"></a>QSystemStorageInfo::~QSystemStorageInfo ()</h3>
+<p>Destroys the <a href="qsystemstorageinfo.html">QSystemStorageInfo</a> object.</p>
+<!-- @@@~QSystemStorageInfo -->
+<!-- $$$availableDiskSpace[overload1]$$$availableDiskSpaceconstQString& -->
+<h3 class="fn"><a name="availableDiskSpace"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qlonglong-typedef">qlonglong</a> QSystemStorageInfo::availableDiskSpace ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>volumeDrive</i> )</h3>
+<p>Returns the amount of available free space on the <i>volumeDrive</i>, in bytes.</p>
+<!-- @@@availableDiskSpace -->
+<!-- $$$getStorageState[overload1]$$$getStorageStateconstQString& -->
+<h3 class="fn"><a name="getStorageState"></a><a href="qsystemstorageinfo.html#StorageState-enum">QSystemStorageInfo::StorageState</a> QSystemStorageInfo::getStorageState ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>driveVolume</i> )</h3>
+<p>Returns the storage state of volume <i>driveVolume</i></p>
+<!-- @@@getStorageState -->
+<!-- $$$logicalDriveChanged[overload1]$$$logicalDriveChangedboolconstQString& -->
+<h3 class="fn"><a name="logicalDriveChanged"></a>void QSystemStorageInfo::logicalDriveChanged ( bool <i>added</i>, const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>vol</i> )<tt> [signal]</tt></h3>
+<p>This signal gets emitted when new storage has been added or removed from the system. <i>added</i> is true when a new drive is found, otherwise false when removed. <i>vol</i> is the volume's name.</p>
+<!-- @@@logicalDriveChanged -->
+<!-- $$$storageStateChanged[overload1]$$$storageStateChangedconstQString&QSystemStorageInfo::StorageState -->
+<h3 class="fn"><a name="storageStateChanged"></a>void QSystemStorageInfo::storageStateChanged ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>vol</i>, <a href="qsystemstorageinfo.html#StorageState-enum">QSystemStorageInfo::StorageState</a> <i>state</i> )<tt> [signal]</tt></h3>
+<p>This signal gets emitted when a volume has changed from one <a href="qsystemstorageinfo.html#StorageState-enum">StorageState</a> to another, <i>vol</i> being the volume name, and <i>state</i> being the new state.</p>
+<p>The polling time may be different for different platforms.</p>
+<!-- @@@storageStateChanged -->
+<!-- $$$totalDiskSpace[overload1]$$$totalDiskSpaceconstQString& -->
+<h3 class="fn"><a name="totalDiskSpace"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qlonglong-typedef">qlonglong</a> QSystemStorageInfo::totalDiskSpace ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>volumeDrive</i> )</h3>
+<p>Returns the amount of total space on the <i>volumeDrive</i>, in bytes.</p>
+<!-- @@@totalDiskSpace -->
+<!-- $$$typeForDrive[overload1]$$$typeForDriveconstQString& -->
+<h3 class="fn"><a name="typeForDrive"></a><a href="qsystemstorageinfo.html#DriveType-enum">QSystemStorageInfo::DriveType</a> QSystemStorageInfo::typeForDrive ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>driveVolume</i> )</h3>
+<p>Returns the type of volume <i>driveVolume</i></p>
+<!-- @@@typeForDrive -->
+<!-- $$$uriForDrive[overload1]$$$uriForDriveconstQString& -->
+<h3 class="fn"><a name="uriForDrive"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QSystemStorageInfo::uriForDrive ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>driveVolume</i> )</h3>
+<p>Returns the uri, or unique identifier for <i>driveVolume</i>.</p>
+<!-- @@@uriForDrive -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativefeedbackactuator.cpp -->
+  <title>Qt 1.2: QML Actuator Element</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="qdeclarativeelements.html">QML Elements</a></li>              <li>QML Actuator Element</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QML Actuator Element</h1>
+<span class="subtitle"></span>
+<!-- $$$Actuator-brief -->
+<p>The Actuator element represents a feedback actuator. <a href="#details">More...</a></p>
+<!-- @@@Actuator -->
+<p>Actuator instantiates the C++ class <a href="qfeedbackactuator.html">QFeedbackActuator</a></p>
+<li><a href="qml-actuator-members.html">List of all members, including inherited members</a></li>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-actuator.html#actuatorId-prop">actuatorId</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-actuator.html#enabled-prop">enabled</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-actuator.html#name-prop">name</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-actuator.html#state-prop">state</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-actuator.html#valid-prop">valid</a></b></b> : bool</li>
+</ul>
+<a name="methods"></a>
+<h2>Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-actuator.html#isCapabilitySupported-method">isCapabilitySupported</a></b></b></li>
+</ul>
+<!-- $$$Actuator-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>This element is part of the <b>QtMobility.feedback 1.1</b> module.</p>
+<p>The Actuator class maps directly to the <a href="qfeedbackactuator.html">QFeedbackActuator</a> C++ class, and can be used with <a href="qml-hapticseffect.html">HapticsEffect</a> elements.</p>
+<p>There are several predefined enumerations and constants provided in this object:</p>
+<p>1. Capability</p>
+<ul>
+<li>Envelope - Value specifying that the device can bound its intensity by an Envelope.</li>
+<li>Period - Value specifying that the device can play periodic effects.</li>
+</ul>
+<p>2. State</p>
+<ul>
+<li>Busy - The actuator is busy.</li>
+<li>Ready - The actuator is ready to play an effect.</li>
+<li>Unknown - The actuator is in an unknown state.</li>
+</ul>
+<p>See also <a href="qml-hapticseffect.html">HapticsEffect</a> and <a href="qfeedbackactuator.html">QFeedbackActuator</a>.</p>
+<!-- @@@Actuator -->
+<h2>Property Documentation</h2>
+<!-- $$$actuatorId -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="actuatorId-prop"></a>actuatorId : int</p></td></tr></table></div><div class="qmldoc"><p>This property holds the id of the feedback actuator. This property is read only.</p>
+</div></div><!-- @@@actuatorId -->
+<br/>
+<!-- $$$enabled -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="enabled-prop"></a>enabled : bool</p></td></tr></table></div><div class="qmldoc"><p>This property is true if the feedback actuator is enabled.</p>
+</div></div><!-- @@@enabled -->
+<br/>
+<!-- $$$name -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="name-prop"></a><span class="qmlreadonly">read-only</span>name : string</p></td></tr></table></div><div class="qmldoc"><p>This property holds the name of the feedback actuator. This property is read only.</p>
+</div></div><!-- @@@name -->
+<br/>
+<!-- $$$state -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="state-prop"></a><span class="qmlreadonly">read-only</span>state : enumeration</p></td></tr></table></div><div class="qmldoc"><p>This property holds the state of the feedback actuator. This property is read only.</p>
+</div></div><!-- @@@state -->
+<br/>
+<!-- $$$valid -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="valid-prop"></a><span class="qmlreadonly">read-only</span>valid : bool</p></td></tr></table></div><div class="qmldoc"><p>This property is true if the actuator is valid. This property is read only.</p>
+</div></div><!-- @@@valid -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$isCapabilitySupported -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="isCapabilitySupported-method"></a>bool Actuator::isCapabilitySupported ( enumeration <i>capability</i> )</p></td></tr></table></div><div class="qmldoc"><p>Returns if the actuator supports the supplied <i>capability</i>, available capabilities are:</p>
+<ul>
+<li>Envelope - Value specifying that the device can bound its intensity by an Envelope.</li>
+<li>Period - Value specifying that the device can play periodic effects.</li>
+</ul>
+</div></div><!-- @@@isCapabilitySupported -->
+<br/>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

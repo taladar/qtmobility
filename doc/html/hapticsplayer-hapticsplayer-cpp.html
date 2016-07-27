@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt 1.2: hapticsplayer.cpp Example File (hapticsplayer/hapticsplayer.cpp)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<h1 class="title">hapticsplayer.cpp Example File</h1>
+<span class="small-subtitle">hapticsplayer/hapticsplayer.cpp</span>
+<!-- $$$hapticsplayer/hapticsplayer.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the examples of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** You may use this file under the terms of the BSD license as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+ **     the names of its contributors may be used to endorse or promote
+ **     products derived from this software without specific prior written
+ **     permission.
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;hapticsplayer.h&quot;
+
+ #include &lt;QtCore/qmetaobject.h&gt;
+
+ #include &lt;QtGui/QFileDialog&gt;
+ #include &lt;QDebug&gt;
+
+ static const char ENUM_THEME_EFFECT[] = &quot;ThemeEffect&quot;;
+ static const char ENUM_ANIMATION_STATE[] = &quot;State&quot;;
+
+ HapticsPlayer::HapticsPlayer() : actuator(0)
+ {
+     ui.setupUi(this);
+
+ #if defined(Q_WS_MAEMO_5)
+     <span class="comment">// maemo5 style problem: title of groupboxes is rendered badly if there isn't enough space</span>
+     <span class="comment">// that is, the sizehint of the title area is Preferred rather than Minimum.</span>
+     <span class="comment">// to fix that, we manually tweak some spacers.</span>
+     ui.verticalSpacer_2-&gt;changeSize(20, 20, QSizePolicy::Expanding, QSizePolicy::Fixed);
+     ui.verticalSpacer_3-&gt;changeSize(20, 20, QSizePolicy::Expanding, QSizePolicy::Fixed);
+     ui.verticalSpacer_4-&gt;changeSize(20, 30, QSizePolicy::Expanding, QSizePolicy::Fixed);
+     ui.verticalSpacer_5-&gt;changeSize(20, 30, QSizePolicy::Expanding, QSizePolicy::Fixed);
+     ui.verticalSpacer_6-&gt;changeSize(20, 20, QSizePolicy::Expanding, QSizePolicy::Fixed);
+     ui.verticalSpacer_7-&gt;changeSize(20, 30, QSizePolicy::Expanding, QSizePolicy::Fixed);
+ #endif
+
+     connect(ui.actuators, SIGNAL(currentIndexChanged(int)), SLOT(actuatorChanged()));
+     connect(ui.enabled, SIGNAL(toggled(bool)), SLOT(enabledChanged(bool)));
+     connect(ui.playPause, SIGNAL(pressed()), SLOT(playPauseClicked()));
+     connect(ui.stop, SIGNAL(pressed()), &amp;effect, SLOT(stop()));
+     connect(ui.duration, SIGNAL(valueChanged(int)), SLOT(durationChanged(int)));
+     connect(ui.intensity, SIGNAL(valueChanged(int)), SLOT(intensityChanged(int)));
+
+     <span class="comment">//for the envelope</span>
+     connect(ui.attackTime, SIGNAL(valueChanged(int)), SLOT(attackTimeChanged(int)));
+     connect(ui.attackIntensity, SIGNAL(valueChanged(int)), SLOT(attackIntensityChanged(int)));
+     connect(ui.fadeTime, SIGNAL(valueChanged(int)), SLOT(fadeTimeChanged(int)));
+     connect(ui.fadeIntensity, SIGNAL(valueChanged(int)), SLOT(fadeIntensityChanged(int)));
+
+     <span class="comment">//for the period</span>
+     connect(ui.grpPeriod, SIGNAL(toggled(bool)), SLOT(periodToggled(bool)));
+     connect(ui.period, SIGNAL(valueChanged(int)), SLOT(periodChanged(int)));
+
+     connect(ui.instantPlay, SIGNAL(pressed()), SLOT(instantPlayClicked()));
+
+     <span class="comment">//file API</span>
+     connect(ui.browse, SIGNAL(pressed()), SLOT(browseClicked()));
+     connect(ui.filePlayPause, SIGNAL(pressed()), SLOT(filePlayPauseClicked()));
+     connect(ui.fileStop, SIGNAL(pressed()), &amp;fileEffect, SLOT(stop()));
+
+     foreach(QFeedbackActuator *dev, QFeedbackActuator::actuators()) {
+         ui.actuators-&gt;addItem(dev-&gt;name());
+     }
+     if (QFeedbackActuator::actuators().count() &gt; 0)
+         ui.actuators-&gt;setCurrentIndex(0);
+
+     <span class="comment">//adding the instant effects</span>
+     const QMetaObject &amp;mo = QFeedbackEffect::staticMetaObject;
+     const QMetaEnum &amp;me = mo.enumerator(mo.indexOfEnumerator(ENUM_THEME_EFFECT));
+     Q_ASSERT(me.keyCount());
+     for (int i = 0 ; i &lt; me.keyCount(); ++i) {
+         ui.instantEffect-&gt;addItem(me.key(i));
+     }
+
+     <span class="comment">//initialization</span>
+     durationChanged(effect.duration());
+     intensityChanged(ui.intensity-&gt;value());
+     attackTimeChanged(ui.attackTime-&gt;value());
+     attackIntensityChanged(ui.attackIntensity-&gt;value());
+     fadeTimeChanged(ui.fadeTime-&gt;value());
+     fadeIntensityChanged(ui.fadeIntensity-&gt;value());
+
+     ui.tabWidget-&gt;setTabEnabled(1, QFeedbackEffect::supportsThemeEffect());
+     ui.tabWidget-&gt;setTabEnabled(2, !QFeedbackFileEffect::supportedMimeTypes().isEmpty());
+ #ifdef Q_OS_SYMBIAN
+     <span class="comment">// Due to focus handling problems when using tabwidget in Qt/s60 with old non-touch-screen devices</span>
+     <span class="comment">// we have to handle focus explicitly here, this might get fixed at some point</span>
+     connect(ui.tabWidget,SIGNAL(currentChanged(int)),this,SLOT(tabChanged(int)));
+     <span class="comment">// force initial focus to a button on the first tab</span>
+     ui.tabWidget-&gt;setCurrentIndex(0);
+     ui.playPause-&gt;setFocus();
+ #endif
+     <span class="comment">//that is a hackish way of updating the info concerning the effects</span>
+     startTimer(50);
+ }
+
+ QFeedbackActuator* HapticsPlayer::currentActuator()
+ {
+     QList&lt;QFeedbackActuator*&gt; devs = QFeedbackActuator::actuators();
+     int index = ui.actuators-&gt;currentIndex();
+     if (index == -1 || devs.count() == 0 || index &gt; devs.count()) {
+         if (!actuator) {
+             actuator = new QFeedbackActuator(this);
+         }
+         return actuator;
+     }
+     return devs.at(index);
+ }
+
+ void HapticsPlayer::actuatorChanged()
+ {
+     QFeedbackActuator* dev = currentActuator();
+     if (dev) {
+         enabledChanged(dev-&gt;isEnabled());
+         effect.setActuator(dev);
+     }
+ }
+
+ #ifdef Q_OS_SYMBIAN
+ void HapticsPlayer::tabChanged(int index)
+ {
+     switch(index) {
+         case 0:
+            ui.playPause-&gt;setFocus();
+            break;
+         case 1:
+            ui.instantPlay-&gt;setFocus();
+            break;
+         case 2:
+            ui.browse-&gt;setFocus();
+            break;
+     }
+ }
+ #endif
+
+ void HapticsPlayer::enabledChanged(bool on)
+ {
+     if (!on)
+         effect.stop();
+     QFeedbackActuator* dev = currentActuator();
+     if (dev) {
+         dev-&gt;setEnabled(on);
+         ui.enabled-&gt;setChecked(dev-&gt;isEnabled());
+
+         if (dev-&gt;isEnabled() &amp;&amp; (dev-&gt;isCapabilitySupported(QFeedbackActuator::Envelope))) {
+             ui.envelope-&gt;setEnabled(true);
+             ui.envelope-&gt;show();
+         } else {
+             ui.envelope-&gt;setEnabled(true);
+             ui.envelope-&gt;hide();
+         }
+         if (dev-&gt;isEnabled() &amp;&amp; (dev-&gt;isCapabilitySupported(QFeedbackActuator::Period))) {
+             ui.grpPeriod-&gt;setEnabled(true);
+             ui.grpPeriod-&gt;show();
+         } else {
+             ui.grpPeriod-&gt;setEnabled(false);
+             ui.grpPeriod-&gt;hide();
+         }
+     }
+ #ifdef Q_OS_SYMBIAN
+     ui.playPause-&gt;setFocus();
+ #endif
+ }
+
+ void HapticsPlayer::playPauseClicked()
+ {
+     if (effect.state() == QFeedbackEffect::Running) {
+         effect.pause();
+     } else {
+         effect.start();
+     }
+ }
+
+ void HapticsPlayer::durationChanged(int duration)
+ {
+     effect.setDuration(duration);
+     ui.attackTime-&gt;setMaximum(duration);
+     ui.fadeTime-&gt;setMaximum(duration);
+     attackTimeChanged(ui.attackTime-&gt;value());
+ }
+
+ void HapticsPlayer::intensityChanged(int value)
+ {
+     effect.setIntensity(qreal(value) / ui.intensity-&gt;maximum());
+     ui.lblIntensity-&gt;setText(QString::number(effect.intensity()));
+ }
+
+ void HapticsPlayer::timerEvent(QTimerEvent *e)
+ {
+     <span class="comment">//update the display for effect</span>
+     {
+         QFeedbackEffect::State newState = effect.state();
+         const QMetaObject *mo = effect.metaObject();
+         ui.effectState-&gt;setText(mo-&gt;enumerator(mo-&gt;indexOfEnumerator(ENUM_ANIMATION_STATE)).key(newState));
+         ui.stop-&gt;setEnabled(newState != QFeedbackEffect::Stopped);
+         if (effect.state() == QFeedbackEffect::Paused || effect.state() == QFeedbackEffect::Stopped)
+             ui.playPause-&gt;setText(tr(&quot;Play&quot;));
+         else
+             ui.playPause-&gt;setText(tr(&quot;Pause&quot;));
+     }
+
+     <span class="comment">//update the display for effect</span>
+     {
+         QFeedbackEffect::State newState = fileEffect.state();
+         const QMetaObject *mo = fileEffect.metaObject();
+         ui.fileEffectState-&gt;setText(mo-&gt;enumerator(mo-&gt;indexOfEnumerator(ENUM_ANIMATION_STATE)).key(newState));
+         ui.fileStop-&gt;setEnabled(newState != QFeedbackEffect::Stopped);
+         ui.filePlayPause-&gt;setEnabled(fileEffect.isLoaded());
+         ui.browse-&gt;setEnabled(newState == QFeedbackEffect::Stopped);
+         ui.fileStatus-&gt;setText( fileEffect.isLoaded() ? QString::fromLatin1(&quot;%1 : %2 ms&quot;).arg(tr(&quot;Loaded&quot;)).arg(fileEffect.duration()) : tr(&quot;Not Loaded&quot;) );
+     }
+     QWidget::timerEvent(e);
+ }
+
+ void HapticsPlayer::attackTimeChanged(int attackTime)
+ {
+     effect.setAttackTime(attackTime);
+     <span class="comment">//let's check the boundaries</span>
+     if (attackTime + ui.fadeTime-&gt;value() &gt; ui.duration-&gt;value())
+         ui.fadeTime-&gt;setValue(ui.duration-&gt;value() - attackTime);
+ }
+
+ void HapticsPlayer::attackIntensityChanged(int attackIntensity)
+ {
+     effect.setAttackIntensity(qreal(attackIntensity) / ui.attackIntensity-&gt;maximum());
+     ui.lblAttackIntensity-&gt;setText(QString::number(effect.attackIntensity()));
+ }
+
+ void HapticsPlayer::fadeTimeChanged(int fadeTime)
+ {
+     effect.setFadeTime(fadeTime);
+     <span class="comment">//let's check the boundaries</span>
+     if (fadeTime + ui.attackTime-&gt;value() &gt; ui.duration-&gt;value())
+         ui.attackTime-&gt;setValue(ui.duration-&gt;value() - fadeTime);
+ }
+
+ void HapticsPlayer::fadeIntensityChanged(int fadeIntensity)
+ {
+     effect.setFadeIntensity(qreal(fadeIntensity) / ui.fadeIntensity-&gt;maximum());
+     ui.lblFadeIntensity-&gt;setText(QString::number(effect.fadeIntensity()));
+ }
+
+ void HapticsPlayer::periodToggled(bool on)
+ {
+     effect.setPeriod(on ? ui.period-&gt;value() : 0);
+ }
+
+ void HapticsPlayer::periodChanged(int value)
+ {
+     effect.setPeriod(value);
+ }
+
+ void HapticsPlayer::instantPlayClicked()
+ {
+     const QMetaObject &amp;mo = QFeedbackEffect::staticMetaObject;
+     const QMetaEnum &amp;me = mo.enumerator(mo.indexOfEnumerator(ENUM_THEME_EFFECT));
+     QFeedbackEffect::playThemeEffect(QFeedbackEffect::ThemeEffect(me.keyToValue(ui.instantEffect-&gt;currentText().toLatin1())));
+ }
+
+ void HapticsPlayer::browseClicked()
+ {
+     QString filename = QFileDialog::getOpenFileName(this, tr(&quot;Feedback file&quot;));
+     if (!filename.isEmpty()) {
+         ui.filename-&gt;setText(QDir::toNativeSeparators(filename));
+         fileEffect.setSource(QUrl::fromLocalFile(filename));
+         fileEffect.load();
+     }
+ }
+
+ void HapticsPlayer::filePlayPauseClicked()
+ {
+     if (fileEffect.state() == QFeedbackEffect::Running)
+         fileEffect.pause();
+     else
+         fileEffect.start();
+ }
+
+ #include &quot;moc_hapticsplayer.cpp&quot;</pre>
+</div>
+<!-- @@@hapticsplayer/hapticsplayer.cpp -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

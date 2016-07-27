@@ -1,0 +1,41 @@
+/*
+* Copyright (c) 2001-2009 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description: 
+*
+*/
+
+
+TARGET          t_persistencelayer.exe
+targettype      EXE
+CAPABILITY   	ReadUserData WriteUserData
+UID           	0x1000097a 0x10003A73 //The same UID as CntSrv
+VENDORID 		0x70000001
+
+userinclude ../inc 
+systeminclude /epoc32/include 
+userinclude ../src ../tsrc/TestSyncPlugIn 
+userinclude 	. 
+userinclude 	../cntsrv/inc
+
+SOURCEPATH		.
+source		T_PersistenceLayer.cpp 
+source		T_CntTestImplementor.cpp 
+
+LIBRARY         euser.lib 
+LIBRARY         pimtestclient.lib
+LIBRARY         nbcnttestlib.lib 
+LIBRARY         efsrv.lib 
+LIBRARY         cntmodel.lib
+LIBRARY         cntsyncchecker.lib
+LIBRARY         cntpldbms.lib 

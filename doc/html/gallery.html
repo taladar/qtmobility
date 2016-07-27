@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- gallery.qdoc -->
+  <title>Qt 1.2: Document Gallery</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li>Document Gallery</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#namespace">Namespace</a></li>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level2"><a href="#requests">Requests</a></li>
+<li class="level2"><a href="#filters">Filters</a></li>
+<li class="level2"><a href="#galleries">Galleries</a></li>
+<li class="level2"><a href="#qgalleryquerymodel">QGalleryQueryModel</a></li>
+<li class="level2"><a href="#qml-elements"><a href="battery-charge.html#qml">QML</a> Elements</a></li>
+<li class="level1"><a href="#examples">Examples</a></li>
+</ul>
+</div>
+<h1 class="title">Document Gallery</h1>
+<span class="subtitle"></span>
+<!-- $$$gallery.html-description -->
+<div class="descr"> <a name="details"></a>
+<a name="namespace"></a>
+<h2>Namespace</h2>
+<p>The QtMobility APIs are placed into the <i>QtMobility</i> namespace. This is done to facilitate the future migration of QtMobility APIs into Qt. See the <a href="quickstart.html">Quickstart guide</a> for an example on how the namespace impacts on application development.</p>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>The Document Gallery provides an API for navigating and querying documents using their meta-data. The common use case would be populating the media selection views of a music player, or image viewer. It also provides API's for querying and editing the meta-data of individual documents.</p>
+<p>Typically all files in user directories should be available in the document gallery. The principal types are Audio, Video, Image, and (Office) Document, but files can also be categorized as a File, Folder, Text, or Playlist. There are also some meta-types composed from the meta-data of files, these are Artist, Album, AudioGenre, and PhotoAlbum.</p>
+<p>The document gallery API is composed of a set of asynchronous request (<a href="qgalleryabstractrequest.html">QGalleryAbstractRequest</a>) classes which talk to the system file indexing service, this would be tracker on Maemo platforms, the meta-data system (MDS) on Symbian and potentially Windows Search, or Spotlight on macs. There are three requests; <a href="qgalleryqueryrequest.html">QGalleryQueryRequest</a> takes a type, a parent item, and some filtering criteria (<a href="qgalleryfilter.html">QGalleryFilter</a>) and returns meta-data for all matching items. <a href="qgalleryitemrequest.html">QGalleryItemRequest</a> takes an item ID and returns meta-data for just that item. And <a href="qgallerytyperequest.html">QGalleryTypeRequest</a> takes an item type and returns meta-data describing that type.</p>
+<p>The requests operate on implementations of the <a href="qabstractgallery.html">QAbstractGallery</a>. The default implementation is <a href="qdocumentgallery.html">QDocumentGallery</a>, but it's possible to create alternative implementations which talk to a media server or web services.</p>
+<p>The primary interface to the results of a request is the <a href="qgalleryresultset.html">QGalleryResultSet</a> class which provides accessors for reading and writing the meta-data of a set of items.</p>
+<p>A <a href="qgalleryresultset.html">QGalleryResultSet</a> cannot be created directly and may not need to be accessed directly, instead an instance must be requested from a gallery using one of the gallery request classes which typically also provide convenience functions for accessing the items in a result set.</p>
+<a name="requests"></a>
+<h3>Requests</h3>
+<p>The gallery request classes inherit from <a href="qgalleryabstractrequest.html">QGalleryAbstractRequest</a> and are used to fetch items from a gallery, or to initiate service provided by a gallery.</p>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qgalleryabstractrequest.html">QGalleryAbstractRequest</a></p></td><td class="tblDescr"><p>Base class for gallery requests</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qgalleryitemrequest.html">QGalleryItemRequest</a></p></td><td class="tblDescr"><p>Request for the properties of a single item from a gallery</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qgalleryqueryrequest.html">QGalleryQueryRequest</a></p></td><td class="tblDescr"><p>Request for a set of items from a gallery</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qgallerytyperequest.html">QGalleryTypeRequest</a></p></td><td class="tblDescr"><p>Interface for requesting the properties of a type from a gallery</p></td></tr>
+</table>
+<a name="filters"></a>
+<h3>Filters</h3>
+<p>The filter classes provide a way to describe meta-data criteria items must satisfy to be included in the results of some requests.</p>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qgalleryfilter.html">QGalleryFilter</a></p></td><td class="tblDescr"><p>Filtering criteria for gallery requests</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qgalleryintersectionfilter.html">QGalleryIntersectionFilter</a></p></td><td class="tblDescr"><p>Filter which matches the intersection of two or more meta-data filters</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a></p></td><td class="tblDescr"><p>Filter which accepts items with meta-data properties matching a specific value</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qgalleryunionfilter.html">QGalleryUnionFilter</a></p></td><td class="tblDescr"><p>Filter which matches the union of two or more meta-data filters</p></td></tr>
+</table>
+<a name="galleries"></a>
+<h3>Galleries</h3>
+<p>The gallery classes provide instances of different gallery types. Currently the only gallery type is the Document Gallery.</p>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qabstractgallery.html">QAbstractGallery</a></p></td><td class="tblDescr"><p>Base class for gallery implementations</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qdocumentgallery.html">QDocumentGallery</a></p></td><td class="tblDescr"><p>Access to a gallery of documents and media present on a device</p></td></tr>
+</table>
+<a name="qgalleryquerymodel"></a>
+<h3>QGalleryQueryModel</h3>
+<p>The <a href="qgalleryquerymodel.html">QGalleryQueryModel</a> class implements a <a href="http://qt.nokia.com/doc/4.7/qabstractitemmodel.html">QAbstractItemModel</a> using <a href="qgalleryqueryrequest.html">QGalleryQueryRequest</a>. This is a convenience class which simplifies the process of presenting gallery items in a list view.</p>
+<a name="qml-elements"></a>
+<h3><a href="battery-charge.html#qml">QML</a> Elements</h3>
+<p>QML elements providing access to the document gallery are implemented in the <a href="qml-gallery.html">Gallery QML Plugin</a>.</p>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-documentgalleryitem.html">QML DocumentGalleryItem Element</a></p></td><td class="tblDescr"><p>The DocumentGalleryItem element allows you to request information about a single item from the document gallery</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-documentgallerymodel.html">QML DocumentGalleryModel Element</a></p></td><td class="tblDescr"><p>The DocumentGalleryModel element is used to specify a model containing items from the document gallery.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-documentgallerytype.html">QML DocumentGalleryType Element</a></p></td><td class="tblDescr"><p>The DocumentGalleryType element allows you to request information about an item type from the document gallery.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerycontainsfilter.html">QML GalleryContainsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryContainsFilter element provides a filter which tests if a meta-data property contains a string.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-galleryendswithfilter.html">QML GalleryEndsWithFilter Element</a></p></td><td class="tblDescr"><p>The GalleryEndsWithFilter element provides a filter which tests if a meta-data property ends with a string.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-galleryequalsfilter.html">QML GalleryEqualsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryEqualsFilter element provides a filter which tests if a meta-data property is equal to a value.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-galleryfilterintersection.html">QML GalleryFilterIntersection Element</a></p></td><td class="tblDescr"><p>The GalleryFilterIntersection elements provides a intersection of gallery filters.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-galleryfilterunion.html">QML GalleryFilterUnion Element</a></p></td><td class="tblDescr"><p>The GalleryFilterUnion elements provides a union of gallery filters.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-gallerygreaterthanequalsfilter.html">QML GalleryGreaterThanEqualsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryGreaterThanEqualsFilter element provides a filter which tests if a meta-data property is greater than or equal to a value.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerygreaterthanfilter.html">QML GalleryGreaterThanFilter Element</a></p></td><td class="tblDescr"><p>The GalleryGreaterThanFilter element provides a filter which tests if a meta-data property is greater than a value.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-gallerylessthanequalsfilter.html">QML GalleryLessThanEqualsFilter Element</a></p></td><td class="tblDescr"><p>The GalleryLessThanEqualsFilter element provides a filter which tests if a meta-data property is less than or equal to a value.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerylessthanfilter.html">QML GalleryLessThanFilter Element</a></p></td><td class="tblDescr"><p>The GalleryLessThanEqualsFilter element provides a filter which tests if a meta-data property is less than a value.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-gallerystartswithfilter.html">QML GalleryStartsWithFilter Element</a></p></td><td class="tblDescr"><p>The GalleryStartsWithFilter element provides a filter which tests if a meta-data property starts with a string.</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-gallerywildcardfilter.html">QML GalleryWildcardFilter Element</a></p></td><td class="tblDescr"><p>The GalleryWildcardFilter element provides a filter which tests a meta-data property against a value using wildcard matching.</p></td></tr>
+</table>
+<a name="examples"></a>
+<h2>Examples</h2>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="documentproperties.html">Document Properties</a></p></td><td class="tblDescr"><p></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="mediabrowser.html">Media Browser</a></p></td><td class="tblDescr"><p></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="declarative-music-browser.html">Music Browser</a></p></td><td class="tblDescr"><p></p></td></tr>
+</table>
+</div>
+<!-- @@@gallery.html -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

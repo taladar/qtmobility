@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativedeviceinfo.cpp -->
+  <title>Qt 1.2: QML DeviceInfo Element</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="qdeclarativeelements.html">QML Elements</a></li>              <li>QML DeviceInfo Element</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<p class="naviNextPrevious headerNavi">
+</p><p/>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QML DeviceInfo Element</h1>
+<span class="subtitle"></span>
+<!-- $$$DeviceInfo-brief -->
+<p>The DeviceInfo element allows you to access information anbout the device and receive notifications from the device. <a href="#details">More...</a></p>
+<!-- @@@DeviceInfo -->
+<li><a href="qml-deviceinfo-members.html">List of all members, including inherited members</a></li>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#batteryLevel-prop">batteryLevel</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#batteryStatus-prop">batteryStatus</a></b></b> : BatteryStatus</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#currentBluetoothPowerState-prop">currentBluetoothPowerState</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#currentPowerState-prop">currentPowerState</a></b></b> : PowerState</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#currentProfile-prop">currentProfile</a></b></b> : Profile</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#imei-prop">imei</a></b></b> : QString</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#imsi-prop">imsi</a></b></b> : QString</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#inputMethodType-prop">inputMethodType</a></b></b> : InputMethodFlags</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#isDeviceLocked-prop">isDeviceLocked</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#isKeyboardFlippedOpen-prop">isKeyboardFlippedOpen</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#isWirelessKeyboardConnected-prop">isWirelessKeyboardConnected</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#keyboardTypes-prop">keyboardTypes</a></b></b> : KeyboardTypeFlags</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#lockStatus-prop">lockStatus</a></b></b> : LockTypeFlags</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#manufacturer-prop">manufacturer</a></b></b> : QString</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#messageRingtoneVolume-28-29-prop">messageRingtoneVolume()</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#model-prop">model</a></b></b> : QString</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#monitorBatteryLevelChanges-prop">monitorBatteryLevelChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#monitorBatteryStatusChanges-prop">monitorBatteryStatusChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#monitorBluetoothStateChanges-prop">monitorBluetoothStateChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#monitorCurrentProfileChanges-prop">monitorCurrentProfileChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#monitorKeyboardFlips-28-29-prop">monitorKeyboardFlips()</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#monitorLockStatusChanges-28-29-prop">monitorLockStatusChanges()</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#monitorPowerStateChanges-prop">monitorPowerStateChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#monitorThermalStateChanges-prop">monitorThermalStateChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#monitorWirelessKeyboardConnects-28-29-prop">monitorWirelessKeyboardConnects()</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#primaryKeypadLightOn-28-29-prop">primaryKeypadLightOn()</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#productName-prop">productName</a></b></b> : QString</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#screen-prop">screen</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#secondaryKeypadLightOn-28-29-prop">secondaryKeypadLightOn()</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#simStatus-prop">simStatus</a></b></b> : SimStatus</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#uniqueID-prop">uniqueID</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#vibrationActive-28-29-prop">vibrationActive()</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#voiceRingtoneVolume-28-29-prop">voiceRingtoneVolume()</a></b></b> : int</li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#batteryLevelChanged-signal">batteryLevelChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#batteryStatusChanged-signal">batteryStatusChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#bluetoothStateChanged-signal">bluetoothStateChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#currentProfileChanged-signal">currentProfileChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#deviceLocked-signal">deviceLocked</a></b></b></li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#keyboardFlipped-signal">keyboardFlipped</a></b></b></li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#lockStatusChanged-signal">lockStatusChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#powerStateChanged-signal">powerStateChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#thermalStateChanged-signal">thermalStateChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-deviceinfo.html#wirelessKeyboardConnected-signal">wirelessKeyboardConnected</a></b></b></li>
+</ul>
+<!-- $$$DeviceInfo-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>This element is part of the <b>QtMobility.systeminfo 1.1</b> module. It is a convience class to make QML usage easier.</p>
+<p>Note: To use notification signals, you need to set the monitor* properties to true.</p>
+<p>See also <a href="qsystemdeviceinfo.html">QSystemDeviceInfo</a>.</p>
+<!-- @@@DeviceInfo -->
+<h2>Property Documentation</h2>
+<!-- $$$batteryLevel -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="batteryLevel-prop"></a>batteryLevel : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the battery charge level as percentage 1 - 100 scale.</p>
+</div></div><!-- @@@batteryLevel -->
+<br/>
+<!-- $$$batteryStatus -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="batteryStatus-prop"></a>batteryStatus : BatteryStatus</p></td></tr></table></div><div class="qmldoc"><p>Returns the battery charge status.</p>
+</div></div><!-- @@@batteryStatus -->
+<br/>
+<!-- $$$currentBluetoothPowerState -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="currentBluetoothPowerState-prop"></a>currentBluetoothPowerState : bool</p></td></tr></table></div><div class="qmldoc"><p>Gets the current bluetooth power state.</p>
+</div></div><!-- @@@currentBluetoothPowerState -->
+<br/>
+<!-- $$$currentPowerState -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="currentPowerState-prop"></a>currentPowerState : PowerState</p></td></tr></table></div><div class="qmldoc"><p>Gets the current <a href="qsystemdeviceinfo.html#currentPowerState-prop">QSystemDeviceInfo::currentPowerState</a> state.</p>
+</div></div><!-- @@@currentPowerState -->
+<br/>
+<!-- $$$currentProfile -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="currentProfile-prop"></a>currentProfile : Profile</p></td></tr></table></div><div class="qmldoc"><p>Gets the current <a href="qsystemdeviceinfo.html#currentProfile-prop">QSystemDeviceInfo::currentProfile</a> device profile.</p>
+</div></div><!-- @@@currentProfile -->
+<br/>
+<!-- $$$imei -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="imei-prop"></a>imei : <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></p></td></tr></table></div><div class="qmldoc"><p>Returns the International Mobile Equipment Identity (IMEI), or a null <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> in the case of none.</p>
+</div></div><!-- @@@imei -->
+<br/>
+<!-- $$$imsi -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="imsi-prop"></a>imsi : <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></p></td></tr></table></div><div class="qmldoc"><p>Returns the International Mobile Subscriber Identity (IMSI), or a null <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> in the case of none</p>
+</div></div><!-- @@@imsi -->
+<br/>
+<!-- $$$inputMethodType -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="inputMethodType-prop"></a>inputMethodType : InputMethodFlags</p></td></tr></table></div><div class="qmldoc"><p>Returns the <a href="qsystemdeviceinfo.html#InputMethod-enum">QSystemDeviceInfo::InputMethodFlags</a> InputMethodType that the system uses.</p>
+</div></div><!-- @@@inputMethodType -->
+<br/>
+<!-- $$$isDeviceLocked -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="isDeviceLocked-prop"></a>isDeviceLocked : bool</p></td></tr></table></div><div class="qmldoc"><p>Returns true if the device is locked, otherwise false.</p>
+</div></div><!-- @@@isDeviceLocked -->
+<br/>
+<!-- $$$isKeyboardFlippedOpen -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="isKeyboardFlippedOpen-prop"></a>isKeyboardFlippedOpen : bool</p></td></tr></table></div><div class="qmldoc"><p>Returns true if the flip keyboard is open, otherwise false;</p>
+</div></div><!-- @@@isKeyboardFlippedOpen -->
+<br/>
+<!-- $$$isWirelessKeyboardConnected -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="isWirelessKeyboardConnected-prop"></a>isWirelessKeyboardConnected : bool</p></td></tr></table></div><div class="qmldoc"><p>Returns true if a wireless keyboard is connected, otherwise false;</p>
+</div></div><!-- @@@isWirelessKeyboardConnected -->
+<br/>
+<!-- $$$keyboardTypes -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="keyboardTypes-prop"></a>keyboardTypes : KeyboardTypeFlags</p></td></tr></table></div><div class="qmldoc"><p>Returns the type of keyboards found.</p>
+</div></div><!-- @@@keyboardTypes -->
+<br/>
+<!-- $$$lockStatus -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="lockStatus-prop"></a>lockStatus : LockTypeFlags</p></td></tr></table></div><div class="qmldoc"><p>Returns the <a href="qsystemdeviceinfo.html#LockType-enum">QSystemDeviceInfo::LockTypeFlags</a> type of lock state the device might be in. The LockType must be currently active not just enabled.</p>
+</div></div><!-- @@@lockStatus -->
+<br/>
+<!-- $$$manufacturer -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="manufacturer-prop"></a>manufacturer : <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></p></td></tr></table></div><div class="qmldoc"><p>Returns the name of the manufacturer of this device. In the case of desktops, the name of the vendor of the motherboard.</p>
+</div></div><!-- @@@manufacturer -->
+<br/>
+<!-- $$$messageRingtoneVolume() -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="messageRingtoneVolume-28-29-prop"></a>messageRingtoneVolume() : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the active profile's message ringtone volume. From 0 to 100.</p>
+</div></div><!-- @@@messageRingtoneVolume() -->
+<br/>
+<!-- $$$model -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="model-prop"></a>model : <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></p></td></tr></table></div><div class="qmldoc"><p>Returns the model information of the device. In the case of desktops where no model information is present, the CPU architect, such as i686, and machine type, such as Server, Desktop or Laptop.</p>
+</div></div><!-- @@@model -->
+<br/>
+<!-- $$$monitorBatteryLevelChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorBatteryLevelChanges-prop"></a>monitorBatteryLevelChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Use the monitorBatteryLevelChanges signal.</p>
+</div></div><!-- @@@monitorBatteryLevelChanges -->
+<br/>
+<!-- $$$monitorBatteryStatusChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorBatteryStatusChanges-prop"></a>monitorBatteryStatusChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Use the monitorBatteryStatusChanges signal.</p>
+</div></div><!-- @@@monitorBatteryStatusChanges -->
+<br/>
+<!-- $$$monitorBluetoothStateChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorBluetoothStateChanges-prop"></a>monitorBluetoothStateChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Use the bluetoothStateChanges signal.</p>
+</div></div><!-- @@@monitorBluetoothStateChanges -->
+<br/>
+<!-- $$$monitorCurrentProfileChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorCurrentProfileChanges-prop"></a>monitorCurrentProfileChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Use the monitorCurrentProfileChanges signal.</p>
+</div></div><!-- @@@monitorCurrentProfileChanges -->
+<br/>
+<!-- $$$monitorKeyboardFlips() -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorKeyboardFlips-28-29-prop"></a>monitorKeyboardFlips() : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-deviceinfo.html#keyboardFlipped-signal">keyboardFlipped</a> signal.</p>
+</div></div><!-- @@@monitorKeyboardFlips() -->
+<br/>
+<!-- $$$monitorLockStatusChanges() -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorLockStatusChanges-28-29-prop"></a>monitorLockStatusChanges() : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-deviceinfo.html#lockStatusChanged-signal">lockStatusChanged</a> signal.</p>
+</div></div><!-- @@@monitorLockStatusChanges() -->
+<br/>
+<!-- $$$monitorPowerStateChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorPowerStateChanges-prop"></a>monitorPowerStateChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Use the monitorPowerStateChanges signal.</p>
+</div></div><!-- @@@monitorPowerStateChanges -->
+<br/>
+<!-- $$$monitorThermalStateChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorThermalStateChanges-prop"></a>monitorThermalStateChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>Use the thermalStateChanges signal.</p>
+</div></div><!-- @@@monitorThermalStateChanges -->
+<br/>
+<!-- $$$monitorWirelessKeyboardConnects() -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorWirelessKeyboardConnects-28-29-prop"></a>monitorWirelessKeyboardConnects() : bool</p></td></tr></table></div><div class="qmldoc"><p>Start the connection for the <a href="qml-deviceinfo.html#wirelessKeyboardConnected-signal">wirelessKeyboardConnected</a> signal.</p>
+</div></div><!-- @@@monitorWirelessKeyboardConnects() -->
+<br/>
+<!-- $$$primaryKeypadLightOn() -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="primaryKeypadLightOn-28-29-prop"></a>primaryKeypadLightOn() : bool</p></td></tr></table></div><div class="qmldoc"><p>Returns the whether he primary keypad or keyboard light is on.</p>
+</div></div><!-- @@@primaryKeypadLightOn() -->
+<br/>
+<!-- $$$productName -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="productName-prop"></a>productName : <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></p></td></tr></table></div><div class="qmldoc"><p>Returns the product name of the device. In the case where no product information is available, an empty string will be returned.</p>
+</div></div><!-- @@@productName -->
+<br/>
+<!-- $$$screen -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="screen-prop"></a>screen : int</p></td></tr></table></div><div class="qmldoc"><p>Contains the display number of this screen.</p>
+</div></div><!-- @@@screen -->
+<br/>
+<!-- $$$secondaryKeypadLightOn() -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="secondaryKeypadLightOn-28-29-prop"></a>secondaryKeypadLightOn() : bool</p></td></tr></table></div><div class="qmldoc"><p>Returns the whether he secondary keypad or keyboard light is on.</p>
+</div></div><!-- @@@secondaryKeypadLightOn() -->
+<br/>
+<!-- $$$simStatus -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="simStatus-prop"></a>simStatus : SimStatus</p></td></tr></table></div><div class="qmldoc"><p>Returns the <a href="qsystemdeviceinfo.html#simStatus-prop">QSystemDeviceInfo::simStatus</a> status of SIM card.</p>
+</div></div><!-- @@@simStatus -->
+<br/>
+<!-- $$$uniqueID -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="uniqueID-prop"></a>uniqueID : string</p></td></tr></table></div><div class="qmldoc"><p>Returns a unique identifier for the machine.</p>
+<p>Depending on security enforcement on platform, this may return a non unique number, or 0.</p>
+</div></div><!-- @@@uniqueID -->
+<br/>
+<!-- $$$vibrationActive() -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="vibrationActive-28-29-prop"></a>vibrationActive() : bool</p></td></tr></table></div><div class="qmldoc"><p>Returns the whether the active profile's vibration is active.</p>
+</div></div><!-- @@@vibrationActive() -->
+<br/>
+<!-- $$$voiceRingtoneVolume() -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="voiceRingtoneVolume-28-29-prop"></a>voiceRingtoneVolume() : int</p></td></tr></table></div><div class="qmldoc"><p>Returns the active profile's voice ringtone volume. From 0 to 100.</p>
+</div></div><!-- @@@voiceRingtoneVolume() -->
+<br/>
+<h2>Signal Documentation</h2>
+<!-- $$$batteryLevelChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="batteryLevelChanged-signal"></a>DeviceInfo::batteryLevelChanged ( int )</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when battery level has changed.</p>
+</div></div><!-- @@@batteryLevelChanged -->
+<br/>
+<!-- $$$batteryStatusChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="batteryStatusChanged-signal"></a>DeviceInfo::batteryStatusChanged ( DeviceInfo::BatteryStatus )</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when battery status has changed.</p>
+</div></div><!-- @@@batteryStatusChanged -->
+<br/>
+<!-- $$$bluetoothStateChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="bluetoothStateChanged-signal"></a>DeviceInfo::bluetoothStateChanged ( bool )</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when bluetooth power state has changed.</p>
+</div></div><!-- @@@bluetoothStateChanged -->
+<br/>
+<!-- $$$currentProfileChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="currentProfileChanged-signal"></a>DeviceInfo::currentProfileChanged ( DeviceInfo::Profile )</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when current device profile has changed.</p>
+</div></div><!-- @@@currentProfileChanged -->
+<br/>
+<!-- $$$deviceLocked -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="deviceLocked-signal"></a>DeviceInfo::deviceLocked ( bool )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted whenever the device lock state changes</p>
+</div></div><!-- @@@deviceLocked -->
+<br/>
+<!-- $$$keyboardFlipped -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="keyboardFlipped-signal"></a>DeviceInfo::keyboardFlipped ( bool )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted whenever a phone flips open.</p>
+</div></div><!-- @@@keyboardFlipped -->
+<br/>
+<!-- $$$lockStatusChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="lockStatusChanged-signal"></a>DeviceInfo::lockStatusChanged ( DeviceInfo::LockTypeFlags )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted whenever the lock state changes</p>
+</div></div><!-- @@@lockStatusChanged -->
+<br/>
+<!-- $$$powerStateChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="powerStateChanged-signal"></a>DeviceInfo::powerStateChanged ( DeviceINfo::PowerState )</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when the power state has changed.</p>
+</div></div><!-- @@@powerStateChanged -->
+<br/>
+<!-- $$$thermalStateChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="thermalStateChanged-signal"></a>DeviceInfo::thermalStateChanged ( DeviceInfo::ThermalState )</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when thermal state has changed.</p>
+</div></div><!-- @@@thermalStateChanged -->
+<br/>
+<!-- $$$wirelessKeyboardConnected -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="wirelessKeyboardConnected-signal"></a>DeviceInfo::wirelessKeyboardConnected ( bool )</p></td></tr></table></div><div class="qmldoc"><p>This signal is emitted whenever a wireless keyboard is connected</p>
+</div></div><!-- @@@wirelessKeyboardConnected -->
+<br/>
+<p class="naviNextPrevious footerNavi">
+</p>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

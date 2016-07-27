@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgeomaprectangleobject.cpp -->
+  <title>Qt 1.2: QGeoMapRectangleObject Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QGeoMapRectangleObject</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGeoMapRectangleObject Class Reference</h1>
+<!-- $$$QGeoMapRectangleObject-brief -->
+<p>The QGeoMapRectangleObject class is a <a href="qgeomapobject.html">QGeoMapObject</a> used to draw a rectangular region on a map. <a href="#details">More...</a></p>
+<!-- @@@QGeoMapRectangleObject -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QGeoMapRectangleObject&gt;</pre><p>Inherits <a href="qgeomapobject.html">QGeoMapObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qgeomaprectangleobject-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><a href="qgeomaprectangleobject.html#bottomRight-prop">bottomRight</a></b> : QGeoCoordinate</li>
+<li class="fn"><b><a href="qgeomaprectangleobject.html#brush-prop">brush</a></b> : QBrush</li>
+<li class="fn"><b><a href="qgeomaprectangleobject.html#pen-prop">pen</a></b> : QPen</li>
+<li class="fn"><b><a href="qgeomaprectangleobject.html#topLeft-prop">topLeft</a></b> : QGeoCoordinate</li>
+</ul>
+<ul>
+<li class="fn">6 properties inherited from <a href="qgeomapobject.html#properties">QGeoMapObject</a></li>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#QGeoMapRectangleObject">QGeoMapRectangleObject</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#QGeoMapRectangleObject-2">QGeoMapRectangleObject</a></b> ( const QGeoBoundingBox &amp; <i>boundingBox</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#QGeoMapRectangleObject-3">QGeoMapRectangleObject</a></b> ( const QGeoCoordinate &amp; <i>topLeft</i>, const QGeoCoordinate &amp; <i>bottomRight</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#dtor.QGeoMapRectangleObject">~QGeoMapRectangleObject</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#bottomRight-prop">bottomRight</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoBoundingBox </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#bounds">bounds</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBrush </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#brush-prop">brush</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPen </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#pen-prop">pen</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#bottomRight-prop">setBottomRight</a></b> ( const QGeoCoordinate &amp; <i>bottomRight</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#setBounds">setBounds</a></b> ( const QGeoBoundingBox &amp; <i>bounds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#brush-prop">setBrush</a></b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#pen-prop">setPen</a></b> ( const QPen &amp; <i>pen</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#topLeft-prop">setTopLeft</a></b> ( const QGeoCoordinate &amp; <i>topLeft</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#topLeft-prop">topLeft</a></b> () const</td></tr>
+</table>
+<a name="reimplemented-public-functions"></a>
+<h2>Reimplemented Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QGeoMapObject::Type </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#type">type</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">15 public functions inherited from <a href="qgeomapobject.html#public-functions">QGeoMapObject</a></li>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#bottomRightChanged">bottomRightChanged</a></b> ( const QGeoCoordinate &amp; <i>bottomRight</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#brushChanged">brushChanged</a></b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#penChanged">penChanged</a></b> ( const QPen &amp; <i>pen</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#topLeftChanged">topLeftChanged</a></b> ( const QGeoCoordinate &amp; <i>topLeft</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">6 signals inherited from <a href="qgeomapobject.html#signals">QGeoMapObject</a></li>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">3 protected functions inherited from <a href="qgeomapobject.html#protected-functions">QGeoMapObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QGeoMapRectangleObject-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QGeoMapRectangleObject class is a <a href="qgeomapobject.html">QGeoMapObject</a> used to draw a rectangular region on a map.</p>
+<p>The rectangle is specified by either a valid <a href="qgeoboundingbox.html">QGeoBoundingBox</a> instance or a pair of valid <a href="qgeocoordinate.html">QGeoCoordinate</a> instances which represent the top left and bottom right coordinates of the rectangle respectively.</p>
+</div>
+<!-- @@@QGeoMapRectangleObject -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$bottomRight-prop$$$bottomRight$$$setBottomRightconstQGeoCoordinate&$$$bottomRightChangedconstQGeoCoordinate& -->
+<h3 class="fn"><a name="bottomRight-prop"></a>bottomRight : <a href="qgeocoordinate.html">QGeoCoordinate</a></h3>
+<p>This property holds this property holds the bottom right coordinate of the rectangle to be drawn by this rectangle object.</p>
+<p>The default value of this property is an invalid coordinate. While the value of this property is invalid the rectangle object will not be displayed.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b>bottomRight</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setBottomRight</b> ( const QGeoCoordinate &amp; <i>bottomRight</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#bottomRightChanged">bottomRightChanged</a></b> ( const QGeoCoordinate &amp; <i>bottomRight</i> )</td></tr>
+</table>
+<!-- @@@bottomRight -->
+<!-- $$$brush-prop$$$brush$$$setBrushconstQBrush&$$$brushChangedconstQBrush& -->
+<h3 class="fn"><a name="brush-prop"></a>brush : <a href="http://qt.nokia.com/doc/4.7/qbrush.html">QBrush</a></h3>
+<p>This property holds this property holds the brush that will be used to draw this object.</p>
+<p>The brush is used to fill in rectangle.</p>
+<p>The outline around the perimeter of the rectangle is drawn using the <a href="qgeomaprectangleobject.html#pen-prop">QGeoMapRectangleObject::pen</a> property.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QBrush </td><td class="memItemRight bottomAlign"><b>brush</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setBrush</b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#brushChanged">brushChanged</a></b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+</table>
+<!-- @@@brush -->
+<!-- $$$pen-prop$$$pen$$$setPenconstQPen&$$$penChangedconstQPen& -->
+<h3 class="fn"><a name="pen-prop"></a>pen : <a href="http://qt.nokia.com/doc/4.7/qpen.html">QPen</a></h3>
+<p>This property holds this property holds the pen that will be used to draw this object.</p>
+<p>The pen is used to draw an outline around the rectangle. The rectangle is filled using the <a href="qgeomaprectangleobject.html#brush-prop">QGeoMapRectangleObject::brush</a> property.</p>
+<p>The pen will be treated as a cosmetic pen, which means that the width of the pen will be independent of the zoom level of the map.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QPen </td><td class="memItemRight bottomAlign"><b>pen</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setPen</b> ( const QPen &amp; <i>pen</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#penChanged">penChanged</a></b> ( const QPen &amp; <i>pen</i> )</td></tr>
+</table>
+<!-- @@@pen -->
+<!-- $$$topLeft-prop$$$topLeft$$$setTopLeftconstQGeoCoordinate&$$$topLeftChangedconstQGeoCoordinate& -->
+<h3 class="fn"><a name="topLeft-prop"></a>topLeft : <a href="qgeocoordinate.html">QGeoCoordinate</a></h3>
+<p>This property holds this property holds the top left coordinate of the rectangle to be drawn by this rectangle object.</p>
+<p>The default value of this property is an invalid coordinate. While the value of this property is invalid the rectangle object will not be displayed.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b>topLeft</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setTopLeft</b> ( const QGeoCoordinate &amp; <i>topLeft</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaprectangleobject.html#topLeftChanged">topLeftChanged</a></b> ( const QGeoCoordinate &amp; <i>topLeft</i> )</td></tr>
+</table>
+<!-- @@@topLeft -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QGeoMapRectangleObject[overload1]$$$QGeoMapRectangleObject -->
+<h3 class="fn"><a name="QGeoMapRectangleObject"></a>QGeoMapRectangleObject::QGeoMapRectangleObject ()</h3>
+<p>Constructs a new rectangle object.</p>
+<!-- @@@QGeoMapRectangleObject -->
+<!-- $$$QGeoMapRectangleObject$$$QGeoMapRectangleObjectconstQGeoBoundingBox& -->
+<h3 class="fn"><a name="QGeoMapRectangleObject-2"></a>QGeoMapRectangleObject::QGeoMapRectangleObject ( const <a href="qgeoboundingbox.html">QGeoBoundingBox</a> &amp; <i>boundingBox</i> )</h3>
+<p>Constructs a new rectangle object based on the bounding box <i>boundingBox</i>.</p>
+<!-- @@@QGeoMapRectangleObject -->
+<!-- $$$QGeoMapRectangleObject$$$QGeoMapRectangleObjectconstQGeoCoordinate&constQGeoCoordinate& -->
+<h3 class="fn"><a name="QGeoMapRectangleObject-3"></a>QGeoMapRectangleObject::QGeoMapRectangleObject ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>topLeft</i>, const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>bottomRight</i> )</h3>
+<p>Constructs a new rectangle object with the top left coordinate at <i>topLeft</i> and the bottom right coordinate at <i>bottomRight</i>.</p>
+<!-- @@@QGeoMapRectangleObject -->
+<!-- $$$~QGeoMapRectangleObject[overload1]$$$~QGeoMapRectangleObject -->
+<h3 class="fn"><a name="dtor.QGeoMapRectangleObject"></a>QGeoMapRectangleObject::~QGeoMapRectangleObject ()</h3>
+<p>Destroys this rectangle object.</p>
+<!-- @@@~QGeoMapRectangleObject -->
+<!-- $$$bottomRightChanged[overload1]$$$bottomRightChangedconstQGeoCoordinate& -->
+<h3 class="fn"><a name="bottomRightChanged"></a>void QGeoMapRectangleObject::bottomRightChanged ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>bottomRight</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the bottom right coordinate of this rectangle object has changed.</p>
+<p>The new value is <i>bottomRight</i>.</p>
+<!-- @@@bottomRightChanged -->
+<!-- $$$bounds[overload1]$$$bounds -->
+<h3 class="fn"><a name="bounds"></a><a href="qgeoboundingbox.html">QGeoBoundingBox</a> QGeoMapRectangleObject::bounds () const</h3>
+<p>Returns a <a href="qgeoboundingbox.html">QGeoBoundingBox</a> instance which corresponds to the rectangle that will be drawn by this object.</p>
+<p>This is equivalent to</p>
+<pre class="highlightedCode brush: cpp"> QGeoMapRectangleObject *object;
+<span class="comment"> // setup object</span>
+ QGeoBoundingBox(object-&gt;topLeft(), object-&gt;bottomRight());</pre>
+<p>See also <a href="qgeomaprectangleobject.html#setBounds">setBounds</a>().</p>
+<!-- @@@bounds -->
+<!-- $$$brushChanged[overload1]$$$brushChangedconstQBrush& -->
+<h3 class="fn"><a name="brushChanged"></a>void QGeoMapRectangleObject::brushChanged ( const <a href="http://qt.nokia.com/doc/4.7/qbrush.html">QBrush</a> &amp; <i>brush</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the brush used to fill in the interior of this rectangle object has changed.</p>
+<p>The new value is <i>brush</i>.</p>
+<!-- @@@brushChanged -->
+<!-- $$$penChanged[overload1]$$$penChangedconstQPen& -->
+<h3 class="fn"><a name="penChanged"></a>void QGeoMapRectangleObject::penChanged ( const <a href="http://qt.nokia.com/doc/4.7/qpen.html">QPen</a> &amp; <i>pen</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the pen used to draw the perimeter of this rectangle object has changed.</p>
+<p>The new value is <i>pen</i>.</p>
+<!-- @@@penChanged -->
+<!-- $$$setBounds[overload1]$$$setBoundsconstQGeoBoundingBox& -->
+<h3 class="fn"><a name="setBounds"></a>void QGeoMapRectangleObject::setBounds ( const <a href="qgeoboundingbox.html">QGeoBoundingBox</a> &amp; <i>bounds</i> )</h3>
+<p>Sets the rectangle that will be drawn by this object to <i>bounds</i>.</p>
+<p>This is equivalent to</p>
+<pre class="highlightedCode brush: cpp"> QGeoMapRectangleObject *object;
+<span class="comment"> // setup object</span>
+ object-&gt;setTopLeft(bounds.topLeft());
+ object-&gt;setBottomRight(bounds.bottomRight());</pre>
+<p>See also <a href="qgeomaprectangleobject.html#bounds">bounds</a>().</p>
+<!-- @@@setBounds -->
+<!-- $$$topLeftChanged[overload1]$$$topLeftChangedconstQGeoCoordinate& -->
+<h3 class="fn"><a name="topLeftChanged"></a>void QGeoMapRectangleObject::topLeftChanged ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>topLeft</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the top left coordinate of this rectangle object has changed.</p>
+<p>The new value is <i>topLeft</i>.</p>
+<!-- @@@topLeftChanged -->
+<!-- $$$type[overload1]$$$type -->
+<h3 class="fn"><a name="type"></a><a href="qgeomapobject.html#Type-enum">QGeoMapObject::Type</a> QGeoMapRectangleObject::type () const<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="qgeomapobject.html#type">QGeoMapObject::type</a>().</p>
+<!-- @@@type -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

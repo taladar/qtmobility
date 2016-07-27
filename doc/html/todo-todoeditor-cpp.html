@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt 1.2: todoeditor.cpp Example File (todo/todoeditor.cpp)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<h1 class="title">todoeditor.cpp Example File</h1>
+<span class="small-subtitle">todo/todoeditor.cpp</span>
+<!-- $$$todo/todoeditor.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the examples of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** You may use this file under the terms of the BSD license as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+ **     the names of its contributors may be used to endorse or promote
+ **     products derived from this software without specific prior written
+ **     permission.
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &lt;qtorganizer.h&gt;
+
+ #include &quot;todoeditor.h&quot;
+
+ TodoEditor::TodoEditor()
+ {
+     setupGui();
+ }
+
+ void TodoEditor::editTodo(const QOrganizerTodo &amp;newTodo)
+ {
+     todo = newTodo;
+
+     subjectLineEdit-&gt;setText(todo.displayLabel());
+     startDateEdit-&gt;setDateTime(todo.startDateTime());
+     dueDateEdit-&gt;setDateTime(todo.dueDateTime());
+     priorityCombo-&gt;setCurrentIndex(
+         priorityCombo-&gt;findData(QVariant(todo.priority())));
+     statusCombo-&gt;setCurrentIndex(
+         statusCombo-&gt;findData(QVariant(todo.status())));
+     descriptionTextEdit-&gt;setText(todo.description());
+
+     if (!todo.details(QOrganizerItemVisualReminder::DefinitionName).isEmpty()){
+         QOrganizerItemVisualReminder reminder =
+             todo.detail&lt;QOrganizerItemVisualReminder&gt;();
+         int seconds = reminder.secondsBeforeStart();
+         alarmCombo-&gt;setCurrentIndex(seconds/(15*60));
+     } else
+         alarmCombo-&gt;setCurrentIndex(0);
+ }
+
+ void TodoEditor::updateSubject()
+ {
+     todo.setDisplayLabel(subjectLineEdit-&gt;text());
+ }
+
+ void TodoEditor::updateDescription()
+ {
+     todo.setDescription(descriptionTextEdit-&gt;toPlainText());
+ }
+
+ void TodoEditor::updateDates()
+ {
+     QDateTime startTime = startDateEdit-&gt;dateTime();
+     QDateTime dueDateTime = dueDateEdit-&gt;dateTime();
+
+     todo.setStartDateTime(startTime);
+     todo.setDueDateTime(dueDateTime);
+
+     updateAlarm(alarmCombo-&gt;currentIndex());
+ }
+
+ void TodoEditor::updateStatus(int index)
+ {
+     QOrganizerTodoProgress::Status status =
+         (QOrganizerTodoProgress::Status) statusCombo-&gt;itemData(index).toInt();
+     todo.setStatus(status);
+ }
+
+ void TodoEditor::updatePriority(int index)
+ {
+     QOrganizerItemPriority::Priority priority =
+         (QOrganizerItemPriority::Priority)
+             priorityCombo-&gt;itemData(index).toInt();
+     todo.setPriority(priority);
+ }
+
+ void TodoEditor::updateAlarm(int index)
+ {
+     int seconds = index * (15*60);
+     QDateTime dueDate = todo.dueDateTime();
+
+     QOrganizerItemVisualReminder oldReminder =
+         todo.detail(QOrganizerItemVisualReminder::DefinitionName);
+     todo.removeDetail(&amp;oldReminder);
+
+     if (seconds == 0)
+         return;
+
+     QOrganizerItemVisualReminder reminder;
+     reminder.setSecondsBeforeStart(seconds);
+
+     todo.saveDetail(&amp;reminder);
+ }
+
+ void TodoEditor::finishEditing()
+ {
+     emit editingFinished(todo);
+ }
+
+ void TodoEditor::setupGui()
+ {
+     startDateEdit = new QDateTimeEdit;
+     dueDateEdit = new QDateTimeEdit;
+     subjectLineEdit = new QLineEdit;
+     descriptionTextEdit = new QTextEdit;
+     doneButton = new QPushButton(tr(&quot;Done&quot;));
+
+     setupCombos();
+
+     connect(startDateEdit, SIGNAL(editingFinished()),
+         this, SLOT(updateDates()));
+     connect(dueDateEdit, SIGNAL(editingFinished()), this, SLOT(updateDates()));
+     connect(subjectLineEdit, SIGNAL(editingFinished()),
+         this, SLOT(updateSubject()));
+     connect(descriptionTextEdit, SIGNAL(textChanged()),
+         this, SLOT(updateDescription()));
+     connect(statusCombo, SIGNAL(activated(int)), this, SLOT(updateStatus(int)));
+     connect(priorityCombo, SIGNAL(activated(int)),
+         this, SLOT(updatePriority(int)));
+     connect(alarmCombo, SIGNAL(activated(int)), this, SLOT(updateAlarm(int)));
+     connect(doneButton, SIGNAL(clicked()), this, SLOT(finishEditing()));
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(new QLabel(tr(&quot;Subject:&quot;)));
+     layout-&gt;addWidget(subjectLineEdit);
+     layout-&gt;addWidget(new QLabel(tr(&quot;Start Date:&quot;)));
+     layout-&gt;addWidget(startDateEdit);
+     layout-&gt;addWidget(new QLabel(tr(&quot;Due Date:&quot;)));
+     layout-&gt;addWidget(dueDateEdit);
+     layout-&gt;addWidget(new QLabel(tr(&quot;Status:&quot;)));
+     layout-&gt;addWidget(statusCombo);
+     layout-&gt;addWidget(new QLabel(tr(&quot;Priority:&quot;)));
+     layout-&gt;addWidget(priorityCombo);
+     layout-&gt;addWidget(new QLabel(tr(&quot;Alarm:&quot;)));
+     layout-&gt;addWidget(alarmCombo);
+     layout-&gt;addWidget(new QLabel(tr(&quot;Description&quot;)));
+     layout-&gt;addWidget(descriptionTextEdit);
+     layout-&gt;addWidget(doneButton);
+
+     setLayout(layout);
+ }
+
+ void TodoEditor::setupCombos()
+ {
+     priorityCombo = new QComboBox;
+     priorityCombo-&gt;addItem(&quot;Unknown&quot;, QOrganizerItemPriority::UnknownPriority);
+     priorityCombo-&gt;addItem(&quot;Highest&quot;, QOrganizerItemPriority::HighestPriority);
+     priorityCombo-&gt;addItem(&quot;Extremely high&quot;,
+         QOrganizerItemPriority::ExtremelyHighPriority);
+     priorityCombo-&gt;addItem(&quot;Very high&quot;,
+         QOrganizerItemPriority::VeryHighPriority);
+     priorityCombo-&gt;addItem(&quot;High&quot;, QOrganizerItemPriority::HighPriority);
+     priorityCombo-&gt;addItem(&quot;Medium&quot;, QOrganizerItemPriority::MediumPriority);
+     priorityCombo-&gt;addItem(&quot;Low&quot;, QOrganizerItemPriority::LowPriority);
+     priorityCombo-&gt;addItem(&quot;Very low&quot;, QOrganizerItemPriority::VeryLowPriority);
+     priorityCombo-&gt;addItem(&quot;Extremely low&quot;,
+         QOrganizerItemPriority::ExtremelyLowPriority);
+     priorityCombo-&gt;addItem(&quot;Lowest&quot;, QOrganizerItemPriority::LowestPriority);
+
+     statusCombo = new QComboBox;
+     statusCombo-&gt;addItem(&quot;Not started&quot;,
+         QOrganizerTodoProgress::StatusNotStarted);
+     statusCombo-&gt;addItem(&quot;In progress&quot;, QOrganizerTodoProgress::StatusInProgress);
+     statusCombo-&gt;addItem(&quot;Complete&quot;,
+         QOrganizerTodoProgress::StatusComplete);
+
+     alarmCombo = new QComboBox;
+     QStringList alarmList;
+     alarmList &lt;&lt; &quot;None&quot; &lt;&lt; &quot;15 minutes&quot; &lt;&lt; &quot;30 minutes&quot; &lt;&lt; &quot;45 minutes&quot;
+               &lt;&lt; &quot;1 hour&quot;;
+     alarmCombo-&gt;addItems(alarmList);
+ }</pre>
+</div>
+<!-- @@@todo/todoeditor.cpp -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

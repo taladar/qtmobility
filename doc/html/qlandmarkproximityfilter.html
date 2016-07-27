@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qlandmarkproximityfilter.cpp -->
+  <title>Qt 1.2: QLandmarkProximityFilter Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QLandmarkProximityFilter</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QLandmarkProximityFilter Class Reference</h1>
+<!-- $$$QLandmarkProximityFilter-brief -->
+<p>The QLandmarkProximityFilter class is used to search for landmarks based on the radius around a given coordinate and perform sorting by distance. <a href="#details">More...</a></p>
+<!-- @@@QLandmarkProximityFilter -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QLandmarkProximityFilter&gt;</pre><p>Inherits <a href="qlandmarkfilter.html">QLandmarkFilter</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qlandmarkproximityfilter-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qlandmarkproximityfilter.html#QLandmarkProximityFilter">QLandmarkProximityFilter</a></b> ( const QGeoCoordinate &amp; <i>center</i> = QGeoCoordinate(), qreal <i>radius</i> = -1 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qlandmarkproximityfilter.html#QLandmarkProximityFilter-2">QLandmarkProximityFilter</a></b> ( const QGeoBoundingCircle &amp; <i>circle</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qlandmarkproximityfilter.html#QLandmarkProximityFilter-3">QLandmarkProximityFilter</a></b> ( const QLandmarkFilter &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qlandmarkproximityfilter.html#dtor.QLandmarkProximityFilter">~QLandmarkProximityFilter</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoBoundingCircle </td><td class="memItemRight bottomAlign"><b><a href="qlandmarkproximityfilter.html#boundingCircle">boundingCircle</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b><a href="qlandmarkproximityfilter.html#center">center</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qlandmarkproximityfilter.html#radius">radius</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qlandmarkproximityfilter.html#setBoundingCircle">setBoundingCircle</a></b> ( const QGeoBoundingCircle &amp; <i>circle</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qlandmarkproximityfilter.html#setCenter">setCenter</a></b> ( const QGeoCoordinate &amp; <i>center</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qlandmarkproximityfilter.html#setRadius">setRadius</a></b> ( qreal <i>radius</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">4 public functions inherited from <a href="qlandmarkfilter.html#public-functions">QLandmarkFilter</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QLandmarkProximityFilter-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QLandmarkProximityFilter class is used to search for landmarks based on the radius around a given coordinate and perform sorting by distance.</p>
+<p>In order to be a valid filter, the region covered by the proximity filter must not cover one of the poles. The landmarks are returned in ascending order of distance. A proximity filter may be used inside an intersection filter to sort landmarks by distance in combination with other criteria such as categories. (Note that a using sort order other than <a href="qlandmarksortorder.html">QLandmarkSortOrder</a> (i.e&#x2e; no sort) will override the sorting by distance).</p>
+</div>
+<!-- @@@QLandmarkProximityFilter -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QLandmarkProximityFilter[overload1]$$$QLandmarkProximityFilterconstQGeoCoordinate&qreal -->
+<h3 class="fn"><a name="QLandmarkProximityFilter"></a>QLandmarkProximityFilter::QLandmarkProximityFilter ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>center</i> = QGeoCoordinate(), <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>radius</i> = -1 )</h3>
+<p>Creates a filter that will select landmarks within a given <i>radius</i> around a <i>center</i> coordinate.</p>
+<!-- @@@QLandmarkProximityFilter -->
+<!-- $$$QLandmarkProximityFilter$$$QLandmarkProximityFilterconstQGeoBoundingCircle& -->
+<h3 class="fn"><a name="QLandmarkProximityFilter-2"></a>QLandmarkProximityFilter::QLandmarkProximityFilter ( const <a href="qgeoboundingcircle.html">QGeoBoundingCircle</a> &amp; <i>circle</i> )</h3>
+<p>Creates a filter that will select landmarks withiin a given bounding <i>circle</i>.</p>
+<!-- @@@QLandmarkProximityFilter -->
+<!-- $$$QLandmarkProximityFilter$$$QLandmarkProximityFilterconstQLandmarkFilter& -->
+<h3 class="fn"><a name="QLandmarkProximityFilter-3"></a>QLandmarkProximityFilter::QLandmarkProximityFilter ( const <a href="qlandmarkfilter.html">QLandmarkFilter</a> &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i> if possible, otherwise constructs a new proximity filter.</p>
+<!-- @@@QLandmarkProximityFilter -->
+<!-- $$$~QLandmarkProximityFilter[overload1]$$$~QLandmarkProximityFilter -->
+<h3 class="fn"><a name="dtor.QLandmarkProximityFilter"></a>QLandmarkProximityFilter::~QLandmarkProximityFilter ()<tt> [virtual]</tt></h3>
+<p>Destroys the filter.</p>
+<!-- @@@~QLandmarkProximityFilter -->
+<!-- $$$boundingCircle[overload1]$$$boundingCircle -->
+<h3 class="fn"><a name="boundingCircle"></a><a href="qgeoboundingcircle.html">QGeoBoundingCircle</a> QLandmarkProximityFilter::boundingCircle ()</h3>
+<p>Sets the bounding circle for the proximity filter.</p>
+<p>See also <a href="qlandmarkproximityfilter.html#setBoundingCircle">setBoundingCircle</a>().</p>
+<!-- @@@boundingCircle -->
+<!-- $$$center[overload1]$$$center -->
+<h3 class="fn"><a name="center"></a><a href="qgeocoordinate.html">QGeoCoordinate</a> QLandmarkProximityFilter::center () const</h3>
+<p>Returns the center coordinate of the filter.</p>
+<p>See also <a href="qlandmarkproximityfilter.html#setCenter">setCenter</a>().</p>
+<!-- @@@center -->
+<!-- $$$radius[overload1]$$$radius -->
+<h3 class="fn"><a name="radius"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> QLandmarkProximityFilter::radius () const</h3>
+<p>Returns the radius of the filter. The unit of the radius is meters.</p>
+<p>See also <a href="qlandmarkproximityfilter.html#setRadius">setRadius</a>().</p>
+<!-- @@@radius -->
+<!-- $$$setBoundingCircle[overload1]$$$setBoundingCircleconstQGeoBoundingCircle& -->
+<h3 class="fn"><a name="setBoundingCircle"></a>void QLandmarkProximityFilter::setBoundingCircle ( const <a href="qgeoboundingcircle.html">QGeoBoundingCircle</a> &amp; <i>circle</i> )</h3>
+<p>Sets the bounding <i>circle</i> for the proximity filter</p>
+<p>See also <a href="qlandmarkproximityfilter.html#boundingCircle">boundingCircle</a>().</p>
+<!-- @@@setBoundingCircle -->
+<!-- $$$setCenter[overload1]$$$setCenterconstQGeoCoordinate& -->
+<h3 class="fn"><a name="setCenter"></a>void QLandmarkProximityFilter::setCenter ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>center</i> )</h3>
+<p>Sets the <i>center</i> coordinate of the filter.</p>
+<p>See also <a href="qlandmarkproximityfilter.html#center">center</a>().</p>
+<!-- @@@setCenter -->
+<!-- $$$setRadius[overload1]$$$setRadiusqreal -->
+<h3 class="fn"><a name="setRadius"></a>void QLandmarkProximityFilter::setRadius ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>radius</i> )</h3>
+<p>Sets the <i>radius</i> of the filter. The unit of the radius is meters.</p>
+<p>See also <a href="qlandmarkproximityfilter.html#radius">radius</a>().</p>
+<!-- @@@setRadius -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

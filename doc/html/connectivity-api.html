@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- connectivity.qdoc -->
+  <title>Qt 1.2: Connectivity</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li>Connectivity</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level1"><a href="#known-issues-and-limitations">Known Issues and Limitations</a></li>
+<li class="level2"><a href="#bluetooth">Bluetooth</a></li>
+<li class="level2"><a href="#bluetooth-and-s60-5-0-symbian-1">Bluetooth and S60 5.0/Symbian^1</a></li>
+<li class="level2"><a href="#nfc">NFC</a></li>
+<li class="level1"><a href="#examples">Examples</a></li>
+<li class="level1"><a href="#main-classes">Main Classes</a></li>
+<li class="level2"><a href="#nfc-classes">NFC Classes</a></li>
+<li class="level2"><a href="#bluetooth-classes">Bluetooth Classes</a></li>
+<li class="level2"><a href="#qt-quick-elements">Qt Quick Elements</a></li>
+</ul>
+</div>
+<h1 class="title">Connectivity</h1>
+<span class="subtitle"></span>
+<!-- $$$connectivity-api.html-description -->
+<div class="descr"> <a name="details"></a>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>The Connectivity API provides a set of APIs for communicating with local devices.</p>
+<p>The current version of the Connectivity API includes support for Bluetooth and Near Field Communication (NFC) technologies. Bluetooth is a short-range (less than 100 meters) wireless technology. It has a reasonably high data transfer rate of 2.1 Mbit/s, which makes it ideal for transfering data between devices.</p>
+<p>The Bluetooth API provides classes for controlling the local Bluetooth device, discovering devices in the local vacinity, discovering services provided by those devices, publishing services and both server and client sockets for L2CAP and RFCOMM protocols.</p>
+<p>NFC is an extremely short-range (approx. 1 centimeter) wireless techonology and has a maximum transfer rate of 424 kbit/s. NFC is ideal for transfer small packets of data when two devices are touched together.</p>
+<p>The NFC API provides APIs for interacting with NFC Forum Tags and NFC Forum Devices, including target detection and loss, registering NDEF message handlers, reading and writing NDEF messages to NFC Forum Tags, send tag specific commands. The API also provides client and server LLCP sockets.</p>
+<a name="known-issues-and-limitations"></a>
+<h2>Known Issues and Limitations</h2>
+<a name="bluetooth"></a>
+<h3>Bluetooth</h3>
+<p>The Bluetooth API is only supported on Linux (including Maemo6 and Meego) via Bluez 4, S60 5.0 and Symbian^3. For the Beta release the entire API is fully functional on these platforms, there are however some known bugs.</p>
+<ul>
+<li>Symbian: Connections to an L2cap socket via address and service UUID fail.</li>
+<li>Limited Enquiry does not work on Symbian or Linux</li>
+<li>Symbian: The Symbian^1/S60 5.0 SDK can not compile connectivity.</li>
+</ul>
+<a name="bluetooth-and-s60-5-0-symbian-1"></a>
+<h3>Bluetooth and S60 5.0/Symbian^1</h3>
+<p>The S60 5.0 SDK as shipped by Nokia does not include all the required header files and libraries to compile the bluetooth backend for Symbian. It contains a subset of the requires bluetooth library. There is a Bluetooth plugin available for the S60 3.2 SDK but it cannot be used since it will overwrite and damage part of the bluetooth support already present in the 5.0 SDK. As such, compiling QtMobility for Symbian/S60 5.0 not recommended until Nokia releases a S60 5.0/Symbian^1 bluetooth plugin. A bug has been opened about this issue: <a href="https://qtrequirements.apac.nokia.com/browse/MOBILITY-2528">https://qtrequirements.apac.nokia.com/browse/MOBILITY-2528</a></p>
+<a name="nfc"></a>
+<h3>NFC</h3>
+<p>The NFC API is only supported on Maemo6 and Symbian^3 and the Qt Simulator. On Symbian^3 the API is fully functional. On the Qt Simulator only target detection and loss and tag access are support. On Maemo6 the following features are <b>NOT</b> supported:</p>
+<ul>
+<li>Connectionless LLCP sockets (both client and server).</li>
+<li>Tag type specific access.</li>
+</ul>
+<a name="examples"></a>
+<h2>Examples</h2>
+<p>Some interesting examples for the API exist.</p>
+<table class="generic">
+ <thead><tr class="qt-style topAlign"><th >Example</th><th >Description</th></tr></thead>
+<tr class="odd topAlign"><td ><p><a href="annotatedurl.html">NFC Annotated URL</a></p></td><td ><p>Displays URL along with caption text and an image from from an NFC tag containing a specially formated NDEF message.</p></td></tr>
+<tr class="even topAlign"><td ><p><a href="btchat.html">Bluetooth Chat</a></p></td><td ><p>A chat server and client using bluetooth.</p></td></tr>
+<tr class="odd topAlign"><td ><p><a href="bttennis.html">Bluetooth Tennis</a></p></td><td ><p>The classic game of <a href="http://en.wikipedia.org/wiki/Pong">Pong</a>. Supports multiplayer over Bluetooth and touch-to-play functionality on devices that support NFC.</p></td></tr>
+<tr class="even topAlign"><td ><p><a href="btfiletransfer.html">Bluetooth File Transfer</a></p></td><td ><p>Transfer files between Bluetooth devices.</p></td></tr>
+<tr class="odd topAlign"><td ><p><a href="btscanner.html">Bluetooth Scanner</a></p></td><td ><p>Scan for Bluetooth devices.</p></td></tr>
+<tr class="even topAlign"><td ><p><a href="ndefeditor.html">NDEF Editor</a></p></td><td ><p>Create NDEF messages using the NDEF records supported by the Connectivity API and save them to supported NFC Forum tags.</p></td></tr>
+<tr class="odd topAlign"><td ><p><a href="declarative-connectivity-tennis.html">QML Bluetooth Tennis</a></p></td><td ><p>The tennis game using a QML interface to the Bluetooth API. It must connect to an instance of the C++ <a href="bttennis.html">Bluetooth Tennis</a> game to play.</p></td></tr>
+<tr class="even topAlign"><td ><p><a href="declarative-connectivity-scanner.html">QML Bluetooth Scanner</a></p></td><td ><p>A QML implementation of the Bluetooth device scanner.</p></td></tr>
+<tr class="odd topAlign"><td ><p><a href="declarative-connectivity-poster.html">QML Poster</a></p></td><td ><p>A QML implementation of the NFC Annotated URL example.</p></td></tr>
+</table>
+<a name="main-classes"></a>
+<h2>Main Classes</h2>
+<a name="nfc-classes"></a>
+<h3>NFC Classes</h3>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qllcpserver.html">QLlcpServer</a></p></td><td class="tblDescr"><p>NFC LLCP socket based server</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qllcpsocket.html">QLlcpSocket</a></p></td><td class="tblDescr"><p>NFC LLCP socket</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qndeffilter.html">QNdefFilter</a></p></td><td class="tblDescr"><p>Filter for matching NDEF messages</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qndefmessage.html">QNdefMessage</a></p></td><td class="tblDescr"><p>NFC NDEF message</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qndefnfctextrecord.html">QNdefNfcTextRecord</a></p></td><td class="tblDescr"><p>NFC RTD-Text</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qndefnfcurirecord.html">QNdefNfcUriRecord</a></p></td><td class="tblDescr"><p>NFC RTD-URI</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qndefrecord.html">QNdefRecord</a></p></td><td class="tblDescr"><p>NFC NDEF record</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qnearfieldmanager.html">QNearFieldManager</a></p></td><td class="tblDescr"><p>Access to notifications for NFC events</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qnearfieldtagtype1.html">QNearFieldTagType1</a></p></td><td class="tblDescr"><p>Interface for communicating with an NFC Tag Type 1 tag</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qnearfieldtagtype2.html">QNearFieldTagType2</a></p></td><td class="tblDescr"><p>Interface for communicating with an NFC Tag Type 2 tag</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qnearfieldtagtype3.html">QNearFieldTagType3</a></p></td><td class="tblDescr"><p>Interface for communicating with an NFC Tag Type 3 tag</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qnearfieldtagtype4.html">QNearFieldTagType4</a></p></td><td class="tblDescr"><p>Interface for communicating with an NFC Tag Type 4 tag</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qnearfieldtarget.html">QNearFieldTarget</a></p></td><td class="tblDescr"><p>Interface for communicating with a target device</p></td></tr>
+</table>
+<a name="bluetooth-classes"></a>
+<h3>Bluetooth Classes</h3>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qbluetoothserviceinfo-alternative.html">QBluetoothServiceInfo::Alternative</a></p></td><td class="tblDescr"><p>Data type for Bluetooth Data Element Alternative attributes</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qbluetooth.html">QBluetooth</a></p></td><td class="tblDescr"><p>Contains functions and definitions related to Bluetooth</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qbluetoothaddress.html">QBluetoothAddress</a></p></td><td class="tblDescr"><p>Bluetooth address</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qbluetoothdevicediscoveryagent.html">QBluetoothDeviceDiscoveryAgent</a></p></td><td class="tblDescr"><p>API for discovering nearby Bluetooth devices</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a></p></td><td class="tblDescr"><p>Information about Bluetooth devices</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qbluetoothlocaldevice.html">QBluetoothLocalDevice</a></p></td><td class="tblDescr"><p>Access to local Bluetooth devices</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qbluetoothservicediscoveryagent.html">QBluetoothServiceDiscoveryAgent</a></p></td><td class="tblDescr"><p>API for querying the services provided by a Bluetooth device</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qbluetoothserviceinfo.html">QBluetoothServiceInfo</a></p></td><td class="tblDescr"><p>Information about services</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qbluetoothsocket.html">QBluetoothSocket</a></p></td><td class="tblDescr"><p>Bluetooth socket</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qbluetoothtransfermanager.html">QBluetoothTransferManager</a></p></td><td class="tblDescr"><p>Allows the application to send data objects to other devices. Currently implemented using OPP</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qbluetoothtransferreply.html">QBluetoothTransferReply</a></p></td><td class="tblDescr"><p>Contains the data and headers for a request sent with QBluetoothTranferManager</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qbluetoothtransferrequest.html">QBluetoothTransferRequest</a></p></td><td class="tblDescr"><p>Holds a request to be sent with QBluetoothTransferManager</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qbluetoothuuid.html">QBluetoothUuid</a></p></td><td class="tblDescr"><p>Bluetooth UUID</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="ql2capserver.html">QL2capServer</a></p></td><td class="tblDescr"><p>L2CAP server</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qrfcommserver.html">QRfcommServer</a></p></td><td class="tblDescr"><p>RFCOMM server</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qbluetoothserviceinfo-sequence.html">QBluetoothServiceInfo::Sequence</a></p></td><td class="tblDescr"><p>Data type for Bluetooth Data Element Sequence attributes</p></td></tr>
+</table>
+<a name="qt-quick-elements"></a>
+<h3>Qt Quick Elements</h3>
+<table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-bluetoothdiscoverymodel.html">QML BluetoothDiscoveryModel Element</a></p></td><td class="tblDescr"><p>The BluetoothDisoceryModel element provides access device and service scanning</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-bluetoothsocket.html">QML BluetoothSocket Element</a></p></td><td class="tblDescr"><p>The BluetoothSocket element represents a single bluetooth client socket.</p></td></tr>
+</table>
+</div>
+<!-- @@@connectivity-api.html -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

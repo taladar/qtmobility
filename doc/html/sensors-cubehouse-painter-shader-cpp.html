@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt 1.2: painter_shader.cpp Example File (sensors/cubehouse/painter_shader.cpp)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<h1 class="title">painter_shader.cpp Example File</h1>
+<span class="small-subtitle">sensors/cubehouse/painter_shader.cpp</span>
+<!-- $$$sensors/cubehouse/painter_shader.cpp-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the examples of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** You may use this file under the terms of the BSD license as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+ **     the names of its contributors may be used to endorse or promote
+ **     products derived from this software without specific prior written
+ **     permission.
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;painter.h&quot;
+ #include &quot;light.h&quot;
+ #include &quot;lightmodel.h&quot;
+ #include &quot;material.h&quot;
+ #include &lt;QtOpenGL/qglshaderprogram.h&gt;
+
+ ShaderPainter::ShaderPainter()
+ {
+     materialProgram = new QGLShaderProgram();
+     materialProgram-&gt;addShaderFromSourceFile
+         (QGLShader::Vertex, QLatin1String(&quot;:/lighting.vsh&quot;));
+     materialProgram-&gt;addShaderFromSourceFile
+         (QGLShader::Fragment, QLatin1String(&quot;:/material.fsh&quot;));
+     materialProgram-&gt;bindAttributeLocation(&quot;vertex&quot;, 0);
+     materialProgram-&gt;bindAttributeLocation(&quot;normal&quot;, 1);
+     materialProgram-&gt;bindAttributeLocation(&quot;texcoord&quot;, 2);
+     materialProgram-&gt;link();
+
+     textureProgram = new QGLShaderProgram();
+     textureProgram-&gt;addShaderFromSourceFile
+         (QGLShader::Vertex, QLatin1String(&quot;:/lighting.vsh&quot;));
+     textureProgram-&gt;addShaderFromSourceFile
+         (QGLShader::Fragment, QLatin1String(&quot;:/texture.fsh&quot;));
+     textureProgram-&gt;bindAttributeLocation(&quot;vertex&quot;, 0);
+     textureProgram-&gt;bindAttributeLocation(&quot;normal&quot;, 1);
+     textureProgram-&gt;bindAttributeLocation(&quot;texcoord&quot;, 2);
+     textureProgram-&gt;link();
+
+     currentProgram = 0;
+     matricesChanged = false;
+ }
+
+ ShaderPainter::~ShaderPainter()
+ {
+     delete materialProgram;
+     delete textureProgram;
+ }
+
+ void ShaderPainter::setMatrices(const QMatrix4x4 &amp;mv, const QMatrix4x4 &amp;proj)
+ {
+     combinedMatrix = proj * mv;
+     modelViewMatrix = mv;
+     normalMatrix = mv.normalMatrix();
+     matricesChanged = true;
+ }
+
+ void ShaderPainter::selectMaterial(Material *material)
+ {
+     if (currentProgram != materialProgram) {
+         materialProgram-&gt;bind();
+         materialProgram-&gt;enableAttributeArray(0);
+         materialProgram-&gt;enableAttributeArray(1);
+         materialProgram-&gt;disableAttributeArray(2);
+         currentProgram = materialProgram;
+         matricesChanged = true;
+     }
+     if (matricesChanged) {
+         materialProgram-&gt;setUniformValue(&quot;matrix&quot;, combinedMatrix);
+         materialProgram-&gt;setUniformValue(&quot;modelView&quot;, modelViewMatrix);
+         materialProgram-&gt;setUniformValue(&quot;normalMatrix&quot;, normalMatrix);
+         matricesChanged = false;
+     }
+     updateMaterials(materialProgram, material);
+ }
+
+ void ShaderPainter::selectTexturedMaterial(Material *material)
+ {
+     if (currentProgram != textureProgram) {
+         textureProgram-&gt;bind();
+         textureProgram-&gt;enableAttributeArray(0);
+         textureProgram-&gt;enableAttributeArray(1);
+         textureProgram-&gt;enableAttributeArray(2);
+         textureProgram-&gt;setUniformValue(&quot;tex&quot;, 0);
+         currentProgram = textureProgram;
+         matricesChanged = true;
+     }
+     if (matricesChanged) {
+         textureProgram-&gt;setUniformValue(&quot;matrix&quot;, combinedMatrix);
+         textureProgram-&gt;setUniformValue(&quot;modelView&quot;, modelViewMatrix);
+         textureProgram-&gt;setUniformValue(&quot;normalMatrix&quot;, normalMatrix);
+         matricesChanged = false;
+     }
+     updateMaterials(textureProgram, material);
+ }
+
+ void ShaderPainter::setVertices(const float *array, int stride)
+ {
+     <span class="comment">// Doesn't matter which program we use - they have the same locations.</span>
+     materialProgram-&gt;setAttributeArray(0, array, 3, stride * sizeof(float));
+ }
+
+ void ShaderPainter::setTexCoords(const float *array, int stride)
+ {
+     materialProgram-&gt;setAttributeArray(2, array, 2, stride * sizeof(float));
+ }
+
+ void ShaderPainter::setNormals(const float *array, int stride)
+ {
+     materialProgram-&gt;setAttributeArray(1, array, 3, stride * sizeof(float));
+ }
+
+ void ShaderPainter::updateMaterials
+     (QGLShaderProgram *program, Material *material)
+ {
+     <span class="comment">// Set the uniform variables for the light.</span>
+     QVector4D pli = light-&gt;eyePosition(QMatrix4x4());
+     program-&gt;setUniformValue(&quot;pli&quot;, QVector3D(pli.x(), pli.y(), pli.z()));
+     program-&gt;setUniformValue(&quot;pliw&quot;, GLfloat(pli.w()));
+
+     <span class="comment">// Set the uniform variables for the light model.</span>
+     program-&gt;setUniformValue(&quot;viewerAtInfinity&quot;, (int)(lightModel-&gt;viewerPosition() == LightModel::ViewerAtInfinity));
+     program-&gt;setUniformValue(&quot;acs&quot;, lightModel-&gt;ambientSceneColor());
+
+     <span class="comment">// Set the uniform variables for the material.</span>
+     program-&gt;setUniformValue(&quot;acm&quot;, material-&gt;ambientColor());
+     program-&gt;setUniformValue(&quot;dcm&quot;, material-&gt;diffuseColor());
+     program-&gt;setUniformValue(&quot;scm&quot;, material-&gt;specularColor());
+     program-&gt;setUniformValue(&quot;srm&quot;, (float)(material-&gt;shininess()));
+ }</pre>
+</div>
+<!-- @@@sensors/cubehouse/painter_shader.cpp -->
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

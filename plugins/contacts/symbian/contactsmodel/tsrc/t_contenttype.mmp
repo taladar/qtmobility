@@ -1,0 +1,36 @@
+/*
+* Copyright (c) 1997-2009 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description: 
+*
+*/
+
+TARGET          t_contenttype.exe
+TARGETTYPE      EXE
+
+CAPABILITY   ReadUserData WriteUserData
+UID		0x1000007a
+VENDORID 0x70000001
+
+SOURCEPATH	../tsrc
+
+SYSTEMINCLUDE /epoc32/include
+SYSTEMINCLUDE /epoc32/include/platform
+SYSTEMINCLUDE /epoc32/include/app
+USERINCLUDE ../inc . 
+
+SOURCE          t_contenttype.cpp
+
+LIBRARY         euser.lib efsrv.lib cntmodel.lib estor.lib
+
+SMPSAFE

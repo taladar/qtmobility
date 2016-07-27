@@ -1,0 +1,157 @@
+/****************************************************************************
+**
+** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+** All rights reserved.
+** Contact: Nokia Corporation (qt-info@nokia.com)
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** No Commercial Usage
+** This file contains pre-release code and may not be distributed.
+** You may use this file in accordance with the terms and conditions
+** contained in the Technology Preview License Agreement accompanying
+** this package.
+**
+** GNU Free Documentation License
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of this
+** file.
+**
+** If you have questions regarding the use of this file, please contact
+** Nokia at qt-info@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \group qml-location
+    \title QML Location Plugin
+    QML Support for the QtMobility Project Location API.
+*/
+
+/*!
+    \page qml-location-plugin.html
+
+    \title Location QML Plugin
+
+    \brief A QML plugin for the QtMobility Project Location API.
+
+
+    \section1 Overview
+
+    The Location API gives users of the QtMobility Project the capability to write applications that understand a geographical location and movement of the position coordinates. Backend services can be called by the API to detect landmarks and display appropriate information. The QML Location Plugin delivers these capabilities in an easy to use form.
+
+    \section1 Positioning
+
+    \section2 Coordinate
+
+    The \l Coordinate is a basic unit of geographical information. The \l Coordinate element includes properties to hold the coordinate values for \l {Coordinate::latitude}{latitude}, \l {Coordinate::longitude}{longitude} and \l {Coordinate::altitude}{altitude}.
+
+    \section2 Position
+
+    The three dimensional position of an object such as a mobile device can be specified by giving the latitude, longitude and altitude. That is the values held in the Coordinate element. Additionally for computation of future positions we would like to know if the object is moving, what \l {Position::speed}{speed} it is doing and what is the \l {Position::timestamp}{timestamp} of the last position data. Position therefore includes values for \l {Coordinate::latitude}{latitude}, \l {Coordinate::longitude}{longitude}, \l {Coordinate::altitude}{altitude}, \l {Position::speed}{speed} and a \l {Position::timestamp}{timestamp}. \l Position also takes responsibility for validation of sensible values for these properties: just as there is a \l {Coordinate::latitude}{latitude} there is a property \l {Position::latitudeValid}{latitudeValid}. Similarly for the other properties with the exception of the timestamp.
+
+
+    \section2 PositionSource
+
+    We have a Position element, a Coordinate element but where do we get the
+    data from? It is a good idea to be able to indicate alternative sources.
+    Perhaps instead of directly picking up GPS satellites you want to do
+    some testing using a datafile. We may also need to manage our
+    interaction with the source.
+
+    The \l PositionSource element provides the developer with control,
+    within the limits allowed by the platform, of the source of the
+    geographical data. The positional data can be sourced from a logfile
+    which is in NMEA format.
+
+    \l {http://en.wikipedia.org/wiki/NMEA}{NMEA} is a common text-based protocol for specifying navigational data. For convenience, the \l {PositionSource::nmeaSource}{nmeaSource} property is provided to enable QML applications to read NMEA data from a log file, the source will emit updates according to the time stamp of each NMEA sentence to produce a "replay" of the recorded data.
+
+    \section2 Positioning Elements
+
+
+    \annotatedlist qml-location
+
+    \section1 Maps
+
+    The Map element can be used be used to display a map of the world.  The
+    bulk of the functionality is provided by a mapping plugin described
+    by the plugin element associated with the Map.
+
+    \section2 Landmarks
+
+    Most maps have landmarks. Useful markers identified in the landscape either as destinations
+    or things that are noteworthy. In QtMobility the QML Location plugin supports
+    Landmarks on maps using the Location API. Landmarks can be imported into
+    the application and populate the map with associated position data, meta-data
+    and icon representations.
+
+    The main element is \l Landmark. Using \l Landmark we can specify the name,
+    phone number, some descriptive text, the radius of the landmark, the URL
+    for the representative icon and a URL for the real landmark.
+
+    This is simple but insufficient. We also need to be able to search for
+    landmarks, to categorize them, and importantly navigate to them.
+
+    Other plugin elements now come to our aid.
+
+    In order to search for Landmarks we need to set up filters that can be
+    used to define our search criteria.
+
+    For example, we can set up a filter to locate a particular landmark by
+    name using the \l LandmarkNameFilter
+
+    \snippet doc/src/snippets/declarative/declarative-landmark.qml   Landmark name filter
+
+    We can also search by proximity. That is, are we within a defined range
+    of any landmarks? Here is an example that uses a filter tied into the
+    current device location
+
+    \snippet doc/src/snippets/declarative/declarative-landmark.qml  Landmark proximity filter
+
+    \l PositionSource refreshes the coordinate once per second (1000 milliseconds)
+    and this new location is used to determine if the coordinate is within a
+    given radius of any landmark coordinate during the search. The result would
+    be a list of landmarks that are within the given radius, 1500 meters,
+    of our location.
+
+    If we want to combine filters the API gives us elements that can be combined
+    in a set-like way to create unions (logical OR) and intersections (logical AND)
+    of the results of different filters. In the examples above we had a
+    \l LandmarkNameFilter and we had a \l LandmarkProximityFilter. If we want
+    to combine them so that the result would show when the device is within
+    the desired radius then we use a \l LandmarkUnionFilter to combine the
+    two previous filters
+
+    \snippet doc/src/snippets/declarative/declarative-landmark.qml  LandmarkModel union filter
+
+    Generating a list of results for a filter is done by means of a \l LandmarkModel
+    element. This encapsulates the list of results and gives us desirable
+    features such as control over the sortOrder and sortBy functionality. Here
+    is a sample use of the element to provide a list of up to 50 items found
+    to be within a specified distance defined in the \i proximityFilter
+
+    \snippet doc/src/snippets/declarative/declarative-map.qml  LandmarkModel proximity filter
+
+    \note The \l {LandmarkAbstractModel::autoUpdate}{autoUpdate} property is
+    a boolean. It enables the model to be updated if any signals are
+    emitted that would change the model. For instance, a change in the
+    contents of a filter.
+
+    Landmarks can be organized into categories similar to tagging. New categories
+    cannot be defined at the QML level, they are either supplied by the backend database
+    or new ones are defined at the C++ layer. Landmarks are associated with
+    various categories by using the \l LandmarkCategoryModel element. This
+    element contains a Landmark element and a list of \l LandmarkCategory instances.
+
+    Searches can be made using a \l LandmarkCategoryFilter. The
+    \l LandmarkCategoryModel is first used to specify which \l Landmark we
+    are interested in, then the \l {LandmarkCategoryModel::categories}{categories}
+    property is populated with the categories associated with that landmark.
+
+
+*/
+
+

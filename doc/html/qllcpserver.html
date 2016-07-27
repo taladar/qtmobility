@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qllcpserver.cpp -->
+  <title>Qt 1.2: QLlcpServer Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtconnectivity.html">QtConnectivity</a></li>
+              <li>QLlcpServer</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QLlcpServer Class Reference</h1>
+<!-- $$$QLlcpServer-brief -->
+<p>The QLlcpServer class provides an NFC LLCP socket based server. <a href="#details">More...</a></p>
+<!-- @@@QLlcpServer -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QLlcpServer&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qllcpserver-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#QLlcpServer">QLlcpServer</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#dtor.QLlcpServer">~QLlcpServer</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#close">close</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#hasPendingConnections">hasPendingConnections</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#isListening">isListening</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#listen">listen</a></b> ( const QString &amp; <i>serviceUri</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QLlcpSocket * </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#nextPendingConnection">nextPendingConnection</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QLlcpSocket::SocketError </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#serverError">serverError</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint8 </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#serverPort">serverPort</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#serviceUri">serviceUri</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qllcpserver.html#newConnection">newConnection</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QLlcpServer-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QLlcpServer class provides an NFC LLCP socket based server.</p>
+<p>This class makes it possible to accept incoming LLCP socket connections.</p>
+<p>Call <a href="qllcpserver.html#listen">listen</a>() to have the server start listening for incoming connections on a specified port. The <a href="qllcpserver.html#newConnection">newConnection</a>() signal is then emitted each time a client connects to the server.</p>
+<p>Call <a href="qllcpserver.html#nextPendingConnection">nextPendingConnection</a>() to accept the pending connection as a connected <a href="qllcpsocket.html">QLlcpSocket</a>. The function returns a pointer to a <a href="qllcpsocket.html">QLlcpSocket</a> that can be used for communicating with the client.</p>
+<p>If an error occurs, <a href="qllcpserver.html#serverError">serverError</a>() returns the type of error, and errorString() can be called to get a human readable description of what happened.</p>
+<p>When listening for connections, the port which the server is listening on is available through <a href="qllcpserver.html#serverPort">serverPort</a>().</p>
+<p>Calling <a href="qllcpserver.html#close">close</a>() makes QLlcpServer stop listening for incoming connections.</p>
+</div>
+<!-- @@@QLlcpServer -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QLlcpServer[overload1]$$$QLlcpServerQObject* -->
+<h3 class="fn"><a name="QLlcpServer"></a>QLlcpServer::QLlcpServer ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new NFC LLCP server with <i>parent</i>.</p>
+<!-- @@@QLlcpServer -->
+<!-- $$$~QLlcpServer[overload1]$$$~QLlcpServer -->
+<h3 class="fn"><a name="dtor.QLlcpServer"></a>QLlcpServer::~QLlcpServer ()<tt> [virtual]</tt></h3>
+<p>Destroys the NFC LLCP server.</p>
+<!-- @@@~QLlcpServer -->
+<!-- $$$close[overload1]$$$close -->
+<h3 class="fn"><a name="close"></a>void QLlcpServer::close ()</h3>
+<p>Stops listening for incoming connections.</p>
+<!-- @@@close -->
+<!-- $$$hasPendingConnections[overload1]$$$hasPendingConnections -->
+<h3 class="fn"><a name="hasPendingConnections"></a>bool QLlcpServer::hasPendingConnections () const<tt> [virtual]</tt></h3>
+<p>Returns true if the server has a pending connection; otherwise returns false.</p>
+<p>See also <a href="qllcpserver.html#nextPendingConnection">nextPendingConnection</a>().</p>
+<!-- @@@hasPendingConnections -->
+<!-- $$$isListening[overload1]$$$isListening -->
+<h3 class="fn"><a name="isListening"></a>bool QLlcpServer::isListening () const</h3>
+<p>Returns true if the server is listening for incoming connections; otherwise returns false.</p>
+<!-- @@@isListening -->
+<!-- $$$listen[overload1]$$$listenconstQString& -->
+<h3 class="fn"><a name="listen"></a>bool QLlcpServer::listen ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>serviceUri</i> )</h3>
+<p>Tells the server to listen for incoming connections on <i>serviceUri</i>. If the server is currently listening then it will return false. Returns true on success; otherwise returns false.</p>
+<p><a href="qllcpserver.html#serviceUri">serviceUri</a>() will return the <i>serviceUri</i> that is passed into listen.</p>
+<p><a href="qllcpserver.html#serverPort">serverPort</a>() will return the port that is assigned to the server.</p>
+<p>See also <a href="qllcpserver.html#serverPort">serverPort</a>(), <a href="qllcpserver.html#isListening">isListening</a>(), and <a href="qllcpserver.html#close">close</a>().</p>
+<!-- @@@listen -->
+<!-- $$$newConnection[overload1]$$$newConnection -->
+<h3 class="fn"><a name="newConnection"></a>void QLlcpServer::newConnection ()<tt> [signal]</tt></h3>
+<p>This signal is emitted every time a new connection is available.</p>
+<p>See also <a href="qllcpserver.html#hasPendingConnections">hasPendingConnections</a>() and <a href="qllcpserver.html#nextPendingConnection">nextPendingConnection</a>().</p>
+<!-- @@@newConnection -->
+<!-- $$$nextPendingConnection[overload1]$$$nextPendingConnection -->
+<h3 class="fn"><a name="nextPendingConnection"></a><a href="qllcpsocket.html">QLlcpSocket</a> * QLlcpServer::nextPendingConnection ()<tt> [virtual]</tt></h3>
+<p>Returns the next pending connection as a connected <a href="qllcpsocket.html">QLlcpSocket</a> object.</p>
+<p>The socket is created as a child of the server, which means that it is automatically deleted when the <a href="qllcpserver.html">QLlcpServer</a> object is destroyed. It is still a good idea to delete the object explicitly when you are done with it, to avoid wasting memory.</p>
+<p>0 is returned if this function is called when there are no pending connections.</p>
+<p>See also <a href="qllcpserver.html#hasPendingConnections">hasPendingConnections</a>() and <a href="qllcpserver.html#newConnection">newConnection</a>().</p>
+<!-- @@@nextPendingConnection -->
+<!-- $$$serverError[overload1]$$$serverError -->
+<h3 class="fn"><a name="serverError"></a><a href="qllcpsocket.html#SocketError-enum">QLlcpSocket::SocketError</a> QLlcpServer::serverError () const</h3>
+<p>Returns the last error that occurred.</p>
+<!-- @@@serverError -->
+<!-- $$$serverPort[overload1]$$$serverPort -->
+<h3 class="fn"><a name="serverPort"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#quint8-typedef">quint8</a> QLlcpServer::serverPort () const</h3>
+<p>Returns the LLCP port associated with the service URI that the server is listening on.</p>
+<p><b>Note:</b> This call is not supported on all platforms and will return 0 on these platforms.</p>
+<!-- @@@serverPort -->
+<!-- $$$serviceUri[overload1]$$$serviceUri -->
+<h3 class="fn"><a name="serviceUri"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QLlcpServer::serviceUri () const</h3>
+<p>Returns the LLCP service URI that the server is listening on.</p>
+<!-- @@@serviceUri -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

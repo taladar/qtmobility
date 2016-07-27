@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativenetworkinfo.cpp -->
+  <title>Qt 1.2: QML NetworkInfo Element</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="qdeclarativeelements.html">QML Elements</a></li>              <li>QML NetworkInfo Element</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<p class="naviNextPrevious headerNavi">
+</p><p/>
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QML NetworkInfo Element</h1>
+<span class="subtitle"></span>
+<!-- $$$NetworkInfo-brief -->
+<p>The NetworkInfo element allows you to get information and receive notifications from the network. <a href="#details">More...</a></p>
+<!-- @@@NetworkInfo -->
+<li><a href="qml-networkinfo-members.html">List of all members, including inherited members</a></li>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-networkinfo.html#macAddress-prop">macAddress</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#mode-prop">mode</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#monitorCurrentMobileNetworkCodeChanges-prop">monitorCurrentMobileNetworkCodeChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#monitorModeChanges-prop">monitorModeChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#monitorNameChanges-prop">monitorNameChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#monitorSignalStrengthChanges-prop">monitorSignalStrengthChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#monitorStatusChanges-prop">monitorStatusChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#monitoringCellDataTechnologyChanges-prop">monitoringCellDataTechnologyChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#monitoringCellIdChanges-prop">monitoringCellIdChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#monitoringCurrentMobileCountryCodeChanges-prop">monitoringCurrentMobileCountryCodeChanges</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#networkName-prop">networkName</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#networkSignalStrength-prop">networkSignalStrength</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#networkStatus-prop">networkStatus</a></b></b> : string</li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-networkinfo.html#currentMobileCountryCodeChanged-signal">currentMobileCountryCodeChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#currentMobileNetworkCodeChanged-signal">currentMobileNetworkCodeChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#modeChanged-signal">modeChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#nameChanged-signal">nameChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#signalStrengthChanged-signal">signalStrengthChanged</a></b></b></li>
+<li class="fn"><b><b><a href="qml-networkinfo.html#statusChanged-signal">statusChanged</a></b></b></li>
+</ul>
+<a name="methods"></a>
+<h2>Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-networkinfo.html#interfaceForMode-method">interfaceForMode</a></b></b></li>
+</ul>
+<!-- $$$NetworkInfo-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>This element is part of the <b>QtMobility.systeminfo 1.1</b> module. It is a convience class to make QML usage easier.</p>
+<p>Note: To use notification signals, you need to set the monitor* properties to true.</p>
+<p>To use this in a mode other than the default mode given by currentMode, set the mode with <i>mode</i>.</p>
+<pre class="highlightedCode brush: cpp"> import Qt 4.7
+ import QtMobility.systeminfo 1.1
+
+ Rectangle {
+
+     NetworkInfo {
+         id: wlaninfo
+         mode: NetworkInfo.WlanMode;
+         monitorNameChanges: true
+         monitorSignalStrengthChanges: true
+     }
+     Text {
+         id: signame
+         color: &quot;white&quot;
+         text:  wlaninfo.networkName +&quot; &quot;+wlaninfo.networkSignalStrength;
+         anchors.horizontalCenter: parent.horizontalCenter;
+         anchors.verticalCenter: parent.verticalCenter;
+     }
+ }</pre>
+<p>See also <a href="qsystemnetworkinfo.html">QSystemNetworkInfo</a>.</p>
+<!-- @@@NetworkInfo -->
+<h2>Property Documentation</h2>
+<!-- $$$macAddress -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="macAddress-prop"></a>macAddress : string</p></td></tr></table></div><div class="qmldoc"><p>Returns this <a href="qml-networkinfo.html">NetworkInfo</a>'s network interface's MAC address.</p>
+</div></div><!-- @@@macAddress -->
+<br/>
+<!-- $$$mode -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="mode-prop"></a>mode : enumeration</p></td></tr></table></div><div class="qmldoc"><p>Sets this <a href="qml-networkinfo.html">NetworkInfo</a> to use QSystemNetworkInfo::NetworkModes. Does not set the mode of the underlaying system.</p>
+<p>If not set, the default is whatever defaultMode is.</p>
+</div></div><!-- @@@mode -->
+<br/>
+<!-- $$$monitorCurrentMobileNetworkCodeChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorCurrentMobileNetworkCodeChanges-prop"></a>monitorCurrentMobileNetworkCodeChanges : bool</p></td></tr></table></div><div class="qmldoc"></div></div><!-- @@@monitorCurrentMobileNetworkCodeChanges -->
+<br/>
+<!-- $$$monitorModeChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorModeChanges-prop"></a>monitorModeChanges : bool</p></td></tr></table></div><div class="qmldoc"></div></div><!-- @@@monitorModeChanges -->
+<br/>
+<!-- $$$monitorNameChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorNameChanges-prop"></a>monitorNameChanges : bool</p></td></tr></table></div><div class="qmldoc"></div></div><!-- @@@monitorNameChanges -->
+<br/>
+<!-- $$$monitorSignalStrengthChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorSignalStrengthChanges-prop"></a>monitorSignalStrengthChanges : bool</p></td></tr></table></div><div class="qmldoc"></div></div><!-- @@@monitorSignalStrengthChanges -->
+<br/>
+<!-- $$$monitorStatusChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitorStatusChanges-prop"></a>monitorStatusChanges : bool</p></td></tr></table></div><div class="qmldoc"></div></div><!-- @@@monitorStatusChanges -->
+<br/>
+<!-- $$$monitoringCellDataTechnologyChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitoringCellDataTechnologyChanges-prop"></a>monitoringCellDataTechnologyChanges : bool</p></td></tr></table></div><div class="qmldoc"><p>See also QSystemNetworkInfo::cellDataTechnologyChanged.</p>
+</div></div><!-- @@@monitoringCellDataTechnologyChanges -->
+<br/>
+<!-- $$$monitoringCellIdChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitoringCellIdChanges-prop"></a>monitoringCellIdChanges : bool</p></td></tr></table></div><div class="qmldoc"></div></div><!-- @@@monitoringCellIdChanges -->
+<br/>
+<!-- $$$monitoringCurrentMobileCountryCodeChanges -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="monitoringCurrentMobileCountryCodeChanges-prop"></a>monitoringCurrentMobileCountryCodeChanges : bool</p></td></tr></table></div><div class="qmldoc"></div></div><!-- @@@monitoringCurrentMobileCountryCodeChanges -->
+<br/>
+<!-- $$$networkName -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="networkName-prop"></a>networkName : string</p></td></tr></table></div><div class="qmldoc"><p>Returns this <a href="qml-networkinfo.html">NetworkInfo</a>'s network name.</p>
+</div></div><!-- @@@networkName -->
+<br/>
+<!-- $$$networkSignalStrength -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="networkSignalStrength-prop"></a>networkSignalStrength : int</p></td></tr></table></div><div class="qmldoc"><p>Returns this <a href="qml-networkinfo.html">NetworkInfo</a>'s network signal strength.</p>
+</div></div><!-- @@@networkSignalStrength -->
+<br/>
+<!-- $$$networkStatus -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="networkStatus-prop"></a>networkStatus : string</p></td></tr></table></div><div class="qmldoc"><p>Returns this <a href="qml-networkinfo.html">NetworkInfo</a>'s network status.</p>
+<p>The following table shows the mapping between the <a href="qml-networkinfo.html">NetworkInfo</a> NetworkStatus property and the <a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::NetworkStatus</a> enum.</p>
+<table class="generic">
+<thead><tr class="qt-style topAlign"><th ><a href="qml-networkinfo.html">NetworkInfo</a>.networkStatus</th><th ><a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::NetworkStatus</a></th></tr></thead>
+<tr class="odd topAlign"><td ><p>&quot;Undefined&quot;</p></td><td ><p><a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::UndefinedStatus</a></p></td></tr>
+<tr class="even topAlign"><td ><p>&quot;No Network Available&quot;</p></td><td ><p><a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::NoNetworkAvailable</a></p></td></tr>
+<tr class="odd topAlign"><td ><p>&quot;Emergency Only&quot;</p></td><td ><p><a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::EmergencyOnly</a></p></td></tr>
+<tr class="even topAlign"><td ><p>&quot;Searching&quot;</p></td><td ><p><a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::Searching</a></p></td></tr>
+<tr class="odd topAlign"><td ><p>&quot;Busy&quot;</p></td><td ><p><a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::Busy</a></p></td></tr>
+<tr class="even topAlign"><td ><p>&quot;Connected&quot;</p></td><td ><p><a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::Connected</a></p></td></tr>
+<tr class="odd topAlign"><td ><p>&quot;Home Network&quot;</p></td><td ><p><a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::HomeNetwork</a></p></td></tr>
+<tr class="even topAlign"><td ><p>&quot;Denied&quot;</p></td><td ><p><a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::Denied</a></p></td></tr>
+<tr class="odd topAlign"><td ><p>&quot;Roaming&quot;</p></td><td ><p><a href="qsystemnetworkinfo.html#NetworkStatus-enum">QSystemNetworkInfo::Roaming</a></p></td></tr>
+</table>
+</div></div><!-- @@@networkStatus -->
+<br/>
+<h2>Signal Documentation</h2>
+<!-- $$$currentMobileCountryCodeChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="even"><td class="tblQmlFuncNode"><p><a name="currentMobileCountryCodeChanged-signal"></a>NetworkInfo::currentMobileCountryCodeChanged ()</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when network MCC has changed. Note: To receive this notification, you must first call <i>startCurrentMobileCountryCodeChanged</i>.</p>
+</div></div><!-- @@@currentMobileCountryCodeChanged -->
+<br/>
+<!-- $$$currentMobileNetworkCodeChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="currentMobileNetworkCodeChanged-signal"></a>NetworkInfo::currentMobileNetworkCodeChanged ()</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when network MNC has changed. Note: To receive this notification, you must first call <i>startCurrentMobileNetworkCodeChanged</i>.</p>
+</div></div><!-- @@@currentMobileNetworkCodeChanged -->
+<br/>
+<!-- $$$modeChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="modeChanged-signal"></a>NetworkInfo::modeChanged ()</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when the systems default network mode has changed. Note: To receive this notification, you must first call <i>startModeChanged</i>.</p>
+</div></div><!-- @@@modeChanged -->
+<br/>
+<!-- $$$nameChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="nameChanged-signal"></a>NetworkInfo::nameChanged ()</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when network name has changed. Note: To receive this notification, you must first call <i>startNameChanged</i>.</p>
+</div></div><!-- @@@nameChanged -->
+<br/>
+<!-- $$$signalStrengthChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="signalStrengthChanged-signal"></a>NetworkInfo::signalStrengthChanged ()</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when network signal strength has changed. Note: To receive this notification, you must first call <i>startSignalStrengthChanged</i>.</p>
+</div></div><!-- @@@signalStrengthChanged -->
+<br/>
+<!-- $$$statusChanged -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="statusChanged-signal"></a>NetworkInfo::statusChanged ()</p></td></tr></table></div><div class="qmldoc"><p>This handler is called when network status has changed. Note: To receive this notification, you must first call <i>startStatusChanged</i>.</p>
+</div></div><!-- @@@statusChanged -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$interfaceForMode -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="interfaceForMode-method"></a><a href="http://qt.nokia.com/doc/4.7/qnetworkinterface.html">QNetworkInterface</a> NetworkInfo::interfaceForMode ()</p></td></tr></table></div><div class="qmldoc"><p>Returns the <a href="http://qt.nokia.com/doc/4.7/qnetworkinterface.html">QNetworkInterface</a> for this <a href="qml-networkinfo.html">NetworkInfo</a>.</p>
+</div></div><!-- @@@interfaceForMode -->
+<br/>
+<p class="naviNextPrevious footerNavi">
+</p>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

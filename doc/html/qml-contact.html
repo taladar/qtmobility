@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativecontact.cpp -->
+  <title>Qt 1.2: QML Contact Element</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="qdeclarativeelements.html">QML Elements</a></li>              <li>QML Contact Element</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QML Contact Element</h1>
+<span class="subtitle"></span>
+<!-- $$$Contact-brief -->
+<p>The Contact element represents an addressbook contact, A Contact object has a collection of details (like a name, phone numbers and email addresses). Each detail (which can have multiple fields) is stored in an appropriate subclass of <a href="qml-contactdetail.html">ContactDetail</a>, and the Contact allows retrieving these details in various ways. <a href="#details">More...</a></p>
+<!-- @@@Contact -->
+<li><a href="qml-contact-members.html">List of all members, including inherited members</a></li>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-contact.html#address-prop">address</a></b></b> : Address</li>
+<li class="fn"><b><b><a href="qml-contact.html#anniversary-prop">anniversary</a></b></b> : Anniversary</li>
+<li class="fn"><b><b><a href="qml-contact.html#avatar-prop">avatar</a></b></b> : Avatar</li>
+<li class="fn"><b><b><a href="qml-contact.html#birthday-prop">birthday</a></b></b> : Birthday</li>
+<li class="fn"><b><b><a href="qml-contact.html#contactId-prop">contactId</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-contact.html#details-prop">details</a></b></b> : list&lt;ContactDetail&gt;</li>
+<li class="fn"><b><b><a href="qml-contact.html#displayLabel-prop">displayLabel</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-contact.html#email-prop">email</a></b></b> : EmailAddress</li>
+<li class="fn"><b><b><a href="qml-contact.html#family-prop">family</a></b></b> : Family</li>
+<li class="fn"><b><b><a href="qml-contact.html#favorite-prop">favorite</a></b></b> : Favorite</li>
+<li class="fn"><b><b><a href="qml-contact.html#gender-prop">gender</a></b></b> : Gender</li>
+<li class="fn"><b><b><a href="qml-contact.html#geolocation-prop">geolocation</a></b></b> : GeoLocation</li>
+<li class="fn"><b><b><a href="qml-contact.html#globalPresence-prop">globalPresence</a></b></b> : GlobalPresence</li>
+<li class="fn"><b><b><a href="qml-contact.html#guid-prop">guid</a></b></b> : Guid</li>
+<li class="fn"><b><b><a href="qml-contact.html#hobby-prop">hobby</a></b></b> : Hobby</li>
+<li class="fn"><b><b><a href="qml-contact.html#manager-prop">manager</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-contact.html#modified-prop">modified</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-contact.html#name-prop">name</a></b></b> : Name</li>
+<li class="fn"><b><b><a href="qml-contact.html#nickname-prop">nickname</a></b></b> : Nickname</li>
+<li class="fn"><b><b><a href="qml-contact.html#note-prop">note</a></b></b> : Note</li>
+<li class="fn"><b><b><a href="qml-contact.html#onlineAccount-prop">onlineAccount</a></b></b> : OnlineAccount</li>
+<li class="fn"><b><b><a href="qml-contact.html#organization-prop">organization</a></b></b> : Organization</li>
+<li class="fn"><b><b><a href="qml-contact.html#phoneNumber-prop">phoneNumber</a></b></b> : PhoneNumber</li>
+<li class="fn"><b><b><a href="qml-contact.html#presence-prop">presence</a></b></b> : Presence</li>
+<li class="fn"><b><b><a href="qml-contact.html#ringtone-prop">ringtone</a></b></b> : Ringtone</li>
+<li class="fn"><b><b><a href="qml-contact.html#syncTarget-prop">syncTarget</a></b></b> : SyncTarget</li>
+<li class="fn"><b><b><a href="qml-contact.html#tag-prop">tag</a></b></b> : Tag</li>
+<li class="fn"><b><b><a href="qml-contact.html#thumbnail-prop">thumbnail</a></b></b> : url</li>
+<li class="fn"><b><b><a href="qml-contact.html#type-prop">type</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-contact.html#url-prop">url</a></b></b> : Url</li>
+</ul>
+<a name="methods"></a>
+<h2>Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-contact.html#addDetail-method">addDetail</a></b></b></li>
+<li class="fn"><b><b><a href="qml-contact.html#clearDetails-method">clearDetails</a></b></b></li>
+<li class="fn"><b><b><a href="qml-contact.html#detail-method">detail</a></b></b></li>
+<li class="fn"><b><b><a href="qml-contact.html#details-method">details</a></b></b></li>
+<li class="fn"><b><b><a href="qml-contact.html#removeDetail-method">removeDetail</a></b></b></li>
+<li class="fn"><b><b><a href="qml-contact.html#save-method">save</a></b></b></li>
+</ul>
+<!-- $$$Contact-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>If some of the contact details are not unique details, all of this type of detail values can be accessed by dynamic properties. For example, there are 3 phone numbers stored in a contact, they can be accessed by contact.phoneNumbers property, Which holds a list of all <a href="qml-phonenumber.html">PhoneNumber</a> details. If the dynamic property was not exists (for unique details), an undefined value returned. The list of dynamic detail properties depends on the contact engine implementations.</p>
+<p>The Contact element is part of the <b>QtMobility.contacts 1.1</b> module.</p>
+<p>See also <a href="qcontact.html">QContact</a>.</p>
+<!-- @@@Contact -->
+<h2>Property Documentation</h2>
+<!-- $$$address -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="address-prop"></a><span class="qmlreadonly">read-only</span>address : <a href="qml-address.html">Address</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the address detail of the Contact object.</p>
+</div></div><!-- @@@address -->
+<br/>
+<!-- $$$anniversary -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="anniversary-prop"></a><span class="qmlreadonly">read-only</span>anniversary : <a href="qml-anniversary.html">Anniversary</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the anniversary detail of the Contact object.</p>
+</div></div><!-- @@@anniversary -->
+<br/>
+<!-- $$$avatar -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="avatar-prop"></a><span class="qmlreadonly">read-only</span>avatar : <a href="qml-avatar.html">Avatar</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the avatar detail of the Contact object.</p>
+</div></div><!-- @@@avatar -->
+<br/>
+<!-- $$$birthday -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="birthday-prop"></a><span class="qmlreadonly">read-only</span>birthday : <a href="qml-birthday.html">Birthday</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the birthday detail of the Contact object.</p>
+</div></div><!-- @@@birthday -->
+<br/>
+<!-- $$$contactId -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="contactId-prop"></a><span class="qmlreadonly">read-only</span>contactId : int</p></td></tr></table></div><div class="qmldoc"><p>This property holds the id of the Contact object. This property is read only.</p>
+</div></div><!-- @@@contactId -->
+<br/>
+<!-- $$$details -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="details-prop"></a><span class="qmlreadonly">read-only</span>details : list&lt;<a href="qml-contactdetail.html">ContactDetail</a>&gt;</p></td></tr></table></div><div class="qmldoc"><p>This property holds the list of <a href="qml-contactdetail.html">ContactDetail</a> elements that the contact has.</p>
+</div></div><!-- @@@details -->
+<br/>
+<!-- $$$displayLabel -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="displayLabel-prop"></a><span class="qmlreadonly">read-only</span>displayLabel : string</p></td></tr></table></div><div class="qmldoc"><p>This property holds the display label value of the Contact object.</p>
+</div></div><!-- @@@displayLabel -->
+<br/>
+<!-- $$$email -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="email-prop"></a><span class="qmlreadonly">read-only</span>email : <a href="qml-emailaddress.html">EmailAddress</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the email address detail of the Contact object.</p>
+</div></div><!-- @@@email -->
+<br/>
+<!-- $$$family -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="family-prop"></a><span class="qmlreadonly">read-only</span>family : <a href="qml-family.html">Family</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the family detail of the Contact object.</p>
+</div></div><!-- @@@family -->
+<br/>
+<!-- $$$favorite -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="favorite-prop"></a><span class="qmlreadonly">read-only</span>favorite : <a href="qml-favorite.html">Favorite</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the favorite detail of the Contact object.</p>
+</div></div><!-- @@@favorite -->
+<br/>
+<!-- $$$gender -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="gender-prop"></a><span class="qmlreadonly">read-only</span>gender : <a href="qml-gender.html">Gender</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the gender detail of the Contact object.</p>
+</div></div><!-- @@@gender -->
+<br/>
+<!-- $$$geolocation -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="geolocation-prop"></a><span class="qmlreadonly">read-only</span>geolocation : <a href="qml-geolocation.html">GeoLocation</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the geolocation detail of the Contact object.</p>
+</div></div><!-- @@@geolocation -->
+<br/>
+<!-- $$$globalPresence -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="globalPresence-prop"></a><span class="qmlreadonly">read-only</span>globalPresence : <a href="qml-globalpresence.html">GlobalPresence</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the globalPresence detail of the Contact object.</p>
+</div></div><!-- @@@globalPresence -->
+<br/>
+<!-- $$$guid -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="guid-prop"></a><span class="qmlreadonly">read-only</span>guid : <a href="qml-guid.html">Guid</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the guid detail of the Contact object.</p>
+</div></div><!-- @@@guid -->
+<br/>
+<!-- $$$hobby -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="hobby-prop"></a><span class="qmlreadonly">read-only</span>hobby : <a href="qml-hobby.html">Hobby</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the hobby detail of the Contact object.</p>
+</div></div><!-- @@@hobby -->
+<br/>
+<!-- $$$manager -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="manager-prop"></a><span class="qmlreadonly">read-only</span>manager : string</p></td></tr></table></div><div class="qmldoc"><p>This property holds the manager name which the Contact object comes from.</p>
+</div></div><!-- @@@manager -->
+<br/>
+<!-- $$$modified -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="modified-prop"></a><span class="qmlreadonly">read-only</span>modified : bool</p></td></tr></table></div><div class="qmldoc"><p>This property holds the dirty flag of the Contact object. If the Contact has been changed, returns true, otherwise returns false.</p>
+</div></div><!-- @@@modified -->
+<br/>
+<!-- $$$name -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="name-prop"></a><span class="qmlreadonly">read-only</span>name : <a href="qml-name.html">Name</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the name detail of the Contact object.</p>
+</div></div><!-- @@@name -->
+<br/>
+<!-- $$$nickname -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="nickname-prop"></a><span class="qmlreadonly">read-only</span>nickname : <a href="qml-nickname.html">Nickname</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the nickname detail of the Contact object.</p>
+</div></div><!-- @@@nickname -->
+<br/>
+<!-- $$$note -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="note-prop"></a><span class="qmlreadonly">read-only</span>note : <a href="qml-note.html">Note</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the note detail of the Contact object.</p>
+</div></div><!-- @@@note -->
+<br/>
+<!-- $$$onlineAccount -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="onlineAccount-prop"></a><span class="qmlreadonly">read-only</span>onlineAccount : <a href="qml-onlineaccount.html">OnlineAccount</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the onlineAccount detail of the Contact object.</p>
+</div></div><!-- @@@onlineAccount -->
+<br/>
+<!-- $$$organization -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="organization-prop"></a><span class="qmlreadonly">read-only</span>organization : <a href="qml-organization.html">Organization</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the organization detail of the Contact object.</p>
+</div></div><!-- @@@organization -->
+<br/>
+<!-- $$$phoneNumber -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="phoneNumber-prop"></a><span class="qmlreadonly">read-only</span>phoneNumber : <a href="qml-phonenumber.html">PhoneNumber</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the phoneNumber detail of the Contact object.</p>
+</div></div><!-- @@@phoneNumber -->
+<br/>
+<!-- $$$presence -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="presence-prop"></a><span class="qmlreadonly">read-only</span>presence : <a href="qml-presence.html">Presence</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the presence detail of the Contact object.</p>
+</div></div><!-- @@@presence -->
+<br/>
+<!-- $$$ringtone -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="ringtone-prop"></a><span class="qmlreadonly">read-only</span>ringtone : <a href="qml-ringtone.html">Ringtone</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the ringtone detail of the Contact object.</p>
+</div></div><!-- @@@ringtone -->
+<br/>
+<!-- $$$syncTarget -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="syncTarget-prop"></a><span class="qmlreadonly">read-only</span>syncTarget : <a href="qml-synctarget.html">SyncTarget</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the syncTarget detail of the Contact object.</p>
+</div></div><!-- @@@syncTarget -->
+<br/>
+<!-- $$$tag -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="tag-prop"></a><span class="qmlreadonly">read-only</span>tag : <a href="qml-tag.html">Tag</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the tag detail of the Contact object.</p>
+</div></div><!-- @@@tag -->
+<br/>
+<!-- $$$thumbnail -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="thumbnail-prop"></a>thumbnail : <a href="qml-contact.html#url-prop">url</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the thumbnail URL of the Contact object.</p>
+</div></div><!-- @@@thumbnail -->
+<br/>
+<!-- $$$type -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="type-prop"></a>type : enumeration</p></td></tr></table></div><div class="qmldoc"><p>This property holds type of the Contact, the value can be one of:</p>
+<ul>
+<li>Contact.Contact</li>
+<li>Contact.Group</li>
+</ul>
+</div></div><!-- @@@type -->
+<br/>
+<!-- $$$url -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="url-prop"></a><span class="qmlreadonly">read-only</span>url : <a href="qml-url.html">Url</a></p></td></tr></table></div><div class="qmldoc"><p>This property holds the url detail of the Contact object.</p>
+</div></div><!-- @@@url -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$addDetail -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="addDetail-method"></a>Contact::addDetail ( <a href="qml-contact.html#detail-method">detail</a> )</p></td></tr></table></div><div class="qmldoc"><p>Adds the given contact <i>detail</i> to the contact, returns true if successful, otherwise returns false. <b>Note:</b>: If the <i>detail</i> has been added into the same contact before, this operation will be ignored, so if you want to add a <i>detail</i> multiple times, the <i>detail</i> should be copied before calling this function.</p>
+</div></div><!-- @@@addDetail -->
+<br/>
+<!-- $$$clearDetails -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="clearDetails-method"></a>Contact::clearDetails ()</p></td></tr></table></div><div class="qmldoc"><p>Remove all detail objects in this contact.</p>
+</div></div><!-- @@@clearDetails -->
+<br/>
+<!-- $$$detail -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="detail-method"></a><a href="qml-contactdetail.html">ContactDetail</a> Contact::detail ( <a href="qml-contact.html#name-prop">name</a> )</p></td></tr></table></div><div class="qmldoc"><p>Returns <a href="qml-contactdetail.html">ContactDetail</a> object which detail name or detail type is <i>name</i>.</p>
+</div></div><!-- @@@detail -->
+<br/>
+<!-- $$$details -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="details-method"></a>list&lt;<a href="qml-contactdetail.html">ContactDetail</a>&gt; Contact::details ( <a href="qml-contact.html#name-prop">name</a> )</p></td></tr></table></div><div class="qmldoc"><p>Returns a list of <a href="qml-contactdetail.html">ContactDetail</a> objects which detail name or detail type is <i>name</i>.</p>
+</div></div><!-- @@@details -->
+<br/>
+<!-- $$$removeDetail -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="removeDetail-method"></a>Contact::removeDetail ( <a href="qml-contact.html#detail-method">detail</a> )</p></td></tr></table></div><div class="qmldoc"><p>Removes the give contact <i>detail</i> from the contact, returns true if successful, otherwise returns false.</p>
+</div></div><!-- @@@removeDetail -->
+<br/>
+<!-- $$$save -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlFuncNode"><p><a name="save-method"></a>Contact::save ()</p></td></tr></table></div><div class="qmldoc"><p>Saves this Contact if the contact has been modified.</p>
+<p>See also <a href="qml-contact.html#modified-prop">Contact::modified</a>.</p>
+</div></div><!-- @@@save -->
+<br/>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

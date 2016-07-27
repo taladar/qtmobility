@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgeomaptextobject.cpp -->
+  <title>Qt 1.2: QGeoMapTextObject Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QGeoMapTextObject</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGeoMapTextObject Class Reference</h1>
+<!-- $$$QGeoMapTextObject-brief -->
+<p>The QGeoMapTextObject class is a <a href="qgeomapobject.html">QGeoMapObject</a> used to draw text on a map. <a href="#details">More...</a></p>
+<!-- @@@QGeoMapTextObject -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QGeoMapTextObject&gt;</pre><p>Inherits <a href="qgeomapobject.html">QGeoMapObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qgeomaptextobject-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<table class="propsummary">
+<tr><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qgeomaptextobject.html#alignment-prop">alignment</a></b> : Qt::Alignment</li>
+<li class="fn"><b><a href="qgeomaptextobject.html#brush-prop">brush</a></b> : QBrush</li>
+<li class="fn"><b><a href="qgeomaptextobject.html#coordinate-prop">coordinate</a></b> : QGeoCoordinate</li>
+<li class="fn"><b><a href="qgeomaptextobject.html#font-prop">font</a></b> : QFont</li>
+</ul></td><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qgeomaptextobject.html#offset-prop">offset</a></b> : QPoint</li>
+<li class="fn"><b><a href="qgeomaptextobject.html#pen-prop">pen</a></b> : QPen</li>
+<li class="fn"><b><a href="qgeomaptextobject.html#text-prop">text</a></b> : QString</li>
+</ul>
+</td></tr>
+</table>
+<ul>
+<li class="fn">6 properties inherited from <a href="qgeomapobject.html#properties">QGeoMapObject</a></li>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#QGeoMapTextObject">QGeoMapTextObject</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#QGeoMapTextObject-2">QGeoMapTextObject</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i>, const QString &amp; <i>text</i> = QString(), const QFont &amp; <i>font</i> = QFont(), const QPoint &amp; <i>offset</i> = QPoint(), Qt::Alignment <i>alignment</i> = Qt::AlignCenter )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#dtor.QGeoMapTextObject">~QGeoMapTextObject</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Qt::Alignment </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#alignment-prop">alignment</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBrush </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#brush-prop">brush</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#coordinate-prop">coordinate</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QFont </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#font-prop">font</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPoint </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#offset-prop">offset</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPen </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#pen-prop">pen</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#alignment-prop">setAlignment</a></b> ( Qt::Alignment <i>alignment</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#brush-prop">setBrush</a></b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#coordinate-prop">setCoordinate</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#font-prop">setFont</a></b> ( const QFont &amp; <i>font</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#offset-prop">setOffset</a></b> ( const QPoint &amp; <i>offset</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#pen-prop">setPen</a></b> ( const QPen &amp; <i>pen</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#text-prop">setText</a></b> ( const QString &amp; <i>text</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#text-prop">text</a></b> () const</td></tr>
+</table>
+<a name="reimplemented-public-functions"></a>
+<h2>Reimplemented Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QGeoMapObject::Type </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#type">type</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">15 public functions inherited from <a href="qgeomapobject.html#public-functions">QGeoMapObject</a></li>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#alignmentChanged">alignmentChanged</a></b> ( Qt::Alignment <i>alignment</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#brushChanged">brushChanged</a></b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#coordinateChanged">coordinateChanged</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#fontChanged">fontChanged</a></b> ( const QFont &amp; <i>font</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#offsetChanged">offsetChanged</a></b> ( const QPoint &amp; <i>offset</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#penChanged">penChanged</a></b> ( const QPen &amp; <i>pen</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#textChanged">textChanged</a></b> ( const QString &amp; <i>text</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">6 signals inherited from <a href="qgeomapobject.html#signals">QGeoMapObject</a></li>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">3 protected functions inherited from <a href="qgeomapobject.html#protected-functions">QGeoMapObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QGeoMapTextObject-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QGeoMapTextObject class is a <a href="qgeomapobject.html">QGeoMapObject</a> used to draw text on a map.</p>
+<p>The text is drawn at a given coordinate on the map.</p>
+<p>The text object is drawn such that the rendered size of the text object is independent of the zoom level of the map.</p>
+</div>
+<!-- @@@QGeoMapTextObject -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$alignment-prop$$$alignment$$$setAlignmentQt::Alignment$$$alignmentChangedQt::Alignment -->
+<h3 class="fn"><a name="alignment-prop"></a>alignment : <a href="http://qt.nokia.com/doc/4.7/qt.html#Alignment-typedef">Qt::Alignment</a></h3>
+<p>This property holds this property holds the alignment options used to align the text when drawing this text object.</p>
+<p>The default value of this property will align the text so that it is centered both horizontally and vertically around the point that is <a href="qgeomaptextobject.html#offset-prop">QGeoMapTextObject::offset</a> pixels away from the position of <a href="qgeomaptextobject.html#coordinate-prop">QGeoMapTextObject::coordinate</a> on the screen.</p>
+<p>Using</p>
+<pre class="highlightedCode brush: cpp"> textObject-&gt;setAlignment(Qt::AlignLeft | Qt::AlignVCenter);</pre>
+<p>will place the text so that the point halway up the left edge of the text is at the anchor point defined by <a href="qgeomaptextobject.html#offset-prop">QGeoMapTextObject::offset</a> and <a href="qgeomaptextobject.html#coordinate-prop">QGeoMapTextObject::coordinate</a>.</p>
+<p>The alignment property is a flag, so using</p>
+<pre class="highlightedCode brush: cpp"> textObject-&gt;setAlignment(Qt::AlignLeft);</pre>
+<p>may alter the vertical alignment as well.</p>
+<p>The <a href="http://qt.nokia.com/doc/4.7/qt.html#AlignmentFlag-enum">Qt::AlignVertical_Mask</a> and <a href="http://qt.nokia.com/doc/4.7/qt.html#AlignmentFlag-enum">Qt::AlignHorizontal_Mask</a> enum values can be used to alter one component of the alignment independent of the other.</p>
+<pre class="highlightedCode brush: cpp"> textObject-&gt;setAlignment(Qt::AlignLeft | (textObject-&gt;alignment() &amp; Qt::AlignVertical_Mask));</pre>
+<p>The alignment does not take the width of <a href="qgeomaptextobject.html#pen-prop">QGeoMapTextObject::pen</a> into consideration.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> Qt::Alignment </td><td class="memItemRight bottomAlign"><b>alignment</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setAlignment</b> ( Qt::Alignment <i>alignment</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#alignmentChanged">alignmentChanged</a></b> ( Qt::Alignment <i>alignment</i> )</td></tr>
+</table>
+<!-- @@@alignment -->
+<!-- $$$brush-prop$$$brush$$$setBrushconstQBrush&$$$brushChangedconstQBrush& -->
+<h3 class="fn"><a name="brush-prop"></a>brush : <a href="http://qt.nokia.com/doc/4.7/qbrush.html">QBrush</a></h3>
+<p>This property holds this property holds the brush that will be used to draw this object.</p>
+<p>The brush is used to fill in the glyphs of the text.</p>
+<p>The outline around the perimeter of the glyphs is drawn using the <a href="qgeomaptextobject.html#pen-prop">QGeoMapTextObject::pen</a> property.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QBrush </td><td class="memItemRight bottomAlign"><b>brush</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setBrush</b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#brushChanged">brushChanged</a></b> ( const QBrush &amp; <i>brush</i> )</td></tr>
+</table>
+<!-- @@@brush -->
+<!-- $$$coordinate-prop$$$coordinate$$$setCoordinateconstQGeoCoordinate&$$$coordinateChangedconstQGeoCoordinate& -->
+<h3 class="fn"><a name="coordinate-prop"></a>coordinate : <a href="qgeocoordinate.html">QGeoCoordinate</a></h3>
+<p>This property holds this property holds the coordinate at which this text object will be rendered.</p>
+<p>The default value of this property is an invalid coordinate. While the value of this property is invalid the text object will not be displayed.</p>
+<p>If <a href="qgeomaptextobject.html#offset-prop">QGeoMapTextObject::offset</a> and <a href="qgeomaptextobject.html#alignment-prop">QGeoMapTextObject::alignment</a> are not set the text will be drawn so that it is centered both horizontally and vertically around the position of QGeoMapTextObject::coordinate on the screen.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b>coordinate</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setCoordinate</b> ( const QGeoCoordinate &amp; <i>coordinate</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#coordinateChanged">coordinateChanged</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i> )</td></tr>
+</table>
+<!-- @@@coordinate -->
+<!-- $$$font-prop$$$font$$$setFontconstQFont&$$$fontChangedconstQFont& -->
+<h3 class="fn"><a name="font-prop"></a>font : <a href="http://qt.nokia.com/doc/4.7/qfont.html">QFont</a></h3>
+<p>This property holds this property holds the font that will be used to render the text for this text object.</p>
+<p>The default value of this property is the application's default font.</p>
+<p>It is not necessary to account for the zoom level of the map, since text objects are scaled such that they appear to be independent of the zoom level.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QFont </td><td class="memItemRight bottomAlign"><b>font</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setFont</b> ( const QFont &amp; <i>font</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#fontChanged">fontChanged</a></b> ( const QFont &amp; <i>font</i> )</td></tr>
+</table>
+<!-- @@@font -->
+<!-- $$$offset-prop$$$offset$$$setOffsetconstQPoint&$$$offsetChangedconstQPoint& -->
+<h3 class="fn"><a name="offset-prop"></a>offset : <a href="http://qt.nokia.com/doc/4.7/qpoint.html">QPoint</a></h3>
+<p>This property holds this property holds the offset in pixels from the screen position of QGeoMapTextObject::coordinate at which the text will be rendered when drawing this text object.</p>
+<p>The default value of this property is <a href="http://qt.nokia.com/doc/4.7/qpoint.html">QPoint</a>(0,0).</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QPoint </td><td class="memItemRight bottomAlign"><b>offset</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setOffset</b> ( const QPoint &amp; <i>offset</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#offsetChanged">offsetChanged</a></b> ( const QPoint &amp; <i>offset</i> )</td></tr>
+</table>
+<!-- @@@offset -->
+<!-- $$$pen-prop$$$pen$$$setPenconstQPen&$$$penChangedconstQPen& -->
+<h3 class="fn"><a name="pen-prop"></a>pen : <a href="http://qt.nokia.com/doc/4.7/qpen.html">QPen</a></h3>
+<p>This property holds this property holds the pen that will be used to draw this object.</p>
+<p>The pen is used to draw an outline around the text. The text itself is filled using the <a href="qgeomaptextobject.html#brush-prop">QGeoMapTextObject::brush</a> property.</p>
+<p>The pen will be treated as a cosmetic pen, which means that the width of the pen will be independent of the zoom level of the map.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QPen </td><td class="memItemRight bottomAlign"><b>pen</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setPen</b> ( const QPen &amp; <i>pen</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#penChanged">penChanged</a></b> ( const QPen &amp; <i>pen</i> )</td></tr>
+</table>
+<!-- @@@pen -->
+<!-- $$$text-prop$$$text$$$setTextconstQString&$$$textChangedconstQString& -->
+<h3 class="fn"><a name="text-prop"></a>text : <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></h3>
+<p>This property holds this property holds the text that will be displayed by this text object.</p>
+<p>The default value of this property is an empty string.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><b>text</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setText</b> ( const QString &amp; <i>text</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaptextobject.html#textChanged">textChanged</a></b> ( const QString &amp; <i>text</i> )</td></tr>
+</table>
+<!-- @@@text -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QGeoMapTextObject[overload1]$$$QGeoMapTextObject -->
+<h3 class="fn"><a name="QGeoMapTextObject"></a>QGeoMapTextObject::QGeoMapTextObject ()</h3>
+<p>Constructs a new text object.</p>
+<!-- @@@QGeoMapTextObject -->
+<!-- $$$QGeoMapTextObject$$$QGeoMapTextObjectconstQGeoCoordinate&constQString&constQFont&constQPoint&Qt::Alignment -->
+<h3 class="fn"><a name="QGeoMapTextObject-2"></a>QGeoMapTextObject::QGeoMapTextObject ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>coordinate</i>, const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>text</i> = QString(), const <a href="http://qt.nokia.com/doc/4.7/qfont.html">QFont</a> &amp; <i>font</i> = QFont(), const <a href="http://qt.nokia.com/doc/4.7/qpoint.html">QPoint</a> &amp; <i>offset</i> = QPoint(), <a href="http://qt.nokia.com/doc/4.7/qt.html#Alignment-typedef">Qt::Alignment</a> <i>alignment</i> = Qt::AlignCenter )</h3>
+<p>Constructs a new text object which will display the text <i>text</i> with font <i>font</i> at the coordinate <i>coordinate</i> on the map.</p>
+<p>The text will be displayed at an on-screen offset from the coordinate of <i>offset</i> pixels, and will be aligned according to <i>alignment</i>.</p>
+<!-- @@@QGeoMapTextObject -->
+<!-- $$$~QGeoMapTextObject[overload1]$$$~QGeoMapTextObject -->
+<h3 class="fn"><a name="dtor.QGeoMapTextObject"></a>QGeoMapTextObject::~QGeoMapTextObject ()</h3>
+<p>Destroys this text object.</p>
+<!-- @@@~QGeoMapTextObject -->
+<!-- $$$alignmentChanged[overload1]$$$alignmentChangedQt::Alignment -->
+<h3 class="fn"><a name="alignmentChanged"></a>void QGeoMapTextObject::alignmentChanged ( <a href="http://qt.nokia.com/doc/4.7/qt.html#Alignment-typedef">Qt::Alignment</a> <i>alignment</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the alignment of this text object has changed.</p>
+<p>The new value is <i>alignment</i>.</p>
+<!-- @@@alignmentChanged -->
+<!-- $$$brushChanged[overload1]$$$brushChangedconstQBrush& -->
+<h3 class="fn"><a name="brushChanged"></a>void QGeoMapTextObject::brushChanged ( const <a href="http://qt.nokia.com/doc/4.7/qbrush.html">QBrush</a> &amp; <i>brush</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the brush used to fill the inside of the letters for this text object has changed.</p>
+<p>The new value is <i>brush</i>.</p>
+<!-- @@@brushChanged -->
+<!-- $$$coordinateChanged[overload1]$$$coordinateChangedconstQGeoCoordinate& -->
+<h3 class="fn"><a name="coordinateChanged"></a>void QGeoMapTextObject::coordinateChanged ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>coordinate</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the coordinate at which this text object will be drawn has changed.</p>
+<p>The new value is <i>coordinate</i>.</p>
+<!-- @@@coordinateChanged -->
+<!-- $$$fontChanged[overload1]$$$fontChangedconstQFont& -->
+<h3 class="fn"><a name="fontChanged"></a>void QGeoMapTextObject::fontChanged ( const <a href="http://qt.nokia.com/doc/4.7/qfont.html">QFont</a> &amp; <i>font</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the font use to draw this text object has changed.</p>
+<p>The new value is <i>font</i>.</p>
+<!-- @@@fontChanged -->
+<!-- $$$offsetChanged[overload1]$$$offsetChangedconstQPoint& -->
+<h3 class="fn"><a name="offsetChanged"></a>void QGeoMapTextObject::offsetChanged ( const <a href="http://qt.nokia.com/doc/4.7/qpoint.html">QPoint</a> &amp; <i>offset</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the on screen offset from the coordinate at which this text object will be drawn has changed.</p>
+<p>The new value is <i>offset</i>.</p>
+<!-- @@@offsetChanged -->
+<!-- $$$penChanged[overload1]$$$penChangedconstQPen& -->
+<h3 class="fn"><a name="penChanged"></a>void QGeoMapTextObject::penChanged ( const <a href="http://qt.nokia.com/doc/4.7/qpen.html">QPen</a> &amp; <i>pen</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the pen used to draw the outline of the letters for this text object has changed.</p>
+<p>The new value is <i>pen</i>.</p>
+<!-- @@@penChanged -->
+<!-- $$$textChanged[overload1]$$$textChangedconstQString& -->
+<h3 class="fn"><a name="textChanged"></a>void QGeoMapTextObject::textChanged ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>text</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when the text to be drawn by this text object has changed.</p>
+<p>The new value is <i>text</i>.</p>
+<!-- @@@textChanged -->
+<!-- $$$type[overload1]$$$type -->
+<h3 class="fn"><a name="type"></a><a href="qgeomapobject.html#Type-enum">QGeoMapObject::Type</a> QGeoMapTextObject::type () const<tt> [virtual]</tt></h3>
+<p>Reimplemented from <a href="qgeomapobject.html#type">QGeoMapObject::type</a>().</p>
+<!-- @@@type -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

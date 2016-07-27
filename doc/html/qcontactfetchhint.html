@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qcontactfetchhint.cpp -->
+  <title>Qt 1.2: QContactFetchHint Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtcontacts.html">QtContacts</a></li>
+              <li>QContactFetchHint</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QContactFetchHint Class Reference</h1>
+<!-- $$$QContactFetchHint-brief -->
+<p>The QContactFetchHint class provides hints to the manager about which contact information needs to be retrieved in an asynchronous fetch request or a synchronous function call. <a href="#details">More...</a></p>
+<!-- @@@QContactFetchHint -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QContactFetchHint&gt;</pre><p>This class was introduced in Qt Mobility 1.0.</p>
+<ul>
+<li><a href="qcontactfetchhint-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#OptimizationHint-enum">OptimizationHint</a></b> { AllRequired, NoRelationships, NoActionPreferences, NoBinaryBlobs }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#OptimizationHint-enum">OptimizationHints</a></b></td></tr>
+</table>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#QContactFetchHint">QContactFetchHint</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#QContactFetchHint-2">QContactFetchHint</a></b> ( const QContactFetchHint &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#dtor.QContactFetchHint">~QContactFetchHint</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#detailDefinitionsHint">detailDefinitionsHint</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#maxCountHint">maxCountHint</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> OptimizationHints </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#optimizationHints">optimizationHints</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSize </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#preferredImageSize">preferredImageSize</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#relationshipTypesHint">relationshipTypesHint</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#setDetailDefinitionsHint">setDetailDefinitionsHint</a></b> ( const QStringList &amp; <i>definitionNames</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#setMaxCountHint">setMaxCountHint</a></b> ( int <i>count</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#setOptimizationHints">setOptimizationHints</a></b> ( OptimizationHints <i>hints</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#setPreferredImageSize">setPreferredImageSize</a></b> ( const QSize &amp; <i>size</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#setRelationshipTypesHint">setRelationshipTypesHint</a></b> ( const QStringList &amp; <i>relationshipTypes</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QContactFetchHint &amp; </td><td class="memItemRight bottomAlign"><b><a href="qcontactfetchhint.html#operator-eq">operator=</a></b> ( const QContactFetchHint &amp; <i>other</i> )</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QContactFetchHint-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QContactFetchHint class provides hints to the manager about which contact information needs to be retrieved in an asynchronous fetch request or a synchronous function call.</p>
+<p>All of the hints may be ignored at the discretion of the manager, however if a manager is able to optimize retrieval of contacts due to hints, it may do so. If a manager ignores a hint, it must retrieve the full set of data that the hint refers to.</p>
+<p>The fetch hint contains:</p>
+<ul>
+<li>a list of detail definition names which the client is interested in (empty if interested in all detail definitions)</li>
+<li>a list of relationship types which the client is interested in (empty if interested in all relationships)</li>
+<li>some optimization flags which allow the client to tell the backend if they are not interested in any relationships, any action preferences, or any binary blobs (images etc).</li>
+<li>a preferred size for any images, if the backend supports multiple sizes or scaling</li>
+</ul>
+<p>Important note: a client should not make changes to a contact which has been retrieved using a fetch hint other than the default fetch hint. Doing so can result in information loss when saving the contact back to the manager (as the &quot;new&quot; restricted contact will replace the previously saved contact in the backend).</p>
+</div>
+<!-- @@@QContactFetchHint -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$OptimizationHint$$$AllRequired$$$NoRelationships$$$NoActionPreferences$$$NoBinaryBlobs -->
+<h3 class="flags"><a name="OptimizationHint-enum"></a>enum QContactFetchHint::OptimizationHint<br/>flags QContactFetchHint::OptimizationHints</h3>
+<p>This enum defines flags which may be set to inform the backend that the client does not require certain information. The backend may safely ignore the hint, but then must return the full set of information relating to the optimization hint.</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QContactFetchHint::AllRequired</tt></td><td class=" topAlign"><tt>0x0</tt></td><td  class="topAlign">Tells the backend that all information is required</td></tr>
+<tr><td  class="topAlign"><tt>QContactFetchHint::NoRelationships</tt></td><td class=" topAlign"><tt>0x1</tt></td><td  class="topAlign">Tells the backend that the client does not require retrieved contacts to include a cache of relationships</td></tr>
+<tr><td  class="topAlign"><tt>QContactFetchHint::NoActionPreferences</tt></td><td class=" topAlign"><tt>0x2</tt></td><td  class="topAlign">Tells the backend that the client does not require retrieved contacts to include a cache of action preferences</td></tr>
+<tr><td  class="topAlign"><tt>QContactFetchHint::NoBinaryBlobs</tt></td><td class=" topAlign"><tt>0x4</tt></td><td  class="topAlign">Tells the backend that the client does not require retrieved contacts to include binary blobs such as thumbnail images</td></tr>
+</table>
+<p>The OptimizationHints type is a typedef for <a href="qflags.html">QFlags</a>&lt;OptimizationHint&gt;. It stores an OR combination of OptimizationHint values.</p>
+<!-- @@@OptimizationHint -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QContactFetchHint[overload1]$$$QContactFetchHint -->
+<h3 class="fn"><a name="QContactFetchHint"></a>QContactFetchHint::QContactFetchHint ()</h3>
+<p>Constructs a new contact fetch hint which requests that the backend fetch all information</p>
+<!-- @@@QContactFetchHint -->
+<!-- $$$QContactFetchHint$$$QContactFetchHintconstQContactFetchHint& -->
+<h3 class="fn"><a name="QContactFetchHint-2"></a>QContactFetchHint::QContactFetchHint ( const QContactFetchHint &amp; <i>other</i> )</h3>
+<p>Constructs a new contact fetch hint as a copy of <i>other</i></p>
+<!-- @@@QContactFetchHint -->
+<!-- $$$~QContactFetchHint[overload1]$$$~QContactFetchHint -->
+<h3 class="fn"><a name="dtor.QContactFetchHint"></a>QContactFetchHint::~QContactFetchHint ()</h3>
+<p>Frees any memory in use by the fetch hint</p>
+<!-- @@@~QContactFetchHint -->
+<!-- $$$detailDefinitionsHint[overload1]$$$detailDefinitionsHint -->
+<h3 class="fn"><a name="detailDefinitionsHint"></a><a href="http://qt.nokia.com/doc/4.7/qstringlist.html">QStringList</a> QContactFetchHint::detailDefinitionsHint () const</h3>
+<p>Returns the list of definition names that identify detail definitions of which details the manager should (at a minimum) retrieve when fetching contacts. This hint may be ignored by the backend, in which case it will return the full set of details for each contact retrieved.</p>
+<p>See also <a href="qcontactfetchhint.html#setDetailDefinitionsHint">setDetailDefinitionsHint</a>().</p>
+<!-- @@@detailDefinitionsHint -->
+<!-- $$$maxCountHint[overload1]$$$maxCountHint -->
+<h3 class="fn"><a name="maxCountHint"></a>int QContactFetchHint::maxCountHint () const</h3>
+<p>Returns the number of results which the client considers to be the maximum number of useful results. The client is only interested in this number of results, so returning any more results would be superfluous to the client's requirements. Note that this fetch hint only affects operations where the backend would return a list of contacts; this hint specifies the maximum number of contacts in the list which would be useful to the client. The backend may ignore this hint, in which case it must return all contacts which would otherwise have been returned as a result of the operation.</p>
+<p>A negative value for count denotes that the client wishes to retrieve all results. The default value is -1.</p>
+<p>See also <a href="qcontactfetchhint.html#setMaxCountHint">setMaxCountHint</a>().</p>
+<!-- @@@maxCountHint -->
+<!-- $$$optimizationHints[overload1]$$$optimizationHints -->
+<h3 class="fn"><a name="optimizationHints"></a><a href="qcontactfetchhint.html#OptimizationHint-enum">OptimizationHints</a> QContactFetchHint::optimizationHints () const</h3>
+<p>Returns the optimization hint flags specified by the client. These hints may be ignored by the backend, in which case it will return the full set of information accessible in a contact, including relationships, action preferences, and binary blobs.</p>
+<p>See also <a href="qcontactfetchhint.html#setOptimizationHints">setOptimizationHints</a>().</p>
+<!-- @@@optimizationHints -->
+<!-- $$$preferredImageSize[overload1]$$$preferredImageSize -->
+<h3 class="fn"><a name="preferredImageSize"></a><a href="http://qt.nokia.com/doc/4.7/qsize.html">QSize</a> QContactFetchHint::preferredImageSize () const</h3>
+<p>Returns the preferred pixel dimensions for any images returned by the manager for a given request. This hint may be ignored by the manager.</p>
+<p>This is useful when the backend supports multiple sizes of an image (or the image is natively scaleable) in order to get an image that will look good at the indicated dimensions.</p>
+<p>The caller should be prepared for images of any dimensions, in any case.</p>
+<p>See also <a href="qcontactfetchhint.html#setPreferredImageSize">setPreferredImageSize</a>().</p>
+<!-- @@@preferredImageSize -->
+<!-- $$$relationshipTypesHint[overload1]$$$relationshipTypesHint -->
+<h3 class="fn"><a name="relationshipTypesHint"></a><a href="http://qt.nokia.com/doc/4.7/qstringlist.html">QStringList</a> QContactFetchHint::relationshipTypesHint () const</h3>
+<p>Returns the list of relationship types that the manager should (at a minimum) retrieve when fetching contacts. This hint may be ignored by the backend, in which case it will return the full set of relationships for each contact retrieved.</p>
+<p>See also <a href="qcontactfetchhint.html#setRelationshipTypesHint">setRelationshipTypesHint</a>() and <a href="qcontact.html#relationships">QContact::relationships</a>().</p>
+<!-- @@@relationshipTypesHint -->
+<!-- $$$setDetailDefinitionsHint[overload1]$$$setDetailDefinitionsHintconstQStringList& -->
+<h3 class="fn"><a name="setDetailDefinitionsHint"></a>void QContactFetchHint::setDetailDefinitionsHint ( const <a href="http://qt.nokia.com/doc/4.7/qstringlist.html">QStringList</a> &amp; <i>definitionNames</i> )</h3>
+<p>Sets the list of definition names that identify detail definitions of which details the manager should (at a minimum) retrieve when fetching contacts to <i>definitionNames</i>. This hint may be ignored by the backend, in which case it will return the full set of details for each contact retrieved.</p>
+<p>See also <a href="qcontactfetchhint.html#detailDefinitionsHint">detailDefinitionsHint</a>().</p>
+<!-- @@@setDetailDefinitionsHint -->
+<!-- $$$setMaxCountHint[overload1]$$$setMaxCountHintint -->
+<h3 class="fn"><a name="setMaxCountHint"></a>void QContactFetchHint::setMaxCountHint ( int <i>count</i> )</h3>
+<p>Sets the maximum number of results which the client is interested in to <i>count</i>. The client is only interested in this number of results, so returning any more results would be superfluous to the client's requirements. Note that this fetch hint only affects operations where the backend would return a list of contacts; this hint specifies the maximum number of contacts in the list which would be useful to the client. The backend may ignore this hint, in which case it must return all contacts which would otherwise have been returned as a result of the operation.</p>
+<p>A negative value for count denotes that the client wishes to retrieve all results. The default value is -1.</p>
+<p>See also <a href="qcontactfetchhint.html#maxCountHint">maxCountHint</a>().</p>
+<!-- @@@setMaxCountHint -->
+<!-- $$$setOptimizationHints[overload1]$$$setOptimizationHintsOptimizationHints -->
+<h3 class="fn"><a name="setOptimizationHints"></a>void QContactFetchHint::setOptimizationHints ( <a href="qcontactfetchhint.html#OptimizationHint-enum">OptimizationHints</a> <i>hints</i> )</h3>
+<p>Sets the optimization hint flags specified by the client to <i>hints</i>. These hints may be ignored by the backend, in which case it will return the full set of information accessible in a contact, including relationships, action preferences, and binary blobs.</p>
+<p>See also <a href="qcontactfetchhint.html#optimizationHints">optimizationHints</a>().</p>
+<!-- @@@setOptimizationHints -->
+<!-- $$$setPreferredImageSize[overload1]$$$setPreferredImageSizeconstQSize& -->
+<h3 class="fn"><a name="setPreferredImageSize"></a>void QContactFetchHint::setPreferredImageSize ( const <a href="http://qt.nokia.com/doc/4.7/qsize.html">QSize</a> &amp; <i>size</i> )</h3>
+<p>Sets the preferred pixel dimensions for any images returned by the manager for the given request to <i>size</i>. This hint may be ignored by the manager.</p>
+<p>This is useful when the backend supports multiple sizes of an image (or the image is natively scaleable) in order to get an image that will look good at the indicated dimensions.</p>
+<p>The caller should be prepared for images of any dimensions, in any case.</p>
+<p>See also <a href="qcontactfetchhint.html#preferredImageSize">preferredImageSize</a>().</p>
+<!-- @@@setPreferredImageSize -->
+<!-- $$$setRelationshipTypesHint[overload1]$$$setRelationshipTypesHintconstQStringList& -->
+<h3 class="fn"><a name="setRelationshipTypesHint"></a>void QContactFetchHint::setRelationshipTypesHint ( const <a href="http://qt.nokia.com/doc/4.7/qstringlist.html">QStringList</a> &amp; <i>relationshipTypes</i> )</h3>
+<p>Sets the list of relationship types that the manager should (at a minimum) retrieve when fetching contacts to <i>relationshipTypes</i>. This hint may be ignored by the backend, in which case it will return the full set of relationships for each contact retrieved.</p>
+<p>See also <a href="qcontactfetchhint.html#relationshipTypesHint">relationshipTypesHint</a>() and <a href="qcontact.html#relationships">QContact::relationships</a>().</p>
+<!-- @@@setRelationshipTypesHint -->
+<!-- $$$operator=[overload1]$$$operator=constQContactFetchHint& -->
+<h3 class="fn"><a name="operator-eq"></a>QContactFetchHint &amp; QContactFetchHint::operator= ( const QContactFetchHint &amp; <i>other</i> )</h3>
+<p>Assigns this fetch hint to be equal to the <i>other</i> fetch hint</p>
+<!-- @@@operator= -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

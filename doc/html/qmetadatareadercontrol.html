@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qmetadatareadercontrol.cpp -->
+  <title>Qt 1.2: QMetaDataReaderControl Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtmultimediakit.html">QtMultimediaKit</a></li>
+              <li>QMetaDataReaderControl</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#macros">Macros</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QMetaDataReaderControl Class Reference</h1>
+<!-- $$$QMetaDataReaderControl-brief -->
+<p>The QMetaDataReaderControl class provides read access to the meta-data of a <a href="qmediaservice.html">QMediaService</a>'s media. <a href="#details">More...</a></p>
+<!-- @@@QMetaDataReaderControl -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QMetaDataReaderControl&gt;</pre><p>Inherits <a href="qmediacontrol.html">QMediaControl</a>.</p>
+<p>This class was introduced in Qt Mobility 1.0.</p>
+<ul>
+<li><a href="qmetadatareadercontrol-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qmetadatareadercontrol.html#dtor.QMetaDataReaderControl">~QMetaDataReaderControl</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QStringList </td><td class="memItemRight bottomAlign"><b><a href="qmetadatareadercontrol.html#availableExtendedMetaData">availableExtendedMetaData</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QList&lt;QtMultimediaKit::MetaData&gt; </td><td class="memItemRight bottomAlign"><b><a href="qmetadatareadercontrol.html#availableMetaData">availableMetaData</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVariant </td><td class="memItemRight bottomAlign"><b><a href="qmetadatareadercontrol.html#extendedMetaData">extendedMetaData</a></b> ( const QString &amp; <i>key</i> ) const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qmetadatareadercontrol.html#isMetaDataAvailable">isMetaDataAvailable</a></b> () const = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVariant </td><td class="memItemRight bottomAlign"><b><a href="qmetadatareadercontrol.html#metaData">metaData</a></b> ( QtMultimediaKit::MetaData <i>key</i> ) const = 0</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qmetadatareadercontrol.html#metaDataAvailableChanged">metaDataAvailableChanged</a></b> ( bool <i>available</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qmetadatareadercontrol.html#metaDataChanged">metaDataChanged</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h2>Protected Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qmetadatareadercontrol.html#QMetaDataReaderControl">QMetaDataReaderControl</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+</table>
+<ul>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="macros"></a>
+<h2>Macros</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qmetadatareadercontrol.html#QMetaDataReaderControl_iid">QMetaDataReaderControl_iid</a></b></td></tr>
+</table>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QMetaDataReaderControl-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QMetaDataReaderControl class provides read access to the meta-data of a <a href="qmediaservice.html">QMediaService</a>'s media.</p>
+<p>If a <a href="qmediaservice.html">QMediaService</a> can provide read or write access to the meta-data of its current media it will implement QMetaDataReaderControl. This control provides functions for both retrieving and setting meta-data values. Meta-data may be addressed by the well defined keys in the <a href="qtmultimediakit.html#MetaData-enum">QtMultimediaKit::MetaData</a> enumeration using the <a href="qmetadatareadercontrol.html#metaData">metaData</a>() functions, or by string keys using the <a href="qmetadatareadercontrol.html#extendedMetaData">extendedMetaData</a>() functions.</p>
+<p>The functionality provided by this control is exposed to application code by the meta-data members of <a href="qmediaobject.html">QMediaObject</a>, and so meta-data access is potentially available in any of the media object classes. Any media service may implement QMetaDataReaderControl.</p>
+<p>The interface name of QMetaDataReaderControl is <tt>com.nokia.Qt.QMetaDataReaderControl/1.0</tt> as defined in <a href="qmetadatareadercontrol.html#QMetaDataReaderControl_iid">QMetaDataReaderControl_iid</a>.</p>
+</div>
+<p>See also <a href="qmediaservice.html#requestControl">QMediaService::requestControl</a>() and <a href="qmediaobject.html">QMediaObject</a>.</p>
+<!-- @@@QMetaDataReaderControl -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QMetaDataReaderControl[overload1]$$$QMetaDataReaderControlQObject* -->
+<h3 class="fn"><a name="QMetaDataReaderControl"></a>QMetaDataReaderControl::QMetaDataReaderControl ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )<tt> [protected]</tt></h3>
+<p>Construct a <a href="qmetadatareadercontrol.html">QMetaDataReaderControl</a> with <i>parent</i>. This class is meant as a base class for service specific meta data providers so this constructor is protected.</p>
+<!-- @@@QMetaDataReaderControl -->
+<!-- $$$~QMetaDataReaderControl[overload1]$$$~QMetaDataReaderControl -->
+<h3 class="fn"><a name="dtor.QMetaDataReaderControl"></a>QMetaDataReaderControl::~QMetaDataReaderControl ()</h3>
+<p>Destroy the meta-data object.</p>
+<!-- @@@~QMetaDataReaderControl -->
+<!-- $$$availableExtendedMetaData[overload1]$$$availableExtendedMetaData -->
+<h3 class="fn"><a name="availableExtendedMetaData"></a><a href="http://qt.nokia.com/doc/4.7/qstringlist.html">QStringList</a> QMetaDataReaderControl::availableExtendedMetaData () const<tt> [pure virtual]</tt></h3>
+<p>Returns a list of keys there is extended meta-data available for.</p>
+<!-- @@@availableExtendedMetaData -->
+<!-- $$$availableMetaData[overload1]$$$availableMetaData -->
+<h3 class="fn"><a name="availableMetaData"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qtmultimediakit.html#MetaData-enum">QtMultimediaKit::MetaData</a>&gt; QMetaDataReaderControl::availableMetaData () const<tt> [pure virtual]</tt></h3>
+<p>Returns a list of keys there is meta-data available for.</p>
+<!-- @@@availableMetaData -->
+<!-- $$$extendedMetaData[overload1]$$$extendedMetaDataconstQString& -->
+<h3 class="fn"><a name="extendedMetaData"></a><a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> QMetaDataReaderControl::extendedMetaData ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>key</i> ) const<tt> [pure virtual]</tt></h3>
+<p>Returns the metaData for an abitrary string <i>key</i>.</p>
+<p>The valid selection of keys for extended meta-data is determined by the provider and the meaning and type may differ between providers.</p>
+<!-- @@@extendedMetaData -->
+<!-- $$$isMetaDataAvailable[overload1]$$$isMetaDataAvailable -->
+<h3 class="fn"><a name="isMetaDataAvailable"></a>bool QMetaDataReaderControl::isMetaDataAvailable () const<tt> [pure virtual]</tt></h3>
+<p>Identifies if meta-data is available from a media service.</p>
+<p>Returns true if the meta-data is available and false otherwise.</p>
+<!-- @@@isMetaDataAvailable -->
+<!-- $$$metaData[overload1]$$$metaDataQtMultimediaKit::MetaData -->
+<h3 class="fn"><a name="metaData"></a><a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a> QMetaDataReaderControl::metaData ( <a href="qtmultimediakit.html#MetaData-enum">QtMultimediaKit::MetaData</a> <i>key</i> ) const<tt> [pure virtual]</tt></h3>
+<p>Returns the meta-data for the given <i>key</i>.</p>
+<!-- @@@metaData -->
+<!-- $$$metaDataAvailableChanged[overload1]$$$metaDataAvailableChangedbool -->
+<h3 class="fn"><a name="metaDataAvailableChanged"></a>void QMetaDataReaderControl::metaDataAvailableChanged ( bool <i>available</i> )<tt> [signal]</tt></h3>
+<p>Signal the availability of meta-data has changed, <i>available</i> will be true if the multimedia object has meta-data.</p>
+<!-- @@@metaDataAvailableChanged -->
+<!-- $$$metaDataChanged[overload1]$$$metaDataChanged -->
+<h3 class="fn"><a name="metaDataChanged"></a>void QMetaDataReaderControl::metaDataChanged ()<tt> [signal]</tt></h3>
+<p>Signal the changes of meta-data.</p>
+<!-- @@@metaDataChanged -->
+</div>
+<div class="macros">
+<h2>Macro Documentation</h2>
+<!-- $$$QMetaDataReaderControl_iid[overload1]$$$QMetaDataReaderControl_iid -->
+<h3 class="fn"><a name="QMetaDataReaderControl_iid"></a>QMetaDataReaderControl_iid</h3>
+<p><tt>com.nokia.Qt.QMetaDataReaderControl/1.0</tt></p>
+<p>Defines the interface name of the <a href="qmetadatareadercontrol.html">QMetaDataReaderControl</a> class.</p>
+<!-- @@@QMetaDataReaderControl_iid -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

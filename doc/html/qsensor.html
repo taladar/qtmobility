@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qsensor.cpp -->
+  <title>Qt 1.2: QSensor Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtsensors.html">QtSensors</a></li>
+              <li>QSensor</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#related-non-members">Related Non-Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QSensor Class Reference</h1>
+<!-- $$$QSensor-brief -->
+<p>The QSensor class represents a single hardware sensor. <a href="#details">More...</a></p>
+<!-- @@@QSensor -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QSensor&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qaccelerometer.html">QAccelerometer</a>, <a href="qambientlightsensor.html">QAmbientLightSensor</a>, <a href="qcompass.html">QCompass</a>, <a href="qgyroscope.html">QGyroscope</a>, <a href="qlightsensor.html">QLightSensor</a>, <a href="qmagnetometer.html">QMagnetometer</a>, <a href="qorientationsensor.html">QOrientationSensor</a>, <a href="qproximitysensor.html">QProximitySensor</a>, <a href="qrotationsensor.html">QRotationSensor</a>, and <a href="qtapsensor.html">QTapSensor</a>.</p>
+<ul>
+<li><a href="qsensor-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2>Properties</h2>
+<table class="propsummary">
+<tr><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qsensor.html#active-prop">active</a></b> : bool</li>
+<li class="fn"><b><a href="qsensor.html#availableDataRates-prop">availableDataRates</a></b> : const QtMobility::qrangelist</li>
+<li class="fn"><b><a href="qsensor.html#busy-prop">busy</a></b> : const bool</li>
+<li class="fn"><b><a href="qsensor.html#connectedToBackend-prop">connectedToBackend</a></b> : const bool</li>
+<li class="fn"><b><a href="qsensor.html#dataRate-prop">dataRate</a></b> : int</li>
+<li class="fn"><b><a href="qsensor.html#description-prop">description</a></b> : const QString</li>
+</ul></td><td  class="topAlign"><ul>
+<li class="fn"><b><a href="qsensor.html#error-prop">error</a></b> : const int</li>
+<li class="fn"><b><a href="qsensor.html#outputRange-prop">outputRange</a></b> : int</li>
+<li class="fn"><b><a href="qsensor.html#outputRanges-prop">outputRanges</a></b> : const QtMobility::qoutputrangelist</li>
+<li class="fn"><b><a href="qsensor.html#reading-prop">reading</a></b> : QSensorReading * const</li>
+<li class="fn"><b><a href="qsensor.html#sensorid-prop">sensorid</a></b> : QByteArray</li>
+<li class="fn"><b><a href="qsensor.html#type-prop">type</a></b> : const QByteArray</li>
+</ul>
+</td></tr>
+</table>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#QSensor">QSensor</a></b> ( const QByteArray &amp; <i>type</i>, QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#dtor.QSensor">~QSensor</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#addFilter">addFilter</a></b> ( QSensorFilter * <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qrangelist </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#availableDataRates-prop">availableDataRates</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#connectToBackend">connectToBackend</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#dataRate-prop">dataRate</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#description-prop">description</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#error-prop">error</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QSensorFilter *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#filters">filters</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#sensorid-prop">identifier</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#active-prop">isActive</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#busy-prop">isBusy</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#connectedToBackend-prop">isConnectedToBackend</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#outputRange-prop">outputRange</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qoutputrangelist </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#outputRanges-prop">outputRanges</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSensorReading * </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#reading-prop">reading</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#removeFilter">removeFilter</a></b> ( QSensorFilter * <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#active-prop">setActive</a></b> ( bool <i>active</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#dataRate-prop">setDataRate</a></b> ( int <i>rate</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#sensorid-prop">setIdentifier</a></b> ( const QByteArray &amp; <i>identifier</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#outputRange-prop">setOutputRange</a></b> ( int <i>index</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#type-prop">type</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2>Public Slots</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#start">start</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#stop">stop</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#activeChanged">activeChanged</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#availableSensorsChanged">availableSensorsChanged</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#busyChanged">busyChanged</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#readingChanged">readingChanged</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#sensorError">sensorError</a></b> ( int <i>error</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#defaultSensorForType">defaultSensorForType</a></b> ( const QByteArray &amp; <i>type</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QByteArray&gt; </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#sensorTypes">sensorTypes</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QByteArray&gt; </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#sensorsForType">sensorsForType</a></b> ( const QByteArray &amp; <i>type</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="related-non-members"></a>
+<h2>Related Non-Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> class </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html">qoutputrange</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> typedef </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#qoutputrangelist-typedef">qoutputrangelist</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> typedef </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#qrange-typedef">qrange</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> typedef </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#qrangelist-typedef">qrangelist</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> typedef </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#qtimestamp-typedef">qtimestamp</a></b></td></tr>
+</table>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QSensor-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QSensor class represents a single hardware sensor.</p>
+<p>The life cycle of a sensor is typically:</p>
+<ul>
+<li>Create a sub-class of QSensor on the stack or heap.</li>
+<li>Setup as required by the application.</li>
+<li>Start receiving values.</li>
+<li>Sensor data is used by the application.</li>
+<li>Stop receiving values.</li>
+</ul>
+<p>The sensor data is delivered via QSensorData and its sub-classes.</p>
+</div>
+<p>See also <a href="qsensorreading.html">QSensorReading</a>.</p>
+<!-- @@@QSensor -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$active-prop$$$isActive$$$setActivebool$$$activeChanged -->
+<h3 class="fn"><a name="active-prop"></a>active : bool</h3>
+<p>This property holds a value to indicate if the sensor is active.</p>
+<p>This is true if the sensor is active (returning values). This is false otherwise.</p>
+<p>Note that setting this value to true will not have an immediate effect. Instead, the sensor will be started once the event loop has been reached.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><b>isActive</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setActive</b> ( bool <i>active</i> )</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#activeChanged">activeChanged</a></b> ()</td></tr>
+</table>
+<!-- @@@active -->
+<!-- $$$availableDataRates-prop$$$availableDataRates -->
+<h3 class="fn"><a name="availableDataRates-prop"></a>availableDataRates : const QtMobility::qrangelist</h3>
+<p>This property holds the data rates that the sensor supports.</p>
+<p>This is a list of the data rates that the sensor supports. Measured in Hertz.</p>
+<p>Entries in the list can represent discrete rates or a continuous range of rates. A discrete rate is noted by having both values the same.</p>
+<p>See the <a href="sensors-sensor-explorer.html">sensor_explorer</a> example for an example of how to interpret and use this information.</p>
+<p>Note that this information is not mandatory as not all sensors have a rate at which they run. In such cases, the list will be empty.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qrangelist </td><td class="memItemRight bottomAlign"><b>availableDataRates</b> () const</td></tr>
+</table>
+<p>See also <a href="qsensor.html#dataRate-prop">QSensor::dataRate</a> and <a href="qsensor.html#qrangelist-typedef">qrangelist</a>.</p>
+<!-- @@@availableDataRates -->
+<!-- $$$busy-prop$$$isBusy -->
+<h3 class="fn"><a name="busy-prop"></a>busy : const bool</h3>
+<p>This property holds a value to indicate if the sensor is busy.</p>
+<p>Some sensors may be on the system but unavailable for use. This function will return true if the sensor is busy. You will not be able to <a href="qsensor.html#start">start</a>() the sensor.</p>
+<p>Note that this function does not return true if you are using the sensor, only if another process is using the sensor.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><b>isBusy</b> () const</td></tr>
+</table>
+<p>See also <a href="qsensor.html#busyChanged">busyChanged</a>().</p>
+<!-- @@@busy -->
+<!-- $$$connectedToBackend-prop$$$isConnectedToBackend -->
+<h3 class="fn"><a name="connectedToBackend-prop"></a>connectedToBackend : const bool</h3>
+<p>This property holds a value indicating if the sensor has connected to a backend.</p>
+<p>A sensor that has not been connected to a backend cannot do anything useful.</p>
+<p>Call the <a href="qsensor.html#connectToBackend">connectToBackend</a>() method to force the sensor to connect to a backend immediately. This is automatically called if you call <a href="qsensor.html#start">start</a>() so you only need to do this if you need access to sensor properties (ie. to poll the sensor's meta-data before you use it).</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><b>isConnectedToBackend</b> () const</td></tr>
+</table>
+<!-- @@@connectedToBackend -->
+<!-- $$$dataRate-prop$$$dataRate$$$setDataRateint -->
+<h3 class="fn"><a name="dataRate-prop"></a>dataRate : int</h3>
+<p>This property holds the data rate that the sensor should be run at.</p>
+<p>Measured in Hertz.</p>
+<p>The data rate is the maximum frequency at which the sensor can detect changes.</p>
+<p>Setting this property is not portable and can cause conflicts with other applications. Check with the sensor backend and platform documentation for any policy regarding multiple applications requesting a data rate.</p>
+<p>The default value (0) means that the app does not care what the data rate is. Applications should consider using a timer-based poll of the current value or ensure that the code that processes values can run very quickly as the platform may provide updates hundreds of times each second.</p>
+<p>This should be set before calling <a href="qsensor.html#start">start</a>() because the sensor may not notice changes to this value while it is running.</p>
+<p>Note that there is no mechanism to determine the current data rate in use by the platform.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>dataRate</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setDataRate</b> ( int <i>rate</i> )</td></tr>
+</table>
+<p>See also <a href="qsensor.html#availableDataRates-prop">QSensor::availableDataRates</a>.</p>
+<!-- @@@dataRate -->
+<!-- $$$description-prop$$$description -->
+<h3 class="fn"><a name="description-prop"></a>description : const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a></h3>
+<p>This property holds a descriptive string for the sensor.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><b>description</b> () const</td></tr>
+</table>
+<!-- @@@description -->
+<!-- $$$error-prop$$$error$$$sensorErrorint -->
+<h3 class="fn"><a name="error-prop"></a>error : const int</h3>
+<p>This property holds the last error code set on the sensor.</p>
+<p>Note that error codes are sensor-specific.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>error</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#sensorError">sensorError</a></b> ( int <i>error</i> )</td></tr>
+</table>
+<!-- @@@error -->
+<!-- $$$outputRange-prop$$$outputRange$$$setOutputRangeint -->
+<h3 class="fn"><a name="outputRange-prop"></a>outputRange : int</h3>
+<p>This property holds the output range in use by the sensor.</p>
+<p>This value represents the index in the <a href="qsensor.html#outputRanges-prop">QSensor::outputRanges</a> list to use.</p>
+<p>Setting this property is not portable and can cause conflicts with other applications. Check with the sensor backend and platform documentation for any policy regarding multiple applications requesting an output range.</p>
+<p>The default value (-1) means that the app does not care what the output range is.</p>
+<p>Note that there is no mechanism to determine the current output range in use by the platform.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>outputRange</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setOutputRange</b> ( int <i>index</i> )</td></tr>
+</table>
+<p>See also <a href="qsensor.html#outputRanges-prop">QSensor::outputRanges</a>.</p>
+<!-- @@@outputRange -->
+<!-- $$$outputRanges-prop$$$outputRanges -->
+<h3 class="fn"><a name="outputRanges-prop"></a>outputRanges : const QtMobility::qoutputrangelist</h3>
+<p>This property holds a list of output ranges the sensor supports.</p>
+<p>A sensor may have more than one output range. Typically this is done to give a greater measurement range at the cost of lowering accuracy.</p>
+<p>Note that this information is not mandatory. This information is typically only available for sensors that have selectable output ranges (such as typical accelerometers).</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> qoutputrangelist </td><td class="memItemRight bottomAlign"><b>outputRanges</b> () const</td></tr>
+</table>
+<p>See also <a href="qsensor.html#outputRange-prop">QSensor::outputRange</a> and <a href="qsensor.html#qoutputrangelist-typedef">qoutputrangelist</a>.</p>
+<!-- @@@outputRanges -->
+<!-- $$$reading-prop$$$reading$$$readingChanged -->
+<h3 class="fn"><a name="reading-prop"></a>reading : <a href="qsensorreading.html">QSensorReading</a> * const</h3>
+<p>This property holds the reading class.</p>
+<p>The reading class provides access to sensor readings. The reading object is a volatile cache of the most recent sensor reading that has been received so the application should process readings immediately or save the values somewhere for later processing.</p>
+<p>Note that this will return 0 until a sensor backend is connected to a backend.</p>
+<p>Also note that readings are not immediately available after <a href="qsensor.html#start">start</a>() is called. Applications must wait for the <a href="qsensor.html#readingChanged">readingChanged</a>() signal to be emitted.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QSensorReading * </td><td class="memItemRight bottomAlign"><b>reading</b> () const</td></tr>
+</table>
+<p><b>Notifier signal:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsensor.html#readingChanged">readingChanged</a></b> ()</td></tr>
+</table>
+<p>See also <a href="qsensor.html#connectedToBackend-prop">isConnectedToBackend</a>() and <a href="qsensor.html#start">start</a>().</p>
+<!-- @@@reading -->
+<!-- $$$sensorid-prop$$$identifier$$$setIdentifierconstQByteArray& -->
+<h3 class="fn"><a name="sensorid-prop"></a>sensorid : <a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a></h3>
+<p>This property holds the backend identifier for the sensor.</p>
+<p>Note that the identifier is filled out automatically when the sensor is connected to a backend. If you want to connect a specific backend, you should call setIdentifier() before <a href="qsensor.html#connectToBackend">connectToBackend</a>().</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b>identifier</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setIdentifier</b> ( const QByteArray &amp; <i>identifier</i> )</td></tr>
+</table>
+<!-- @@@sensorid -->
+<!-- $$$type-prop$$$type -->
+<h3 class="fn"><a name="type-prop"></a>type : const <a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a></h3>
+<p>This property holds the type of the sensor.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b>type</b> () const</td></tr>
+</table>
+<!-- @@@type -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QSensor[overload1]$$$QSensorconstQByteArray&QObject* -->
+<h3 class="fn"><a name="QSensor"></a>QSensor::QSensor ( const <a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a> &amp; <i>type</i>, <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Construct the <i>type</i> sensor as a child of <i>parent</i>.</p>
+<!-- @@@QSensor -->
+<!-- $$$~QSensor[overload1]$$$~QSensor -->
+<h3 class="fn"><a name="dtor.QSensor"></a>QSensor::~QSensor ()<tt> [virtual]</tt></h3>
+<p>Destroy the sensor. Stops the sensor if it has not already been stopped.</p>
+<!-- @@@~QSensor -->
+<!-- $$$activeChanged[overload1]$$$activeChanged -->
+<h3 class="fn"><a name="activeChanged"></a>void QSensor::activeChanged ()<tt> [signal]</tt></h3>
+<p>This signal is emitted when the <a href="qsensor.html#active-prop">QSensor::active</a> property has changed.</p>
+<p>See also <a href="qsensor.html#active-prop">QSensor::active</a>.</p>
+<!-- @@@activeChanged -->
+<!-- $$$addFilter[overload1]$$$addFilterQSensorFilter* -->
+<h3 class="fn"><a name="addFilter"></a>void QSensor::addFilter ( <a href="qsensorfilter.html">QSensorFilter</a> * <i>filter</i> )</h3>
+<p>Add a <i>filter</i> to the sensor.</p>
+<p>The sensor does not take ownership of the filter. <a href="qsensorfilter.html">QSensorFilter</a> will inform the sensor if it is destroyed.</p>
+<p>See also <a href="qsensorfilter.html">QSensorFilter</a>.</p>
+<!-- @@@addFilter -->
+<!-- $$$availableSensorsChanged[overload1]$$$availableSensorsChanged -->
+<h3 class="fn"><a name="availableSensorsChanged"></a>void QSensor::availableSensorsChanged ()<tt> [signal]</tt></h3>
+<p>This signal is emitted when the list of available sensors has changed. The sensors available to a program will not generally change over time however some of the avilable sensors may represent hardware that is not permanently connected. For example, a game controller that is connected via bluetooth would become available when it was on and would become unavailable when it was off.</p>
+<p>See also <a href="qsensor.html#sensorTypes">QSensor::sensorTypes</a>() and <a href="qsensor.html#sensorsForType">QSensor::sensorsForType</a>().</p>
+<!-- @@@availableSensorsChanged -->
+<!-- $$$busyChanged[overload1]$$$busyChanged -->
+<h3 class="fn"><a name="busyChanged"></a>void QSensor::busyChanged ()<tt> [signal]</tt></h3>
+<p>This signal is emitted when the sensor is no longer busy. This can be used to grab a sensor when it becomes available.</p>
+<pre class="highlightedCode brush: cpp"> sensor.start();
+ if (sensor.isBusy()) {
+     <span class="comment">// need to wait for busyChanged signal and try again</span>
+ }</pre>
+<!-- @@@busyChanged -->
+<!-- $$$connectToBackend[overload1]$$$connectToBackend -->
+<h3 class="fn"><a name="connectToBackend"></a>bool QSensor::connectToBackend ()</h3>
+<p>Try to connect to a sensor backend.</p>
+<p>Returns true if a suitable backend could be found, false otherwise.</p>
+<p>The type must be set before calling this method if you are using <a href="qsensor.html">QSensor</a> directly.</p>
+<p>See also <a href="qsensor.html#connectedToBackend-prop">isConnectedToBackend</a>().</p>
+<!-- @@@connectToBackend -->
+<!-- $$$defaultSensorForType[overload1]$$$defaultSensorForTypeconstQByteArray& -->
+<h3 class="fn"><a name="defaultSensorForType"></a><a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a> QSensor::defaultSensorForType ( const <a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a> &amp; <i>type</i> )<tt> [static]</tt></h3>
+<p>Returns the default sensor identifier for <i>type</i>. This is set in a config file and can be overridden if required. If no default is available the system will return the first registered sensor for <i>type</i>.</p>
+<p>Note that there is special case logic to prevent the generic plugin's backends from becoming the default when another backend is registered for the same type. This logic means that a backend identifier starting with <tt>generic.</tt> will only be the default if no other backends have been registered for that type or if it is specified in <tt>Sensors.conf</tt>.</p>
+<p>See also <a href="determining-the-default-sensor-for-a-type.html">Determining the default sensor for a type</a>.</p>
+<!-- @@@defaultSensorForType -->
+<!-- $$$filters[overload1]$$$filters -->
+<h3 class="fn"><a name="filters"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qsensorfilter.html">QSensorFilter</a> *&gt; QSensor::filters () const</h3>
+<p>Returns the filters currently attached to the sensor.</p>
+<p>See also <a href="qsensorfilter.html">QSensorFilter</a>.</p>
+<!-- @@@filters -->
+<!-- $$$readingChanged[overload1]$$$readingChanged -->
+<h3 class="fn"><a name="readingChanged"></a>void QSensor::readingChanged ()<tt> [signal]</tt></h3>
+<p>This signal is emitted when a new sensor reading is received.</p>
+<p>The sensor reading can be found in the <a href="qsensor.html#reading-prop">QSensor::reading</a> property. Note that the reading object is a volatile cache of the most recent sensor reading that has been received so the application should process the reading immediately or save the values somewhere for later processing.</p>
+<p>Before this signal has been emitted for the first time, the reading object will have uninitialized data.</p>
+<p>See also <a href="qsensor.html#start">start</a>().</p>
+<!-- @@@readingChanged -->
+<!-- $$$removeFilter[overload1]$$$removeFilterQSensorFilter* -->
+<h3 class="fn"><a name="removeFilter"></a>void QSensor::removeFilter ( <a href="qsensorfilter.html">QSensorFilter</a> * <i>filter</i> )</h3>
+<p>Remove <i>filter</i> from the sensor.</p>
+<p>See also <a href="qsensorfilter.html">QSensorFilter</a>.</p>
+<!-- @@@removeFilter -->
+<!-- $$$sensorError[overload1]$$$sensorErrorint -->
+<h3 class="fn"><a name="sensorError"></a>void QSensor::sensorError ( int <i>error</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when an <i>error</i> code is set on the sensor. Note that some errors will cause the sensor to stop working. You should call <a href="qsensor.html#active-prop">isActive</a>() to determine if the sensor is still running.</p>
+<!-- @@@sensorError -->
+<!-- $$$sensorTypes[overload1]$$$sensorTypes -->
+<h3 class="fn"><a name="sensorTypes"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a>&gt; QSensor::sensorTypes ()<tt> [static]</tt></h3>
+<p>Returns a list of all sensor types.</p>
+<!-- @@@sensorTypes -->
+<!-- $$$sensorsForType[overload1]$$$sensorsForTypeconstQByteArray& -->
+<h3 class="fn"><a name="sensorsForType"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a>&gt; QSensor::sensorsForType ( const <a href="http://qt.nokia.com/doc/4.7/qbytearray.html">QByteArray</a> &amp; <i>type</i> )<tt> [static]</tt></h3>
+<p>Returns a list of ids for each of the sensors for <i>type</i>. If there are no sensors of that type available the list will be empty.</p>
+<!-- @@@sensorsForType -->
+<!-- $$$start[overload1]$$$start -->
+<h3 class="fn"><a name="start"></a>bool QSensor::start ()<tt> [slot]</tt></h3>
+<p>Start retrieving values from the sensor. Returns true if the sensor was started, false otherwise.</p>
+<p>The sensor may fail to start for several reasons.</p>
+<p>Once an application has started a sensor it must wait until the sensor receives a new value before it can query the sensor's values. This is due to how the sensor receives values from the system. Sensors do not (in general) poll for new values, rather new values are pushed to the sensors as they happen.</p>
+<p>For example, this code will not work as intended.</p>
+<pre class="highlightedCode brush: cpp"> sensor-&gt;start();
+ sensor-&gt;reading()-&gt;x(); // no data available</pre>
+<p>To work correctly, the code that accesses the reading should ensure the <a href="qsensor.html#readingChanged">readingChanged</a>() signal has been emitted.</p>
+<pre class="highlightedCode brush: cpp">     connect(sensor, SIGNAL(readingChanged()), this, SLOT(checkReading()));
+     sensor-&gt;start();
+ }
+ void MyClass::checkReading() {
+     sensor-&gt;reading()-&gt;x();</pre>
+<p>See also <a href="qsensor.html#busy-prop">QSensor::busy</a>.</p>
+<!-- @@@start -->
+<!-- $$$stop[overload1]$$$stop -->
+<h3 class="fn"><a name="stop"></a>void QSensor::stop ()<tt> [slot]</tt></h3>
+<p>Stop retrieving values from the sensor.</p>
+<p>This releases the sensor so that other processes can use it.</p>
+<p>See also <a href="qsensor.html#busy-prop">QSensor::busy</a>.</p>
+<!-- @@@stop -->
+</div>
+<div class="relnonmem">
+<h2>Related Non-Members</h2>
+<h3> class <a href="qsensor.html">qoutputrange</a></h3><!-- $$$qoutputrange-brief -->
+<p>The qoutputrange class holds the specifics of an output range. <a href="qsensor.html#details">More...</a></p>
+<!-- @@@qoutputrange -->
+<!-- $$$qoutputrangelist -->
+<h3 class="fn"><a name="qoutputrangelist-typedef"></a>typedef qoutputrangelist</h3>
+<p>This type is defined as a list of qoutputrange values.</p>
+<pre class="highlightedCode brush: cpp"> typedef QList&lt;qoutputrange&gt; qoutputrangelist;</pre>
+<p>See also <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>, <a href="qsensor.html">qoutputrange</a>, and <a href="qsensor.html#outputRanges-prop">QSensor::outputRanges</a>.</p>
+<!-- @@@qoutputrangelist -->
+<!-- $$$qrange -->
+<h3 class="fn"><a name="qrange-typedef"></a>typedef qrange</h3>
+<p>This type is defined as a <a href="http://qt.nokia.com/doc/4.7/qpair.html">QPair</a>.</p>
+<pre class="highlightedCode brush: cpp"> typedef QPair&lt;int,int&gt; qrange;</pre>
+<p>See also <a href="http://qt.nokia.com/doc/4.7/qpair.html">QPair</a>, <a href="qsensor.html#qrangelist-typedef">qrangelist</a>, and <a href="qsensor.html#availableDataRates-prop">QSensor::availableDataRates</a>.</p>
+<!-- @@@qrange -->
+<!-- $$$qrangelist -->
+<h3 class="fn"><a name="qrangelist-typedef"></a>typedef qrangelist</h3>
+<p>This type is defined as a list of qrange values.</p>
+<pre class="highlightedCode brush: cpp"> typedef QList&lt;qrange&gt; qrangelist;</pre>
+<p>See also <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>, <a href="qsensor.html#qrange-typedef">qrange</a>, and <a href="qsensor.html#availableDataRates-prop">QSensor::availableDataRates</a>.</p>
+<!-- @@@qrangelist -->
+<!-- $$$qtimestamp -->
+<h3 class="fn"><a name="qtimestamp-typedef"></a>typedef qtimestamp</h3>
+<p>Sensor timestamps are represented by this typedef which is a 64 bit unsigned integer.</p>
+<p>Timestamps values are microseconds since a fixed point. You can use timestamps to see how far apart two sensor readings are.</p>
+<p>Note that sensor timestamps from different sensors may not be directly comparable (as they may choose different fixed points for their reference).</p>
+<p><b>Note that some platforms do not deliver timestamps correctly</b>. Applications should be prepared for occasional issues that cause timestamps to jump forwards or backwards. The <a href="sensors-api.html#platform-notes">platform notes</a> have more details.</p>
+<!-- @@@qtimestamp -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

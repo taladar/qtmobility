@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativecontactfilter.cpp -->
+  <title>Qt 1.2: QML DetailFilter Element</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="qdeclarativeelements.html">QML Elements</a></li>              <li>QML DetailFilter Element</li>    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QML DetailFilter Element</h1>
+<span class="subtitle"></span>
+<!-- $$$DetailFilter-brief -->
+<p>The DetailFilter element provides a filter based around a detail value criterion. <a href="#details">More...</a></p>
+<!-- @@@DetailFilter -->
+<li><a href="qml-detailfilter-members.html">List of all members, including inherited members</a></li>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-detailfilter.html#detail-prop">detail</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-detailfilter.html#field-prop">field</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-detailfilter.html#matchFlags-prop">matchFlags</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-detailfilter.html#value-prop">value</a></b></b> : variant</li>
+</ul>
+<!-- $$$DetailFilter-description -->
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>This element is part of the <b>QtMobility.contacts 1.1</b> module.</p>
+<p>See also <a href="qcontactdetailfilter.html">QContactDetailFilter</a>.</p>
+<!-- @@@DetailFilter -->
+<h2>Property Documentation</h2>
+<!-- $$$detail -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="detail-prop"></a>detail : enumeration</p></td></tr></table></div><div class="qmldoc"><p>This property holds the detail type of which details will be matched to.</p>
+<p>See also <a href="qml-contactdetail.html#type-prop">ContactDetail::type</a>.</p>
+</div></div><!-- @@@detail -->
+<br/>
+<!-- $$$field -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="field-prop"></a>field : int</p></td></tr></table></div><div class="qmldoc"><p>This property holds the detail field type of which detail fields will be matched to. Detail field types are enumeration values defined in each detail elements.</p>
+<p>See also <a href="qml-address.html">Address</a>, <a href="qml-anniversary.html">Anniversary</a>, <a href="qml-avatar.html">Avatar</a>, <a href="qml-birthday.html">Birthday</a>, <a href="qml-displaylabel.html">DisplayLabel</a>, <a href="qml-emailaddress.html">EmailAddress</a>, <a href="qml-family.html">Family</a>, <a href="qml-favorite.html">Favorite</a>, <a href="qml-gender.html">Gender</a>, <a href="qml-geolocation.html">GeoLocation</a>, <a href="qml-globalpresence.html">GlobalPresence</a>, <a href="qml-guid.html">Guid</a>, <a href="qml-name.html">Name</a>, <a href="qml-nickname.html">Nickname</a>, <a href="qml-note.html">Note</a>, <a href="qml-onlineaccount.html">OnlineAccount</a>, <a href="qml-organization.html">Organization</a>, <a href="qml-phonenumber.html">PhoneNumber</a>, <a href="qml-presence.html">Presence</a>, <a href="qml-ringtone.html">Ringtone</a>, <a href="qml-synctarget.html">SyncTarget</a>, <a href="qml-tag.html">Tag</a>, <a href="qml-timestamp.html">Timestamp</a>, <a href="qml-url.html">Url</a>, and <a href="qml-hobby.html">Hobby</a>.</p>
+</div></div><!-- @@@field -->
+<br/>
+<!-- $$$matchFlags -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="matchFlags-prop"></a>matchFlags : enumeration</p></td></tr></table></div><div class="qmldoc"><p>This property holds the semantics of the value matching criterion. The valid match flags include:</p>
+<ul>
+<li>MatchExactly - Performs <a href="http://qt.nokia.com/doc/4.7/qvariant.html">QVariant</a>-based matching (default).</li>
+<li>MatchContains - The search term is contained in the item.</li>
+<li>MatchStartsWith - The search term matches the start of the item.</li>
+<li>MatchEndsWith - The search term matches the end of the item.</li>
+<li>MatchFixedString - Performs string-based matching. String-based comparisons are case-insensitive unless the <tt>MatchCaseSensitive</tt> flag is also specified.</li>
+<li>MatchCaseSensitive - The search is case sensitive.</li>
+</ul>
+</div></div><!-- @@@matchFlags -->
+<br/>
+<!-- $$$value -->
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td class="tblQmlPropNode"><p><a name="value-prop"></a>value : variant</p></td></tr></table></div><div class="qmldoc"><p>This property holds the value criterion of the detail filter.</p>
+</div></div><!-- @@@value -->
+<br/>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

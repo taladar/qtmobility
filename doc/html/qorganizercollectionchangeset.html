@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qorganizercollectionchangeset.cpp -->
+  <title>Qt 1.2: QOrganizerCollectionChangeSet Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtorganizer.html">QtOrganizer</a></li>
+              <li>QOrganizerCollectionChangeSet</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QOrganizerCollectionChangeSet Class Reference</h1>
+<!-- $$$QOrganizerCollectionChangeSet-brief -->
+<p>The QOrganizerCollectionChangeSet class provides a simple API to simplify the emission of state-change signals from <a href="qorganizermanagerengine.html">QOrganizerManagerEngine</a> implementations. <a href="#details">More...</a></p>
+<!-- @@@QOrganizerCollectionChangeSet -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QOrganizerCollectionChangeSet&gt;</pre><ul>
+<li><a href="qorganizercollectionchangeset-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#QOrganizerCollectionChangeSet">QOrganizerCollectionChangeSet</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#QOrganizerCollectionChangeSet-2">QOrganizerCollectionChangeSet</a></b> ( const QOrganizerCollectionChangeSet &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#dtor.QOrganizerCollectionChangeSet">~QOrganizerCollectionChangeSet</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;QOrganizerCollectionId&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#addedCollections">addedCollections</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;QOrganizerCollectionId&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#changedCollections">changedCollections</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#clearAddedCollections">clearAddedCollections</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#clearAll">clearAll</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#clearChangedCollections">clearChangedCollections</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#clearRemovedCollections">clearRemovedCollections</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#dataChanged">dataChanged</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#emitSignals">emitSignals</a></b> ( QOrganizerManagerEngine * <i>engine</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#insertAddedCollection">insertAddedCollection</a></b> ( const QOrganizerCollectionId &amp; <i>addedOrganizerCollectionId</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#insertAddedCollections">insertAddedCollections</a></b> ( const QList&lt;QOrganizerCollectionId&gt; &amp; <i>addedOrganizerCollectionIds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#insertChangedCollection">insertChangedCollection</a></b> ( const QOrganizerCollectionId &amp; <i>changedOrganizerCollectionId</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#insertChangedCollections">insertChangedCollections</a></b> ( const QList&lt;QOrganizerCollectionId&gt; &amp; <i>changedOrganizerCollectionIds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#insertRemovedCollection">insertRemovedCollection</a></b> ( const QOrganizerCollectionId &amp; <i>removedOrganizerCollectionId</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#insertRemovedCollections">insertRemovedCollections</a></b> ( const QList&lt;QOrganizerCollectionId&gt; &amp; <i>removedOrganizerCollectionIds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;QOrganizerCollectionId&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#removedCollections">removedCollections</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#setDataChanged">setDataChanged</a></b> ( bool <i>dataChanged</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerCollectionChangeSet &amp; </td><td class="memItemRight bottomAlign"><b><a href="qorganizercollectionchangeset.html#operator-eq">operator=</a></b> ( const QOrganizerCollectionChangeSet &amp; <i>other</i> )</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QOrganizerCollectionChangeSet-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QOrganizerCollectionChangeSet class provides a simple API to simplify the emission of state-change signals from <a href="qorganizermanagerengine.html">QOrganizerManagerEngine</a> implementations.</p>
+<p>This class can be utilized by backend implementations to ensure correct emission of the <a href="qorganizermanagerengine.html#dataChanged">QOrganizerManagerEngine::dataChanged</a>(), <a href="qorganizermanagerengine.html#itemsAdded">QOrganizerManagerEngine::itemsAdded</a>(), <a href="qorganizermanagerengine.html#itemsChanged">QOrganizerManagerEngine::itemsChanged</a>() and <a href="qorganizermanagerengine.html#itemsRemoved">QOrganizerManagerEngine::itemsRemoved</a>().</p>
+</div>
+<p>See also <a href="qorganizermanagerengine.html">QOrganizerManagerEngine</a>.</p>
+<!-- @@@QOrganizerCollectionChangeSet -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QOrganizerCollectionChangeSet[overload1]$$$QOrganizerCollectionChangeSet -->
+<h3 class="fn"><a name="QOrganizerCollectionChangeSet"></a>QOrganizerCollectionChangeSet::QOrganizerCollectionChangeSet ()</h3>
+<p>Constructs a new change set</p>
+<!-- @@@QOrganizerCollectionChangeSet -->
+<!-- $$$QOrganizerCollectionChangeSet$$$QOrganizerCollectionChangeSetconstQOrganizerCollectionChangeSet& -->
+<h3 class="fn"><a name="QOrganizerCollectionChangeSet-2"></a>QOrganizerCollectionChangeSet::QOrganizerCollectionChangeSet ( const QOrganizerCollectionChangeSet &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> change set</p>
+<!-- @@@QOrganizerCollectionChangeSet -->
+<!-- $$$~QOrganizerCollectionChangeSet[overload1]$$$~QOrganizerCollectionChangeSet -->
+<h3 class="fn"><a name="dtor.QOrganizerCollectionChangeSet"></a>QOrganizerCollectionChangeSet::~QOrganizerCollectionChangeSet ()</h3>
+<p>Frees the memory used by this change set</p>
+<!-- @@@~QOrganizerCollectionChangeSet -->
+<!-- $$$addedCollections[overload1]$$$addedCollections -->
+<h3 class="fn"><a name="addedCollections"></a><a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="qorganizercollectionid.html">QOrganizerCollectionId</a>&gt; QOrganizerCollectionChangeSet::addedCollections () const</h3>
+<p>Returns the set of ids of collections which have been added to the database.</p>
+<!-- @@@addedCollections -->
+<!-- $$$changedCollections[overload1]$$$changedCollections -->
+<h3 class="fn"><a name="changedCollections"></a><a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="qorganizercollectionid.html">QOrganizerCollectionId</a>&gt; QOrganizerCollectionChangeSet::changedCollections () const</h3>
+<p>Returns the set of ids of collections which have been changed in the database.</p>
+<!-- @@@changedCollections -->
+<!-- $$$clearAddedCollections[overload1]$$$clearAddedCollections -->
+<h3 class="fn"><a name="clearAddedCollections"></a>void QOrganizerCollectionChangeSet::clearAddedCollections ()</h3>
+<p>Clears the set of ids of collections which have been added to the database</p>
+<!-- @@@clearAddedCollections -->
+<!-- $$$clearAll[overload1]$$$clearAll -->
+<h3 class="fn"><a name="clearAll"></a>void QOrganizerCollectionChangeSet::clearAll ()</h3>
+<p>Clears all flags and sets of ids in this change set</p>
+<!-- @@@clearAll -->
+<!-- $$$clearChangedCollections[overload1]$$$clearChangedCollections -->
+<h3 class="fn"><a name="clearChangedCollections"></a>void QOrganizerCollectionChangeSet::clearChangedCollections ()</h3>
+<p>Clears the set of ids of collections which have been changed to the database</p>
+<!-- @@@clearChangedCollections -->
+<!-- $$$clearRemovedCollections[overload1]$$$clearRemovedCollections -->
+<h3 class="fn"><a name="clearRemovedCollections"></a>void QOrganizerCollectionChangeSet::clearRemovedCollections ()</h3>
+<p>Clears the set of ids of collections which have been removed to the database</p>
+<!-- @@@clearRemovedCollections -->
+<!-- $$$dataChanged[overload1]$$$dataChanged -->
+<h3 class="fn"><a name="dataChanged"></a>bool QOrganizerCollectionChangeSet::dataChanged ()</h3>
+<p>Returns the value of the data changed flag</p>
+<p>See also <a href="qorganizercollectionchangeset.html#setDataChanged">setDataChanged</a>().</p>
+<!-- @@@dataChanged -->
+<!-- $$$emitSignals[overload1]$$$emitSignalsQOrganizerManagerEngine* -->
+<h3 class="fn"><a name="emitSignals"></a>void QOrganizerCollectionChangeSet::emitSignals ( <a href="qorganizermanagerengine.html">QOrganizerManagerEngine</a> * <i>engine</i> )</h3>
+<p>Emits the appropriate signals from the given <i>engine</i> given the state of the change set</p>
+<!-- @@@emitSignals -->
+<!-- $$$insertAddedCollection[overload1]$$$insertAddedCollectionconstQOrganizerCollectionId& -->
+<h3 class="fn"><a name="insertAddedCollection"></a>void QOrganizerCollectionChangeSet::insertAddedCollection ( const <a href="qorganizercollectionid.html">QOrganizerCollectionId</a> &amp; <i>addedOrganizerCollectionId</i> )</h3>
+<p>Inserts the given collection id <i>addedOrganizerCollectionId</i> into the set of ids of collections which have been added to the database.</p>
+<!-- @@@insertAddedCollection -->
+<!-- $$$insertAddedCollections[overload1]$$$insertAddedCollectionsconstQList<QOrganizerCollectionId>& -->
+<h3 class="fn"><a name="insertAddedCollections"></a>void QOrganizerCollectionChangeSet::insertAddedCollections ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qorganizercollectionid.html">QOrganizerCollectionId</a>&gt; &amp; <i>addedOrganizerCollectionIds</i> )</h3>
+<p>Inserts each of the given collection ids <i>addedOrganizerCollectionIds</i> into the set of ids of collections which have been added to the database.</p>
+<!-- @@@insertAddedCollections -->
+<!-- $$$insertChangedCollection[overload1]$$$insertChangedCollectionconstQOrganizerCollectionId& -->
+<h3 class="fn"><a name="insertChangedCollection"></a>void QOrganizerCollectionChangeSet::insertChangedCollection ( const <a href="qorganizercollectionid.html">QOrganizerCollectionId</a> &amp; <i>changedOrganizerCollectionId</i> )</h3>
+<p>Inserts the given collection id <i>changedOrganizerCollectionId</i> into the set of ids of collections which have been changed to the database.</p>
+<!-- @@@insertChangedCollection -->
+<!-- $$$insertChangedCollections[overload1]$$$insertChangedCollectionsconstQList<QOrganizerCollectionId>& -->
+<h3 class="fn"><a name="insertChangedCollections"></a>void QOrganizerCollectionChangeSet::insertChangedCollections ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qorganizercollectionid.html">QOrganizerCollectionId</a>&gt; &amp; <i>changedOrganizerCollectionIds</i> )</h3>
+<p>Inserts each of the given collection ids <i>changedOrganizerCollectionIds</i> into the set of ids of collections which have been changed to the database.</p>
+<!-- @@@insertChangedCollections -->
+<!-- $$$insertRemovedCollection[overload1]$$$insertRemovedCollectionconstQOrganizerCollectionId& -->
+<h3 class="fn"><a name="insertRemovedCollection"></a>void QOrganizerCollectionChangeSet::insertRemovedCollection ( const <a href="qorganizercollectionid.html">QOrganizerCollectionId</a> &amp; <i>removedOrganizerCollectionId</i> )</h3>
+<p>Inserts the given collection id <i>removedOrganizerCollectionId</i> into the set of ids of collections which have been removed to the database.</p>
+<!-- @@@insertRemovedCollection -->
+<!-- $$$insertRemovedCollections[overload1]$$$insertRemovedCollectionsconstQList<QOrganizerCollectionId>& -->
+<h3 class="fn"><a name="insertRemovedCollections"></a>void QOrganizerCollectionChangeSet::insertRemovedCollections ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qorganizercollectionid.html">QOrganizerCollectionId</a>&gt; &amp; <i>removedOrganizerCollectionIds</i> )</h3>
+<p>Inserts each of the given collection ids <i>removedOrganizerCollectionIds</i> into the set of ids of collections which have been removed to the database.</p>
+<!-- @@@insertRemovedCollections -->
+<!-- $$$removedCollections[overload1]$$$removedCollections -->
+<h3 class="fn"><a name="removedCollections"></a><a href="http://qt.nokia.com/doc/4.7/qset.html">QSet</a>&lt;<a href="qorganizercollectionid.html">QOrganizerCollectionId</a>&gt; QOrganizerCollectionChangeSet::removedCollections () const</h3>
+<p>Returns the set of ids of collections which have been removed from the database.</p>
+<!-- @@@removedCollections -->
+<!-- $$$setDataChanged[overload1]$$$setDataChangedbool -->
+<h3 class="fn"><a name="setDataChanged"></a>void QOrganizerCollectionChangeSet::setDataChanged ( bool <i>dataChanged</i> )</h3>
+<p>Sets the data changed flag to <i>dataChanged</i>. If this is set to true prior to calling <a href="qorganizercollectionchangeset.html#emitSignals">emitSignals</a>(), only the <a href="qorganizermanagerengine.html#dataChanged">QOrganizerManagerEngine::dataChanged</a>() signal will be emitted; otherwise, the appropriate finer-grained signals will be emitted.</p>
+<p>See also <a href="qorganizercollectionchangeset.html#dataChanged">dataChanged</a>().</p>
+<!-- @@@setDataChanged -->
+<!-- $$$operator=[overload1]$$$operator=constQOrganizerCollectionChangeSet& -->
+<h3 class="fn"><a name="operator-eq"></a>QOrganizerCollectionChangeSet &amp; QOrganizerCollectionChangeSet::operator= ( const QOrganizerCollectionChangeSet &amp; <i>other</i> )</h3>
+<p>Assigns this change set to be equal to <i>other</i></p>
+<!-- @@@operator= -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

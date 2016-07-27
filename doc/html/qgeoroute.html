@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgeoroute.cpp -->
+  <title>Qt 1.2: QGeoRoute Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QGeoRoute</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGeoRoute Class Reference</h1>
+<!-- $$$QGeoRoute-brief -->
+<p>The QGeoRoute class represents a route between two points. <a href="#details">More...</a></p>
+<!-- @@@QGeoRoute -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QGeoRoute&gt;</pre><p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qgeoroute-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#QGeoRoute">QGeoRoute</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#QGeoRoute-2">QGeoRoute</a></b> ( const QGeoRoute &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#dtor.QGeoRoute">~QGeoRoute</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoBoundingBox </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#bounds">bounds</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#distance">distance</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoRouteSegment </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#firstRouteSegment">firstRouteSegment</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QGeoCoordinate&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#path">path</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoRouteRequest </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#request">request</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#routeId">routeId</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#setBounds">setBounds</a></b> ( const QGeoBoundingBox &amp; <i>bounds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#setDistance">setDistance</a></b> ( qreal <i>distance</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#setFirstRouteSegment">setFirstRouteSegment</a></b> ( const QGeoRouteSegment &amp; <i>routeSegment</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#setPath">setPath</a></b> ( const QList&lt;QGeoCoordinate&gt; &amp; <i>path</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#setRequest">setRequest</a></b> ( const QGeoRouteRequest &amp; <i>request</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#setRouteId">setRouteId</a></b> ( const QString &amp; <i>id</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#setTravelMode">setTravelMode</a></b> ( QGeoRouteRequest::TravelMode <i>mode</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#setTravelTime">setTravelTime</a></b> ( int <i>secs</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoRouteRequest::TravelMode </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#travelMode">travelMode</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#travelTime">travelTime</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#operator-not-eq">operator!=</a></b> ( const QGeoRoute &amp; <i>other</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoRoute &amp; </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#operator-eq">operator=</a></b> ( const QGeoRoute &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgeoroute.html#operator-eq-eq">operator==</a></b> ( const QGeoRoute &amp; <i>other</i> ) const</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QGeoRoute-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QGeoRoute class represents a route between two points.</p>
+<p>A QGeoRoute object contains high level information about a route, such as the length the route, the estimated travel time for the route, and enough information to render a basic image of the route on a map.</p>
+<p>The QGeoRoute object also contains a list of <a href="qgeoroutesegment.html">QGeoRouteSegment</a> objecs which describe subsections of the route in greater detail.</p>
+<p>Routing information is normally requested using <a href="qgeoroutingmanager.html#calculateRoute">QGeoRoutingManager::calculateRoute</a>(), which returns a <a href="qgeoroutereply.html">QGeoRouteReply</a> instance. If the operation is completed successfully the routing information can be accessed with <a href="qgeoroutereply.html#routes">QGeoRouteReply::routes</a>()</p>
+</div>
+<p>See also <a href="qgeoroutingmanager.html">QGeoRoutingManager</a>.</p>
+<!-- @@@QGeoRoute -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QGeoRoute[overload1]$$$QGeoRoute -->
+<h3 class="fn"><a name="QGeoRoute"></a>QGeoRoute::QGeoRoute ()</h3>
+<p>Constructs a route object.</p>
+<!-- @@@QGeoRoute -->
+<!-- $$$QGeoRoute$$$QGeoRouteconstQGeoRoute& -->
+<h3 class="fn"><a name="QGeoRoute-2"></a>QGeoRoute::QGeoRoute ( const QGeoRoute &amp; <i>other</i> )</h3>
+<p>Constructs a route object from the contents of <i>other</i>.</p>
+<!-- @@@QGeoRoute -->
+<!-- $$$~QGeoRoute[overload1]$$$~QGeoRoute -->
+<h3 class="fn"><a name="dtor.QGeoRoute"></a>QGeoRoute::~QGeoRoute ()</h3>
+<p>Destroys this route object.</p>
+<!-- @@@~QGeoRoute -->
+<!-- $$$bounds[overload1]$$$bounds -->
+<h3 class="fn"><a name="bounds"></a><a href="qgeoboundingbox.html">QGeoBoundingBox</a> QGeoRoute::bounds () const</h3>
+<p>Returns a bounding box which encompasses the entire route.</p>
+<p>See also <a href="qgeoroute.html#setBounds">setBounds</a>().</p>
+<!-- @@@bounds -->
+<!-- $$$distance[overload1]$$$distance -->
+<h3 class="fn"><a name="distance"></a><a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> QGeoRoute::distance () const</h3>
+<p>Returns the distance covered by this route, in metres.</p>
+<p>See also <a href="qgeoroute.html#setDistance">setDistance</a>().</p>
+<!-- @@@distance -->
+<!-- $$$firstRouteSegment[overload1]$$$firstRouteSegment -->
+<h3 class="fn"><a name="firstRouteSegment"></a><a href="qgeoroutesegment.html">QGeoRouteSegment</a> QGeoRoute::firstRouteSegment () const</h3>
+<p>Returns the first route segment in the route.</p>
+<p>Will return an invalid route segment if there are no route segments associated with the route.</p>
+<p>The remaining route segments can be accessed sequentially with QGeoRouteSegment::nextRouteSegment.</p>
+<p>See also <a href="qgeoroute.html#setFirstRouteSegment">setFirstRouteSegment</a>().</p>
+<!-- @@@firstRouteSegment -->
+<!-- $$$path[overload1]$$$path -->
+<h3 class="fn"><a name="path"></a><a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgeocoordinate.html">QGeoCoordinate</a>&gt; QGeoRoute::path () const</h3>
+<p>Returns the geometric shape of the route.</p>
+<p>The coordinates should be listed in the order in which they would be traversed by someone traveling along this segment of the route.</p>
+<p>See also <a href="qgeoroute.html#setPath">setPath</a>().</p>
+<!-- @@@path -->
+<!-- $$$request[overload1]$$$request -->
+<h3 class="fn"><a name="request"></a><a href="qgeorouterequest.html">QGeoRouteRequest</a> QGeoRoute::request () const</h3>
+<p>Returns the route request which describes the criteria used in the calculation of this route.</p>
+<p>See also <a href="qgeoroute.html#setRequest">setRequest</a>().</p>
+<!-- @@@request -->
+<!-- $$$routeId[overload1]$$$routeId -->
+<h3 class="fn"><a name="routeId"></a><a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> QGeoRoute::routeId () const</h3>
+<p>Returns the ID of this route.</p>
+<p>Service providers which support the updating of routes commonly assign IDs to routes. If this route did not come from such a service provider the function will return an empty string.</p>
+<p>See also <a href="qgeoroute.html#setRouteId">setRouteId</a>().</p>
+<!-- @@@routeId -->
+<!-- $$$setBounds[overload1]$$$setBoundsconstQGeoBoundingBox& -->
+<h3 class="fn"><a name="setBounds"></a>void QGeoRoute::setBounds ( const <a href="qgeoboundingbox.html">QGeoBoundingBox</a> &amp; <i>bounds</i> )</h3>
+<p>Sets the bounding box which encompasses the entire route to <i>bounds</i>.</p>
+<p>See also <a href="qgeoroute.html#bounds">bounds</a>().</p>
+<!-- @@@setBounds -->
+<!-- $$$setDistance[overload1]$$$setDistanceqreal -->
+<h3 class="fn"><a name="setDistance"></a>void QGeoRoute::setDistance ( <a href="http://qt.nokia.com/doc/4.7/qtglobal.html#qreal-typedef">qreal</a> <i>distance</i> )</h3>
+<p>Sets the distance covered by this route, in metres, to <i>distance</i>.</p>
+<p>See also <a href="qgeoroute.html#distance">distance</a>().</p>
+<!-- @@@setDistance -->
+<!-- $$$setFirstRouteSegment[overload1]$$$setFirstRouteSegmentconstQGeoRouteSegment& -->
+<h3 class="fn"><a name="setFirstRouteSegment"></a>void QGeoRoute::setFirstRouteSegment ( const <a href="qgeoroutesegment.html">QGeoRouteSegment</a> &amp; <i>routeSegment</i> )</h3>
+<p>Sets the first route segment in the route to <i>routeSegment</i>.</p>
+<p>See also <a href="qgeoroute.html#firstRouteSegment">firstRouteSegment</a>().</p>
+<!-- @@@setFirstRouteSegment -->
+<!-- $$$setPath[overload1]$$$setPathconstQList<QGeoCoordinate>& -->
+<h3 class="fn"><a name="setPath"></a>void QGeoRoute::setPath ( const <a href="http://qt.nokia.com/doc/4.7/qlist.html">QList</a>&lt;<a href="qgeocoordinate.html">QGeoCoordinate</a>&gt; &amp; <i>path</i> )</h3>
+<p>Sets the geometric shape of the route to <i>path</i>.</p>
+<p>The coordinates in <i>path</i> should be listed in the order in which they would be traversed by someone traveling along this segment of the route.</p>
+<p>See also <a href="qgeoroute.html#path">path</a>().</p>
+<!-- @@@setPath -->
+<!-- $$$setRequest[overload1]$$$setRequestconstQGeoRouteRequest& -->
+<h3 class="fn"><a name="setRequest"></a>void QGeoRoute::setRequest ( const <a href="qgeorouterequest.html">QGeoRouteRequest</a> &amp; <i>request</i> )</h3>
+<p>Sets the route request which describes the criteria used in the calculcation of this route to <i>request</i>.</p>
+<p>See also <a href="qgeoroute.html#request">request</a>().</p>
+<!-- @@@setRequest -->
+<!-- $$$setRouteId[overload1]$$$setRouteIdconstQString& -->
+<h3 class="fn"><a name="setRouteId"></a>void QGeoRoute::setRouteId ( const <a href="http://qt.nokia.com/doc/4.7/qstring.html">QString</a> &amp; <i>id</i> )</h3>
+<p>Sets the ID of this route to <i>id</i>.</p>
+<p>Service providers which support the updating of routes commonly assign IDs to routes. If this route came from such a service provider changing the ID will probably cause route updates to stop working.</p>
+<p>See also <a href="qgeoroute.html#routeId">routeId</a>().</p>
+<!-- @@@setRouteId -->
+<!-- $$$setTravelMode[overload1]$$$setTravelModeQGeoRouteRequest::TravelMode -->
+<h3 class="fn"><a name="setTravelMode"></a>void QGeoRoute::setTravelMode ( <a href="qgeorouterequest.html#TravelMode-enum">QGeoRouteRequest::TravelMode</a> <i>mode</i> )</h3>
+<p>Sets the travel mode for this route to <i>mode</i>.</p>
+<p>This should be one of the travel modes returned by <a href="qgeoroute.html#request">request</a>().travelModes().</p>
+<p>See also <a href="qgeoroute.html#travelMode">travelMode</a>().</p>
+<!-- @@@setTravelMode -->
+<!-- $$$setTravelTime[overload1]$$$setTravelTimeint -->
+<h3 class="fn"><a name="setTravelTime"></a>void QGeoRoute::setTravelTime ( int <i>secs</i> )</h3>
+<p>Sets the estimated amount of time it will take to traverse this route, in seconds, to <i>secs</i>.</p>
+<p>See also <a href="qgeoroute.html#travelTime">travelTime</a>().</p>
+<!-- @@@setTravelTime -->
+<!-- $$$travelMode[overload1]$$$travelMode -->
+<h3 class="fn"><a name="travelMode"></a><a href="qgeorouterequest.html#TravelMode-enum">QGeoRouteRequest::TravelMode</a> QGeoRoute::travelMode () const</h3>
+<p>Returns the travel mode for the this route.</p>
+<p>This should be one of the travel modes returned by <a href="qgeoroute.html#request">request</a>().travelModes().</p>
+<p>See also <a href="qgeoroute.html#setTravelMode">setTravelMode</a>().</p>
+<!-- @@@travelMode -->
+<!-- $$$travelTime[overload1]$$$travelTime -->
+<h3 class="fn"><a name="travelTime"></a>int QGeoRoute::travelTime () const</h3>
+<p>Returns the estimated amount of time it will take to traverse this route, in seconds.</p>
+<p>See also <a href="qgeoroute.html#setTravelTime">setTravelTime</a>().</p>
+<!-- @@@travelTime -->
+<!-- $$$operator!=[overload1]$$$operator!=constQGeoRoute& -->
+<h3 class="fn"><a name="operator-not-eq"></a>bool QGeoRoute::operator!= ( const QGeoRoute &amp; <i>other</i> ) const</h3>
+<p>Returns whether this route and <i>other</i> are not equal.</p>
+<!-- @@@operator!= -->
+<!-- $$$operator=[overload1]$$$operator=constQGeoRoute& -->
+<h3 class="fn"><a name="operator-eq"></a>QGeoRoute &amp; QGeoRoute::operator= ( const QGeoRoute &amp; <i>other</i> )</h3>
+<p>Assigns the contents of <i>other</i> to this route and returns a reference to this route.</p>
+<!-- @@@operator= -->
+<!-- $$$operator==[overload1]$$$operator==constQGeoRoute& -->
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QGeoRoute::operator== ( const QGeoRoute &amp; <i>other</i> ) const</h3>
+<p>Returns whether this route and <i>other</i> are equal.</p>
+<!-- @@@operator== -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

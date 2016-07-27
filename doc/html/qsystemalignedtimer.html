@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qsystemalignedtimer.cpp -->
+  <title>Qt 1.2: QSystemAlignedTimer Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtsysteminfo.html">QtSystemInfo</a></li>
+              <li>QSystemAlignedTimer</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QSystemAlignedTimer Class Reference</h1>
+<!-- $$$QSystemAlignedTimer-brief -->
+<p>The QSystemAlignedTimer class provides a service for applications to synchronize their activity. <a href="#details">More...</a></p>
+<!-- @@@QSystemAlignedTimer -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QSystemAlignedTimer&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt Mobility 1.2.</p>
+<ul>
+<li><a href="qsystemalignedtimer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#AlignedTimerError-enum">AlignedTimerError</a></b> { NoError, AlignedTimerNotSupported, InvalidArgument, TimerFailed, InternalError }</td></tr>
+</table>
+<a name="properties"></a>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><b><a href="qsystemalignedtimer.html#active-prop">active</a></b> : const bool</li>
+<li class="fn"><b><a href="qsystemalignedtimer.html#maximumInterval-prop">maximumInterval</a></b> : int</li>
+<li class="fn"><b><a href="qsystemalignedtimer.html#minimumInterval-prop">minimumInterval</a></b> : int</li>
+<li class="fn"><b><a href="qsystemalignedtimer.html#singleShot-prop">singleShot</a></b> : bool</li>
+</ul>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#QSystemAlignedTimer">QSystemAlignedTimer</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#dtor.QSystemAlignedTimer">~QSystemAlignedTimer</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#active-prop">isActive</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#singleShot-prop">isSingleShot</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> AlignedTimerError </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#lastError">lastError</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#maximumInterval-prop">maximumInterval</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#minimumInterval-prop">minimumInterval</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#maximumInterval-prop">setMaximumInterval</a></b> ( int <i>seconds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#minimumInterval-prop">setMinimumInterval</a></b> ( int <i>seconds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#singleShot-prop">setSingleShot</a></b> ( bool <i>singleShot</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#wokeUp">wokeUp</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2>Public Slots</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#start">start</a></b> ( int <i>minimumTime</i>, int <i>maximumTime</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#start-2">start</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#stop">stop</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#error">error</a></b> ( QSystemAlignedTimer::AlignedTimerError <i>error</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#timeout">timeout</a></b> ()</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#signals">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsystemalignedtimer.html#singleShot">singleShot</a></b> ( int <i>minimumTime</i>, int <i>maximumTime</i>, QObject * <i>receiver</i>, const char * <i>member</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#public-variables">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.7/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QSystemAlignedTimer-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QSystemAlignedTimer class provides a service for applications to synchronize their activity.</p>
+<p>QSystemAlignedTimer is a fuzzy timer that allows applications that must do periodic activity like after being in sleep mode a certain period, to synchronize their activities in the same window of time.</p>
+<p>For example send network &quot;alive&quot; messages at the same time (i.e&#x2e; turn the wireless radio on at the same time).</p>
+<p>The service is not only for network-aware applications, it is for use by any applications that need to periodic wake-ups.</p>
+<p>The recommended use case is when app uses single-shot timer only: set mintime 0 for the first call 'to jump to the train' and mintime &gt; 0 after 1st wakeup.</p>
+</div>
+<!-- @@@QSystemAlignedTimer -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$AlignedTimerError$$$NoError$$$AlignedTimerNotSupported$$$InvalidArgument$$$TimerFailed$$$InternalError -->
+<h3 class="fn"><a name="AlignedTimerError-enum"></a>enum QSystemAlignedTimer::AlignedTimerError</h3>
+<p>This enum describes the last known AlignedTimerError</p>
+<table class="valuelist"><tr class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td  class="topAlign"><tt>QSystemAlignedTimer::NoError</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">No error.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemAlignedTimer::AlignedTimerNotSupported</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">The aligned timer is not support on this platform</td></tr>
+<tr><td  class="topAlign"><tt>QSystemAlignedTimer::InvalidArgument</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">Interval arguments are invalid.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemAlignedTimer::TimerFailed</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">General timer failure.</td></tr>
+<tr><td  class="topAlign"><tt>QSystemAlignedTimer::InternalError</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">Internal error.</td></tr>
+</table>
+<!-- @@@AlignedTimerError -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$active-prop$$$isActive -->
+<h3 class="fn"><a name="active-prop"></a>active : const bool</h3>
+<p>Returns true if the timer is running; otherwise false.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><b>isActive</b> () const</td></tr>
+</table>
+<!-- @@@active -->
+<!-- $$$maximumInterval-prop$$$maximumInterval$$$setMaximumIntervalint -->
+<h3 class="fn"><a name="maximumInterval-prop"></a>maximumInterval : int</h3>
+<p>This property holds the timer's maximumInterval.</p>
+<p>Returns this current timer maximum interval.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>maximumInterval</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setMaximumInterval</b> ( int <i>seconds</i> )</td></tr>
+</table>
+<!-- @@@maximumInterval -->
+<!-- $$$minimumInterval-prop$$$minimumInterval$$$setMinimumIntervalint -->
+<h3 class="fn"><a name="minimumInterval-prop"></a>minimumInterval : int</h3>
+<p>This property holds the timers's minimumInterval.</p>
+<p>Returns this current timer minimum interval.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><b>minimumInterval</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setMinimumInterval</b> ( int <i>seconds</i> )</td></tr>
+</table>
+<!-- @@@minimumInterval -->
+<!-- $$$singleShot-prop$$$isSingleShot$$$setSingleShotbool -->
+<h3 class="fn"><a name="singleShot-prop"></a>singleShot : bool</h3>
+<p>Whether the timer is single shot.</p>
+<p><b>Access functions:</b></p>
+<table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><b>isSingleShot</b> () const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><b>setSingleShot</b> ( bool <i>singleShot</i> )</td></tr>
+</table>
+<!-- @@@singleShot -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QSystemAlignedTimer[overload1]$$$QSystemAlignedTimerQObject* -->
+<h3 class="fn"><a name="QSystemAlignedTimer"></a>QSystemAlignedTimer::QSystemAlignedTimer ( <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qsystemalignedtimer.html">QSystemAlignedTimer</a> object with the given <i>parent</i>.</p>
+<!-- @@@QSystemAlignedTimer -->
+<!-- $$$~QSystemAlignedTimer[overload1]$$$~QSystemAlignedTimer -->
+<h3 class="fn"><a name="dtor.QSystemAlignedTimer"></a>QSystemAlignedTimer::~QSystemAlignedTimer ()</h3>
+<p>Destructs the <a href="qsystemalignedtimer.html">QSystemAlignedTimer</a></p>
+<!-- @@@~QSystemAlignedTimer -->
+<!-- $$$error[overload1]$$$errorQSystemAlignedTimer::AlignedTimerError -->
+<h3 class="fn"><a name="error"></a>void QSystemAlignedTimer::error ( <a href="qsystemalignedtimer.html#AlignedTimerError-enum">QSystemAlignedTimer::AlignedTimerError</a> <i>error</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted when an <i>error</i> happens.</p>
+<!-- @@@error -->
+<!-- $$$lastError[overload1]$$$lastError -->
+<h3 class="fn"><a name="lastError"></a><a href="qsystemalignedtimer.html#AlignedTimerError-enum">AlignedTimerError</a> QSystemAlignedTimer::lastError () const</h3>
+<p>Returns the last <a href="qsystemalignedtimer.html#AlignedTimerError-enum">AlignedTimerError</a>.</p>
+<!-- @@@lastError -->
+<!-- $$$singleShot[overload1]$$$singleShotintintQObject*constchar* -->
+<h3 class="fn"><a name="singleShot"></a>void QSystemAlignedTimer::singleShot ( int <i>minimumTime</i>, int <i>maximumTime</i>, <a href="http://qt.nokia.com/doc/4.7/qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i> )<tt> [static]</tt></h3>
+<p>This static function starts a timer to call a slot after a <i>minimumTime</i> interval has elapsed, and ensures that it will be called before the <i>maximumTime</i> has elapsed.</p>
+<p>These values are specified in seconds.</p>
+<p>The receiver is the <i>receiver</i> object and the <i>member</i> is the slot.</p>
+<p>See also <a href="qsystemalignedtimer.html#singleShot-prop">setSingleShot</a>().</p>
+<!-- @@@singleShot -->
+<!-- $$$start[overload1]$$$startintint -->
+<h3 class="fn"><a name="start"></a>void QSystemAlignedTimer::start ( int <i>minimumTime</i>, int <i>maximumTime</i> )<tt> [slot]</tt></h3>
+<p>Starts the timer with the minimal interval of <i>minimumTime</i>, and maximum interval <i>maximumTime</i> in seconds.</p>
+<p>This is not a guaranteed interval, and the timeout signal may be fired at any time, depending on other clients attached to this timer.</p>
+<p>In the case of minimalInterval of 0, it means 'wake me up when someone else is woken up'.</p>
+<p>If you need a window of time in which your timer should fire, use QSystemAlignedTimer::setWindow</p>
+<!-- @@@start -->
+<!-- $$$start$$$start -->
+<h3 class="fn"><a name="start-2"></a>void QSystemAlignedTimer::start ()<tt> [slot]</tt></h3>
+<p>Starts the alignedtimer.</p>
+<!-- @@@start -->
+<!-- $$$stop[overload1]$$$stop -->
+<h3 class="fn"><a name="stop"></a>void QSystemAlignedTimer::stop ()<tt> [slot]</tt></h3>
+<p>Stops this timer request.</p>
+<!-- @@@stop -->
+<!-- $$$timeout[overload1]$$$timeout -->
+<h3 class="fn"><a name="timeout"></a>void QSystemAlignedTimer::timeout ()<tt> [signal]</tt></h3>
+<p>This signal is emitted when the timer times out.</p>
+<!-- @@@timeout -->
+<!-- $$$wokeUp[overload1]$$$wokeUp -->
+<h3 class="fn"><a name="wokeUp"></a>void QSystemAlignedTimer::wokeUp ()</h3>
+<p>This should be called when the application wakes up via other means than <a href="qsystemalignedtimer.html">QSystemAlignedTimer</a> timeout.</p>
+<p>Other applications that are in their wakeup window *may* be woken up. Single-shot timer is canceled, and reoccuring timer interval will restart.</p>
+<p>Symbian does not support this wokeUp call for reoccuring timers and will simply ignore it.</p>
+<!-- @@@wokeUp -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>

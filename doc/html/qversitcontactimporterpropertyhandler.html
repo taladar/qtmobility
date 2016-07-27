@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qversitcontactimporter.cpp -->
+  <title>Qt 1.2: QVersitContactImporterPropertyHandler Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</head>
+<body class="offline narrow creator">
+<div class="header" id="qtdocheader">
+  <div class="content"> 
+    <a href="index.html" class="qtref"><span>QtMobility Reference Documentation</span></a>
+  </div>
+  <div class="breadcrumb toolblock">
+    <ul>
+      <li class="first"><a href="index.html">Home</a></li>
+      <!--  Breadcrumbs go here -->
+              <li><a href="modules.html">Modules</a></li>              <li>QVersitContactImporterPropertyHandler</li>
+    </ul>
+  </div>
+</div>
+<div class="content mainContent">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QVersitContactImporterPropertyHandler Class Reference</h1>
+<!-- $$$QVersitContactImporterPropertyHandler-brief -->
+<p>The QVersitContactImporterPropertyHandler class is the legacy interface for specifying custom import behaviour for vCard properties. <a href="#details">More...</a></p>
+<!-- @@@QVersitContactImporterPropertyHandler -->
+<pre class="highlightedCode brush: cpp"> #include &lt;QVersitContactImporterPropertyHandler&gt;</pre><p><b>This class is deprecated.</b></p>
+<p>This class was introduced in Qt Mobility 1.1.</p>
+<ul>
+<li><a href="qversitcontactimporterpropertyhandler-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactimporterpropertyhandler.html#dtor.QVersitContactImporterPropertyHandler">~QVersitContactImporterPropertyHandler</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactimporterpropertyhandler.html#postProcessProperty">postProcessProperty</a></b> ( const QVersitDocument &amp; <i>document</i>, const QVersitProperty &amp; <i>property</i>, bool <i>alreadyProcessed</i>, int <i>contactIndex</i>, QContact * <i>contact</i> ) = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qversitcontactimporterpropertyhandler.html#preProcessProperty">preProcessProperty</a></b> ( const QVersitDocument &amp; <i>document</i>, const QVersitProperty &amp; <i>property</i>, int <i>contactIndex</i>, QContact * <i>contact</i> ) = 0</td></tr>
+</table>
+<a name="details"></a>
+<!-- $$$QVersitContactImporterPropertyHandler-description -->
+<div class="descr">
+<h2>Detailed Description</h2>
+<p>The QVersitContactImporterPropertyHandler class is the legacy interface for specifying custom import behaviour for vCard properties.</p>
+<p>This interface is replaced by <a href="qversitcontactimporterpropertyhandlerv2.html">QVersitContactImporterPropertyHandlerV2</a>. For general information on extending Qt Versit, see the document on <a href="versitplugins.html">Versit Plugins</a>.</p>
+</div>
+<p>See also <a href="qversitcontactimporter.html">QVersitContactImporter</a>.</p>
+<!-- @@@QVersitContactImporterPropertyHandler -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$~QVersitContactImporterPropertyHandler[overload1]$$$~QVersitContactImporterPropertyHandler -->
+<h3 class="fn"><a name="dtor.QVersitContactImporterPropertyHandler"></a>QVersitContactImporterPropertyHandler::~QVersitContactImporterPropertyHandler ()<tt> [virtual]</tt></h3>
+<p>Frees any memory in use by this handler.</p>
+<!-- @@@~QVersitContactImporterPropertyHandler -->
+<!-- $$$postProcessProperty[overload1]$$$postProcessPropertyconstQVersitDocument&constQVersitProperty&boolintQContact* -->
+<h3 class="fn"><a name="postProcessProperty"></a>bool QVersitContactImporterPropertyHandler::postProcessProperty ( const <a href="qversitdocument.html">QVersitDocument</a> &amp; <i>document</i>, const <a href="qversitproperty.html">QVersitProperty</a> &amp; <i>property</i>, bool <i>alreadyProcessed</i>, int <i>contactIndex</i>, <a href="qcontact.html">QContact</a> * <i>contact</i> )<tt> [pure virtual]</tt></h3>
+<p>Process <i>property</i> and update <i>contact</i> with the corresponding <a href="qcontactdetail.html">QContactDetail</a>(s). <i>document</i> provides the context within which the property was found. <i>contactIndex</i> specifies the position that <i>contact</i> will take in the list returned by <a href="qversitcontactimporter.html#importDocuments">QVersitContactImporter::importDocuments</a>(). <i>alreadyProcessed</i> is true if the detail has already been processed either by <a href="qversitcontactimporterpropertyhandler.html#preProcessProperty">preProcessProperty</a>() or by <a href="qversitcontactimporter.html">QVersitContactImporter</a> itself.</p>
+<p>Returns true if the property has been handled, false otherwise.</p>
+<p>This function is called on every <a href="qversitproperty.html">QVersitProperty</a> encountered during an import. This can be used to implement support for vCard properties not supported by <a href="qversitcontactimporter.html">QVersitContactImporter</a>.</p>
+<!-- @@@postProcessProperty -->
+<!-- $$$preProcessProperty[overload1]$$$preProcessPropertyconstQVersitDocument&constQVersitProperty&intQContact* -->
+<h3 class="fn"><a name="preProcessProperty"></a>bool QVersitContactImporterPropertyHandler::preProcessProperty ( const <a href="qversitdocument.html">QVersitDocument</a> &amp; <i>document</i>, const <a href="qversitproperty.html">QVersitProperty</a> &amp; <i>property</i>, int <i>contactIndex</i>, <a href="qcontact.html">QContact</a> * <i>contact</i> )<tt> [pure virtual]</tt></h3>
+<p>Process <i>property</i> and update <i>contact</i> with the corresponding <a href="qcontactdetail.html">QContactDetail</a>(s). <i>document</i> provides the context within which the property was found. <i>contactIndex</i> specifies the position that <i>contact</i> will take in the list returned by <a href="qversitcontactimporter.html#importDocuments">QVersitContactImporter::importDocuments</a>().</p>
+<p>Returns true if the property has been handled and requires no further processing, false otherwise.</p>
+<p>This function is called on every <a href="qversitproperty.html">QVersitProperty</a> encountered during an import. Supply this function and return true to implement custom import behaviour.</p>
+<!-- @@@preProcessProperty -->
+</div>
+  <div class="ft">
+    <span></span>
+  </div>
+</div> 
+<div class="footer">
+  <p>
+     <acronym title="Copyright">&copy;</acronym> 2008-2011 Nokia Corporation and/or its
+     subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+     in Finland and/or other countries worldwide.</p>
+  <p>
+     All other trademarks are property of their respective owners. <a title="Privacy Policy"
+     href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  <br />
+  <p>
+    Licensees holding valid Qt Commercial licenses may use this document in accordance with the    Qt Commercial License Agreement provided with the Software or, alternatively, in accordance    with the terms contained in a written agreement between you and Nokia.</p>
+  <p>
+    Alternatively, this document may be used under the terms of the <a href="http://www.gnu.org/licenses/fdl.html">GNU
+    Free Documentation License version 1.3</a>
+    as published by the Free Software Foundation.</p>
+</div>
+</body>
+</html>
