@@ -5,8 +5,8 @@ libQtServiceFramework.so.1 libqtserviceframework1 #MINVER#
  _ZN10QByteArray4dataEv@Base 1.1.0
  _ZN10QByteArraypLERKS_@Base 1.1.0
  _ZN10QByteArraypLEc@Base 1.1.0
- _ZN10QDBusErrorD1Ev@Base 1.2.0
- _ZN10QDBusErrorD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QDBusErrorD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QDBusErrorD2Ev@Base 1.2.0
  _ZN10QtMobility14QServiceFilter12setInterfaceERK7QStringS3_NS0_16VersionMatchRuleE@Base 1.1.0
  _ZN10QtMobility14QServiceFilter14setServiceNameERK7QString@Base 1.1.0
  _ZN10QtMobility14QServiceFilter15setCapabilitiesENS0_19CapabilityMatchRuleERK11QStringList@Base 1.1.0
@@ -113,16 +113,16 @@ libQtServiceFramework.so.1 libqtserviceframework1 #MINVER#
  _ZN11QDataStreamrsERt@Base 1.1.0
  _ZN15QBasicAtomicInt3refEv@Base 1.1.0
  _ZN15QBasicAtomicInt5derefEv@Base 1.1.0
- _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
- _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
- _ZN15QObjectUserDataC1Ev@Base 1.2.0
- _ZN15QObjectUserDataC2Ev@Base 1.2.0
- _ZN20QXmlStreamAttributesD1Ev@Base 1.2.0
- _ZN20QXmlStreamAttributesD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN15QBasicAtomicIntC1Ev@Base 1.2.0
+ (arch=powerpc)_ZN15QBasicAtomicIntC2Ev@Base 1.2.0
+ (arch=powerpc)_ZN15QObjectUserDataC1Ev@Base 1.2.0
+ (arch=powerpc)_ZN15QObjectUserDataC2Ev@Base 1.2.0
+ (arch=powerpc)_ZN20QXmlStreamAttributesD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN20QXmlStreamAttributesD2Ev@Base 1.2.0
  _ZN5QCharC1E11QLatin1Char@Base 1.1.0
  _ZN5QCharC2E11QLatin1Char@Base 1.1.0
- _ZN6QDebug6StreamD1Ev@Base 1.2.0
- _ZN6QDebug6StreamD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN6QDebug6StreamD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN6QDebug6StreamD2Ev@Base 1.2.0
  _ZN7QString5clearEv@Base 1.1.0
  _ZN9QHashData8willGrowEv@Base 1.1.0
  _ZN9QHashData9firstNodeEv@Base 1.1.0

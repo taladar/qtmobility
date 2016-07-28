@@ -3,21 +3,21 @@ libQtVersit.so.1 libqtversit1 #MINVER#
  _Z6qDebugv@Base 1.1.0
  _ZN10QByteArray4dataEv@Base 1.1.0
  _ZN10QByteArrayixEi@Base 1.1.0
- _ZN10QtMobility11QContactTagC1ERKS0_@Base 1.2.0
- _ZN10QtMobility11QContactTagC2ERKS0_@Base 1.2.0
- _ZN10QtMobility11QContactTagD1Ev@Base 1.2.0
- _ZN10QtMobility11QContactTagD2Ev@Base 1.2.0
- _ZN10QtMobility11QContactUrlD1Ev@Base 1.2.0
- _ZN10QtMobility11QContactUrlD2Ev@Base 1.2.0
- _ZN10QtMobility12QContactGuidD1Ev@Base 1.2.0
- _ZN10QtMobility12QContactGuidD2Ev@Base 1.2.0
- _ZN10QtMobility12QContactNameC1ERKS0_@Base 1.2.0
- _ZN10QtMobility12QContactNameC2ERKS0_@Base 1.2.0
- _ZN10QtMobility12QContactNameD1Ev@Base 1.2.0
- _ZN10QtMobility12QContactNameD2Ev@Base 1.2.0
- _ZN10QtMobility12QContactNameaSERKS0_@Base 1.2.0
- _ZN10QtMobility12QContactNoteD1Ev@Base 1.2.0
- _ZN10QtMobility12QContactNoteD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility11QContactTagC1ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility11QContactTagC2ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility11QContactTagD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility11QContactTagD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility11QContactUrlD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility11QContactUrlD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility12QContactGuidD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility12QContactGuidD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility12QContactNameC1ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility12QContactNameC2ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility12QContactNameD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility12QContactNameD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility12QContactNameaSERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility12QContactNoteD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility12QContactNoteD2Ev@Base 1.2.0
  _ZN10QtMobility13QVersitReader11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN10QtMobility13QVersitReader11qt_metacastEPKc@Base 1.1.0
  _ZN10QtMobility13QVersitReader12startReadingEv@Base 1.1.0
@@ -59,8 +59,8 @@ libQtVersit.so.1 libqtversit1 #MINVER#
  _ZN10QtMobility13QVersitWriterD0Ev@Base 1.1.0
  _ZN10QtMobility13QVersitWriterD1Ev@Base 1.1.0
  _ZN10QtMobility13QVersitWriterD2Ev@Base 1.1.0
- _ZN10QtMobility14QContactAvatarD1Ev@Base 1.2.0
- _ZN10QtMobility14QContactAvatarD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility14QContactAvatarD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility14QContactAvatarD2Ev@Base 1.2.0
  (optional=templinst)_ZN10QtMobility14QContactDetail8setValueILi10EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
  (optional=templinst)_ZN10QtMobility14QContactDetail8setValueILi11EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
  (optional=templinst)_ZN10QtMobility14QContactDetail8setValueILi12EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
@@ -74,12 +74,12 @@ libQtVersit.so.1 libqtversit1 #MINVER#
  (optional=templinst)_ZN10QtMobility14QContactDetail8setValueILi7EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
  (optional=templinst)_ZN10QtMobility14QContactDetail8setValueILi8EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
  (optional=templinst)_ZN10QtMobility14QContactDetail8setValueILi9EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
- _ZN10QtMobility14QContactFamilyD1Ev@Base 1.2.0
- _ZN10QtMobility14QContactFamilyD2Ev@Base 1.2.0
- _ZN10QtMobility14QContactGenderD1Ev@Base 1.2.0
- _ZN10QtMobility14QContactGenderD2Ev@Base 1.2.0
- _ZN10QtMobility15QContactAddressD1Ev@Base 1.2.0
- _ZN10QtMobility15QContactAddressD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility14QContactFamilyD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility14QContactFamilyD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility14QContactGenderD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility14QContactGenderD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility15QContactAddressD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility15QContactAddressD2Ev@Base 1.2.0
  _ZN10QtMobility15QVersitDocument11addPropertyERKNS_15QVersitPropertyE@Base 1.1.0
  _ZN10QtMobility15QVersitDocument13setPropertiesERK5QListINS_15QVersitPropertyEE@Base 1.1.0
  _ZN10QtMobility15QVersitDocument14addSubDocumentERKS0_@Base 1.1.0
@@ -115,33 +115,33 @@ libQtVersit.so.1 libqtversit1 #MINVER#
  _ZN10QtMobility15QVersitPropertyD1Ev@Base 1.1.0
  _ZN10QtMobility15QVersitPropertyD2Ev@Base 1.1.0
  _ZN10QtMobility15QVersitPropertyaSERKS0_@Base 1.1.0
- _ZN10QtMobility16QContactBirthdayD1Ev@Base 1.2.0
- _ZN10QtMobility16QContactBirthdayD2Ev@Base 1.2.0
- _ZN10QtMobility16QContactNicknameC1ERKS0_@Base 1.2.0
- _ZN10QtMobility16QContactNicknameC2ERKS0_@Base 1.2.0
- _ZN10QtMobility16QContactNicknameD1Ev@Base 1.2.0
- _ZN10QtMobility16QContactNicknameD2Ev@Base 1.2.0
- _ZN10QtMobility16QContactRingtoneD1Ev@Base 1.2.0
- _ZN10QtMobility16QContactRingtoneD2Ev@Base 1.2.0
- _ZN10QtMobility17QContactThumbnailD1Ev@Base 1.2.0
- _ZN10QtMobility17QContactThumbnailD2Ev@Base 1.2.0
- _ZN10QtMobility17QContactTimestampD1Ev@Base 1.2.0
- _ZN10QtMobility17QContactTimestampD2Ev@Base 1.2.0
- _ZN10QtMobility19QContactAnniversaryD1Ev@Base 1.2.0
- _ZN10QtMobility19QContactAnniversaryD2Ev@Base 1.2.0
- _ZN10QtMobility19QContactGeoLocationD1Ev@Base 1.2.0
- _ZN10QtMobility19QContactGeoLocationD2Ev@Base 1.2.0
- _ZN10QtMobility19QContactPhoneNumberD1Ev@Base 1.2.0
- _ZN10QtMobility19QContactPhoneNumberD2Ev@Base 1.2.0
- _ZN10QtMobility20QContactEmailAddressD1Ev@Base 1.2.0
- _ZN10QtMobility20QContactEmailAddressD2Ev@Base 1.2.0
- _ZN10QtMobility20QContactOrganizationC1ERKS0_@Base 1.2.0
- _ZN10QtMobility20QContactOrganizationC2ERKS0_@Base 1.2.0
- _ZN10QtMobility20QContactOrganizationD1Ev@Base 1.2.0
- _ZN10QtMobility20QContactOrganizationD2Ev@Base 1.2.0
- _ZN10QtMobility20QContactOrganizationaSERKS0_@Base 1.2.0
- _ZN10QtMobility21QContactOnlineAccountD1Ev@Base 1.2.0
- _ZN10QtMobility21QContactOnlineAccountD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility16QContactBirthdayD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility16QContactBirthdayD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility16QContactNicknameC1ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility16QContactNicknameC2ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility16QContactNicknameD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility16QContactNicknameD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility16QContactRingtoneD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility16QContactRingtoneD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility17QContactThumbnailD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility17QContactThumbnailD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility17QContactTimestampD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility17QContactTimestampD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility19QContactAnniversaryD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility19QContactAnniversaryD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility19QContactGeoLocationD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility19QContactGeoLocationD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility19QContactPhoneNumberD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility19QContactPhoneNumberD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility20QContactEmailAddressD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility20QContactEmailAddressD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility20QContactOrganizationC1ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility20QContactOrganizationC2ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility20QContactOrganizationD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility20QContactOrganizationD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility20QContactOrganizationaSERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility21QContactOnlineAccountD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility21QContactOnlineAccountD2Ev@Base 1.2.0
  _ZN10QtMobility22QVersitContactExporter14exportContactsERK5QListINS_8QContactEENS_15QVersitDocument10VersitTypeE@Base 1.1.0
  _ZN10QtMobility22QVersitContactExporter16setDetailHandlerEPNS_35QVersitContactExporterDetailHandlerE@Base 1.1.0
  _ZN10QtMobility22QVersitContactExporter16setDetailHandlerEPNS_37QVersitContactExporterDetailHandlerV2E@Base 1.1.0
@@ -166,8 +166,8 @@ libQtVersit.so.1 libqtversit1 #MINVER#
  _ZN10QtMobility22QVersitContactImporterC2Ev@Base 1.1.0
  _ZN10QtMobility22QVersitContactImporterD1Ev@Base 1.1.0
  _ZN10QtMobility22QVersitContactImporterD2Ev@Base 1.1.0
- _ZN10QtMobility22QVersitResourceHandlerC1Ev@Base 1.2.0
- _ZN10QtMobility22QVersitResourceHandlerC2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QVersitResourceHandlerC1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QVersitResourceHandlerC2Ev@Base 1.2.0
  _ZN10QtMobility28QVersitContactHandlerFactory11ProfileSyncE@Base 1.1.0
  _ZN10QtMobility28QVersitContactHandlerFactory13ProfileBackupE@Base 1.1.0
  _ZN10QtMobility29QVersitDefaultResourceHandler12loadResourceERK7QStringP10QByteArrayPS1_@Base 1.1.0
@@ -183,14 +183,14 @@ libQtVersit.so.1 libqtversit1 #MINVER#
  _ZN10QtMobilitylsE6QDebugRKNS_15QVersitPropertyE@Base 1.1.0
  _ZN15QBasicAtomicInt3refEv@Base 1.1.0
  _ZN15QBasicAtomicInt5derefEv@Base 1.1.0
- _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
- _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
+ (arch=powerpc)_ZN15QBasicAtomicIntC1Ev@Base 1.2.0
+ (arch=powerpc)_ZN15QBasicAtomicIntC2Ev@Base 1.2.0
  _ZN5QCharC1E11QLatin1Char@Base 1.1.0
  _ZN5QCharC1Ev@Base 1.1.0
  _ZN5QCharC2E11QLatin1Char@Base 1.1.0
  _ZN5QCharC2Ev@Base 1.1.0
- _ZN6QDebug6StreamD1Ev@Base 1.2.0
- _ZN6QDebug6StreamD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN6QDebug6StreamD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN6QDebug6StreamD2Ev@Base 1.2.0
  _ZN7QString5clearEv@Base 1.1.0
  (optional=templinst)_ZN8QVariant8setValueI10QByteArrayEEvRKT_@Base 1.1.0
  (optional=templinst)_ZN8QVariant8setValueI7QStringEEvRKT_@Base 1.1.0

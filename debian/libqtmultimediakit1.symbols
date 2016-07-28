@@ -1,10 +1,10 @@
-# SymbolsHelper-Confirmed: 1.2.0 amd64 armel armhf powerpc
+# SymbolsHelper-Confirmed: 1.2.0 amd64 armel armhf i386 powerpc
 libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _Z6qDebugv@Base 1.1.0
  _Z8qWarningv@Base 1.1.0
  _ZN10QByteArray4dataEv@Base 1.1.0
- _ZN10QTransformC1ERKS_@Base 1.2.0
- _ZN10QTransformC2ERKS_@Base 1.2.0
+ (arch=!amd64 !i386)_ZN10QTransformC1ERKS_@Base 1.2.0
+ (arch=!amd64 !i386)_ZN10QTransformC2ERKS_@Base 1.2.0
  _ZN11QAudioInput11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN11QAudioInput11qt_metacastEPKc@Base 1.1.0
  _ZN11QAudioInput12stateChangedEN6QAudio5StateE@Base 1.1.0
@@ -363,8 +363,8 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN14QMediaResourceaSERKS_@Base 1.1.0
  _ZN15QBasicAtomicInt3refEv@Base 1.1.0
  _ZN15QBasicAtomicInt5derefEv@Base 1.1.0
- _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
- _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN15QBasicAtomicIntC1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN15QBasicAtomicIntC2Ev@Base 1.2.0
  _ZN15QCameraExposure10flashReadyEb@Base 1.1.0
  _ZN15QCameraExposure11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN15QCameraExposure11qt_metacastEPKc@Base 1.1.0
@@ -390,9 +390,9 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN15QCameraExposureD0Ev@Base 1.1.0
  _ZN15QCameraExposureD1Ev@Base 1.1.0
  _ZN15QCameraExposureD2Ev@Base 1.1.0
- _ZN15QGraphicsObjectD0Ev@Base 1.2.0
- _ZN15QGraphicsObjectD1Ev@Base 1.2.0
- _ZN15QGraphicsObjectD2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN15QGraphicsObjectD0Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN15QGraphicsObjectD1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN15QGraphicsObjectD2Ev@Base 1.2.0
  _ZN15QMediaTimeRange11addIntervalERK18QMediaTimeInterval@Base 1.1.0
  _ZN15QMediaTimeRange11addIntervalExx@Base 1.1.0
  _ZN15QMediaTimeRange12addTimeRangeERKS_@Base 1.1.0
@@ -447,8 +447,8 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN17QCameraViewfinderD0Ev@Base 1.1.0
  _ZN17QCameraViewfinderD1Ev@Base 1.1.0
  _ZN17QCameraViewfinderD2Ev@Base 1.1.0
- _ZN17QFactoryInterfaceC1Ev@Base 1.2.0
- _ZN17QFactoryInterfaceC2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN17QFactoryInterfaceC1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN17QFactoryInterfaceC2Ev@Base 1.2.0
  _ZN17QImageVideoBuffer3mapEN20QAbstractVideoBuffer7MapModeEPiS2_@Base 1.1.0
  _ZN17QImageVideoBuffer5unmapEv@Base 1.1.0
  _ZN17QImageVideoBufferC1ERK6QImage@Base 1.1.0
@@ -540,11 +540,11 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN19QAbstractAudioInput12stateChangedEN6QAudio5StateE@Base 1.1.0
  _ZN19QAbstractAudioInput16staticMetaObjectE@Base 1.1.0
  _ZN19QAbstractAudioInput6notifyEv@Base 1.1.0
- _ZN19QAbstractAudioInputC1Ev@Base 1.2.0
- _ZN19QAbstractAudioInputC2Ev@Base 1.2.0
- _ZN19QAbstractAudioInputD0Ev@Base 1.2.0
- _ZN19QAbstractAudioInputD1Ev@Base 1.2.0
- _ZN19QAbstractAudioInputD2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN19QAbstractAudioInputC1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN19QAbstractAudioInputC2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN19QAbstractAudioInputD0Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN19QAbstractAudioInputD1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN19QAbstractAudioInputD2Ev@Base 1.2.0
  _ZN19QAudioCaptureSource11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN19QAudioCaptureSource11qt_metacastEPKc@Base 1.1.0
  _ZN19QAudioCaptureSource13setAudioInputERK7QString@Base 1.1.0
@@ -696,11 +696,11 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN20QAbstractAudioOutput12stateChangedEN6QAudio5StateE@Base 1.1.0
  _ZN20QAbstractAudioOutput16staticMetaObjectE@Base 1.1.0
  _ZN20QAbstractAudioOutput6notifyEv@Base 1.1.0
- _ZN20QAbstractAudioOutputC1Ev@Base 1.2.0
- _ZN20QAbstractAudioOutputC2Ev@Base 1.2.0
- _ZN20QAbstractAudioOutputD0Ev@Base 1.2.0
- _ZN20QAbstractAudioOutputD1Ev@Base 1.2.0
- _ZN20QAbstractAudioOutputD2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN20QAbstractAudioOutputC1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN20QAbstractAudioOutputC2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN20QAbstractAudioOutputD0Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN20QAbstractAudioOutputD1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN20QAbstractAudioOutputD2Ev@Base 1.2.0
  _ZN20QAbstractVideoBufferC1ENS_10HandleTypeE@Base 1.1.0
  _ZN20QAbstractVideoBufferC1ER27QAbstractVideoBufferPrivateNS_10HandleTypeE@Base 1.1.0
  _ZN20QAbstractVideoBufferC2ENS_10HandleTypeE@Base 1.1.0
@@ -819,11 +819,11 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN21QMediaServiceProvider16staticMetaObjectE@Base 1.1.0
  _ZN21QMediaServiceProvider17deviceDescriptionERK10QByteArrayS2_@Base 1.1.0
  _ZN21QMediaServiceProvider22defaultServiceProviderEv@Base 1.1.0
- _ZN21QMediaServiceProviderC1Ev@Base 1.2.0
- _ZN21QMediaServiceProviderC2Ev@Base 1.2.0
- _ZN21QMediaServiceProviderD0Ev@Base 1.2.0
- _ZN21QMediaServiceProviderD1Ev@Base 1.2.0
- _ZN21QMediaServiceProviderD2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN21QMediaServiceProviderC1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN21QMediaServiceProviderC2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN21QMediaServiceProviderD0Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN21QMediaServiceProviderD1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN21QMediaServiceProviderD2Ev@Base 1.2.0
  _ZN21QVideoEncoderSettings10setBitRateEi@Base 1.1.0
  _ZN21QVideoEncoderSettings10setQualityEN15QtMultimediaKit15EncodingQualityE@Base 1.1.0
  (subst)_ZN21QVideoEncoderSettings12setFrameRateE{qreal}@Base 1.1.0
@@ -947,8 +947,8 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN22QMetaDataWriterControlD0Ev@Base 1.1.0
  _ZN22QMetaDataWriterControlD1Ev@Base 1.1.0
  _ZN22QMetaDataWriterControlD2Ev@Base 1.1.0
- _ZN23QMediaBindableInterfaceC1Ev@Base 1.2.0
- _ZN23QMediaBindableInterfaceC2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN23QMediaBindableInterfaceC1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN23QMediaBindableInterfaceC2Ev@Base 1.2.0
  _ZN23QMediaBindableInterfaceD0Ev@Base 1.1.0
  _ZN23QMediaBindableInterfaceD1Ev@Base 1.1.0
  _ZN23QMediaBindableInterfaceD2Ev@Base 1.1.0
@@ -972,16 +972,16 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN24QAbstractAudioDeviceInfo11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN24QAbstractAudioDeviceInfo11qt_metacastEPKc@Base 1.1.0
  _ZN24QAbstractAudioDeviceInfo16staticMetaObjectE@Base 1.1.0
- _ZN24QAbstractAudioDeviceInfoC1Ev@Base 1.2.0
- _ZN24QAbstractAudioDeviceInfoC2Ev@Base 1.2.0
- _ZN24QAbstractAudioDeviceInfoD0Ev@Base 1.2.0
- _ZN24QAbstractAudioDeviceInfoD1Ev@Base 1.2.0
- _ZN24QAbstractAudioDeviceInfoD2Ev@Base 1.2.0
- _ZN25QMediaPlaylistIOInterfaceC1Ev@Base 1.2.0
- _ZN25QMediaPlaylistIOInterfaceC2Ev@Base 1.2.0
- _ZN25QMediaPlaylistIOInterfaceD0Ev@Base 1.2.0
- _ZN25QMediaPlaylistIOInterfaceD1Ev@Base 1.2.0
- _ZN25QMediaPlaylistIOInterfaceD2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN24QAbstractAudioDeviceInfoC1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN24QAbstractAudioDeviceInfoC2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN24QAbstractAudioDeviceInfoD0Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN24QAbstractAudioDeviceInfoD1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN24QAbstractAudioDeviceInfoD2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN25QMediaPlaylistIOInterfaceC1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN25QMediaPlaylistIOInterfaceC2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN25QMediaPlaylistIOInterfaceD0Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN25QMediaPlaylistIOInterfaceD1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN25QMediaPlaylistIOInterfaceD2Ev@Base 1.2.0
  _ZN25QMediaServiceProviderHintC1E6QFlagsINS_7FeatureEE@Base 1.1.0
  _ZN25QMediaServiceProviderHintC1ERK10QByteArray@Base 1.1.0
  _ZN25QMediaServiceProviderHintC1ERK7QStringRK11QStringList@Base 1.1.0
@@ -1048,14 +1048,14 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN27QMediaServiceProviderPlugin11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN27QMediaServiceProviderPlugin11qt_metacastEPKc@Base 1.1.0
  _ZN27QMediaServiceProviderPlugin16staticMetaObjectE@Base 1.1.0
- _ZN27QMediaServiceProviderPluginD0Ev@Base 1.2.0
- _ZN27QMediaServiceProviderPluginD1Ev@Base 1.2.0
- _ZN27QMediaServiceProviderPluginD2Ev@Base 1.2.0
- _ZN28QAudioSystemFactoryInterfaceC1Ev@Base 1.2.0
- _ZN28QAudioSystemFactoryInterfaceC2Ev@Base 1.2.0
- _ZN28QAudioSystemFactoryInterfaceD0Ev@Base 1.2.0
- _ZN28QAudioSystemFactoryInterfaceD1Ev@Base 1.2.0
- _ZN28QAudioSystemFactoryInterfaceD2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN27QMediaServiceProviderPluginD0Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN27QMediaServiceProviderPluginD1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN27QMediaServiceProviderPluginD2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN28QAudioSystemFactoryInterfaceC1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN28QAudioSystemFactoryInterfaceC2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN28QAudioSystemFactoryInterfaceD0Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN28QAudioSystemFactoryInterfaceD1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN28QAudioSystemFactoryInterfaceD2Ev@Base 1.2.0
  _ZN29QCameraImageProcessingControl11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN29QCameraImageProcessingControl11qt_metacastEPKc@Base 1.1.0
  _ZN29QCameraImageProcessingControl16staticMetaObjectE@Base 1.1.0
@@ -1082,9 +1082,9 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN33QCameraCaptureBufferFormatControlD0Ev@Base 1.2.0
  _ZN33QCameraCaptureBufferFormatControlD1Ev@Base 1.2.0
  _ZN33QCameraCaptureBufferFormatControlD2Ev@Base 1.2.0
- _ZN37QMediaServiceProviderFactoryInterfaceD0Ev@Base 1.2.0
- _ZN37QMediaServiceProviderFactoryInterfaceD1Ev@Base 1.2.0
- _ZN37QMediaServiceProviderFactoryInterfaceD2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN37QMediaServiceProviderFactoryInterfaceD0Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN37QMediaServiceProviderFactoryInterfaceD1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN37QMediaServiceProviderFactoryInterfaceD2Ev@Base 1.2.0
  _ZN5QCharC1E11QLatin1Char@Base 1.1.0
  _ZN5QCharC2E11QLatin1Char@Base 1.1.0
  _ZN5QRectC1ERK6QPointRK5QSize@Base 1.1.0
@@ -1096,8 +1096,8 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZN5QSizeC1Ev@Base 1.1.0
  _ZN5QSizeC2Eii@Base 1.1.0
  _ZN5QSizeC2Ev@Base 1.1.0
- _ZN6QDebug6StreamD1Ev@Base 1.2.0
- _ZN6QDebug6StreamD2Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN6QDebug6StreamD1Ev@Base 1.2.0
+ (arch=!amd64 !i386)_ZN6QDebug6StreamD2Ev@Base 1.2.0
  _ZN6QPointC1Eii@Base 1.1.0
  _ZN6QPointC2Eii@Base 1.1.0
  _ZN6QRectF10moveCenterERK7QPointF@Base 1.1.0
@@ -1845,7 +1845,7 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  _ZTV29QCameraImageProcessingControl@Base 1.1.0
  _ZTV32QCameraCaptureDestinationControl@Base 1.2.0
  _ZTV33QCameraCaptureBufferFormatControl@Base 1.2.0
- _ZTV37QMediaServiceProviderFactoryInterface@Base 1.1.0
+ (arch=!amd64 !i386)_ZTV37QMediaServiceProviderFactoryInterface@Base 1.2.0
  _ZTV7QCamera@Base 1.1.0
  _ZeqRK15QMediaTimeRangeS1_@Base 1.1.0
  _ZeqRK18QMediaTimeIntervalS1_@Base 1.1.0
@@ -1864,7 +1864,7 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  (c++)"non-virtual thunk to QCameraViewfinder::mediaObject() const@Base" 1.1.0
  (c++)"non-virtual thunk to QCameraViewfinder::setMediaObject(QMediaObject*)@Base" 1.1.0
  (c++)"non-virtual thunk to QCameraViewfinder::~QCameraViewfinder()@Base" 1.1.0
- (c++)"non-virtual thunk to QGraphicsObject::~QGraphicsObject()@Base" 1.2.0
+ (c++|arch=!amd64 !i386)"non-virtual thunk to QGraphicsObject::~QGraphicsObject()@Base" 1.2.0
  (c++)"non-virtual thunk to QGraphicsVideoItem::boundingRect() const@Base" 1.1.0
  (c++)"non-virtual thunk to QGraphicsVideoItem::itemChange(QGraphicsItem::GraphicsItemChange, QVariant const&)@Base" 1.1.0
  (c++)"non-virtual thunk to QGraphicsVideoItem::mediaObject() const@Base" 1.1.0
@@ -1878,7 +1878,7 @@ libQtMultimediaKit.so.1 libqtmultimediakit1 #MINVER#
  (c++)"non-virtual thunk to QMediaRecorder::mediaObject() const@Base" 1.1.0
  (c++)"non-virtual thunk to QMediaRecorder::setMediaObject(QMediaObject*)@Base" 1.1.0
  (c++)"non-virtual thunk to QMediaRecorder::~QMediaRecorder()@Base" 1.1.0
- (c++)"non-virtual thunk to QMediaServiceProviderPlugin::~QMediaServiceProviderPlugin()@Base" 1.2.0
+ (c++|arch=!amd64 !i386)"non-virtual thunk to QMediaServiceProviderPlugin::~QMediaServiceProviderPlugin()@Base" 1.2.0
  (c++)"non-virtual thunk to QVideoWidget::mediaObject() const@Base" 1.1.0
  (c++)"non-virtual thunk to QVideoWidget::setMediaObject(QMediaObject*)@Base" 1.1.0
  (c++)"non-virtual thunk to QVideoWidget::~QVideoWidget()@Base" 1.1.0

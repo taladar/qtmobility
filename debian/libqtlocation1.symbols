@@ -1,11 +1,11 @@
-# SymbolsHelper-Confirmed: 1.2.0 amd64
+# SymbolsHelper-Confirmed: 1.2.0 amd64 i386
 libQtLocation.so.1 libqtlocation1 #MINVER#
  _Z6qDebugv@Base 1.1.0
  _Z8qWarningv@Base 1.1.0
  _ZN10QByteArray4dataEv@Base 1.1.0
  _ZN10QByteArrayixEi@Base 1.1.0
- _ZN10QTransformC1ERKS_@Base 1.2.0
- _ZN10QTransformC2ERKS_@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QTransformC1ERKS_@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QTransformC2ERKS_@Base 1.2.0
  _ZN10QtMobility11QGeoAddress10setCountryERK7QString@Base 1.1.0
  _ZN10QtMobility11QGeoAddress11setDistrictERK7QString@Base 1.1.0
  _ZN10QtMobility11QGeoAddress11setPostcodeERK7QString@Base 1.1.0
@@ -236,14 +236,14 @@ libQtLocation.so.1 libqtlocation1 #MINVER#
  _ZN10QtMobility15QLandmarkFilterD1Ev@Base 1.1.0
  _ZN10QtMobility15QLandmarkFilterD2Ev@Base 1.1.0
  _ZN10QtMobility15QLandmarkFilteraSERKS0_@Base 1.1.0
- _ZN10QtMobility16QGeoBoundingAreaC1ERKS0_@Base 1.2.0
- _ZN10QtMobility16QGeoBoundingAreaC1Ev@Base 1.2.0
- _ZN10QtMobility16QGeoBoundingAreaC2ERKS0_@Base 1.2.0
- _ZN10QtMobility16QGeoBoundingAreaC2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility16QGeoBoundingAreaC1ERKS0_@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility16QGeoBoundingAreaC1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility16QGeoBoundingAreaC2ERKS0_@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility16QGeoBoundingAreaC2Ev@Base 1.2.0
  _ZN10QtMobility16QGeoBoundingAreaD0Ev@Base 1.1.0
  _ZN10QtMobility16QGeoBoundingAreaD1Ev@Base 1.1.0
  _ZN10QtMobility16QGeoBoundingAreaD2Ev@Base 1.1.0
- _ZN10QtMobility16QGeoBoundingAreaaSERKS0_@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility16QGeoBoundingAreaaSERKS0_@Base 1.2.0
  (subst)_ZN10QtMobility16QGeoPositionInfo12setAttributeENS0_9AttributeE{qreal}@Base 1.1.0
  _ZN10QtMobility16QGeoPositionInfo12setTimestampERK9QDateTime@Base 1.1.0
  _ZN10QtMobility16QGeoPositionInfo13setCoordinateERKNS_14QGeoCoordinateE@Base 1.1.0
@@ -465,14 +465,14 @@ libQtLocation.so.1 libqtlocation1 #MINVER#
  _ZN10QtMobility17QLandmarkNameSort18setCaseSensitivityEN2Qt15CaseSensitivityE@Base 1.1.0
  _ZN10QtMobility17QLandmarkNameSortC1EN2Qt9SortOrderENS1_15CaseSensitivityE@Base 1.1.0
  _ZN10QtMobility17QLandmarkNameSortC1ERKNS_18QLandmarkSortOrderE@Base 1.1.0
- _ZN10QtMobility17QLandmarkNameSortC1ERKS0_@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility17QLandmarkNameSortC1ERKS0_@Base 1.2.0
  _ZN10QtMobility17QLandmarkNameSortC2EN2Qt9SortOrderENS1_15CaseSensitivityE@Base 1.1.0
  _ZN10QtMobility17QLandmarkNameSortC2ERKNS_18QLandmarkSortOrderE@Base 1.1.0
- _ZN10QtMobility17QLandmarkNameSortC2ERKS0_@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility17QLandmarkNameSortC2ERKS0_@Base 1.2.0
  _ZN10QtMobility17QLandmarkNameSortD0Ev@Base 1.1.0
  _ZN10QtMobility17QLandmarkNameSortD1Ev@Base 1.1.0
  _ZN10QtMobility17QLandmarkNameSortD2Ev@Base 1.1.0
- _ZN10QtMobility17QLandmarkNameSortaSERKS0_@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility17QLandmarkNameSortaSERKS0_@Base 1.2.0
  _ZN10QtMobility18QGeoBoundingCircle9setCenterERKNS_14QGeoCoordinateE@Base 1.1.0
  (subst)_ZN10QtMobility18QGeoBoundingCircle9setRadiusE{qreal}@Base 1.1.0
  _ZN10QtMobility18QGeoBoundingCircle9translateEdd@Base 1.1.0
@@ -846,9 +846,9 @@ libQtLocation.so.1 libqtlocation1 #MINVER#
  _ZN10QtMobility23QGeoSatelliteInfoSource23satellitesInViewUpdatedERK5QListINS_17QGeoSatelliteInfoEE@Base 1.1.0
  _ZN10QtMobility23QGeoSatelliteInfoSourceC1EP7QObject@Base 1.1.0
  _ZN10QtMobility23QGeoSatelliteInfoSourceC2EP7QObject@Base 1.1.0
- _ZN10QtMobility23QGeoSatelliteInfoSourceD0Ev@Base 1.2.0
- _ZN10QtMobility23QGeoSatelliteInfoSourceD1Ev@Base 1.2.0
- _ZN10QtMobility23QGeoSatelliteInfoSourceD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility23QGeoSatelliteInfoSourceD0Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility23QGeoSatelliteInfoSourceD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility23QGeoSatelliteInfoSourceD2Ev@Base 1.2.0
  _ZN10QtMobility23QGeoSearchManagerEngine11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN10QtMobility23QGeoSearchManagerEngine11qt_metacastEPKc@Base 1.1.0
  _ZN10QtMobility23QGeoSearchManagerEngine14reverseGeocodeERKNS_14QGeoCoordinateEPNS_16QGeoBoundingAreaE@Base 1.1.0
@@ -1154,10 +1154,10 @@ libQtLocation.so.1 libqtlocation1 #MINVER#
  _ZN11QDataStreamrsERj@Base 1.1.0
  _ZN15QBasicAtomicInt3refEv@Base 1.1.0
  _ZN15QBasicAtomicInt5derefEv@Base 1.1.0
- _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
- _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
- _ZN24QStyleOptionGraphicsItemD1Ev@Base 1.2.0
- _ZN24QStyleOptionGraphicsItemD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN24QStyleOptionGraphicsItemD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN24QStyleOptionGraphicsItemD2Ev@Base 1.2.0
  _ZN5QCharC1E11QLatin1Char@Base 1.1.0
  _ZN5QCharC1Ei@Base 1.1.0
  _ZN5QCharC2E11QLatin1Char@Base 1.1.0
@@ -1175,8 +1175,8 @@ libQtLocation.so.1 libqtlocation1 #MINVER#
  _ZN5QSizeC1Ev@Base 1.1.0
  _ZN5QSizeC2Eii@Base 1.1.0
  _ZN5QSizeC2Ev@Base 1.1.0
- _ZN6QDebug6StreamD1Ev@Base 1.2.0
- _ZN6QDebug6StreamD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN6QDebug6StreamD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN6QDebug6StreamD2Ev@Base 1.2.0
  _ZN6QPoint2rxEv@Base 1.1.0
  _ZN6QPoint2ryEv@Base 1.1.0
  _ZN6QPoint4setXEi@Base 1.1.0
@@ -1207,7 +1207,7 @@ libQtLocation.so.1 libqtlocation1 #MINVER#
  _ZN9QHashData8willGrowEv@Base 1.1.0
  _ZN9QHashData9firstNodeEv@Base 1.1.0
  _ZN9QHashData9hasShrunkEv@Base 1.1.0
- _ZN9QPolygonFaSERKS_@Base 1.2.0
+#MISSING: 1.2.0# _ZN9QPolygonFaSERKS_@Base 1.2.0
  _ZNK10QByteArraycvPKcEv@Base 1.1.0
  _ZNK10QtMobility11QGeoAddress11countryCodeEv@Base 1.1.0
  _ZNK10QtMobility11QGeoAddress4cityEv@Base 1.1.0

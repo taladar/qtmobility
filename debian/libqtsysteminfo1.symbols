@@ -3,8 +3,8 @@ libQtSystemInfo.so.1 libqtsysteminfo1 #MINVER#
  _Z6qDebugv@Base 1.1.0
  _Z8qWarningv@Base 1.1.0
  _ZN10QByteArray4dataEv@Base 1.1.0
- _ZN10QDBusErrorD1Ev@Base 1.2.0
- _ZN10QDBusErrorD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QDBusErrorD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QDBusErrorD2Ev@Base 1.2.0
  _ZN10QtMobility11QSystemInfo11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN10QtMobility11QSystemInfo11qt_metacastEPKc@Base 1.1.0
  _ZN10QtMobility11QSystemInfo13connectNotifyEPKc@Base 1.1.0
@@ -183,16 +183,16 @@ libQtSystemInfo.so.1 libqtsysteminfo1 #MINVER#
  _ZN10QtMobility19QSystemAlignedTimerD2Ev@Base 1.2.0
  _ZN15QBasicAtomicInt3refEv@Base 1.1.0
  _ZN15QBasicAtomicInt5derefEv@Base 1.1.0
- _ZN15QDBusObjectPathC1ERKS_@Base 1.2.0
- _ZN15QDBusObjectPathC2ERKS_@Base 1.2.0
- _ZN15QDBusObjectPathD1Ev@Base 1.2.0
- _ZN15QDBusObjectPathD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN15QDBusObjectPathC1ERKS_@Base 1.2.0
+ (arch=powerpc)_ZN15QDBusObjectPathC2ERKS_@Base 1.2.0
+ (arch=powerpc)_ZN15QDBusObjectPathD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN15QDBusObjectPathD2Ev@Base 1.2.0
  _ZN5QCharC1E11QLatin1Char@Base 1.1.0
  _ZN5QCharC2E11QLatin1Char@Base 1.1.0
- _ZN6QDebug6StreamD1Ev@Base 1.2.0
- _ZN6QDebug6StreamD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN6QDebug6StreamD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN6QDebug6StreamD2Ev@Base 1.2.0
  _ZN7QString5clearEv@Base 1.2.0
- (optional=templinst)_ZN8QVariant9fromValueI15QDBusObjectPathEES_RKT_@Base 1.1.0
+ (optional=templinst|arch=powerpc)_ZN8QVariant9fromValueI15QDBusObjectPathEES_RKT_@Base 1.1.0
  (optional=templinst)_ZN8QVariant9fromValueIS_EES_RKT_@Base 1.2.0
  _ZNK10QByteArraycvPKcEv@Base 1.1.0
  _ZNK10QtMobility11QSystemInfo10metaObjectEv@Base 1.1.0
@@ -229,7 +229,7 @@ libQtSystemInfo.so.1 libqtsysteminfo1 #MINVER#
  _ZNK5QRect6heightEv@Base 1.2.0
  _ZNK7QString3argEiiiRK5QChar@Base 1.2.0
  (arch=amd64)_ZNK7QString3argEmiiRK5QChar@Base 1.1.0
- (optional=templinst)_ZNK8QVariant5valueI15QDBusObjectPathEET_v@Base 1.1.0
+ (optional=templinst|arch=powerpc)_ZNK8QVariant5valueI15QDBusObjectPathEET_v@Base 1.1.0
  _ZTI12QDBusContext@Base 1.1.0
  _ZTIN10QtMobility11QSystemInfoE@Base 1.1.0
  _ZTIN10QtMobility17QSystemDeviceInfoE@Base 1.1.0

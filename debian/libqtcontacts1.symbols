@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 1.2.0 amd64 armhf powerpc
+# SymbolsHelper-Confirmed: 1.2.0 amd64 armhf i386 powerpc
 libQtContacts.so.1 libqtcontacts1 #MINVER#
  _Z6qDebugv@Base 1.1.0
  _Z8qWarningv@Base 1.1.0
@@ -15,10 +15,10 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility11QContactTag14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility11QContactTag5matchERK7QString@Base 1.2.0
  _ZN10QtMobility11QContactTag8FieldTagE@Base 1.1.0
- _ZN10QtMobility11QContactTagC1ERKS0_@Base 1.2.0
- _ZN10QtMobility11QContactTagC2ERKS0_@Base 1.2.0
- _ZN10QtMobility11QContactTagD1Ev@Base 1.2.0
- _ZN10QtMobility11QContactTagD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility11QContactTagC1ERKS0_@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility11QContactTagC2ERKS0_@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility11QContactTagD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility11QContactTagD2Ev@Base 1.2.0
  _ZN10QtMobility11QContactUrl11SubTypeBlogE@Base 1.1.0
  _ZN10QtMobility11QContactUrl12FieldSubTypeE@Base 1.1.0
  _ZN10QtMobility11QContactUrl14DefinitionNameE@Base 1.1.0
@@ -36,16 +36,16 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility12QContactName16FieldCustomLabelE@Base 1.1.0
  _ZN10QtMobility12QContactName5matchERK7QString@Base 1.1.0
  _ZN10QtMobility12QContactName5matchERK7QStringS3_@Base 1.1.0
- _ZN10QtMobility12QContactNameD1Ev@Base 1.2.0
- _ZN10QtMobility12QContactNameD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility12QContactNameD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility12QContactNameD2Ev@Base 1.2.0
  _ZN10QtMobility12QContactNote14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility12QContactNote9FieldNoteE@Base 1.1.0
  _ZN10QtMobility12QContactType11TypeContactE@Base 1.1.0
  _ZN10QtMobility12QContactType14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility12QContactType9FieldTypeE@Base 1.1.0
  _ZN10QtMobility12QContactType9TypeGroupE@Base 1.1.0
- _ZN10QtMobility12QContactTypeD1Ev@Base 1.2.0
- _ZN10QtMobility12QContactTypeD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility12QContactTypeD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility12QContactTypeD2Ev@Base 1.2.0
  _ZN10QtMobility13QContactHobby10FieldHobbyE@Base 1.1.0
  _ZN10QtMobility13QContactHobby14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility14QContactAction10ActionCallE@Base 1.1.0
@@ -261,8 +261,8 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility17QContactTimestamp14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility17QContactTimestamp22FieldCreationTimestampE@Base 1.1.0
  _ZN10QtMobility17QContactTimestamp26FieldModificationTimestampE@Base 1.1.0
- _ZN10QtMobility17QContactTimestampD1Ev@Base 1.2.0
- _ZN10QtMobility17QContactTimestampD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility17QContactTimestampD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility17QContactTimestampD2Ev@Base 1.2.0
  _ZN10QtMobility18QContactSyncTarget14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility18QContactSyncTarget15FieldSyncTargetE@Base 1.1.0
  _ZN10QtMobility19QContactAnniversary10FieldEventE@Base 1.1.0
@@ -321,16 +321,16 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility19QContactUnionFilterC1Ev@Base 1.1.0
  _ZN10QtMobility19QContactUnionFilterC2ERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility19QContactUnionFilterC2Ev@Base 1.1.0
- _ZN10QtMobility19QContactUnionFilterD1Ev@Base 1.2.0
- _ZN10QtMobility19QContactUnionFilterD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility19QContactUnionFilterD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility19QContactUnionFilterD2Ev@Base 1.2.0
  _ZN10QtMobility19QContactUnionFilterlsERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility20QContactActionFilter13setActionNameERK7QString@Base 1.1.0
  _ZN10QtMobility20QContactActionFilterC1ERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility20QContactActionFilterC1Ev@Base 1.1.0
  _ZN10QtMobility20QContactActionFilterC2ERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility20QContactActionFilterC2Ev@Base 1.1.0
- _ZN10QtMobility20QContactActionFilterD1Ev@Base 1.2.0
- _ZN10QtMobility20QContactActionFilterD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility20QContactActionFilterD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility20QContactActionFilterD2Ev@Base 1.2.0
  _ZN10QtMobility20QContactActionTarget10setContactERKNS_8QContactE@Base 1.1.0
  _ZN10QtMobility20QContactActionTarget10setDetailsERK5QListINS_14QContactDetailEE@Base 1.1.0
  _ZN10QtMobility20QContactActionTargetC1ERKNS_8QContactERK5QListINS_14QContactDetailEE@Base 1.1.0
@@ -349,13 +349,13 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility20QContactDetailFilterC1Ev@Base 1.1.0
  _ZN10QtMobility20QContactDetailFilterC2ERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility20QContactDetailFilterC2Ev@Base 1.1.0
- _ZN10QtMobility20QContactDetailFilterD1Ev@Base 1.2.0
- _ZN10QtMobility20QContactDetailFilterD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility20QContactDetailFilterD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility20QContactDetailFilterD2Ev@Base 1.2.0
  _ZN10QtMobility20QContactDisplayLabel10FieldLabelE@Base 1.1.0
  _ZN10QtMobility20QContactDisplayLabel14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility20QContactDisplayLabel5matchERK7QString@Base 1.1.0
- _ZN10QtMobility20QContactDisplayLabelD1Ev@Base 1.2.0
- _ZN10QtMobility20QContactDisplayLabelD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility20QContactDisplayLabelD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility20QContactDisplayLabelD2Ev@Base 1.2.0
  _ZN10QtMobility20QContactEmailAddress14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility20QContactEmailAddress17FieldEmailAddressE@Base 1.1.0
  _ZN10QtMobility20QContactEmailAddress5matchERK7QString@Base 1.1.0
@@ -378,8 +378,8 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility20QContactOrganization18FieldAssistantNameE@Base 1.1.0
  _ZN10QtMobility20QContactOrganization9FieldNameE@Base 1.1.0
  _ZN10QtMobility20QContactOrganization9FieldRoleE@Base 1.1.0
- _ZN10QtMobility20QContactOrganizationD1Ev@Base 1.2.0
- _ZN10QtMobility20QContactOrganizationD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility20QContactOrganizationD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility20QContactOrganizationD2Ev@Base 1.2.0
  _ZN10QtMobility20QContactRelationship10AggregatesE@Base 1.1.0
  _ZN10QtMobility20QContactRelationship10HasManagerE@Base 1.1.0
  _ZN10QtMobility20QContactRelationship12HasAssistantE@Base 1.1.0
@@ -407,8 +407,8 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility21QContactInvalidFilterC1Ev@Base 1.1.0
  _ZN10QtMobility21QContactInvalidFilterC2ERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility21QContactInvalidFilterC2Ev@Base 1.1.0
- _ZN10QtMobility21QContactInvalidFilterD1Ev@Base 1.2.0
- _ZN10QtMobility21QContactInvalidFilterD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility21QContactInvalidFilterD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility21QContactInvalidFilterD2Ev@Base 1.2.0
  _ZN10QtMobility21QContactLocalIdFilter3addERKj@Base 1.1.0
  _ZN10QtMobility21QContactLocalIdFilter5clearEv@Base 1.1.0
  _ZN10QtMobility21QContactLocalIdFilter6removeERKj@Base 1.1.0
@@ -417,8 +417,8 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility21QContactLocalIdFilterC1Ev@Base 1.1.0
  _ZN10QtMobility21QContactLocalIdFilterC2ERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility21QContactLocalIdFilterC2Ev@Base 1.1.0
- _ZN10QtMobility21QContactLocalIdFilterD1Ev@Base 1.2.0
- _ZN10QtMobility21QContactLocalIdFilterD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility21QContactLocalIdFilterD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility21QContactLocalIdFilterD2Ev@Base 1.2.0
  _ZN10QtMobility21QContactManagerEngine10testFilterERKNS_14QContactFilterERKNS_8QContactE@Base 1.1.0
  _ZN10QtMobility21QContactManagerEngine11dataChangedEv@Base 1.1.0
  _ZN10QtMobility21QContactManagerEngine11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
@@ -466,9 +466,9 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility21QContactManagerEngine31updateRelationshipRemoveRequestEPNS_33QContactRelationshipRemoveRequestENS_15QContactManager5ErrorERK4QMapIiS4_ENS_23QContactAbstractRequest5StateE@Base 1.1.0
  _ZN10QtMobility21QContactManagerEngine32updateContactLocalIdFetchRequestEPNS_27QContactLocalIdFetchRequestERK5QListIjENS_15QContactManager5ErrorENS_23QContactAbstractRequest5StateE@Base 1.1.0
  _ZN10QtMobility21QContactManagerEngine9addSortedEP5QListINS_8QContactEERKS2_RKS1_INS_17QContactSortOrderEE@Base 1.1.0
- _ZN10QtMobility21QContactManagerEngineD0Ev@Base 1.2.0
- _ZN10QtMobility21QContactManagerEngineD1Ev@Base 1.2.0
- _ZN10QtMobility21QContactManagerEngineD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility21QContactManagerEngineD0Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility21QContactManagerEngineD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility21QContactManagerEngineD2Ev@Base 1.2.0
  _ZN10QtMobility21QContactOnlineAccount10ProtocolQqE@Base 1.2.0
  _ZN10QtMobility21QContactOnlineAccount10SubTypeSipE@Base 1.1.0
  _ZN10QtMobility21QContactOnlineAccount11ProtocolAimE@Base 1.2.0
@@ -525,17 +525,17 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility23QContactChangeLogFilterC1ERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility23QContactChangeLogFilterC2ENS0_9EventTypeE@Base 1.1.0
  _ZN10QtMobility23QContactChangeLogFilterC2ERKNS_14QContactFilterE@Base 1.1.0
- _ZN10QtMobility23QContactChangeLogFilterD1Ev@Base 1.2.0
- _ZN10QtMobility23QContactChangeLogFilterD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility23QContactChangeLogFilterD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility23QContactChangeLogFilterD2Ev@Base 1.2.0
  _ZN10QtMobility23QContactManagerEngineV211qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN10QtMobility23QContactManagerEngineV211qt_metacastEPKc@Base 1.1.0
  _ZN10QtMobility23QContactManagerEngineV212saveContactsEP5QListINS_8QContactEEP4QMapIiNS_15QContactManager5ErrorEEPS7_@Base 1.1.0
  _ZN10QtMobility23QContactManagerEngineV212saveContactsEP5QListINS_8QContactEERK11QStringListP4QMapIiNS_15QContactManager5ErrorEEPSA_@Base 1.1.0
  _ZN10QtMobility23QContactManagerEngineV216staticMetaObjectE@Base 1.1.0
  _ZN10QtMobility23QContactManagerEngineV229updateContactFetchByIdRequestEPNS_24QContactFetchByIdRequestERK5QListINS_8QContactEENS_15QContactManager5ErrorERK4QMapIiS9_ENS_23QContactAbstractRequest5StateE@Base 1.1.0
- _ZN10QtMobility23QContactManagerEngineV2D0Ev@Base 1.2.0
- _ZN10QtMobility23QContactManagerEngineV2D1Ev@Base 1.2.0
- _ZN10QtMobility23QContactManagerEngineV2D2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility23QContactManagerEngineV2D0Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility23QContactManagerEngineV2D1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility23QContactManagerEngineV2D2Ev@Base 1.2.0
  _ZN10QtMobility24QContactActionDescriptor12MetaDataIconE@Base 1.1.0
  _ZN10QtMobility24QContactActionDescriptor13MetaDataLabelE@Base 1.1.0
  _ZN10QtMobility24QContactActionDescriptor19MetaDataSecondLabelE@Base 1.1.0
@@ -577,8 +577,8 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility25QContactDetailRangeFilterC1Ev@Base 1.1.0
  _ZN10QtMobility25QContactDetailRangeFilterC2ERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility25QContactDetailRangeFilterC2Ev@Base 1.1.0
- _ZN10QtMobility25QContactDetailRangeFilterD1Ev@Base 1.2.0
- _ZN10QtMobility25QContactDetailRangeFilterD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility25QContactDetailRangeFilterD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility25QContactDetailRangeFilterD2Ev@Base 1.2.0
  _ZN10QtMobility26QContactIntersectionFilter10setFiltersERK5QListINS_14QContactFilterEE@Base 1.1.0
  _ZN10QtMobility26QContactIntersectionFilter5clearEv@Base 1.1.0
  _ZN10QtMobility26QContactIntersectionFilter6appendERKNS_14QContactFilterE@Base 1.1.0
@@ -588,8 +588,8 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility26QContactIntersectionFilterC1Ev@Base 1.1.0
  _ZN10QtMobility26QContactIntersectionFilterC2ERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility26QContactIntersectionFilterC2Ev@Base 1.1.0
- _ZN10QtMobility26QContactIntersectionFilterD1Ev@Base 1.2.0
- _ZN10QtMobility26QContactIntersectionFilterD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility26QContactIntersectionFilterD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility26QContactIntersectionFilterD2Ev@Base 1.2.0
  _ZN10QtMobility26QContactIntersectionFilterlsERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility26QContactRelationshipFilter19setRelatedContactIdERKNS_10QContactIdE@Base 1.1.0
  _ZN10QtMobility26QContactRelationshipFilter19setRelationshipTypeERK7QString@Base 1.1.0
@@ -598,8 +598,8 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  _ZN10QtMobility26QContactRelationshipFilterC1Ev@Base 1.1.0
  _ZN10QtMobility26QContactRelationshipFilterC2ERKNS_14QContactFilterE@Base 1.1.0
  _ZN10QtMobility26QContactRelationshipFilterC2Ev@Base 1.1.0
- _ZN10QtMobility26QContactRelationshipFilterD1Ev@Base 1.2.0
- _ZN10QtMobility26QContactRelationshipFilterD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility26QContactRelationshipFilterD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN10QtMobility26QContactRelationshipFilterD2Ev@Base 1.2.0
  _ZN10QtMobility27QContactLocalIdFetchRequest10setSortingERK5QListINS_17QContactSortOrderEE@Base 1.1.0
  _ZN10QtMobility27QContactLocalIdFetchRequest11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN10QtMobility27QContactLocalIdFetchRequest11qt_metacastEPKc@Base 1.1.0
@@ -752,14 +752,14 @@ libQtContacts.so.1 libqtcontacts1 #MINVER#
  (arch=armhf)_ZN15QBasicAtomicInt18fetchAndAddRelaxedEi@Base 1.2.0
  _ZN15QBasicAtomicInt3refEv@Base 1.1.0
  _ZN15QBasicAtomicInt5derefEv@Base 1.1.0
- _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
- _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN15QBasicAtomicIntC1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN15QBasicAtomicIntC2Ev@Base 1.2.0
  _ZN5QCharC1E11QLatin1Char@Base 1.1.0
  _ZN5QCharC2E11QLatin1Char@Base 1.1.0
  _ZN5QSizeC1Ev@Base 1.1.0
  _ZN5QSizeC2Ev@Base 1.1.0
- _ZN6QDebug6StreamD1Ev@Base 1.2.0
- _ZN6QDebug6StreamD2Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN6QDebug6StreamD1Ev@Base 1.2.0
+ (arch=armhf powerpc)_ZN6QDebug6StreamD2Ev@Base 1.2.0
  _ZN7QString5clearEv@Base 1.1.0
  _ZN9QHashData8willGrowEv@Base 1.1.0
  _ZN9QHashData9firstNodeEv@Base 1.1.0

@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 1.2.0 amd64
+# SymbolsHelper-Confirmed: 1.2.0 amd64 i386
 libQtPublishSubscribe.so.1 libqtpublishsubscribe1 #MINVER#
  _Z6qDebugv@Base 1.1.0
  _Z8qWarningv@Base 1.1.0
@@ -52,12 +52,12 @@ libQtPublishSubscribe.so.1 libqtpublishsubscribe1 #MINVER#
  (arch=amd64)_ZN11QDataStreamrsERy@Base 1.1.0
  _ZN15QBasicAtomicInt3refEv@Base 1.1.0
  _ZN15QBasicAtomicInt5derefEv@Base 1.1.0
- _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
- _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
  _ZN5QCharC1E11QLatin1Char@Base 1.1.0
  _ZN5QCharC2E11QLatin1Char@Base 1.1.0
- _ZN6QDebug6StreamD1Ev@Base 1.2.0
- _ZN6QDebug6StreamD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN6QDebug6StreamD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN6QDebug6StreamD2Ev@Base 1.2.0
  _ZN7QString5clearEv@Base 1.1.0
  _ZN9QHashData8willGrowEv@Base 1.1.0
  _ZN9QHashData9firstNodeEv@Base 1.1.0

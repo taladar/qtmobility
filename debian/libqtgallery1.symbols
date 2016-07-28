@@ -1,8 +1,8 @@
-# SymbolsHelper-Confirmed: 1.2.0 amd64
+# SymbolsHelper-Confirmed: 1.2.0 amd64 i386
 libQtGallery.so.1 libqtgallery1 #MINVER#
  _ZN10QByteArray4dataEv@Base 1.1.0
- _ZN10QDBusErrorD1Ev@Base 1.2.0
- _ZN10QDBusErrorD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QDBusErrorD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QDBusErrorD2Ev@Base 1.2.0
  (optional=templinst)_ZN10QtMobility13qt_writeValueI7QRegExpEEbPNS_16QDocumentGallery5ErrorEP16QXmlStreamWriterRK8QVariant@Base 1.1.0
  (optional=templinst)_ZN10QtMobility13qt_writeValueI7QStringEEbPNS_16QDocumentGallery5ErrorEP16QXmlStreamWriterRK8QVariant@Base 1.1.0
  (optional=templinst)_ZN10QtMobility13qt_writeValueI8QVariantEEbPNS_16QDocumentGallery5ErrorEP16QXmlStreamWriterRKS1_@Base 1.1.0
@@ -383,12 +383,12 @@ libQtGallery.so.1 libqtgallery1 #MINVER#
  _ZN10QtMobilityooERKNS_19QGalleryUnionFilterES2_@Base 1.1.0
  _ZN15QBasicAtomicInt3refEv@Base 1.1.0
  _ZN15QBasicAtomicInt5derefEv@Base 1.1.0
- _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
- _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
  _ZN5QCharC1E11QLatin1Char@Base 1.1.0
  _ZN5QCharC2E11QLatin1Char@Base 1.1.0
- _ZN6QDebug6StreamD1Ev@Base 1.2.0
- _ZN6QDebug6StreamD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN6QDebug6StreamD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN6QDebug6StreamD2Ev@Base 1.2.0
  _ZN9QHashData8willGrowEv@Base 1.1.0
  _ZN9QHashData9firstNodeEv@Base 1.1.0
  _ZNK10QtMobility14QGalleryFilter13toUnionFilterEv@Base 1.1.0

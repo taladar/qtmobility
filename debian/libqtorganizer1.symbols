@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 1.2.0 amd64 powerpc
+# SymbolsHelper-Confirmed: 1.2.0 amd64 i386 powerpc
 libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _Z6qDebugv@Base 1.1.0
  _Z8qWarningv@Base 1.1.0
@@ -46,8 +46,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility14QOrganizerTodo21setProgressPercentageEi@Base 1.1.0
  _ZN10QtMobility14QOrganizerTodo9setAllDayEb@Base 1.1.0
  _ZN10QtMobility14QOrganizerTodo9setStatusENS_22QOrganizerTodoProgress6StatusE@Base 1.1.0
- _ZN10QtMobility14QOrganizerTodoD1Ev@Base 1.2.0
- _ZN10QtMobility14QOrganizerTodoD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility14QOrganizerTodoD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility14QOrganizerTodoD2Ev@Base 1.2.0
  _ZN10QtMobility15QOrganizerEvent11setLocationERK7QString@Base 1.1.0
  _ZN10QtMobility15QOrganizerEvent11setPriorityENS_22QOrganizerItemPriority8PriorityE@Base 1.1.0
  _ZN10QtMobility15QOrganizerEvent14setEndDateTimeERK9QDateTime@Base 1.1.0
@@ -61,8 +61,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility15QOrganizerEvent18setRecurrenceDatesERK4QSetI5QDateE@Base 1.1.0
  _ZN10QtMobility15QOrganizerEvent18setRecurrenceRulesERK4QSetINS_24QOrganizerRecurrenceRuleEE@Base 1.1.0
  _ZN10QtMobility15QOrganizerEvent9setAllDayEb@Base 1.1.0
- _ZN10QtMobility15QOrganizerEventD1Ev@Base 1.2.0
- _ZN10QtMobility15QOrganizerEventD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility15QOrganizerEventD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility15QOrganizerEventD2Ev@Base 1.2.0
  _ZN10QtMobility16QOrganizerItemId10fromStringERK7QString@Base 1.1.0
  _ZN10QtMobility16QOrganizerItemIdC1EPNS_22QOrganizerItemEngineIdE@Base 1.1.0
  _ZN10QtMobility16QOrganizerItemIdC1ERKS0_@Base 1.1.0
@@ -76,13 +76,13 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility17QOrganizerItemTag14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility17QOrganizerItemTag5matchERK7QString@Base 1.1.0
  _ZN10QtMobility17QOrganizerItemTag8FieldTagE@Base 1.1.0
- _ZN10QtMobility17QOrganizerItemTagC1ERKS0_@Base 1.2.0
- _ZN10QtMobility17QOrganizerItemTagC2ERKS0_@Base 1.2.0
- _ZN10QtMobility17QOrganizerItemTagD1Ev@Base 1.2.0
- _ZN10QtMobility17QOrganizerItemTagD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility17QOrganizerItemTagC1ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility17QOrganizerItemTagC2ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility17QOrganizerItemTagD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility17QOrganizerItemTagD2Ev@Base 1.2.0
  _ZN10QtMobility17QOrganizerJournal11setDateTimeERK9QDateTime@Base 1.1.0
- _ZN10QtMobility17QOrganizerJournalD1Ev@Base 1.2.0
- _ZN10QtMobility17QOrganizerJournalD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility17QOrganizerJournalD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility17QOrganizerJournalD2Ev@Base 1.2.0
  _ZN10QtMobility17QOrganizerManager10extractIdsERK5QListINS_14QOrganizerItemEE@Base 1.1.0
  _ZN10QtMobility17QOrganizerManager10itemsAddedERK5QListINS_16QOrganizerItemIdEE@Base 1.1.0
  _ZN10QtMobility17QOrganizerManager10removeItemERKNS_16QOrganizerItemIdE@Base 1.1.0
@@ -119,8 +119,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility17QOrganizerManagerD2Ev@Base 1.1.0
  _ZN10QtMobility18QOrganizerItemGuid14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility18QOrganizerItemGuid9FieldGuidE@Base 1.1.0
- _ZN10QtMobility18QOrganizerItemGuidD1Ev@Base 1.2.0
- _ZN10QtMobility18QOrganizerItemGuidD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility18QOrganizerItemGuidD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility18QOrganizerItemGuidD2Ev@Base 1.2.0
  _ZN10QtMobility18QOrganizerItemType11TypeJournalE@Base 1.1.0
  _ZN10QtMobility18QOrganizerItemType14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility18QOrganizerItemType18TypeTodoOccurrenceE@Base 1.1.0
@@ -129,20 +129,20 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility18QOrganizerItemType8TypeTodoE@Base 1.1.0
  _ZN10QtMobility18QOrganizerItemType9FieldTypeE@Base 1.1.0
  _ZN10QtMobility18QOrganizerItemType9TypeEventE@Base 1.1.0
- _ZN10QtMobility18QOrganizerItemTypeD1Ev@Base 1.2.0
- _ZN10QtMobility18QOrganizerItemTypeD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility18QOrganizerItemTypeD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility18QOrganizerItemTypeD2Ev@Base 1.2.0
  _ZN10QtMobility18QOrganizerTodoTime11FieldAllDayE@Base 1.1.0
  _ZN10QtMobility18QOrganizerTodoTime14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility18QOrganizerTodoTime16FieldDueDateTimeE@Base 1.1.0
  _ZN10QtMobility18QOrganizerTodoTime18FieldStartDateTimeE@Base 1.1.0
- _ZN10QtMobility18QOrganizerTodoTimeD1Ev@Base 1.2.0
- _ZN10QtMobility18QOrganizerTodoTimeD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility18QOrganizerTodoTimeD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility18QOrganizerTodoTimeD2Ev@Base 1.2.0
  _ZN10QtMobility19QOrganizerEventTime11FieldAllDayE@Base 1.1.0
  _ZN10QtMobility19QOrganizerEventTime14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility19QOrganizerEventTime16FieldEndDateTimeE@Base 1.1.0
  _ZN10QtMobility19QOrganizerEventTime18FieldStartDateTimeE@Base 1.1.0
- _ZN10QtMobility19QOrganizerEventTimeD1Ev@Base 1.2.0
- _ZN10QtMobility19QOrganizerEventTimeD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility19QOrganizerEventTimeD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility19QOrganizerEventTimeD2Ev@Base 1.2.0
  _ZN10QtMobility20QOrganizerCollection11setMetaDataERK4QMapI7QString8QVariantE@Base 1.1.0
  _ZN10QtMobility20QOrganizerCollection11setMetaDataERK7QStringRK8QVariant@Base 1.1.0
  _ZN10QtMobility20QOrganizerCollection14KeyDescriptionE@Base 1.1.0
@@ -206,19 +206,19 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility20QOrganizerItemParent13FieldParentIdE@Base 1.1.0
  _ZN10QtMobility20QOrganizerItemParent14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility20QOrganizerItemParent17FieldOriginalDateE@Base 1.1.0
- _ZN10QtMobility20QOrganizerItemParentD1Ev@Base 1.2.0
- _ZN10QtMobility20QOrganizerItemParentD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility20QOrganizerItemParentD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility20QOrganizerItemParentD2Ev@Base 1.2.0
  _ZN10QtMobility21QOrganizerItemComment12FieldCommentE@Base 1.1.0
  _ZN10QtMobility21QOrganizerItemComment14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility21QOrganizerItemComment5matchERK7QString@Base 1.1.0
- _ZN10QtMobility21QOrganizerItemCommentC1ERKS0_@Base 1.2.0
- _ZN10QtMobility21QOrganizerItemCommentC2ERKS0_@Base 1.2.0
- _ZN10QtMobility21QOrganizerItemCommentD1Ev@Base 1.2.0
- _ZN10QtMobility21QOrganizerItemCommentD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility21QOrganizerItemCommentC1ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility21QOrganizerItemCommentC2ERKS0_@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility21QOrganizerItemCommentD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility21QOrganizerItemCommentD2Ev@Base 1.2.0
  _ZN10QtMobility21QOrganizerJournalTime14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility21QOrganizerJournalTime18FieldEntryDateTimeE@Base 1.1.0
- _ZN10QtMobility21QOrganizerJournalTimeD1Ev@Base 1.2.0
- _ZN10QtMobility21QOrganizerJournalTimeD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility21QOrganizerJournalTimeD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility21QOrganizerJournalTimeD2Ev@Base 1.2.0
  _ZN10QtMobility22QOrganizerCollectionId10fromStringERK7QString@Base 1.1.0
  _ZN10QtMobility22QOrganizerCollectionIdC1EPNS_28QOrganizerCollectionEngineIdE@Base 1.1.0
  _ZN10QtMobility22QOrganizerCollectionIdC1ERKS0_@Base 1.1.0
@@ -229,8 +229,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility22QOrganizerCollectionIdD1Ev@Base 1.1.0
  _ZN10QtMobility22QOrganizerCollectionIdD2Ev@Base 1.1.0
  _ZN10QtMobility22QOrganizerCollectionIdaSERKS0_@Base 1.1.0
- _ZN10QtMobility22QOrganizerItemEngineIdC1Ev@Base 1.2.0
- _ZN10QtMobility22QOrganizerItemEngineIdC2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QOrganizerItemEngineIdC1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QOrganizerItemEngineIdC2Ev@Base 1.2.0
  _ZN10QtMobility22QOrganizerItemIdFilter5clearEv@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemIdFilter6insertERKNS_16QOrganizerItemIdE@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemIdFilter6removeERKNS_16QOrganizerItemIdE@Base 1.1.0
@@ -239,15 +239,15 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility22QOrganizerItemIdFilterC1Ev@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemIdFilterC2ERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemIdFilterC2Ev@Base 1.1.0
- _ZN10QtMobility22QOrganizerItemIdFilterD1Ev@Base 1.2.0
- _ZN10QtMobility22QOrganizerItemIdFilterD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QOrganizerItemIdFilterD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QOrganizerItemIdFilterD2Ev@Base 1.2.0
  _ZN10QtMobility22QOrganizerItemLocation10FieldLabelE@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemLocation13FieldLatitudeE@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemLocation14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemLocation14FieldLongitudeE@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemLocation5matchERK7QString@Base 1.1.0
- _ZN10QtMobility22QOrganizerItemLocationD1Ev@Base 1.2.0
- _ZN10QtMobility22QOrganizerItemLocationD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QOrganizerItemLocationD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QOrganizerItemLocationD2Ev@Base 1.2.0
  _ZN10QtMobility22QOrganizerItemObserver11itemChangedEv@Base 1.2.0
  _ZN10QtMobility22QOrganizerItemObserver11itemRemovedEv@Base 1.2.0
  _ZN10QtMobility22QOrganizerItemObserver11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.2.0
@@ -261,8 +261,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility22QOrganizerItemPriority13FieldPriorityE@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemPriority14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemPriority5matchENS0_8PriorityE@Base 1.1.0
- _ZN10QtMobility22QOrganizerItemPriorityD1Ev@Base 1.2.0
- _ZN10QtMobility22QOrganizerItemPriorityD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QOrganizerItemPriorityD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QOrganizerItemPriorityD2Ev@Base 1.2.0
  _ZN10QtMobility22QOrganizerItemReminder14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemReminder20FieldRepetitionCountE@Base 1.1.0
  _ZN10QtMobility22QOrganizerItemReminder20FieldRepetitionDelayE@Base 1.1.0
@@ -271,8 +271,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility22QOrganizerTodoProgress14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility22QOrganizerTodoProgress21FieldFinishedDateTimeE@Base 1.1.0
  _ZN10QtMobility22QOrganizerTodoProgress23FieldPercentageCompleteE@Base 1.1.0
- _ZN10QtMobility22QOrganizerTodoProgressD1Ev@Base 1.2.0
- _ZN10QtMobility22QOrganizerTodoProgressD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QOrganizerTodoProgressD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility22QOrganizerTodoProgressD2Ev@Base 1.2.0
  _ZN10QtMobility23QOrganizerItemChangeSet11dataChangedEv@Base 1.1.0
  _ZN10QtMobility23QOrganizerItemChangeSet11emitSignalsEPNS_23QOrganizerManagerEngineE@Base 1.1.0
  _ZN10QtMobility23QOrganizerItemChangeSet14setDataChangedEb@Base 1.1.0
@@ -316,8 +316,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility23QOrganizerItemTimestamp14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility23QOrganizerItemTimestamp22FieldCreationTimestampE@Base 1.1.0
  _ZN10QtMobility23QOrganizerItemTimestamp26FieldModificationTimestampE@Base 1.1.0
- _ZN10QtMobility23QOrganizerItemTimestampD1Ev@Base 1.2.0
- _ZN10QtMobility23QOrganizerItemTimestampD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility23QOrganizerItemTimestampD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility23QOrganizerItemTimestampD2Ev@Base 1.2.0
  _ZN10QtMobility23QOrganizerManagerEngine10itemsAddedERK5QListINS_16QOrganizerItemIdEE@Base 1.1.0
  _ZN10QtMobility23QOrganizerManagerEngine10removeItemERKNS_16QOrganizerItemIdEPNS_17QOrganizerManager5ErrorE@Base 1.1.0
  _ZN10QtMobility23QOrganizerManagerEngine10testFilterERKNS_20QOrganizerItemFilterERKNS_14QOrganizerItemE@Base 1.1.0
@@ -364,9 +364,9 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility23QOrganizerManagerEngine8saveItemEPNS_14QOrganizerItemEPNS_17QOrganizerManager5ErrorE@Base 1.1.0
  _ZN10QtMobility23QOrganizerManagerEngine9addSortedEP5QListINS_14QOrganizerItemEERKS2_RKS1_INS_23QOrganizerItemSortOrderEE@Base 1.1.0
  _ZN10QtMobility23QOrganizerManagerEngine9saveItemsEP5QListINS_14QOrganizerItemEEP4QMapIiNS_17QOrganizerManager5ErrorEEPS7_@Base 1.1.0
- _ZN10QtMobility23QOrganizerManagerEngineD0Ev@Base 1.2.0
- _ZN10QtMobility23QOrganizerManagerEngineD1Ev@Base 1.2.0
- _ZN10QtMobility23QOrganizerManagerEngineD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility23QOrganizerManagerEngineD0Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility23QOrganizerManagerEngineD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility23QOrganizerManagerEngineD2Ev@Base 1.2.0
  _ZN10QtMobility24QOrganizerItemRecurrence14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility24QOrganizerItemRecurrence17setExceptionDatesERK4QSetI5QDateE@Base 1.1.0
  _ZN10QtMobility24QOrganizerItemRecurrence17setExceptionRulesERK4QSetINS_24QOrganizerRecurrenceRuleEE@Base 1.1.0
@@ -376,8 +376,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility24QOrganizerItemRecurrence19FieldExceptionRulesE@Base 1.1.0
  _ZN10QtMobility24QOrganizerItemRecurrence20FieldRecurrenceDatesE@Base 1.1.0
  _ZN10QtMobility24QOrganizerItemRecurrence20FieldRecurrenceRulesE@Base 1.1.0
- _ZN10QtMobility24QOrganizerItemRecurrenceD1Ev@Base 1.2.0
- _ZN10QtMobility24QOrganizerItemRecurrenceD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility24QOrganizerItemRecurrenceD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility24QOrganizerItemRecurrenceD2Ev@Base 1.2.0
  _ZN10QtMobility24QOrganizerRecurrenceRule10clearLimitEv@Base 1.1.0
  _ZN10QtMobility24QOrganizerRecurrenceRule11setIntervalEi@Base 1.1.0
  _ZN10QtMobility24QOrganizerRecurrenceRule12setFrequencyENS0_9FrequencyE@Base 1.1.0
@@ -405,8 +405,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility24QOrganizerTodoOccurrence19setFinishedDateTimeERK9QDateTime@Base 1.1.0
  _ZN10QtMobility24QOrganizerTodoOccurrence21setProgressPercentageEi@Base 1.1.0
  _ZN10QtMobility24QOrganizerTodoOccurrence9setStatusENS_22QOrganizerTodoProgress6StatusE@Base 1.1.0
- _ZN10QtMobility24QOrganizerTodoOccurrenceD1Ev@Base 1.2.0
- _ZN10QtMobility24QOrganizerTodoOccurrenceD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility24QOrganizerTodoOccurrenceD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility24QOrganizerTodoOccurrenceD2Ev@Base 1.2.0
  _ZN10QtMobility25QOrganizerAbstractRequest10setManagerEPNS_17QOrganizerManagerE@Base 1.1.0
  _ZN10QtMobility25QOrganizerAbstractRequest11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN10QtMobility25QOrganizerAbstractRequest11qt_metacastEPKc@Base 1.1.0
@@ -427,12 +427,12 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility25QOrganizerEventOccurrence14setEndDateTimeERK9QDateTime@Base 1.1.0
  _ZN10QtMobility25QOrganizerEventOccurrence15setOriginalDateERK5QDate@Base 1.1.0
  _ZN10QtMobility25QOrganizerEventOccurrence16setStartDateTimeERK9QDateTime@Base 1.1.0
- _ZN10QtMobility25QOrganizerEventOccurrenceD1Ev@Base 1.2.0
- _ZN10QtMobility25QOrganizerEventOccurrenceD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility25QOrganizerEventOccurrenceD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility25QOrganizerEventOccurrenceD2Ev@Base 1.2.0
  _ZN10QtMobility25QOrganizerItemDescription14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility25QOrganizerItemDescription16FieldDescriptionE@Base 1.1.0
- _ZN10QtMobility25QOrganizerItemDescriptionD1Ev@Base 1.2.0
- _ZN10QtMobility25QOrganizerItemDescriptionD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility25QOrganizerItemDescriptionD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility25QOrganizerItemDescriptionD2Ev@Base 1.2.0
  _ZN10QtMobility25QOrganizerItemSaveRequest11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN10QtMobility25QOrganizerItemSaveRequest11qt_metacastEPKc@Base 1.1.0
  _ZN10QtMobility25QOrganizerItemSaveRequest16staticMetaObjectE@Base 1.1.0
@@ -453,8 +453,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility25QOrganizerItemUnionFilterC1Ev@Base 1.1.0
  _ZN10QtMobility25QOrganizerItemUnionFilterC2ERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility25QOrganizerItemUnionFilterC2Ev@Base 1.1.0
- _ZN10QtMobility25QOrganizerItemUnionFilterD1Ev@Base 1.2.0
- _ZN10QtMobility25QOrganizerItemUnionFilterD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility25QOrganizerItemUnionFilterD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility25QOrganizerItemUnionFilterD2Ev@Base 1.2.0
  _ZN10QtMobility25QOrganizerItemUnionFilterlsERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility25QOrganizerManagerEngineV211qt_metacallEN11QMetaObject4CallEiPPv@Base 1.2.0
  _ZN10QtMobility25QOrganizerManagerEngineV211qt_metacastEPKc@Base 1.2.0
@@ -462,9 +462,9 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility25QOrganizerManagerEngineV226updateItemFetchByIdRequestEPNS_30QOrganizerItemFetchByIdRequestERK5QListINS_14QOrganizerItemEENS_17QOrganizerManager5ErrorERK4QMapIiS9_ENS_25QOrganizerAbstractRequest5StateE@Base 1.2.0
  _ZN10QtMobility25QOrganizerManagerEngineV29saveItemsEP5QListINS_14QOrganizerItemEEP4QMapIiNS_17QOrganizerManager5ErrorEEPS7_@Base 1.2.0
  _ZN10QtMobility25QOrganizerManagerEngineV29saveItemsEP5QListINS_14QOrganizerItemEERK11QStringListP4QMapIiNS_17QOrganizerManager5ErrorEEPSA_@Base 1.2.0
- _ZN10QtMobility25QOrganizerManagerEngineV2D0Ev@Base 1.2.0
- _ZN10QtMobility25QOrganizerManagerEngineV2D1Ev@Base 1.2.0
- _ZN10QtMobility25QOrganizerManagerEngineV2D2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility25QOrganizerManagerEngineV2D0Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility25QOrganizerManagerEngineV2D1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility25QOrganizerManagerEngineV2D2Ev@Base 1.2.0
  _ZN10QtMobility26QOrganizerItemDetailFilter13setMatchFlagsE6QFlagsINS_20QOrganizerItemFilter9MatchFlagEE@Base 1.1.0
  _ZN10QtMobility26QOrganizerItemDetailFilter23setDetailDefinitionNameERK7QStringS3_@Base 1.1.0
  _ZN10QtMobility26QOrganizerItemDetailFilter8setValueERK8QVariant@Base 1.1.0
@@ -472,13 +472,13 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility26QOrganizerItemDetailFilterC1Ev@Base 1.1.0
  _ZN10QtMobility26QOrganizerItemDetailFilterC2ERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility26QOrganizerItemDetailFilterC2Ev@Base 1.1.0
- _ZN10QtMobility26QOrganizerItemDetailFilterD1Ev@Base 1.2.0
- _ZN10QtMobility26QOrganizerItemDetailFilterD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility26QOrganizerItemDetailFilterD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility26QOrganizerItemDetailFilterD2Ev@Base 1.2.0
  _ZN10QtMobility26QOrganizerItemDisplayLabel10FieldLabelE@Base 1.1.0
  _ZN10QtMobility26QOrganizerItemDisplayLabel14DefinitionNameE@Base 1.1.0
  _ZN10QtMobility26QOrganizerItemDisplayLabel5matchERK7QString@Base 1.1.0
- _ZN10QtMobility26QOrganizerItemDisplayLabelD1Ev@Base 1.2.0
- _ZN10QtMobility26QOrganizerItemDisplayLabelD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility26QOrganizerItemDisplayLabelD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility26QOrganizerItemDisplayLabelD2Ev@Base 1.2.0
  _ZN10QtMobility26QOrganizerItemFetchRequest10setEndDateERK9QDateTime@Base 1.1.0
  _ZN10QtMobility26QOrganizerItemFetchRequest10setSortingERK5QListINS_23QOrganizerItemSortOrderEE@Base 1.1.0
  _ZN10QtMobility26QOrganizerItemFetchRequest11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
@@ -502,8 +502,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility27QOrganizerItemInvalidFilterC1Ev@Base 1.1.0
  _ZN10QtMobility27QOrganizerItemInvalidFilterC2ERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility27QOrganizerItemInvalidFilterC2Ev@Base 1.1.0
- _ZN10QtMobility27QOrganizerItemInvalidFilterD1Ev@Base 1.2.0
- _ZN10QtMobility27QOrganizerItemInvalidFilterD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility27QOrganizerItemInvalidFilterD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility27QOrganizerItemInvalidFilterD2Ev@Base 1.2.0
  _ZN10QtMobility27QOrganizerItemRemoveRequest10setItemIdsERK5QListINS_16QOrganizerItemIdEE@Base 1.1.0
  _ZN10QtMobility27QOrganizerItemRemoveRequest11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN10QtMobility27QOrganizerItemRemoveRequest11qt_metacastEPKc@Base 1.1.0
@@ -514,8 +514,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility27QOrganizerItemRemoveRequestD0Ev@Base 1.2.0
  _ZN10QtMobility27QOrganizerItemRemoveRequestD1Ev@Base 1.2.0
  _ZN10QtMobility27QOrganizerItemRemoveRequestD2Ev@Base 1.2.0
- _ZN10QtMobility28QOrganizerCollectionEngineIdC1Ev@Base 1.2.0
- _ZN10QtMobility28QOrganizerCollectionEngineIdC2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility28QOrganizerCollectionEngineIdC1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility28QOrganizerCollectionEngineIdC2Ev@Base 1.2.0
  _ZN10QtMobility28QOrganizerItemIdFetchRequest10setEndDateERK9QDateTime@Base 1.1.0
  _ZN10QtMobility28QOrganizerItemIdFetchRequest10setSortingERK5QListINS_23QOrganizerItemSortOrderEE@Base 1.1.0
  _ZN10QtMobility28QOrganizerItemIdFetchRequest11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
@@ -559,16 +559,16 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility29QOrganizerItemChangeLogFilterC1ERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility29QOrganizerItemChangeLogFilterC2ENS0_9EventTypeE@Base 1.1.0
  _ZN10QtMobility29QOrganizerItemChangeLogFilterC2ERKNS_20QOrganizerItemFilterE@Base 1.1.0
- _ZN10QtMobility29QOrganizerItemChangeLogFilterD1Ev@Base 1.2.0
- _ZN10QtMobility29QOrganizerItemChangeLogFilterD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility29QOrganizerItemChangeLogFilterD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility29QOrganizerItemChangeLogFilterD2Ev@Base 1.2.0
  _ZN10QtMobility30QOrganizerItemCollectionFilter15setCollectionIdERKNS_22QOrganizerCollectionIdE@Base 1.1.0
  _ZN10QtMobility30QOrganizerItemCollectionFilter16setCollectionIdsERK4QSetINS_22QOrganizerCollectionIdEE@Base 1.1.0
  _ZN10QtMobility30QOrganizerItemCollectionFilterC1ERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility30QOrganizerItemCollectionFilterC1Ev@Base 1.1.0
  _ZN10QtMobility30QOrganizerItemCollectionFilterC2ERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility30QOrganizerItemCollectionFilterC2Ev@Base 1.1.0
- _ZN10QtMobility30QOrganizerItemCollectionFilterD1Ev@Base 1.2.0
- _ZN10QtMobility30QOrganizerItemCollectionFilterD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility30QOrganizerItemCollectionFilterD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility30QOrganizerItemCollectionFilterD2Ev@Base 1.2.0
  _ZN10QtMobility30QOrganizerItemDetailDefinition11insertFieldERK7QStringRKNS_35QOrganizerItemDetailFieldDefinitionE@Base 1.1.0
  _ZN10QtMobility30QOrganizerItemDetailDefinition11removeFieldERK7QString@Base 1.1.0
  _ZN10QtMobility30QOrganizerItemDetailDefinition7setNameERK7QString@Base 1.1.0
@@ -611,8 +611,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility31QOrganizerItemDetailRangeFilterC1Ev@Base 1.1.0
  _ZN10QtMobility31QOrganizerItemDetailRangeFilterC2ERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility31QOrganizerItemDetailRangeFilterC2Ev@Base 1.1.0
- _ZN10QtMobility31QOrganizerItemDetailRangeFilterD1Ev@Base 1.2.0
- _ZN10QtMobility31QOrganizerItemDetailRangeFilterD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility31QOrganizerItemDetailRangeFilterD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility31QOrganizerItemDetailRangeFilterD2Ev@Base 1.2.0
  _ZN10QtMobility32QOrganizerCollectionFetchRequest11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN10QtMobility32QOrganizerCollectionFetchRequest11qt_metacastEPKc@Base 1.1.0
  _ZN10QtMobility32QOrganizerCollectionFetchRequest16staticMetaObjectE@Base 1.1.0
@@ -630,8 +630,8 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN10QtMobility32QOrganizerItemIntersectionFilterC1Ev@Base 1.1.0
  _ZN10QtMobility32QOrganizerItemIntersectionFilterC2ERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility32QOrganizerItemIntersectionFilterC2Ev@Base 1.1.0
- _ZN10QtMobility32QOrganizerItemIntersectionFilterD1Ev@Base 1.2.0
- _ZN10QtMobility32QOrganizerItemIntersectionFilterD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility32QOrganizerItemIntersectionFilterD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN10QtMobility32QOrganizerItemIntersectionFilterD2Ev@Base 1.2.0
  _ZN10QtMobility32QOrganizerItemIntersectionFilterlsERKNS_20QOrganizerItemFilterE@Base 1.1.0
  _ZN10QtMobility33QOrganizerCollectionRemoveRequest11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.1.0
  _ZN10QtMobility33QOrganizerCollectionRemoveRequest11qt_metacastEPKc@Base 1.1.0
@@ -759,12 +759,12 @@ libQtOrganizer.so.1 libqtorganizer1 #MINVER#
  _ZN15QBasicAtomicInt18fetchAndAddOrderedEi@Base 1.1.0
  _ZN15QBasicAtomicInt3refEv@Base 1.1.0
  _ZN15QBasicAtomicInt5derefEv@Base 1.1.0
- _ZN15QBasicAtomicIntC1Ev@Base 1.2.0
- _ZN15QBasicAtomicIntC2Ev@Base 1.2.0
+ (arch=powerpc)_ZN15QBasicAtomicIntC1Ev@Base 1.2.0
+ (arch=powerpc)_ZN15QBasicAtomicIntC2Ev@Base 1.2.0
  _ZN5QCharC1E11QLatin1Char@Base 1.1.0
  _ZN5QCharC2E11QLatin1Char@Base 1.1.0
- _ZN6QDebug6StreamD1Ev@Base 1.2.0
- _ZN6QDebug6StreamD2Ev@Base 1.2.0
+ (arch=powerpc)_ZN6QDebug6StreamD1Ev@Base 1.2.0
+ (arch=powerpc)_ZN6QDebug6StreamD2Ev@Base 1.2.0
  _ZN7QString5clearEv@Base 1.1.0
  _ZN7QString7compareERKS_RK10QStringRefN2Qt15CaseSensitivityE@Base 1.1.0
  (optional=templinst)_ZN8QVariant9fromValueIN10QtMobility16QOrganizerItemIdEEES_RKT_@Base 1.1.0

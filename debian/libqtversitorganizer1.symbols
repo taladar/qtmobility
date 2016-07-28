@@ -1,13 +1,13 @@
-# SymbolsHelper-Confirmed: 1.2.0 amd64
+# SymbolsHelper-Confirmed: 1.2.0 amd64 i386
 libQtVersitOrganizer.so.1 libqtversitorganizer1 #MINVER#
  _Z6qDebugv@Base 1.1.0
  _ZN10QByteArray4dataEv@Base 1.1.0
- _ZN10QtMobility15QOrganizerEventD1Ev@Base 1.2.0
- _ZN10QtMobility15QOrganizerEventD2Ev@Base 1.2.0
- _ZN10QtMobility18QOrganizerTodoTimeD1Ev@Base 1.2.0
- _ZN10QtMobility18QOrganizerTodoTimeD2Ev@Base 1.2.0
- _ZN10QtMobility19QOrganizerEventTimeD1Ev@Base 1.2.0
- _ZN10QtMobility19QOrganizerEventTimeD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility15QOrganizerEventD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility15QOrganizerEventD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility18QOrganizerTodoTimeD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility18QOrganizerTodoTimeD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility19QOrganizerEventTimeD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility19QOrganizerEventTimeD2Ev@Base 1.2.0
  (optional=templinst)_ZN10QtMobility20QOrganizerItemDetail8setValueILi12EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
  (optional=templinst)_ZN10QtMobility20QOrganizerItemDetail8setValueILi13EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
  (optional=templinst)_ZN10QtMobility20QOrganizerItemDetail8setValueILi14EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
@@ -18,20 +18,20 @@ libQtVersitOrganizer.so.1 libqtversitorganizer1 #MINVER#
  (optional=templinst)_ZN10QtMobility20QOrganizerItemDetail8setValueILi7EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
  (optional=templinst)_ZN10QtMobility20QOrganizerItemDetail8setValueILi8EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
  (optional=templinst)_ZN10QtMobility20QOrganizerItemDetail8setValueILi9EEEbRKNS_15QLatin1ConstantIXT_EEERK8QVariant@Base 1.1.0
- _ZN10QtMobility20QOrganizerItemParentD1Ev@Base 1.2.0
- _ZN10QtMobility20QOrganizerItemParentD2Ev@Base 1.2.0
- _ZN10QtMobility21QOrganizerItemCommentD1Ev@Base 1.2.0
- _ZN10QtMobility21QOrganizerItemCommentD2Ev@Base 1.2.0
- _ZN10QtMobility21QOrganizerJournalTimeD1Ev@Base 1.2.0
- _ZN10QtMobility21QOrganizerJournalTimeD2Ev@Base 1.2.0
- _ZN10QtMobility22QOrganizerItemPriorityD1Ev@Base 1.2.0
- _ZN10QtMobility22QOrganizerItemPriorityD2Ev@Base 1.2.0
- _ZN10QtMobility22QOrganizerTodoProgressD1Ev@Base 1.2.0
- _ZN10QtMobility22QOrganizerTodoProgressD2Ev@Base 1.2.0
- _ZN10QtMobility23QOrganizerItemTimestampD1Ev@Base 1.2.0
- _ZN10QtMobility23QOrganizerItemTimestampD2Ev@Base 1.2.0
- _ZN10QtMobility24QOrganizerItemRecurrenceD1Ev@Base 1.2.0
- _ZN10QtMobility24QOrganizerItemRecurrenceD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility20QOrganizerItemParentD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility20QOrganizerItemParentD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility21QOrganizerItemCommentD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility21QOrganizerItemCommentD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility21QOrganizerJournalTimeD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility21QOrganizerJournalTimeD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility22QOrganizerItemPriorityD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility22QOrganizerItemPriorityD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility22QOrganizerTodoProgressD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility22QOrganizerTodoProgressD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility23QOrganizerItemTimestampD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility23QOrganizerItemTimestampD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility24QOrganizerItemRecurrenceD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility24QOrganizerItemRecurrenceD2Ev@Base 1.2.0
  _ZN10QtMobility24QVersitOrganizerExporter11exportItemsERK5QListINS_14QOrganizerItemEENS_15QVersitDocument10VersitTypeE@Base 1.1.0
  _ZN10QtMobility24QVersitOrganizerExporter16setDetailHandlerEPNS_37QVersitOrganizerExporterDetailHandlerE@Base 1.1.0
  _ZN10QtMobility24QVersitOrganizerExporterC1ERK7QString@Base 1.1.0
@@ -48,16 +48,16 @@ libQtVersitOrganizer.so.1 libqtversitorganizer1 #MINVER#
  _ZN10QtMobility24QVersitOrganizerImporterC2Ev@Base 1.1.0
  _ZN10QtMobility24QVersitOrganizerImporterD1Ev@Base 1.1.0
  _ZN10QtMobility24QVersitOrganizerImporterD2Ev@Base 1.1.0
- _ZN10QtMobility25QOrganizerEventOccurrenceD1Ev@Base 1.2.0
- _ZN10QtMobility25QOrganizerEventOccurrenceD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility25QOrganizerEventOccurrenceD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN10QtMobility25QOrganizerEventOccurrenceD2Ev@Base 1.2.0
  _ZN10QtMobility30QVersitOrganizerHandlerFactory11ProfileSyncE@Base 1.1.0
  _ZN10QtMobility30QVersitOrganizerHandlerFactory13ProfileBackupE@Base 1.1.0
  _ZN15QBasicAtomicInt3refEv@Base 1.1.0
  _ZN15QBasicAtomicInt5derefEv@Base 1.1.0
  _ZN5QCharC1E11QLatin1Char@Base 1.1.0
  _ZN5QCharC2E11QLatin1Char@Base 1.1.0
- _ZN6QDebug6StreamD1Ev@Base 1.2.0
- _ZN6QDebug6StreamD2Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN6QDebug6StreamD1Ev@Base 1.2.0
+#MISSING: 1.2.0# _ZN6QDebug6StreamD2Ev@Base 1.2.0
  _ZN9QHashData8willGrowEv@Base 1.1.0
  _ZN9QHashData9firstNodeEv@Base 1.1.0
  (optional=templinst)_ZNK10QtMobility14QOrganizerItem6detailINS_18QOrganizerTodoTimeEEET_v@Base 1.1.0
