@@ -325,7 +325,8 @@ Description: Qt Mobility Service Framework tool
  Qt Mobility delivers a set of new APIs for mobile device functionality.
  .
  This package contains the Service Framework tool (servicefw). It allows
- to register services and make them available over the Service Framework.
+ one to register services and make them available over the Service
+ Framework.
 
 Package: qtmobility-examples
 Architecture: any

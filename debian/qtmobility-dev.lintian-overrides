@@ -1,0 +1,6 @@
+qtmobility-dev: binary-without-manpage usr/bin/icheck
+qtmobility-dev: binary-without-manpage usr/bin/ndefhandlergen
+qtmobility-dev: binary-without-manpage usr/bin/qcrmlgen
+qtmobility-dev: binary-without-manpage usr/bin/servicedbgen
+qtmobility-dev: binary-without-manpage usr/bin/servicexmlgen
+qtmobility-dev: binary-without-manpage usr/bin/vsexplorer
